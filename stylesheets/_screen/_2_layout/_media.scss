@@ -1,0 +1,81 @@
+/**
+
+  @media
+--------------------------------------------------------
+  _2_layout/media.scss
+--------------------------------------------------------
+
+  The 'media' object is a common pattern in OOCSS.
+  It consists of a wrapper element with a classname of
+  .media and then two child elements, one that contains
+  an image or video that is floated, and the other
+  contains text.
+
+  This used commonly in bios, or comments where you
+  have an avatar to one site, and the comment next to it.
+
+  Source: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+
+-----------------------------------------------------  */
+
+
+/* @media objects
+---------------------------------------------------------
+
+  Example: Media object, left
+  <article class="media">
+    <div class="media__left one-fifth">
+      <img src="http://fillmurray.com/300/300">
+    </div>
+    <div class="media__body">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+  </article>
+
+  Example: Media object, right
+  <article class="media">
+    <div class="media__right one-fifth">
+      <img src="http://fillmurray.com/300/300">
+    </div>
+    <div class="media__body">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+  </article>
+
+---------------------------------------------------------  */
+
+// The main media object
+.media{
+  display: block;
+  @include clearfix();
+  margin-bottom: 1em;  // you might end up changing this, either globally or per module
+}
+
+
+
+// Child elements, to the left or right
+.media__left {
+  float: left;
+  margin-right: 1em;  // you might end up changing this, either globally or per module
+}
+.media__right {
+  float: right;
+  margin-left: 1em;
+}
+
+// The images inside those left/right elements should be block
+.media__left img,
+.media__right img {
+  display:block;
+}
+
+
+
+// The body of the media element
+.media__body {
+  overflow: hidden;
+}
+.media__body,
+.media__body > :last-child {
+  margin-bottom: 0;
+}

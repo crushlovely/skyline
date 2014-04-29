@@ -1,0 +1,63 @@
+/**
+
+  @blocks
+--------------------------------------------------------
+
+  A block is a section of content, adds top and bottom
+  padding and some nice bg colors
+
+-----------------------------------------------------  */
+
+// Default Block
+.block {
+  @include padding(n 1 n 1);
+}
+.block__container {
+  @include padding(1 1 1 1);
+}
+
+
+
+.block--default {
+  @extend .block;
+  background: #f4f4f4;
+  .block__container {
+    background: #fff;
+  }
+}
+
+.block--grey {
+  @extend .block;
+  background: #818382;
+  .block__container {
+    @include padding(1 .5 1 .5);
+    background: #858786;
+  }
+}
+
+
+// Light Block
+.block--light {
+  @extend .block;
+  @extend .accent-block--light;
+  .block__container {
+    @extend .accent-block-container--light;
+  }
+}
+
+
+// Block with bottom margin
+.block--bm  {
+  @include padding(n 1 1 1);
+}
+
+
+
+// Dark Block
+.block--dark {
+  @extend .block;
+  @extend .accent-block--dark;
+  .block__container {
+    @extend .accent-block-container--dark;
+  }
+}

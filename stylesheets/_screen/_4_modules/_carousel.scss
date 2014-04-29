@@ -1,0 +1,58 @@
+/**
+
+  @carousel
+--------------------------------------------------------
+
+  Carousels use FlexSlider
+
+  We'll add a title to the carousel module too
+
+  There are variations of carousels, there's a small carousel
+  and also different color themes
+
+------------------------------------------------------ */
+
+.carousel {
+  position: relative;
+  // Add custom styles below...
+
+}
+.carousel__title {
+  // Add custom styles below...
+
+
+}
+
+.carousel__direction-nav {
+  // Add custom styles below...
+
+  li {
+    float: left;
+  }
+}
+
+.carousel__prev,
+.carousel__next {
+  @extend .ss-icon;
+  display: block;
+  text-align: center;
+  // Add custom styles below...
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+/* Have something else to add?
+--------------------------------------------------------
+  + Add any new modifier classes below
+------------------------------------------------------ */
+
+
+
+

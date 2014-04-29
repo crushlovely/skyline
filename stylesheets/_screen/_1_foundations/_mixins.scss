@@ -1,0 +1,164 @@
+/**
+
+  @mixins
+--------------------------------------------------------
+  _1_foundations/mixins.scss
+--------------------------------------------------------
+
+  Here you'll find a breakpoint mixin, nice arrow helper,
+  and a font embedder
+
+-----------------------------------------------------  */
+
+
+
+
+
+
+
+
+/* @flexbox helpers
+--------------------------------------------------------
+
+  Mixins that provide you with all the crazy flexbox
+  prefixes etc.
+
+------------------------------------------------------ */
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+
+
+
+/* @gradual media queries
+--------------------------------------------------------
+
+ The mixin takes arguments of start-width, start-fontsize,
+ end-width, and end-fontsize and then creates media queries
+ between those start and end points at another argument
+ value, increment-width.
+
+------------------------------------------------------ */
+
+// FUNCTION TO STRIP UNITS
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+// GRADUAL QUERIES MIXIN
+@mixin gradual-queries($start-width, $start-fontsize, $end-width, $end-fontsize, $increment-width){
+  // Define number of increments, $increments
+  $increments: ceil((strip-units($end-width) - strip-units($start-width))/strip-units($increment-width));
+  // Define the difference between fontsizes
+  $fontsize-diff: (strip-units($end-fontsize) - strip-units($start-fontsize));
+  // The amount of difference, incrementally
+  $fontsize-increment: $fontsize-diff/$increments;
+  // Apply adjusted fontsizes
+  @for $i from 0 to $increments {
+   $increment-point: $start-width+$i*$increment-width;
+   @media (min-width: $increment-point){
+     font-size: $start-fontsize+($i*$fontsize-increment);
+   }
+  }
+  @media (min-width: $end-width){
+   font-size: $end-fontsize;
+  }
+}
+
+
+
+
+
+/* @breakpoints
+-----------------------------------------------------
+
+  In _1_foundations/vars.scss, you set up your main
+  breakpoint variables.  Here, you'll use those variables
+  to create your breakpoints.
+
+  For example, let's add some styles for anything at least
+  $breakpoint__md, which is portrait tablet
+
+  @include bp-at-least($breakpoint__md){
+    your-styles: go-here;
+  }
+
+  To make this even easier, use the manhattan sublime
+  snippets.
+
+-----------------------------------------------------  */
+
+// Breakpoint At Least
+// [ bp ] Sublime snippet
+@mixin bp-at-least($device-width) {
+  @media screen and (min-width: $device-width) {
+    @content
+  }
+}
+
+// Breakpoint At Least
+// [ bpu ] Sublime snippet
+@mixin bp-until($device-width) {
+  @media screen and (max-width: $device-width - 1) {
+    @content
+  }
+}
+
+// Breakpoint At Least
+// [ bpb ] Sublime snippet
+@mixin bp-between($device-width, $device-width2) {
+  @media screen and (min-width: $device-width) and (max-width: $device-width2) {
+    @content
+  }
+}
+
+
+
+
+
+
+
+/* @font-face import
+-----------------------------------------------------------
+  Use this mixin to embed a font
+
+  $font-name is used in your css in font-family declarations
+  $font-filepath-and-name is the location of your font
+  file and the filename WITHOUT the file extension.  The
+  extensions are added here in the mixin
+
+  @include embed-font($font-name, $font-filepath-and-name);
+--------------------------------------------------------- */
+
+@mixin embed-font($font-name, $font-filepath-and-name){
+  @font-face {
+  	font-family: $font-name;
+  	src: url($font-filepath-and-name+".eot"); /* IE9 Compat Modes */
+  	src: url($font-filepath-and-name+".eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+  	     url($font-filepath-and-name+".woff") format('woff'), /* Modern Browsers */
+  	     url($font-filepath-and-name+".ttf")  format('truetype'), /* Safari, Android, iOS */
+  	     url($font-filepath-and-name+".svg#svgFontName") format('svg'); /* Legacy iOS */
+  	}
+}

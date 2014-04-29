@@ -1,0 +1,25 @@
+/**
+
+  @container
+--------------------------------------------------------
+  _2_layout/container.scss
+--------------------------------------------------------
+
+  Restricts content to the site's max width
+  but allows for full color bars for sections.
+
+  Example: Container
+  <section class="awesome-section-with-background-color">
+    <div class="container">
+      <article style='width: 100%; height: 5em; background-color: #eee; border: 1px solid #ccc;'>.</article>
+    </div>
+  </section>
+
+------------------------------------------------------ */
+
+.container {
+  @include clearfix();
+  margin: 0 auto;
+  max-width: 64rem;   // restricts width
+  padding: 0 2rem;      // adds padding on viewports less than the max-width
+}

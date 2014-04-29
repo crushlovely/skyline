@@ -1,0 +1,74 @@
+/**
+
+  @variables
+---------------------------------------------------------
+  _1_foundations/vars.scss
+--------------------------------------------------------
+
+  Global variables are defined here.  Define your colors,
+  spacing and grid settings.
+
+-----------------------------------------------------  */
+
+
+
+
+
+/* @colors
+--------------------------------------------------------
+
+  All color variables are defined here.
+
+  We use real color names here.  Although naming something
+  like 'brand' is in fact more generic and reusable, we've
+  found that you end up creating variables like $brand-2,
+  $brand-alt, $brand-complimentary etc.  While coding,
+  it's too easy to forget what those mean.
+
+  If the design changes drastically and the brand changes
+  from, let's say, blue to green, just do a global
+  find/replace - that's what text editors are for.
+
+------------------------------------------------------ */
+
+
+// GLOBAL
+//
+$color__black: #515554;
+$color__grey: #b0b3b3;
+$color__grey--light: #cfd2d2;
+$color__offwhite: #f4f4f4;
+$color__white: #fff;
+$color__error: red;
+$color__warning: yellow;
+$color__info: blue;
+$color__success: green;
+
+
+
+
+
+/* @breakpoints
+---------------------------------------------------------
+
+  Define global breakpoints as xs, sm, md, lg, xl
+
+--------------------------------------------------------- */
+
+// Extra Small           // Small mobile
+$breakpoint__xs: 20em;    // 320px
+
+// Small:                // Larger mobile
+$breakpoint__sm: 34.375em; // 550px
+
+// Medium:               // Tablet
+$breakpoint__md: 48em;     // 768px
+
+// Large:                // Landscap tablet, beginning desk size
+$breakpoint__lg: 64em;     // 1024px
+
+// Extra Large:          // Large Desk size
+$breakpoint__xl: 87.5em;  // 1400px
+
+// Extra Extra Large:     // Super Desk size
+$breakpoint__xxl: 100em;  // 1600px

@@ -1,0 +1,39 @@
+/**
+
+  @tabs
+--------------------------------------------------------
+
+  Tabs.
+
+------------------------------------------------------ */
+
+.tab.is-active {
+  // Styles are usually applied to the individual module
+  pointer-events: none;
+}
+
+.panels {
+  position: relative;
+  // height is set by js by reading target panel
+}
+
+// by default, active panels have regular positioning
+.panel {
+  opacity: 0;
+  position: absolute;
+  top: -200%;
+  left: -200%;
+  &.is-active {
+    position: relative;
+    opacity: 1;
+    top: 0;
+    left: 0;
+  }
+}
+// only if the parent is 'is-activated' do they get absolute
+.panels.is-activated .panel {
+
+  &.is-active {
+    position: absolute;
+  }
+}

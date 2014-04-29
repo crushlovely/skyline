@@ -1,0 +1,50 @@
+/**
+
+  @artifact
+--------------------------------------------------------
+
+  Artifact section
+
+-----------------------------------------------------  */
+
+// Artifact section
+//
+.artifact {
+}
+
+
+// Artifact media, usually an image
+//
+.artifact__media {
+
+}
+
+
+// Artifact quote
+//
+.artifact__quote {
+  blockquote {
+    position: relative;
+    @extend %sans--regular;
+    padding-left: 2.5em;
+    font-size: 1.75em;
+    line-height: 1.5;
+    &:before {
+      content: '“';
+      position: absolute;
+      top: -.05em;
+      left: 0;
+      font-size: 5.5em;
+      line-height: 1;
+      @extend %sans--light;
+    }
+    cite {
+      display: inline-block;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      font-size: .8em;
+      @extend %sans--light;
+      font-style: normal;
+    }
+  }
+}

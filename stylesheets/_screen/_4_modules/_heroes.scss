@@ -1,0 +1,53 @@
+/**
+
+  @heroes
+--------------------------------------------------------
+
+  Just your everyday, normal hero.  Contains a div that has
+  the media (video or image) in the background, and a div
+  for the main content.
+
+  Example: Hero
+  <div class="hero">
+    <div class="hero__main">
+      <h1 class="hero__leadin">This is the leadin</h1>
+      <h2 class="hero__name">Name Here</h2>
+    <div class="hero__media"><img src="http://fillmurray.com/1000/400"></div>
+  </div>
+------------------------------------------------------ */
+
+
+.hero {
+  position: relative;
+  background: $color__black;
+  max-height: 28em;
+  overflow: hidden;
+}
+
+.hero__media {
+  position: relative;
+  z-index: 200;
+  @include transition(opacity 1s ease-in-out);
+  opacity: 0;
+  html.is-ready & {
+    opacity: .35;
+  }
+}
+
+.hero__main {
+  position: absolute;
+  z-index: 210;
+  width: 100%;
+  top: 62%;
+  text-align: center;
+  color: $color__white;
+  @include transform(translateY(-50%));
+  font-size: .75em;
+  @include bp-at-least($breakpoint__sm){
+    top: 55%;
+    font-size: 1em;
+  }
+  @include bp-at-least($breakpoint__lg){
+    font-size: 1.25em;
+  }
+}

@@ -1,0 +1,57 @@
+/**
+
+  @hide
+---------------------------------------------------------
+  _2_layout/hide.scss
+--------------------------------------------------------
+
+  Utility state classes to hide things in different ways
+
+  Note: there is room for improvement here.
+
+--------------------------------------------------------- */
+
+// The classic, display: none
+.is-hidden {
+  display: none;
+}
+
+
+// Use this if you still need js access to this element
+// it's visually hidden but still in the DOM
+.is-visually-hidden {
+  position: absolute;
+  left: -9999%;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+}
+
+
+// Responsive hiders
+@include bp-at-least($breakpoint__xs){
+  .hide__xs {
+    display: none;
+  }
+}
+@include bp-at-least($breakpoint__sm){
+  .hide__sm {
+    display: none;
+  }
+}
+@include bp-at-least($breakpoint__md){
+  .hide__md {
+    display: none;
+  }
+}
+@include bp-at-least($breakpoint__lg){
+  .hide__lg {
+    display: none;
+  }
+}
+@include bp-at-least($breakpoint__xl){
+  .hide__xl {
+    display: none;
+  }
+}

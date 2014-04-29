@@ -1,0 +1,159 @@
+/**
+
+   @site-header
+--------------------------------------------------------
+  _5_sections/site-header.scss
+--------------------------------------------------------
+
+  Site-wide header
+
+------------------------------------------------------ */
+
+.site-header {
+  @include clearfix();
+  position: absolute;
+  z-index: 300;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0,0,0,.15);
+  border-bottom: 1px solid $color__white;
+
+  // fixed mod
+  &.site-header--fixed {
+    position: fixed;
+  }
+}
+
+
+
+
+
+/* @branding
+--------------------------------------------------------
+
+  The logo & (optional) wordmark
+
+  This would be setup like this
+
+  <a href="/" class="branding">
+    <img src="logo.svg" class="branding__logo" alt="My Company">
+    <h1 class="branding__wordmark">My Company</h1>
+  </a>
+
+------------------------------------------------------ */
+
+.branding {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: center;
+  @include bp-at-least($breakpoint__sm){
+    float: left;
+    width: auto;
+    margin: 0;
+  }
+}
+
+.branding__logo {
+
+}
+
+.branding__wordmark {
+  height: 3rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: $color__white;
+  margin: 0;
+}
+
+
+.branding--site-nav {
+  text-align: left;
+  background: #161616;
+  display: none;
+  @include bp-at-least($breakpoint__sm){
+    display: block;
+  }
+}
+
+
+
+
+
+/* @site-nav
+--------------------------------------------------------
+
+  Main Site Navigation
+
+------------------------------------------------------ */
+
+.site-nav {
+  position: fixed;
+  z-index: 001;
+  top: 0;
+  left: 0;
+  right: 0;
+  .container {
+    padding: 0;
+  }
+  ul {
+    display: block;
+    li {
+      display: block;
+      border-bottom: 1px solid #161616;
+      &:first-child {
+        border-bottom: 1px solid $color__white;
+      }
+      a {
+        display: block;
+        padding: 0 1rem;
+        color: $color__white;
+        height: 3rem;
+        line-height: 3rem;
+        @include transition(all .3s ease-in-out);
+        &:hover {
+          background: rgba(255, 255, 255, .1);
+        }
+      }
+    }
+  }
+
+  @include bp-at-least($breakpoint__sm){
+    position: absolute;
+    z-index: 310;
+    .container {
+      padding: 0 2em;
+    }
+    ul {
+      float: right;
+      li {
+        float: left;
+        border: none;
+        &:first-child {
+          display: none;
+        }
+        &.site-nav__title {
+          display: none;
+        }
+        a {
+          font-size: .85rem;
+          padding: 0 0 0 2em;
+        }
+      }
+    }
+  }
+}
+
+// Site Nav Button
+.site-nav__button {
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0 1rem;
+  color: $color__white;
+  position: absolute;
+  z-index: 400;
+  top: 0;
+  left: 0;
+}

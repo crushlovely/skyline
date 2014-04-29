@@ -1,0 +1,63 @@
+/* @site-footer
+--------------------------------------------------------
+  _5_sections/site-footer.scss
+--------------------------------------------------------
+
+  The site's footer
+
+------------------------------------------------------ */
+
+
+// Footer section
+.site__footer {
+  background: $color__white;
+  @include padding(n 1 n 1);
+  text-align: center;
+  @extend .accent-color;
+
+  .btn {
+    @extend .accent-color;
+    @extend .accent-border;
+  }
+}
+
+.footer-container {
+  max-width: 42em;
+  margin: 0 auto;
+}
+
+
+// Branding
+.branding {
+  display: block;
+  @include margin(n auto .5 auto);
+  max-width: 34em;
+}
+
+.brading__tagline {
+  color: $color__black;
+  font-size: 1.5em;
+  padding-top: .75em;
+  @extend %serif--italic;
+}
+
+
+// Footer colors
+
+
+
+// Credits
+.footer__credits {
+  opacity: .25;
+  @include margin(.5 auto n auto);
+  display: block;
+  width: 60%;
+  max-width: 10em;
+  color: #000;
+  font-size: 1.25em;
+  @extend %serif--italic;
+  text-decoration: none;
+  img {
+    margin-top: .5em;
+  }
+}

@@ -1,0 +1,139 @@
+/**
+
+  @tables
+---------------------------------------------------------
+  _3_elements/tables.scss
+--------------------------------------------------------
+
+  Base styling for tables
+
+--------------------------------------------------------- */
+
+
+/* @table
+--------------------------------------------------------
+  Base table styling
+
+  Example: Table
+  <table>
+    <thead>
+      <tr>
+        <th>Heading</th>
+        <th>Heading</th>
+        <th>Heading</th>
+        <th>Heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+    </tbody>
+  </table>
+
+------------------------------------------------------ */
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+th {
+  // Add custom styles below...
+
+}
+th,
+td {
+  // Add custom styles below...
+
+}
+
+
+
+
+
+/* @table--striped
+--------------------------------------------------------
+  Striped tables
+
+  Example: Table, striped
+  <table class="table--striped">
+    <thead>
+      <tr>
+        <th>Heading</th>
+        <th>Heading</th>
+        <th>Heading</th>
+        <th>Heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+    </tbody>
+  </table>
+
+------------------------------------------------------ */
+
+// Striped tables
+.table--striped {
+  tbody tr:nth-of-type(odd){
+    background-color: #eee;  // Or whatever color you want
+  }
+}
+
+
+
+
+
+/* Have something else to add?
+--------------------------------------------------------
+  + Add any new modifier classes below
+------------------------------------------------------ */
+
+
+
+
