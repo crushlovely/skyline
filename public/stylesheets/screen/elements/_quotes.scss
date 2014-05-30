@@ -1,0 +1,56 @@
+/**
+
+  @quotes
+--------------------------------------------------------
+  elements/quotes.scss
+--------------------------------------------------------
+
+  Blockquotes and pull quotes
+
+-----------------------------------------------------  */
+
+
+
+
+
+/* @blockquote
+--------------------------------------------------------
+
+  Example:
+  <blockquote>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <cite><a href="http://foo.com">The source</a></cite>
+  </blockquote>
+
+  See http://html5doctor.com/cite-and-blockquote-reloaded/?utm_content=buffercaa2e&utm_source=buffer&utm_medium=twitter&utm_campaign=Buffer for details
+
+-------------------------------------------------------- */
+
+blockquote {
+
+}
+
+
+
+
+
+
+/* @pull-quote
+--------------------------------------------------------
+
+  Large quotes pulled from body text.
+
+  Example:
+  <blockquote class="pull-quote">
+    <p>This is an awesome pull quote!</p>
+  </blockquote>
+
+-------------------------------------------------------- */
+
+.pull-quote {
+  // Any custom styles below...
+}
+
+
+
+

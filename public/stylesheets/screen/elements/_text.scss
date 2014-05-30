@@ -1,0 +1,79 @@
+/**
+
+  @text
+--------------------------------------------------------
+  elements/text.scss
+--------------------------------------------------------
+
+  Some basic styles to paragraphs and
+  inline styles
+
+-----------------------------------------------------  */
+
+
+// Baseline Variable
+//
+$text__baseline: (18/16)*1em;
+
+
+
+/* @anti-fout
+------------------------------------------------------ */
+
+  h1, h2, h3, h4, h5, h6,
+  button, input, .btn,
+  p, ul, ol, blockquote {
+    .wf-loading & {
+      visibility: hidden;
+    }
+    .wf-active & {
+      visibility: visible;;
+    }
+  }
+
+
+
+
+
+
+
+/* @paragraphs
+--------------------------------------------------------
+
+  Example: Paragraphs
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+--------------------------------------------------------  */
+
+p {
+  margin-bottom: 1em;
+  line-height: 1.25*$unit;
+}
+
+
+
+
+
+/* @inline
+--------------------------------------------------------
+
+  Common inline elements
+
+  Example: inline elements
+  <p>Lorem Ipsum is <b>bold</b> text of the <strong>strong</strong> printing and typesetting industry. Lorem Ipsum is <i>italic</i> simply dummy text <em>emphasized</em> of the printing and typesetting industry.</p<
+
+-------------------------------------------------------- */
+
+b,
+strong {
+  // NOTE: use bold font-face if available instead of 'font-weight: bold'
+  font-weight: bold;
+}
+
+
+i,
+em {
+  // NOTE: use italic font-face if available instead of 'font-style: italic'
+  font-style: italic;
+}

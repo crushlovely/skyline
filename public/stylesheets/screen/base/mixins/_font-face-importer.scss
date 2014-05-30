@@ -1,0 +1,29 @@
+/**
+
+  @font-face import mixin
+-----------------------------------------------------------
+  _1_foundations/_mixins/_font-face-importer.scss
+-----------------------------------------------------------
+
+  Use this mixin to embed a font
+
+  $font-name is used in your css in font-family declarations
+  $font-filepath-and-name is the location of your font
+  file and the filename WITHOUT the file extension.  The
+  extensions are added here in the mixin
+
+  Usage:
+  @include embed-font($font-name, $font-filepath-and-name);
+
+--------------------------------------------------------- */
+
+@mixin embed-font($font-name, $font-filepath-and-name){
+  @font-face {
+  	font-family: $font-name;
+  	src: url($font-filepath-and-name+".eot"); /* IE9 Compat Modes */
+  	src: url($font-filepath-and-name+".eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
+  	     url($font-filepath-and-name+".woff") format('woff'), /* Modern Browsers */
+  	     url($font-filepath-and-name+".ttf")  format('truetype'), /* Safari, Android, iOS */
+  	     url($font-filepath-and-name+".svg#svgFontName") format('svg'); /* Legacy iOS */
+  	}
+}

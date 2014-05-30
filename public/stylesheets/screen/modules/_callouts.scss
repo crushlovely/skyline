@@ -1,0 +1,35 @@
+/**
+
+  @callouts
+--------------------------------------------------------
+  modules/_callouts.scss
+--------------------------------------------------------
+
+  A Callout, in this context at least, is those sections
+  of featured content that usually contain an icon, a
+  title, and some text.  These are usually in a row, and
+  call attention to highlighted features.
+
+  Example: Callout
+  <article class="callout">
+    <img class="callout__media" src="images/fpo-icon.png">
+    <h3 class="callout__title">Feature</h3>
+    <p>This callout is very impressive, and should command your attention</p>
+  </article>
+
+-----------------------------------------------------  */
+
+.callout {
+  text-align: center;
+}
+
+.callout__media {
+  display: block;
+  margin: 0 auto 1em;
+  max-height: 3em;
+  width: auto;
+}
+
+.callout__title {
+  font-size: 1.5em;
+}

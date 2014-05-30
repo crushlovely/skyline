@@ -1,0 +1,52 @@
+/**
+
+  @breakpoints mixin
+-----------------------------------------------------
+  base/mixins/breakpoints.scss
+-----------------------------------------------------
+
+  This mixin makes using inline media queries easy.
+  Options include bp-at-least for min-width, bp-until
+  for max-width, and bp-between for min and max widths.
+
+  You can use your breakpoint vars, or any value.
+
+  Usage: styles at medium breakpoint
+  .some-element {
+    @include bp-at-least($breakpoint__md){
+      your-styles: go-here;
+    }
+  }
+
+  Usage: styles at custom breakpoint
+  .another-element {
+    @include bp-until(83.45em){
+      your-styles: go-here;
+    }
+  }
+
+-----------------------------------------------------  */
+
+// Breakpoint At Least
+// [ bp ] Sublime snippet
+@mixin bp-at-least($device-width) {
+  @media screen and (min-width: $device-width) {
+    @content
+  }
+}
+
+// Breakpoint At Least
+// [ bpu ] Sublime snippet
+@mixin bp-until($device-width) {
+  @media screen and (max-width: $device-width - 1) {
+    @content
+  }
+}
+
+// Breakpoint At Least
+// [ bpb ] Sublime snippet
+@mixin bp-between($device-width, $device-width2) {
+  @media screen and (min-width: $device-width) and (max-width: $device-width2) {
+    @content
+  }
+}
