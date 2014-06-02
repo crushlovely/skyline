@@ -199,7 +199,7 @@ textarea {
   font-size: 2em;
   min-height: 6em;
   padding: .5em;
-  border: 1px none;
+  border: solid 1px $color__black;
   @extend %serif--light;
   &:focus {
     outline: none;
