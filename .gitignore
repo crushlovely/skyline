@@ -1,0 +1,7 @@
+.DS_Store
+public/node_modules
+public/.ruby-version
+public/.sass-cache
+public/Gruntfile.js
+public/package.json
+npm-debug.log
