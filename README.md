@@ -36,13 +36,13 @@ The starter files contain as little code as possible.  The structure consists of
 
 * stylesheets
   * screen
-    * base
+    * _1_foundation
       resets, mixins, functions, etc.
-    * composition
+    * _2_layout
       grids, widths, utilities, etc.
-    * elements
+    * _3_elements
       styles for base elements (p, ul, img, form, input, etc.)
-    * modules
+    * _4_modules
       styles for objects/modules you create (.site-header, .hero, .page, .bio, .site-footer, etc.)
 ```
 
