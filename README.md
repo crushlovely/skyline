@@ -13,37 +13,37 @@ Skyline is a minimal scaffolding, it does not impose a visual style.  It contain
 ### Starter Files
 The starter files contain as little code as possible.  The structure consists of:
 
-```html
-* fonts
-  (open source icon font here)
-
-* images
-  (placeholder images are here)
-
-* javascripts
-  * app
-    application.js
-  * vendor
-    (lots of front-end jquery plugins)
-    jquery.skyline.gridguide.js
-    jquery.skyline.smartresize.js
-    jquery.skyline.styleguide.js
-  * utility
-    ios-orientationchange-fix.js
-    modernizr.js (you will usually create your own custom build)
-    respond.js (use if supporting IE8)
-    selectivizr.js (use if supporting IE8)
-
-* stylesheets
-  * screen
-    * _1_foundation
-      resets, mixins, functions, etc.
-    * _2_layout
-      grids, widths, utilities, etc.
-    * _3_elements
-      styles for base elements (p, ul, img, form, input, etc.)
-    * _4_modules
-      styles for objects/modules you create (.site-header, .hero, .page, .bio, .site-footer, etc.)
+```
+├── fonts
+|   ├──  (open source icon font here)
+|
+├── images
+|   ├── (placeholder images are here)
+|
+├── javascripts
+|   ├── app
+|   |   ├── application.js
+|   ├── vendor
+|   |   ├── (lots of front-end jquery plugins)
+|   |   ├── jquery.skyline.gridguide.js
+|   |   ├── jquery.skyline.smartresize.js
+|   |   ├── jquery.skyline.styleguide.js
+|   ├── utility
+|   |   ├── ios-orientationchange-fix.js
+|   |   ├── modernizr.js (you will usually create your own custom build)
+|   |   ├── respond.js (use if supporting IE8)
+|   |   ├── selectivizr.js (use if supporting IE8)
+|
+├── stylesheets
+|   ├── screen
+|   |   ├── _1_foundation
+|   |   |   ├── resets, mixins, functions, etc.
+|   |   ├── _2_layout
+|   |   |   ├── grids, widths, utilities, etc.
+|   |   ├── _3_elements
+|   |   |   ├── styles for base elements (p, ul, img, form, input, etc.)
+|   |   ├── _4_modules
+|   |   |   ├── styles for objects/modules you create (.site-header, .hero, .page, .bio, .site-footer, etc.)
 ```
 
 ### Usage
