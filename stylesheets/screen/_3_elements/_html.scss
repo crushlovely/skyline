@@ -1,0 +1,22 @@
+/**
+
+   @HTML
+--------------------------------------------------------
+  _3_elements/_html.scss
+--------------------------------------------------------
+
+  HTML should contain the site's default background color
+  and font-size
+
+------------------------------------------------------ */
+
+html {
+  @include gradual-queries(20em, 75%, 80em, 100%, 5em);
+}
+
+* {
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

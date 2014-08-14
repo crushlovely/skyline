@@ -63,8 +63,8 @@
   @toc
 
   - Dependencies .... anything needed to compile this project
-  - Base ............ foundations, mixins, functions, vars
-  - Composition ..... layout objects like grids, containers
+  - Foundation ............ foundations, mixins, functions, vars
+  - Layout ..... layout objects like grids, containers
   - Elements ........ single elements
   - Modules ......... objects created by combining elements
 
@@ -80,7 +80,7 @@
 -----------------------------------------------------  */
 /***
 
-  @base
+  @foundation
 ---------------------------------------------------------
 
   Your CSS begins with some global variables, a reset which
@@ -91,7 +91,7 @@
 
   @variables
 ---------------------------------------------------------
-  base/vars.scss
+  _1_foundation/vars.scss
 --------------------------------------------------------
 
   Global variables are defined here.  Define your colors,
@@ -404,7 +404,7 @@ video {
     page-break-after: avoid; } }
 /***
 
-  @composition
+  @layout
 ---------------------------------------------------------
 
   A large portion of CSS is structural layout. You will use
@@ -418,7 +418,7 @@ video {
 
   @container
 --------------------------------------------------------
-  composition/container.scss
+  _2_layout/_container.scss
 --------------------------------------------------------
 
   Restricts content to the site's max width
@@ -478,7 +478,7 @@ video {
 
   @widths
 ---------------------------------------------------------
-  composition/widths.scss
+  _2_layout/widths.scss
 --------------------------------------------------------
 
   Global Width Classes like .one-third or .seven-twelfths
@@ -1177,7 +1177,7 @@ video {
 
   @ups
 --------------------------------------------------------
-  composition/ups.scss
+  _2_layout/ups.scss
 --------------------------------------------------------
 
   UPS?
@@ -1473,7 +1473,7 @@ video {
 
   @grids
 ---------------------------------------------------------
-  composition/_grids.scss
+  _2_layout/_grids.scss
 --------------------------------------------------------
 
   Manhattan uses a simple grid system.  It starts with
@@ -1756,7 +1756,7 @@ video {
 
   @media
 --------------------------------------------------------
-  composition/media.scss
+  _2_layout/media.scss
 --------------------------------------------------------
 
   The 'media' object is a common pattern in OOCSS.
@@ -1828,7 +1828,7 @@ video {
 
   @hide
 ---------------------------------------------------------
-  composition/hide.scss
+  _2_layout/hide.scss
 --------------------------------------------------------
 
   Utility state classes to hide things in different ways
@@ -1874,7 +1874,7 @@ video {
 
   @fonts
 --------------------------------------------------------
-  elements/fonts.scss
+  _3_elements/fonts.scss
 --------------------------------------------------------
 
   Define the fonts used in this app and declare variables
@@ -1938,6 +1938,8 @@ body {
 
    @HTML
 --------------------------------------------------------
+  _3_elements/_html.scss
+--------------------------------------------------------
 
   HTML should contain the site's default background color
   and font-size
@@ -1993,6 +1995,8 @@ body {
 
   @body
 --------------------------------------------------------
+  _3_elements/_body.scss
+--------------------------------------------------------
 
   Body should contain the document's default font and
   background color for the content, if that background
@@ -2007,6 +2011,8 @@ body {
 /**
 
   @code
+--------------------------------------------------------
+  _3_elements/_code.scss
 --------------------------------------------------------
 
   Code elements like <code> and <pre>
@@ -2025,7 +2031,7 @@ code {
 
   @headings
 --------------------------------------------------------
-  elements/headings.scss
+  _3_elements/headings.scss
 --------------------------------------------------------
 
   We set any base styles for any headings that have
@@ -2068,7 +2074,7 @@ h6, .h6 {
 
   @text
 --------------------------------------------------------
-  elements/text.scss
+  _3_elements/text.scss
 --------------------------------------------------------
 
   Some basic styles to paragraphs and
@@ -2119,7 +2125,7 @@ em {
 
   @quotes
 --------------------------------------------------------
-  elements/quotes.scss
+  _3_elements/quotes.scss
 --------------------------------------------------------
 
   Blockquotes and pull quotes
@@ -2152,7 +2158,7 @@ em {
 
   @lists
 --------------------------------------------------------
-  elements/lists.scss
+  _3_elements/lists.scss
 --------------------------------------------------------
 
   Structure for lists
@@ -2199,9 +2205,11 @@ ol {
   ol li {
     line-height: 2; }
 
-/* @hr
+/**
+
+   @hr
 --------------------------------------------------------
-  elements/hr.scss
+  _3_elements/hr.scss
 --------------------------------------------------------
 
   Horizontal Rule
@@ -2220,13 +2228,9 @@ hr {
   margin: 1em 0;
   padding: 0; }
 
-/* Have something else to add?
---------------------------------------------------------
-  + Add any new modifier classes below
------------------------------------------------------- */
 /* @links
 --------------------------------------------------------
-  elements/links.scss
+  _3_elements/links.scss
 --------------------------------------------------------
 
   Links, <a> etc.
@@ -2267,7 +2271,7 @@ body {
 
   @images
 ---------------------------------------------------------
-  elements/images.scss
+  _3_elements/images.scss
 --------------------------------------------------------
 
   Base styling for images, plus some helpful utility
@@ -2380,7 +2384,7 @@ img {
 
   @forms
 ---------------------------------------------------------
-  elements/forms.scss
+  _3_elements/forms.scss
 --------------------------------------------------------
 
   Base styles for all forms and form related elements
@@ -3169,7 +3173,7 @@ fieldset {
 
   @buttons
 --------------------------------------------------------
-  elements/buttons.scss
+  _3_elements/buttons.scss
 --------------------------------------------------------
 
   Buttons are a common UI component in sites/apps.  They
@@ -3344,7 +3348,7 @@ button:focus, button:active {
 
   @icons
 ---------------------------------------------------------
-  elements/icons.scss
+  _3_elements/icons.scss
 --------------------------------------------------------
 
   Define classes for icons.  First a base class, .icon, and
@@ -4029,7 +4033,7 @@ button:focus, button:active {
 
    @site
 --------------------------------------------------------
-  modules/_site.scss
+  _4_modules/_site.scss
 --------------------------------------------------------
 
   This is a utility div to wrap the whole site
@@ -4039,7 +4043,7 @@ button:focus, button:active {
 
   @site-header
 --------------------------------------------------------
-  modules/site-header.scss
+  _4_modules/site-header.scss
 --------------------------------------------------------
 
   Site-wide header
@@ -4178,7 +4182,7 @@ button:focus, button:active {
 
   @site-main
 --------------------------------------------------------
-  modules/site-main.scss
+  _4_modules/site-main.scss
 --------------------------------------------------------
 
   The site's main content
@@ -4191,7 +4195,7 @@ button:focus, button:active {
 
   @site-footer
 --------------------------------------------------------
-  modules/site-footer.scss
+  _4_modules/site-footer.scss
 --------------------------------------------------------
 
   The site's footer
@@ -4240,7 +4244,7 @@ button:focus, button:active {
 
   @pages
 --------------------------------------------------------
-  modules/_pages.scss
+  _4_modules/_pages.scss
 --------------------------------------------------------
 
   Pages have a title and content
@@ -4280,7 +4284,7 @@ button:focus, button:active {
 
   @alerts
 ---------------------------------------------------------
-  modules/_alerts.scss
+  _4_modules/_alerts.scss
 --------------------------------------------------------
 
   Alerts are UI elements that give important info
@@ -4381,7 +4385,7 @@ button:focus, button:active {
 
   @blocks
 --------------------------------------------------------
-  modules/_blocks.scss
+  _4_modules/_blocks.scss
 --------------------------------------------------------
 
   Blocks contain sections of content.  Blocks can have
@@ -4446,7 +4450,7 @@ button:focus, button:active {
 
   @callouts
 --------------------------------------------------------
-  modules/_callouts.scss
+  _4_modules/_callouts.scss
 --------------------------------------------------------
 
   A Callout, in this context at least, is those sections
@@ -4478,7 +4482,7 @@ button:focus, button:active {
 
   @carousels
 --------------------------------------------------------
-  modules/_carousels.scss
+  _4_modules/_carousels.scss
 --------------------------------------------------------
 
   Carousels use FlexSlider
@@ -4511,7 +4515,7 @@ button:focus, button:active {
 
   @heroes
 --------------------------------------------------------
-  modules/_heroes.scss
+  _4_modules/_heroes.scss
 --------------------------------------------------------
 
   Just your everyday, normal hero.  Contains a div that has
@@ -4574,7 +4578,7 @@ button:focus, button:active {
 
   @modals
 ---------------------------------------------------------
-  modules/_modals.scss
+  _4_modules/_modals.scss
 --------------------------------------------------------
 
   These are very basic modals, there's room for improvement.
@@ -4724,7 +4728,7 @@ button:focus, button:active {
 
   @popovers
 --------------------------------------------------------
-  modules/_popovers.scss
+  _4_modules/_popovers.scss
 --------------------------------------------------------
 
   TBD
@@ -4734,7 +4738,7 @@ button:focus, button:active {
 
   @tabs
 --------------------------------------------------------
-  modules/_tabs.scss
+  _4_modules/_tabs.scss
 --------------------------------------------------------
 
   Tabs.
@@ -4764,7 +4768,7 @@ button:focus, button:active {
 
   @thumbnails
 --------------------------------------------------------
-  modules/_thumbnails.scss
+  _4_modules/_thumbnails.scss
 --------------------------------------------------------
 
   description
@@ -4802,7 +4806,7 @@ button:focus, button:active {
 
   @tooltips
 ---------------------------------------------------------
-  modules/_tooltips.scss
+  _4_modules/_tooltips.scss
 --------------------------------------------------------
 
   Tooltips use bootstrap.js for now.
@@ -4820,7 +4824,7 @@ button:focus, button:active {
 
   @video
 --------------------------------------------------------
-  modules/_video-embeds.scss
+  _4_modules/_video-embeds.scss
 --------------------------------------------------------
 
   Video Embeds

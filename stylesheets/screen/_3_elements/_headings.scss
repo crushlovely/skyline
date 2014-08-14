@@ -1,0 +1,68 @@
+/**
+
+  @headings
+--------------------------------------------------------
+  _3_elements/headings.scss
+--------------------------------------------------------
+
+  We set any base styles for any headings that have
+  no classnames.
+
+  Example: Headings
+  <h1>This is an h1 heading</h1>
+  <h2>This is an h2 heading</h2>
+  <h3>This is an h3 heading</h3>
+  <h4>This is an h4 heading</h4>
+  <h5>This is an h5 heading</h5>
+  <h6>This is an h6 heading</h6>
+
+  Additionally, we add classnames so you
+  can apply the styling of, for instance, an h1 to an h2.
+
+  Example: H1 styled like an H3
+  <h1 class="h3">This is an h1 but looks like an h3</h1>
+
+------------------------------------------------------ */
+
+
+// H1
+h1, .h1 {
+  margin-bottom: 1em;
+}
+
+
+// H2
+h2, .h2 {
+  margin-bottom: 1em;
+}
+
+
+
+// H3
+h3, .h3 {
+  margin-bottom: 1em;
+}
+
+
+
+// H4
+h4, .h4 {
+  margin-bottom: 1em;
+}
+
+
+
+// H5
+h5, .h5 {
+  margin-bottom: 1em;
+}
+
+
+
+// H6
+h6, .h6 {
+  margin-bottom: 1em;
+}
+
+
+

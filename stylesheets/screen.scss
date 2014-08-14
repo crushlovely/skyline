@@ -62,8 +62,8 @@
   @toc
 
   - Dependencies .... anything needed to compile this project
-  - Base ............ foundations, mixins, functions, vars
-  - Composition ..... layout objects like grids, containers
+  - Foundation ............ foundations, mixins, functions, vars
+  - Layout ..... layout objects like grids, containers
   - Elements ........ single elements
   - Modules ......... objects created by combining elements
 
@@ -92,7 +92,7 @@
 
 /***
 
-  @base
+  @foundation
 ---------------------------------------------------------
 
   Your CSS begins with some global variables, a reset which
@@ -102,38 +102,38 @@
 
   // Vars
   //
-  @import "screen/base/vars";
+  @import "screen/_1_foundation/vars";
 
   // Reset
   //
-  @import "screen/base/reset";
+  @import "screen/_1_foundation/reset";
 
   // Functions
   //
-  @import "screen/base/functions/auto-or-value";
+  @import "screen/_1_foundation/functions/auto-or-value";
 
   // Mixins
   //
-  @import "screen/base/mixins/arrows";
+  @import "screen/_1_foundation/mixins/arrows";
 
-  @import "screen/base/mixins/breakpoints";
+  @import "screen/_1_foundation/mixins/breakpoints";
 
-  @import "screen/base/mixins/clearfix";
+  @import "screen/_1_foundation/mixins/clearfix";
 
-  @import "screen/base/mixins/element-queries";
+  @import "screen/_1_foundation/mixins/element-queries";
 
-  @import "screen/base/mixins/flexbox";
+  @import "screen/_1_foundation/mixins/flexbox";
 
-  @import "screen/base/mixins/font-face-importer";
+  @import "screen/_1_foundation/mixins/font-face-importer";
 
-  @import "screen/base/mixins/gradual-media-queries";
+  @import "screen/_1_foundation/mixins/gradual-media-queries";
 
-  @import "screen/base/mixins/spacing";
+  @import "screen/_1_foundation/mixins/spacing";
 
 
   // Print
   //
-  @import "screen/base/print";
+  @import "screen/_1_foundation/print";
 
 
 
@@ -142,7 +142,7 @@
 
 /***
 
-  @composition
+  @layout
 ---------------------------------------------------------
 
   A large portion of CSS is structural layout. You will use
@@ -153,17 +153,17 @@
 
 ---------------------------------------------------------  */
 
-  @import "screen/composition/container";
+  @import "screen/_2_layout/container";
 
-  @import "screen/composition/widths";
+  @import "screen/_2_layout/widths";
 
-  @import "screen/composition/ups";
+  @import "screen/_2_layout/ups";
 
-  @import "screen/composition/grids";
+  @import "screen/_2_layout/grids";
 
-  @import "screen/composition/media";
+  @import "screen/_2_layout/media";
 
-  @import "screen/composition/hide";
+  @import "screen/_2_layout/hide";
 
 
 
@@ -178,33 +178,33 @@
 
 ---------------------------------------------------------  */
 
-  @import "screen/elements/fonts";
+  @import "screen/_3_elements/fonts";
 
-  @import "screen/elements/html";
+  @import "screen/_3_elements/html";
 
-  @import "screen/elements/body";
+  @import "screen/_3_elements/body";
 
-  @import "screen/elements/code";
+  @import "screen/_3_elements/code";
 
-  @import "screen/elements/headings";
+  @import "screen/_3_elements/headings";
 
-  @import "screen/elements/text";
+  @import "screen/_3_elements/text";
 
-  @import "screen/elements/quotes";
+  @import "screen/_3_elements/quotes";
 
-  @import "screen/elements/lists";
+  @import "screen/_3_elements/lists";
 
-  @import "screen/elements/hr";
+  @import "screen/_3_elements/hr";
 
-  @import "screen/elements/links";
+  @import "screen/_3_elements/links";
 
-  @import "screen/elements/images";
+  @import "screen/_3_elements/images";
 
-  @import "screen/elements/forms";
+  @import "screen/_3_elements/forms";
 
-  @import "screen/elements/buttons";
+  @import "screen/_3_elements/buttons";
 
-  @import "screen/elements/icons";
+  @import "screen/_3_elements/icons";
 
 
 
@@ -228,43 +228,43 @@
 
   // Site Modules
   //
-  @import "screen/modules/site";
+  @import "screen/_4_modules/site";
 
-  @import "screen/modules/site-header";
+  @import "screen/_4_modules/site-header";
 
-  @import "screen/modules/site-main";
+  @import "screen/_4_modules/site-main";
 
-  @import "screen/modules/site-footer";
+  @import "screen/_4_modules/site-footer";
 
 
   // Page Template Module
   //
-  @import "screen/modules/pages";
+  @import "screen/_4_modules/pages";
 
 
   // Component Modules
   //
-  @import "screen/modules/alerts";
+  @import "screen/_4_modules/alerts";
 
-  @import "screen/modules/blocks";
+  @import "screen/_4_modules/blocks";
 
-  @import "screen/modules/callouts";
+  @import "screen/_4_modules/callouts";
 
-  @import "screen/modules/carousels";
+  @import "screen/_4_modules/carousels";
 
-  @import "screen/modules/heroes";
+  @import "screen/_4_modules/heroes";
 
-  @import "screen/modules/modals";
+  @import "screen/_4_modules/modals";
 
-  @import "screen/modules/popovers";
+  @import "screen/_4_modules/popovers";
 
-  @import "screen/modules/tabs";
+  @import "screen/_4_modules/tabs";
 
-  @import "screen/modules/thumbnails";
+  @import "screen/_4_modules/thumbnails";
 
-  @import "screen/modules/tooltips";
+  @import "screen/_4_modules/tooltips";
 
-  @import "screen/modules/video-embeds";
+  @import "screen/_4_modules/video-embeds";
 
 
   // Vendor Related Modules
