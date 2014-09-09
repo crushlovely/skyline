@@ -35,15 +35,17 @@ The starter files contain as little code as possible.  The structure consists of
 |   |   ├── selectivizr.js (use if supporting IE8)
 |
 ├── stylesheets
-|   ├── screen
-|   |   ├── _1_foundation
-|   |   |   ├── resets, mixins, functions, etc.
-|   |   ├── _2_layout
-|   |   |   ├── grids, widths, utilities, etc.
-|   |   ├── _3_elements
-|   |   |   ├── styles for base elements (p, ul, img, form, input, etc.)
-|   |   ├── _4_modules
-|   |   |   ├── styles for objects/modules you create (.site-header, .hero, .page, .bio, .site-footer, etc.)
+|   ├── base
+|   |   ├── variables, resets, mixins, functions, etc.
+|   ├── elements
+|   |   ├── styles for base elements (p, ul, img, form, input, etc.)
+|   ├── layout
+|   |   ├── grids, widths, utilities, etc.
+|   ├── modules
+|   |   ├── styles for objects/modules you create (.site-header, .hero, .page, .bio, .site-footer, etc.)
+|   ├── vendor
+|   |   ├── styles related to plugins
+
 ```
 
 ### Usage
