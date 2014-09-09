@@ -46,7 +46,7 @@ The starter files contain as little code as possible.  The structure consists of
 |   ├── vendor
 |       ├── styles related to plugins
 |   ├── README.md
-|    ── screen.scss (the manifest file that pulls in all the partials and compiles into screen.css)
+|   ├── screen.scss (the manifest file that pulls in all the partials and compiles into screen.css)
 ```
 
 ### Usage
