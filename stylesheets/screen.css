@@ -4,69 +4,18 @@
   MAIN STYLESHEET for ***YOUR-SITE-NAME-HERE***
 
 ---------------------------------------------------------
-
-  BUILT WITH SKYLINE: EVOLVING CSS ARCHITECTURE
-
-  SKYLINE CREATED BY CRUSH & LOVELY ENGINEERING
-
-  Jeff Schram         Adam Becker         Jacob Fentress
-  (@jeffschram)       (@adambbecker)      (@jfentress)
-  jeffschram.com      adambbecker.com     jacobfentress.com
-
----------------------------------------------------------
-
-
-  ADDITIONAL CREDITS, INSPIRATION & SHOUT OUTS
-
-  Harry Roberts       Chris Coyier        Brad Frost
-  (@csswizardry)      (@crishcoyier)      (@bradfrost)
-  csswizardry.com     css-tricks.com      patternlab.io
-  inuitcss.com        codepen.io          bradfrostweb.com
-
-  Jonathan Snook      Nicole Sullivan
-  (@snook)            (@stubbornella)
-  smaccs.com          stubbornella.org
-
-  - For some mixins, naming conventions and OOCSS concepts
-  - Check these guys out and learn from their awesomeness
-
-
-  Nicolas Gallagher
-  http://nicolasgallagher.com
-  http://necolas.github.io/normalize.css/
-
-  - For the reset
-
-
-  HTML5 Boilerplate (@h5bp)
-  html5boilerplate.com
-
-  - For the print stylesheet
-
-
-  Twitter Bootstrap (@twbootstrap)
-  twitter.github.com/bootstrap
-
-  - For some component ideas, naming conventions and javascript
-
-
-  A quite note on navigating through these files:
-  We are using @waypoints to allow you to easily search
-  for certain sections. For instance, to get to the
-  Table Of Contents (or toc) just search for "@toc"
-  and you'll jump right to it.
-
-
+  For credits, shoutouts, and info check the README.md
 ---------------------------------------------------------
 
   TABLE OF CONTENTS
   @toc
 
-  - Dependencies .... anything needed to compile this project
-  - Foundation ............ foundations, mixins, functions, vars
-  - Layout ..... layout objects like grids, containers
-  - Elements ........ single elements
-  - Modules ......... objects created by combining elements
+  - Dependencies ...... anything needed to compile this project
+  - Base .............. foundations, mixins, functions, vars
+  - Elements .......... single elements
+  - Layout ............ layout objects like grids, containers
+  - Modules ........... objects created by combining elements
+  - Vendor ............ any css from vendor plugins
 
 ---------------------------------------------------------  */
 /***
@@ -80,7 +29,7 @@
 -----------------------------------------------------  */
 /***
 
-  @foundation
+  @base
 ---------------------------------------------------------
 
   Your CSS begins with some global variables, a reset which
@@ -175,16 +124,6 @@ canvas,
 video {
   display: block; }
 
-/**
-
-  @autoOrValue function
---------------------------------------------------------
-  _1_foundations/_functions/_auto-or-value.scss
---------------------------------------------------------
-
-  Function to determine if input is auto or a value
-
------------------------------------------------------  */
 /**
 
   @arrow mixin
@@ -402,6 +341,2987 @@ video {
   h2,
   h3 {
     page-break-after: avoid; } }
+/**
+
+  @fonts
+--------------------------------------------------------
+  _3_elements/fonts.scss
+--------------------------------------------------------
+
+  Define the fonts used in this app and declare variables
+  to be used in your CSS.
+
+  If you are using a webfont, see the base/_mixins.scss
+  file for deets on the font embed mixin that is used to
+  embed webfonts.
+
+  for example, to create a font-family named "interstate-light"
+  using a font at /fonts/interstate_light-webfont.woff (and other extensions)
+
+  @include embed-font("interstate-light", "/fonts/interstate_light-webfont");
+
+-------------------------------------------------------- */
+/* @sans
+--------------------------------------------------------
+
+   use $sans for this font
+
+------------------------------------------------------ */
+.thumbnail__caption h2 {
+  font-family: helvetica, sans-serif;
+  font-weight: 300;
+  font-style: normal; }
+
+.btn {
+  font-family: helvetica, sans-serif;
+  font-weight: 700;
+  font-style: normal; }
+
+/* @serif
+--------------------------------------------------------
+
+  Use $serif for this font
+
+-------------------------------------------------------- */
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=number],
+input[type=datetime],
+input[type=date],
+input[type=tel],
+input[type=month],
+input[type=week],
+input[type=search],
+input[type=submit], input::-webkit-input-placeholder, input:-moz-placeholder, textarea, .page__title h1, .thumbnail__caption h3 {
+  font-family: georgia, times;
+  font-weight: 300;
+  font-style: normal;
+  color: red; }
+
+body {
+  font-family: georgia, times;
+  font-weight: 400;
+  font-style: normal; }
+
+/**
+
+  @icons
+---------------------------------------------------------
+  _3_elements/icons.scss
+--------------------------------------------------------
+
+  Define classes for icons.  First a base class, .icon, and
+  then any modifiers.
+
+  Near the end of this partial, we're including symbolset,
+  which is a font-icon that we dig.
+
+--------------------------------------------------------- */
+/* @icon
+--------------------------------------------------------
+
+  Your open and close icons
+
+  Example: Open Icon
+  <i class="icon icon--open">&plus;</i>
+
+  Example: Close Icon
+  <i class="icon icon--close">&times;</i>
+
+------------------------------------------------------ */
+.icon {
+  color: inherit;
+  display: inline-block;
+  font-style: normal;
+  vertical-align: middle;
+  font-size: 1em; }
+  .icon img {
+    height: 1em;
+    width: auto; }
+
+/* @symbolset
+--------------------------------------------------------
+
+  Symbolset
+  www.symbolset.com
+  Copyright © 2012 Oak Studios LLC
+
+------------------------------------------------------ */
+@font-face {
+  font-family: "SSStandard";
+  src: url("/fonts/ss-standard.eot");
+  /* IE9 Compat Modes */
+  src: url("/fonts/ss-standard.eot?#iefix") format("embedded-opentype"), url("/fonts/ss-standard.woff") format("woff"), url("/fonts/ss-standard.ttf") format("truetype"), url("/fonts/ss-standard.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+.ss-icon, .carousel__prev,
+.carousel__next, .ss-icon.ss-standard, .ss-standard.carousel__prev,
+.ss-standard.carousel__next,
+[class^="ss-"]:before, [class*=" ss-"]:before,
+[class^="ss-"].ss-standard:before, [class*=" ss-"].ss-standard:before,
+[class^="ss-"].right:after, [class*=" ss-"].right:after,
+[class^="ss-"].ss-standard.right:after, [class*=" ss-"].ss-standard.right:after {
+  font-family: "SSStandard";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased; }
+
+[class^="ss-"].right:before, [class*=" ss-"].ss-standard.right:before {
+  display: none;
+  content: ''; }
+
+.ss-cursor:before, .ss-cursor.right:after {
+  content: ''; }
+
+.ss-crosshair:before, .ss-crosshair.right:after {
+  content: '⌖'; }
+
+.ss-search:before, .ss-search.right:after {
+  content: ''; }
+
+.ss-zoomin:before, .ss-zoomin.right:after {
+  content: ''; }
+
+.ss-zoomout:before, .ss-zoomout.right:after {
+  content: ''; }
+
+.ss-view:before, .ss-view.right:after {
+  content: ''; }
+
+.ss-attach:before, .ss-attach.right:after {
+  content: ''; }
+
+.ss-link:before, .ss-link.right:after {
+  content: ''; }
+
+.ss-move:before, .ss-move.right:after {
+  content: ''; }
+
+.ss-write:before, .ss-write.right:after {
+  content: '✎'; }
+
+.ss-writingdisabled:before, .ss-writingdisabled.right:after {
+  content: ''; }
+
+.ss-erase:before, .ss-erase.right:after {
+  content: '✐'; }
+
+.ss-compose:before, .ss-compose.right:after {
+  content: ''; }
+
+.ss-lock:before, .ss-lock.right:after {
+  content: ''; }
+
+.ss-unlock:before, .ss-unlock.right:after {
+  content: ''; }
+
+.ss-key:before, .ss-key.right:after {
+  content: ''; }
+
+.ss-backspace:before, .ss-backspace.right:after {
+  content: '⌫'; }
+
+.ss-ban:before, .ss-ban.right:after {
+  content: ''; }
+
+.ss-trash:before, .ss-trash.right:after {
+  content: ''; }
+
+.ss-target:before, .ss-target.right:after {
+  content: '◎'; }
+
+.ss-tag:before, .ss-tag.right:after {
+  content: ''; }
+
+.ss-bookmark:before, .ss-bookmark.right:after {
+  content: ''; }
+
+.ss-flag:before, .ss-flag.right:after {
+  content: '⚑'; }
+
+.ss-like:before, .ss-like.right:after {
+  content: ''; }
+
+.ss-dislike:before, .ss-dislike.right:after {
+  content: ''; }
+
+.ss-heart:before, .ss-heart.right:after {
+  content: '♥'; }
+
+.ss-halfheart:before, .ss-halfheart.right:after {
+  content: ''; }
+
+.ss-star:before, .ss-star.right:after {
+  content: '⋆'; }
+
+.ss-halfstar:before, .ss-halfstar.right:after {
+  content: ''; }
+
+.ss-sample:before, .ss-sample.right:after {
+  content: ''; }
+
+.ss-crop:before, .ss-crop.right:after {
+  content: ''; }
+
+.ss-layers:before, .ss-layers.right:after {
+  content: ''; }
+
+.ss-phone:before, .ss-phone.right:after {
+  content: ''; }
+
+.ss-phonedisabled:before, .ss-phonedisabled.right:after {
+  content: ''; }
+
+.ss-rss:before, .ss-rss.right:after {
+  content: ''; }
+
+.ss-facetime:before, .ss-facetime.right:after {
+  content: ''; }
+
+.ss-reply:before, .ss-reply.right:after {
+  content: '↩'; }
+
+.ss-send:before, .ss-send.right:after {
+  content: ''; }
+
+.ss-mail:before, .ss-mail.right:after {
+  content: '✉'; }
+
+.ss-inbox:before, .ss-inbox.right:after {
+  content: ''; }
+
+.ss-chat:before, .ss-chat.right:after {
+  content: ''; }
+
+.ss-user:before, .ss-user.right:after {
+  content: ''; }
+
+.ss-femaleuser:before, .ss-femaleuser.right:after {
+  content: ''; }
+
+.ss-users:before, .ss-users.right:after {
+  content: ''; }
+
+.ss-cart:before, .ss-cart.right:after {
+  content: ''; }
+
+.ss-creditcard:before, .ss-creditcard.right:after {
+  content: ''; }
+
+.ss-dollarsign:before, .ss-dollarsign.right:after {
+  content: ''; }
+
+.ss-barchart:before, .ss-barchart.right:after {
+  content: ''; }
+
+.ss-piechart:before, .ss-piechart.right:after {
+  content: ''; }
+
+.ss-box:before, .ss-box.right:after {
+  content: ''; }
+
+.ss-home:before, .ss-home.right:after {
+  content: '⌂'; }
+
+.ss-globe:before, .ss-globe.right:after {
+  content: ''; }
+
+.ss-navigate:before, .ss-navigate.right:after {
+  content: ''; }
+
+.ss-compass:before, .ss-compass.right:after {
+  content: ''; }
+
+.ss-signpost:before, .ss-signpost.right:after {
+  content: ''; }
+
+.ss-location:before, .ss-location.right:after {
+  content: ''; }
+
+.ss-map:before, .ss-map.right:after {
+  content: ''; }
+
+.ss-pin:before, .ss-pin.right:after {
+  content: ''; }
+
+.ss-database:before, .ss-database.right:after {
+  content: ''; }
+
+.ss-hdd:before, .ss-hdd.right:after {
+  content: ''; }
+
+.ss-music:before, .ss-music.right:after {
+  content: '♫'; }
+
+.ss-mic:before, .ss-mic.right:after {
+  content: ''; }
+
+.ss-volume:before, .ss-volume.right:after {
+  content: ''; }
+
+.ss-volumelow:before, .ss-volumelow.right:after {
+  content: ''; }
+
+.ss-volumehigh:before, .ss-volumehigh.right:after {
+  content: ''; }
+
+.ss-airplay:before, .ss-airplay.right:after {
+  content: ''; }
+
+.ss-camera:before, .ss-camera.right:after {
+  content: ''; }
+
+.ss-picture:before, .ss-picture.right:after {
+  content: ''; }
+
+.ss-video:before, .ss-video.right:after {
+  content: ''; }
+
+.ss-play:before, .ss-play.right:after {
+  content: '▶'; }
+
+.ss-pause:before, .ss-pause.right:after {
+  content: ''; }
+
+.ss-stop:before, .ss-stop.right:after {
+  content: '■'; }
+
+.ss-record:before, .ss-record.right:after {
+  content: '●'; }
+
+.ss-rewind:before, .ss-rewind.right:after {
+  content: '⏪'; }
+
+.ss-fastforward:before, .ss-fastforward.right:after {
+  content: '⏩'; }
+
+.ss-skipback:before, .ss-skipback.right:after {
+  content: '⏮'; }
+
+.ss-skipforward:before, .ss-skipforward.right:after {
+  content: '⏭'; }
+
+.ss-eject:before, .ss-eject.right:after {
+  content: '⏏'; }
+
+.ss-repeat:before, .ss-repeat.right:after {
+  content: ''; }
+
+.ss-replay:before, .ss-replay.right:after {
+  content: '↺'; }
+
+.ss-shuffle:before, .ss-shuffle.right:after {
+  content: ''; }
+
+.ss-book:before, .ss-book.right:after {
+  content: ''; }
+
+.ss-openbook:before, .ss-openbook.right:after {
+  content: ''; }
+
+.ss-notebook:before, .ss-notebook.right:after {
+  content: ''; }
+
+.ss-grid:before, .ss-grid.right:after {
+  content: ''; }
+
+.ss-rows:before, .ss-rows.right:after {
+  content: ''; }
+
+.ss-columns:before, .ss-columns.right:after {
+  content: ''; }
+
+.ss-thumbnails:before, .ss-thumbnails.right:after {
+  content: ''; }
+
+.ss-desktop:before, .ss-desktop.right:after {
+  content: ''; }
+
+.ss-laptop:before, .ss-laptop.right:after {
+  content: ''; }
+
+.ss-tablet:before, .ss-tablet.right:after {
+  content: ''; }
+
+.ss-cell:before, .ss-cell.right:after {
+  content: ''; }
+
+.ss-battery:before, .ss-battery.right:after {
+  content: ''; }
+
+.ss-batteryhigh:before, .ss-batteryhigh.right:after {
+  content: ''; }
+
+.ss-batterymedium:before, .ss-batterymedium.right:after {
+  content: ''; }
+
+.ss-batterylow:before, .ss-batterylow.right:after {
+  content: ''; }
+
+.ss-batteryempty:before, .ss-batteryempty.right:after {
+  content: ''; }
+
+.ss-clouddownload:before, .ss-clouddownload.right:after {
+  content: ''; }
+
+.ss-download:before, .ss-download.right:after {
+  content: ''; }
+
+.ss-cloudupload:before, .ss-cloudupload.right:after {
+  content: ''; }
+
+.ss-upload:before, .ss-upload.right:after {
+  content: ''; }
+
+.ss-fork:before, .ss-fork.right:after {
+  content: ''; }
+
+.ss-merge:before, .ss-merge.right:after {
+  content: ''; }
+
+.ss-refresh:before, .ss-refresh.right:after {
+  content: '↻'; }
+
+.ss-sync:before, .ss-sync.right:after {
+  content: ''; }
+
+.ss-loading:before, .ss-loading.right:after {
+  content: ''; }
+
+.ss-wifi:before, .ss-wifi.right:after {
+  content: ''; }
+
+.ss-connection:before, .ss-connection.right:after {
+  content: ''; }
+
+.ss-file:before, .ss-file.right:after {
+  content: ''; }
+
+.ss-folder:before, .ss-folder.right:after {
+  content: ''; }
+
+.ss-quote:before, .ss-quote.right:after {
+  content: '“'; }
+
+.ss-text:before, .ss-text.right:after {
+  content: ''; }
+
+.ss-font:before, .ss-font.right:after {
+  content: ''; }
+
+.ss-print:before, .ss-print.right:after {
+  content: '⎙'; }
+
+.ss-fax:before, .ss-fax.right:after {
+  content: ''; }
+
+.ss-list:before, .ss-list.right:after {
+  content: ''; }
+
+.ss-layout:before, .ss-layout.right:after {
+  content: ''; }
+
+.ss-action:before, .ss-action.right:after {
+  content: ''; }
+
+.ss-redirect:before, .ss-redirect.right:after {
+  content: '↪'; }
+
+.ss-expand:before, .ss-expand.right:after {
+  content: '⤢'; }
+
+.ss-contract:before, .ss-contract.right:after {
+  content: ''; }
+
+.ss-help:before, .ss-help.right:after {
+  content: '❓'; }
+
+.ss-info:before, .ss-info.right:after {
+  content: 'ℹ'; }
+
+.ss-alert:before, .ss-alert.right:after {
+  content: '⚠'; }
+
+.ss-caution:before, .ss-caution.right:after {
+  content: '⛔'; }
+
+.ss-logout:before, .ss-logout.right:after {
+  content: ''; }
+
+.ss-plus:before, .ss-plus.right:after {
+  content: '+'; }
+
+.ss-hyphen:before, .ss-hyphen.right:after {
+  content: '-'; }
+
+.ss-check:before, .ss-check.right:after {
+  content: '✓'; }
+
+.ss-delete:before, .ss-delete.right:after {
+  content: '␡'; }
+
+.ss-settings:before, .ss-settings.right:after {
+  content: '⚙'; }
+
+.ss-dashboard:before, .ss-dashboard.right:after {
+  content: ''; }
+
+.ss-notifications:before, .ss-notifications.right:after {
+  content: ''; }
+
+.ss-notificationsdisabled:before, .ss-notificationsdisabled.right:after {
+  content: ''; }
+
+.ss-clock:before, .ss-clock.right:after {
+  content: '⏲'; }
+
+.ss-stopwatch:before, .ss-stopwatch.right:after {
+  content: '⏱'; }
+
+.ss-calendar:before, .ss-calendar.right:after {
+  content: ''; }
+
+.ss-calendaradd:before, .ss-calendaradd.right:after {
+  content: ''; }
+
+.ss-calendarremove:before, .ss-calendarremove.right:after {
+  content: ''; }
+
+.ss-calendarcheck:before, .ss-calendarcheck.right:after {
+  content: ''; }
+
+.ss-calendardelete:before, .ss-calendardelete.right:after {
+  content: ''; }
+
+.ss-briefcase:before, .ss-briefcase.right:after {
+  content: ''; }
+
+.ss-cloud:before, .ss-cloud.right:after {
+  content: '☁'; }
+
+.ss-droplet:before, .ss-droplet.right:after {
+  content: ''; }
+
+.ss-navigateup:before, .ss-navigateup.right:after {
+  content: ''; }
+
+.ss-navigateright:before, .ss-navigateright.right:after {
+  content: '▻'; }
+
+.ss-navigatedown:before, .ss-navigatedown.right:after {
+  content: ''; }
+
+.ss-navigateleft:before, .ss-navigateleft.right:after {
+  content: '◅'; }
+
+.ss-up:before, .ss-up.right:after {
+  content: '⬆'; }
+
+.ss-upright:before, .ss-upright.right:after {
+  content: '⬈'; }
+
+.ss-right:before, .ss-right.right:after {
+  content: '➡'; }
+
+.ss-downright:before, .ss-downright.right:after {
+  content: '⬊'; }
+
+.ss-down:before, .ss-down.right:after {
+  content: '⬇'; }
+
+.ss-downleft:before, .ss-downleft.right:after {
+  content: '⬋'; }
+
+.ss-left:before, .ss-left.right:after {
+  content: '⬅'; }
+
+.ss-upleft:before, .ss-upleft.right:after {
+  content: '⬉'; }
+
+.ss-directup:before, .ss-directup.right:after {
+  content: '▴'; }
+
+.ss-directright:before, .ss-directright.right:after {
+  content: '▹'; }
+
+.ss-dropdown:before, .ss-dropdown.right:after {
+  content: '▾'; }
+
+.ss-directleft:before, .ss-directleft.right:after {
+  content: '◃'; }
+
+.ss-retweet:before, .ss-retweet.right:after {
+  content: ''; }
+
+@font-face {
+  font-family: "SSSocial";
+  src: url("/fonts/ss-social-regular.eot");
+  /* IE9 Compat Modes */
+  src: url("/fonts/ss-social-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/ss-social-regular.woff") format("woff"), url("/fonts/ss-social-regular.ttf") format("truetype"), url("/fonts/ss-social-regular.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+.ss-icon.ss-social, .ss-social.carousel__prev,
+.ss-social.carousel__next, .ss-icon.ss-social-circle, .ss-social-circle.carousel__prev,
+.ss-social-circle.carousel__next,
+[class^="ss-"]:before, [class*=" ss-"]:before,
+[class^="ss-"][class*=" ss-social"]:before, [class*=" ss-"][class*=" ss-social"]:before,
+[class^="ss-"].right:after, [class*=" ss-"].right:after,
+[class^="ss-"][class*=" ss-social"].right:after, [class*=" ss-"][class*=" ss-social"].right:after {
+  font-family: "SSSocial";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased; }
+
+[class^="ss-"].right:before, [class^="ss-"][class*=" ss-social"].right:before {
+  display: none;
+  content: ''; }
+
+.ss-facebook:before, .ss-facebook.right:after {
+  content: ''; }
+
+.ss-twitter:before, .ss-twitter.right:after {
+  content: ''; }
+
+.ss-linkedin:before, .ss-linkedin.right:after {
+  content: ''; }
+
+.ss-googleplus:before, .ss-googleplus.right:after {
+  content: ''; }
+
+.ss-tumblr:before, .ss-tumblr.right:after {
+  content: ''; }
+
+.ss-wordpress:before, .ss-wordpress.right:after {
+  content: ''; }
+
+.ss-blogger:before, .ss-blogger.right:after {
+  content: ''; }
+
+.ss-posterous:before, .ss-posterous.right:after {
+  content: ''; }
+
+.ss-youtube:before, .ss-youtube.right:after {
+  content: ''; }
+
+.ss-vimeo:before, .ss-vimeo.right:after {
+  content: ''; }
+
+.ss-flickr:before, .ss-flickr.right:after {
+  content: ''; }
+
+.ss-instagram:before, .ss-instagram.right:after {
+  content: ''; }
+
+.ss-pinterest:before, .ss-pinterest.right:after {
+  content: ''; }
+
+.ss-dribbble:before, .ss-dribbble.right:after {
+  content: ''; }
+
+.ss-behance:before, .ss-behance.right:after {
+  content: ''; }
+
+.ss-github:before, .ss-github.right:after {
+  content: ''; }
+
+.ss-octocat:before, .ss-octocat.right:after {
+  content: ''; }
+
+.ss-paypal:before, .ss-paypal.right:after {
+  content: ''; }
+
+.ss-foursquare:before, .ss-foursquare.right:after {
+  content: ''; }
+
+.ss-skype:before, .ss-skype.right:after {
+  content: ''; }
+
+.ss-rdio:before, .ss-rdio.right:after {
+  content: ''; }
+
+.ss-spotify:before, .ss-spotify.right:after {
+  content: ''; }
+
+.ss-lastfm:before, .ss-lastfm.right:after {
+  content: ''; }
+
+.ss-mail:before, .ss-mail.right:after {
+  content: '✉'; }
+
+.ss-like:before, .ss-like.right:after {
+  content: '👍'; }
+
+.ss-rss:before, .ss-rss.right:after {
+  content: ''; }
+
+/* Have something else to add?
+--------------------------------------------------------
+  + Add any new modifier classes below
+------------------------------------------------------ */
+/***
+
+  @elements
+---------------------------------------------------------
+
+  Global styling of elements.
+
+---------------------------------------------------------  */
+/**
+
+   @HTML
+--------------------------------------------------------
+  _3_elements/_html.scss
+--------------------------------------------------------
+
+  HTML should contain the site's default background color
+  and font-size
+
+------------------------------------------------------ */
+@media (min-width: 20em) {
+  html {
+    font-size: 75%; } }
+@media (min-width: 25em) {
+  html {
+    font-size: 77.08333%; } }
+@media (min-width: 30em) {
+  html {
+    font-size: 79.16667%; } }
+@media (min-width: 35em) {
+  html {
+    font-size: 81.25%; } }
+@media (min-width: 40em) {
+  html {
+    font-size: 83.33333%; } }
+@media (min-width: 45em) {
+  html {
+    font-size: 85.41667%; } }
+@media (min-width: 50em) {
+  html {
+    font-size: 87.5%; } }
+@media (min-width: 55em) {
+  html {
+    font-size: 89.58333%; } }
+@media (min-width: 60em) {
+  html {
+    font-size: 91.66667%; } }
+@media (min-width: 65em) {
+  html {
+    font-size: 93.75%; } }
+@media (min-width: 70em) {
+  html {
+    font-size: 95.83333%; } }
+@media (min-width: 75em) {
+  html {
+    font-size: 97.91667%; } }
+@media (min-width: 80em) {
+  html {
+    font-size: 100%; } }
+
+* {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/**
+
+  @body
+--------------------------------------------------------
+  _3_elements/_body.scss
+--------------------------------------------------------
+
+  Body should contain the document's default font and
+  background color for the content, if that background
+  color is different than the html.
+
+------------------------------------------------------ */
+body {
+  line-height: 1.5;
+  color: #515554;
+  background: white; }
+
+/**
+
+  @code
+--------------------------------------------------------
+  _3_elements/_code.scss
+--------------------------------------------------------
+
+  Code elements like <code> and <pre>
+
+  Example: Code in a paragraph
+  <p>This is a cool paragraph about a classname called <code>.franz</code></p>
+
+
+-----------------------------------------------------  */
+code {
+  vertical-align: middle;
+  padding: .25em .5em;
+  background: rgba(193, 199, 208, 0.3); }
+
+/**
+
+  @headings
+--------------------------------------------------------
+  _3_elements/headings.scss
+--------------------------------------------------------
+
+  We set any base styles for any headings that have
+  no classnames.
+
+  Example: Headings
+  <h1>This is an h1 heading</h1>
+  <h2>This is an h2 heading</h2>
+  <h3>This is an h3 heading</h3>
+  <h4>This is an h4 heading</h4>
+  <h5>This is an h5 heading</h5>
+  <h6>This is an h6 heading</h6>
+
+  Additionally, we add classnames so you
+  can apply the styling of, for instance, an h1 to an h2.
+
+  Example: H1 styled like an H3
+  <h1 class="h3">This is an h1 but looks like an h3</h1>
+
+------------------------------------------------------ */
+h1, .h1 {
+  margin-bottom: 1em; }
+
+h2, .h2 {
+  margin-bottom: 1em; }
+
+h3, .h3 {
+  margin-bottom: 1em; }
+
+h4, .h4 {
+  margin-bottom: 1em; }
+
+h5, .h5 {
+  margin-bottom: 1em; }
+
+h6, .h6 {
+  margin-bottom: 1em; }
+
+/**
+
+  @text
+--------------------------------------------------------
+  _3_elements/text.scss
+--------------------------------------------------------
+
+  Some basic styles to paragraphs and
+  inline styles
+
+-----------------------------------------------------  */
+/* @anti-fout
+------------------------------------------------------ */
+.wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading h4, .wf-loading h5, .wf-loading h6, .wf-loading
+button, .wf-loading input, .wf-loading .btn, .wf-loading
+p, .wf-loading ul, .wf-loading ol, .wf-loading blockquote {
+  visibility: hidden; }
+.wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6, .wf-active
+button, .wf-active input, .wf-active .btn, .wf-active
+p, .wf-active ul, .wf-active ol, .wf-active blockquote {
+  visibility: visible; }
+
+/* @paragraphs
+--------------------------------------------------------
+
+  Example: Paragraphs
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+--------------------------------------------------------  */
+p {
+  margin-bottom: 1em;
+  line-height: 1.40625em; }
+
+/* @inline
+--------------------------------------------------------
+
+  Common inline elements
+
+  Example: inline elements
+  <p>Lorem Ipsum is <b>bold</b> text of the <strong>strong</strong> printing and typesetting industry. Lorem Ipsum is <i>italic</i> simply dummy text <em>emphasized</em> of the printing and typesetting industry.</p<
+
+-------------------------------------------------------- */
+b,
+strong {
+  font-weight: bold; }
+
+i,
+em {
+  font-style: italic; }
+
+/**
+
+  @quotes
+--------------------------------------------------------
+  _3_elements/quotes.scss
+--------------------------------------------------------
+
+  Blockquotes and pull quotes
+
+-----------------------------------------------------  */
+/* @blockquote
+--------------------------------------------------------
+
+  Example:
+  <blockquote>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <cite><a href="http://foo.com">The source</a></cite>
+  </blockquote>
+
+  See http://html5doctor.com/cite-and-blockquote-reloaded/?utm_content=buffercaa2e&utm_source=buffer&utm_medium=twitter&utm_campaign=Buffer for details
+
+-------------------------------------------------------- */
+/* @pull-quote
+--------------------------------------------------------
+
+  Large quotes pulled from body text.
+
+  Example:
+  <blockquote class="pull-quote">
+    <p>This is an awesome pull quote!</p>
+  </blockquote>
+
+-------------------------------------------------------- */
+/**
+
+  @lists
+--------------------------------------------------------
+  _3_elements/lists.scss
+--------------------------------------------------------
+
+  Structure for lists
+
+  Example: Unordered List
+  <ul>
+    <li>List item here</li>
+    <li>List item here</li>
+    <li>List item here</li>
+    <li>List item here</li>
+    <li>
+      <ul>
+        <li>Nested Item</li>
+        <li>Nested Item</li>
+        <li>Nested Item</li>
+        <li>Nested Item</li>
+      </ul>
+    </li>
+  </ul>
+
+  Example: Ordered List
+  <ol>
+    <li>List item here</li>
+    <li>List item here</li>
+    <li>List item here</li>
+    <li>List item here</li>
+    <li>
+      <ol>
+        <li>Nested Item</li>
+        <li>Nested Item</li>
+        <li>Nested Item</li>
+        <li>Nested Item</li>
+      </ul>
+    </li>
+  </ol>
+
+-------------------------------------------------------- */
+ul,
+ol {
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 1em; }
+  ul li,
+  ol li {
+    line-height: 2; }
+
+/**
+
+   @hr
+--------------------------------------------------------
+  _3_elements/hr.scss
+--------------------------------------------------------
+
+  Horizontal Rule
+
+  Example:
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+  <hr>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+-------------------------------------------------------- */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/* @links
+--------------------------------------------------------
+  _3_elements/links.scss
+--------------------------------------------------------
+
+  Links, <a> etc.
+  & Webkit tap highlight
+
+  Example: link
+  <p>Lorem Ipsum is simply <a href="#">dummy text</a> of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+-------------------------------------------------------- */
+/* @anchors
+--------------------------------------------------------
+
+  Anchors will have this base styling
+
+------------------------------------------------------ */
+a {
+  color: inherit;
+  -moz-transition: opacity 1s, background-color 1s, color 1s;
+  -webkit-transition: opacity 1s, background-color 1s, color 1s;
+  transition: opacity 1s, background-color 1s, color 1s;
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0); }
+  a:hover, a:focus {
+    opacity: .75; }
+
+/* @webkit-tap-highlight
+--------------------------------------------------------
+
+  Declare the webkit tap highlight style
+
+------------------------------------------------------ */
+body {
+  -webkit-tap-highlight-color: rba(0, 0, 0, 0.35); }
+
+/**
+
+  @images
+---------------------------------------------------------
+  _3_elements/images.scss
+--------------------------------------------------------
+
+  Base styling for images, plus some helpful utility
+  classes that modify images.
+
+  Note: You won't add any styling to these image classes,
+        these are just utility classes
+
+--------------------------------------------------------- */
+/* @images
+--------------------------------------------------------
+
+  Base Image Style is 100% width by default
+
+  Example: Image
+  <img src="http://fillmurray.com/600/300">
+
+------------------------------------------------------ */
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle; }
+
+/* @img--natural
+--------------------------------------------------------
+
+  Natural Images are 100% max-width, but their natural width by default
+
+  Example: Image, Natural Width
+  <img class="img--natural" src="http://fillmurray.com/600/300">
+
+------------------------------------------------------ */
+.img--natural {
+  width: auto; }
+
+/* @img--title
+--------------------------------------------------------
+
+  Title images fit within a heading/title element
+
+  Example: Image inside a title (.img--title)
+  <h1><img class="img--title" src="http://fillmurray.com/300/300"> Title Here versions of Lorem Ipsum.</h1>
+  <h2><img class="img--title" src="http://fillmurray.com/300/300"> Title Here versions of Lorem Ipsum.</h2>
+  <h3><img class="img--title" src="http://fillmurray.com/300/300"> Title Here versions of Lorem Ipsum.</h3>
+
+------------------------------------------------------ */
+.img--title {
+  height: 1em;
+  width: auto;
+  vertical-align: top; }
+
+/* @img--placement
+--------------------------------------------------------
+
+  Here are a few helper classes to position images, particularly
+  helpful inside paragraphs.
+
+  Example: Image Right
+  <p><img class="img--right" src="http://fillmurray.com/400/300"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+  Example: Image, Natural Width
+  <p><img class="img--left" src="http://fillmurray.com/400/300"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+  Example: Image, Center
+  <p><img class="img--center" src="http://fillmurray.com/400/300"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+------------------------------------------------------ */
+.img--right {
+  width: auto;
+  float: right;
+  margin-bottom: 1em;
+  margin-left: 1em; }
+
+.img--left {
+  width: auto;
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 1em; }
+
+.img--center {
+  width: auto;
+  display: block;
+  margin-right: auto;
+  margin-bottom: 1em;
+  margin-left: auto; }
+
+.img--right img,
+.img--left img,
+.img--center img {
+  width: auto; }
+
+/* @img--circle
+--------------------------------------------------------
+
+  Popular circle image for bios etc.
+
+  Example: Circle image
+  <img class="img--circle" src="http://fillmurray.com/400/400">
+
+------------------------------------------------------ */
+.img--circle {
+  border-radius: 50%; }
+
+/* Have something else to add?
+--------------------------------------------------------
+  + Add any new modifier classes below
+------------------------------------------------------ */
+/**
+
+  @forms
+---------------------------------------------------------
+  _3_elements/forms.scss
+--------------------------------------------------------
+
+  Base styles for all forms and form related elements
+
+  Below you'll set styles for all forms, and if you have
+  any specific kinds of forms, like a search form that you
+  create a classname of form--search, put that at the
+  bottom of this partial.
+
+  This scss partial is pretty big.  Here's how it is
+  organized.
+
+  * Base styling on form elements
+
+  * Styles for form & form modules
+
+
+--------------------------------------------------------- */
+/* @text inputs
+--------------------------------------------------------
+
+  Base styles for inputs
+
+  Example: Text Input
+  <input type="text" name="schramburger" placeholder="Your Name">
+
+  Inputs can use sizing classes, .input--s .input--l
+
+  Example: Text Small Input
+  <input class="input--s" type="text" name="schramburger" placeholder="Your Name">
+
+  Example: Text Input
+  <input class="input--l" type="text" name="schramburger" placeholder="Your Name">
+
+------------------------------------------------------ */
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=number],
+input[type=datetime],
+input[type=date],
+input[type=tel],
+input[type=month],
+input[type=week],
+input[type=search],
+input[type=submit] {
+  -webkit-appearance: none;
+  border-radius: 0;
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #515554;
+  color: #515554; }
+  @media (min-width: 20em) {
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=datetime],
+    input[type=date],
+    input[type=tel],
+    input[type=month],
+    input[type=week],
+    input[type=search],
+    input[type=submit] {
+      font-size: 125%; } }
+  @media (min-width: 25em) {
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=datetime],
+    input[type=date],
+    input[type=tel],
+    input[type=month],
+    input[type=week],
+    input[type=search],
+    input[type=submit] {
+      font-size: 122.91667%; } }
+  @media (min-width: 30em) {
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=datetime],
+    input[type=date],
+    input[type=tel],
+    input[type=month],
+    input[type=week],
+    input[type=search],
+    input[type=submit] {
+      font-size: 120.83333%; } }
+  @media (min-width: 35em) {
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=datetime],
+    input[type=date],
+    input[type=tel],
+    input[type=month],
+    input[type=week],
+    input[type=search],
+    input[type=submit] {
+      font-size: 118.75%; } }
+  @media (min-width: 40em) {
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=datetime],
+    input[type=date],
+    input[type=tel],
+    input[type=month],
+    input[type=week],
+    input[type=search],
+    input[type=submit] {
+      font-size: 116.66667%; } }
+  @media (min-width: 45em) {
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=datetime],
+    input[type=date],
+    input[type=tel],
+    input[type=month],
+    input[type=week],
+    input[type=search],
+    input[type=submit] {
+      font-size: 114.58333%; } }
+  @media (min-width: 50em) {
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=datetime],
+    input[type=date],
+    input[type=tel],
+    input[type=month],
+    input[type=week],
+    input[type=search],
+    input[type=submit] {
+      font-size: 112.5%; } }
+  @media (min-width: 55em) {
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=datetime],
+    input[type=date],
+    input[type=tel],
+    input[type=month],
+    input[type=week],
+    input[type=search],
+    input[type=submit] {
+      font-size: 110.41667%; } }
+  @media (min-width: 60em) {
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=datetime],
+    input[type=date],
+    input[type=tel],
+    input[type=month],
+    input[type=week],
+    input[type=search],
+    input[type=submit] {
+      font-size: 108.33333%; } }
+  @media (min-width: 65em) {
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=datetime],
+    input[type=date],
+    input[type=tel],
+    input[type=month],
+    input[type=week],
+    input[type=search],
+    input[type=submit] {
+      font-size: 106.25%; } }
+  @media (min-width: 70em) {
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=datetime],
+    input[type=date],
+    input[type=tel],
+    input[type=month],
+    input[type=week],
+    input[type=search],
+    input[type=submit] {
+      font-size: 104.16667%; } }
+  @media (min-width: 75em) {
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=datetime],
+    input[type=date],
+    input[type=tel],
+    input[type=month],
+    input[type=week],
+    input[type=search],
+    input[type=submit] {
+      font-size: 102.08333%; } }
+  @media (min-width: 80em) {
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=number],
+    input[type=datetime],
+    input[type=date],
+    input[type=tel],
+    input[type=month],
+    input[type=week],
+    input[type=search],
+    input[type=submit] {
+      font-size: 100%; } }
+  input[type=text]:focus,
+  input[type=password]:focus,
+  input[type=email]:focus,
+  input[type=url]:focus,
+  input[type=number]:focus,
+  input[type=datetime]:focus,
+  input[type=date]:focus,
+  input[type=tel]:focus,
+  input[type=month]:focus,
+  input[type=week]:focus,
+  input[type=search]:focus,
+  input[type=submit]:focus {
+    outline: none; }
+  input[type=text].input--s,
+  input[type=password].input--s,
+  input[type=email].input--s,
+  input[type=url].input--s,
+  input[type=number].input--s,
+  input[type=datetime].input--s,
+  input[type=date].input--s,
+  input[type=tel].input--s,
+  input[type=month].input--s,
+  input[type=week].input--s,
+  input[type=search].input--s,
+  input[type=submit].input--s {
+    font-size: .5rem; }
+  input[type=text].input--l,
+  input[type=password].input--l,
+  input[type=email].input--l,
+  input[type=url].input--l,
+  input[type=number].input--l,
+  input[type=datetime].input--l,
+  input[type=date].input--l,
+  input[type=tel].input--l,
+  input[type=month].input--l,
+  input[type=week].input--l,
+  input[type=search].input--l,
+  input[type=submit].input--l {
+    font-size: 1.5rem; }
+
+input::-webkit-input-placeholder {
+  color: #515554; }
+input:-moz-placeholder {
+  color: #515554; }
+input::-moz-placeholder {
+  color: #515554; }
+input:-ms-input-placeholder {
+  color: #515554; }
+
+input:focus::-webkit-input-placeholder {
+  opacity: .3; }
+input:focus:-moz-placeholder {
+  opacity: .3; }
+input:focus::-moz-placeholder {
+  opacity: .3; }
+input:focus:-ms-input-placeholder {
+  opacity: .3; }
+
+/* @select inputs
+--------------------------------------------------------
+
+  Base styling for all selects
+
+  Example: Select Input
+  <select name="schramburger">
+    <option value="value-1">Option 1</option>
+    <option value="value-2">Option 2</option>
+    <option value="value-3">Option 3</option>
+    <option value="value-4">Option 4</option>
+  </select>
+
+  Selects can have added sizing classes, .select--s and .select--l
+
+  Example: Small select
+  <select name="schramburger" class="select--s">
+    <option value="value-1">Option 1</option>
+    <option value="value-2">Option 2</option>
+    <option value="value-3">Option 3</option>
+    <option value="value-4">Option 4</option>
+  </select>
+
+  Example: Large select
+  <select name="schramburger" class="select--l">
+    <option value="value-1">Option 1</option>
+    <option value="value-2">Option 2</option>
+    <option value="value-3">Option 3</option>
+    <option value="value-4">Option 4</option>
+  </select>
+
+------------------------------------------------------ */
+/* @textareas
+--------------------------------------------------------
+
+  Base styling for textareas
+
+  Textareas can have .textarea--s or .textarea--l classes
+  for different sizes
+
+  Example: Textarea
+  <textarea name="schramburger">Hello, there.</textarea>
+
+  Example: Small Textarea
+  <textarea class="textarea--s" name="schramburger">Hello, there.</textarea>
+
+  Example: Large Textarea
+  <textarea class="textarea--l" name="schramburger">Hello, there.</textarea>
+
+------------------------------------------------------ */
+textarea {
+  width: 100%;
+  min-height: 6em;
+  padding: 1em;
+  border: solid 1px #515554; }
+  textarea:focus {
+    outline: none; }
+  textarea.textarea--s {
+    font-size: .5rem; }
+  textarea.textarea--l {
+    font-size: 1.5rem; }
+
+/* @radio inputs
+--------------------------------------------------------
+
+  Base styling for radio inputs.  Radios are surrounded
+  by a label for better click targets.
+
+  Example: Radio
+  <label class="label--radio" for="radio-1"><input id="radio-1" type="radio" value="yes"> Radio label</label>
+
+  Example: Radio with super-long label
+  <label class="label--radio" for="radio-3"><input id="radio-3" type="radio" value="yes"> Radio label Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, accusantium ipsum animi perspiciatis officiis iure voluptatibus corporis. Enim, officia, tempora vitae libero dolore sint voluptatum. Blanditiis odit laudantium minus repellat</label>
+
+
+------------------------------------------------------ */
+/* @checkbox inputs
+--------------------------------------------------------
+
+  Base styling for checkbox inputs.  Checkboxes are surrounded
+  by a label for better click targets.
+
+  Example: Checkbox
+  <label class="label--checkbox" for="checkbox-1"><input id="checkbox-1" type="checkbox" value="yes"> Checkbox label</label>
+
+  Example: Checkbox with super-long label
+  <label class="label--checkbox" for="checkbox-3"><input id="checkbox-3" type="checkbox" value="yes"> Checkbox label Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, accusantium ipsum animi perspiciatis officiis iure voluptatibus corporis. Enim, officia, tempora vitae libero dolore sint voluptatum. Blanditiis odit laudantium minus repellat</label>
+
+
+------------------------------------------------------ */
+input[type=checkbox] {
+  -webkit-appearance: none;
+  width: 1em;
+  height: 1em;
+  border: 1px solid #444;
+  background: transparent; }
+  input[type=checkbox]:checked {
+    background: #222; }
+
+.label--checkbox {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 1.25em; }
+  .label--checkbox input {
+    position: absolute;
+    top: .2em;
+    left: 0; }
+
+/* @textareas
+--------------------------------------------------------
+
+  Base styling for textareas
+
+  Example: Textarea
+  <textarea name="schramburger">Hello, there.</textarea>
+
+------------------------------------------------------ */
+textarea {
+  width: 100%; }
+
+/* @labels
+--------------------------------------------------------
+
+  Base styling for labels
+
+  Example: label
+  <label>Don't label me, I'm a free spirit</labe>
+
+------------------------------------------------------ */
+label {
+  font-size: 1em;
+  font-weight: bold; }
+
+/* @form
+--------------------------------------------------------
+
+  Like the bootstrap convention, apply standard styling
+  on any form with the classname .form
+
+  This allows us to create modifier classnames like
+  .form--inline and .form--horizontal, which will be
+  laid out further below.
+
+------------------------------------------------------ */
+.form {
+  display: block;
+  padding: 2em;
+  border: 1px solid #888;
+  background: #eee; }
+
+/* @form-header
+--------------------------------------------------------
+
+  A form header usually consists of a title and some
+  copy.
+
+  Example: Form header
+  <header class="form__header">
+    <h2>Contact Us</h2>
+    <p>Use this form to contact us.  We love talking to
+    our customers.</p>
+  </header>
+
+-------------------------------------------------------- */
+.form__header {
+  padding-bottom: 1em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #888; }
+
+/* @fieldsets
+--------------------------------------------------------
+
+  Fieldsets group together related fields.
+
+  Example: Fieldset
+  <fieldset>
+    <legend>Personal Information</legend>
+    <article class="field">
+      <label class="field__label" for="exampleInput1">Your Name</label>
+      <input class="field__input="exampleInput1" type="text" required="required" placeholder="Your name">
+      <span class="field__feedback"></span>
+      <span class="field__hint"></span>
+    </article>
+    <article class="field">
+      <label class="field__label" for="exampleInput2">Your Email</label>
+      <input class="field__input="exampleInput2" type="email" required="required" placeholder="Your email">
+      <span class="field__feedback"></span>
+      <span class="field__hint">Must be a valid email address</span>
+    </article>
+  </fieldset>
+
+  Fieldsets are also nested inside other fieldsets.
+
+  Example: Nested Fieldsets
+  <fieldset>
+    <legend>Personal Information</legend>
+    <article class="field">
+      <label class="field__label" for="exampleInput31">Your Name</label>
+      <input class="field__input="exampleInput31" type="text" required="required" placeholder="Your name">
+      <span class="field__feedback"></span>
+      <span class="field__hint"></span>
+    </article>
+    <article class="field">
+      <label class="field__label" for="exampleInput32">Your Email</label>
+      <input class="field__input="exampleInput32" type="email" required="required" placeholder="Your email">
+      <span class="field__feedback"></span>
+      <span class="field__hint">Must be a valid email address</span>
+    </article>
+    <fieldset>
+      <legend>Address</legend>
+        <article class="field">
+          <label class="field__label" for="exampleInput33">Address 1</label>
+          <input class="field__input="exampleInput33" type="text" required="required" placeholder="Address 1">
+          <span class="field__feedback"></span>
+          <span class="field__hint">Must be a valid email address</span>
+        </article>
+        <article class="field">
+          <label class="field__label" for="exampleInput34">Address 2</label>
+          <input class="field__input="exampleInput34" type="text" required="required" placeholder="Address 2">
+          <span class="field__feedback"></span>
+          <span class="field__hint">Must be a valid email address</span>
+        </article>
+    </fieldset>
+  </fieldset>
+
+-------------------------------------------------------- */
+fieldset {
+  border: none; }
+
+/* @fields
+--------------------------------------------------------
+
+  A field is an article that contains the input and anything
+  related to the input.
+
+  Example: Field for a text input
+  <article class="field">
+    <label class="field__label" for="exampleInput1">Your Name</label>
+    <input class="field__input="exampleInput1" type="text" required="required" placeholder="Your name">
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field with hint
+  <article class="field">
+    <label class="field__label" for="exampleInput2">Your Email</label>
+    <input class="field__input="exampleInput2" type="email" required="required" placeholder="Your email">
+    <span class="field__feedback"></span>
+    <span class="field__hint">Must be a valid email address</span>
+  </article>
+
+  Example: Field with Error
+  <article class="field is-error">
+    <label class="field__label" for="exampleInput3">Your Email</label>
+    <input class="field__input="exampleInput3" type="email" required="required" placeholder="Your email">
+    <span class="field__feedback">Sorry, that email is in use.</span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field for a select input
+  <article class="field">
+    <label class="field__label" for="exampleInput4" >Select your favorite</label>
+    <select class="field__input input--select" id="exampleInput4"  name="favorite-food">
+      <option>Pizza</option>
+      <option>Tacos</option>
+      <option>Burgers</option>
+    </select>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field for a textarea input
+  <article class="field">
+    <label class="field__label">Your Name</label>
+    <textarea class="field__input">Hello, there</textarea>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+-------------------------------------------------------- */
+.field {
+  position: relative;
+  margin-bottom: 2em; }
+
+.field__label {
+  display: block; }
+
+.field__hint {
+  color: #888;
+  font-size: .75em;
+  padding: .25em 0;
+  font-style: italic; }
+
+.field__feedback {
+  display: none;
+  font-size: .75em;
+  padding: .25em .75em;
+  background: rgba(218, 35, 0, 0.3);
+  color: white; }
+
+.field.is-error .field__feedback {
+  display: block; }
+.field.is-error input {
+  border: 1px solid rgba(218, 35, 0, 0.3); }
+
+/* @input group
+--------------------------------------------------------
+
+  Group containing multiple inputs, helpful for lists
+  of radios or checkboxes.  Shown below in a field...
+
+  Example: Field with input group of radios
+  <article class="field">
+    <label class="field__label">Choose your favorite</label>
+    <div class="field__input-group">
+      <label class="label--radio" for="favorite-food-1"><input id="favorite-food-1" name="favorite-food" type="radio" value="pizza"> Pizza</label>
+      <label class="label--radio" for="favorite-food-2"><input id="favorite-food-2" name="favorite-food" type="radio" value="tacos"> Tacos</label>
+      <label class="label--radio" for="favorite-food-3"><input id="favorite-food-3" name="favorite-food" type="radio" value="burgers"> Burgers</label>
+    </div>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field with input group of checkboxes
+  <article class="field">
+    <label class="field__label">Select your favorites</label>
+    <div class="field__input-group">
+      <label class="label--checkbox" for="favorite-food-4"><input id="favorite-food-4" name="favorite-food-alt" type="checkbox" value="pizza"> Pizza</label>
+      <label class="label--checkbox" for="favorite-food-5"><input id="favorite-food-5" name="favorite-food-alt" type="checkbox" value="tacos"> Tacos</label>
+      <label class="label--checkbox" for="favorite-food-6"><input id="favorite-food-6" name="favorite-food-alt" type="checkbox" value="burgers"> Burgers</label>
+    </div>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field with input group list modifier
+  <article class="field">
+    <label class="field__label">Select your favorites</label>
+    <div class="field__input-group--list">
+      <label class="label--checkbox" for="favorite-food-7"><input id="favorite-food-7" name="favorite-food-alt2" type="checkbox" value="pizza"> Pizza</label>
+      <label class="label--checkbox" for="favorite-food-8"><input id="favorite-food-8" name="favorite-food-alt2" type="checkbox" value="tacos"> Tacos</label>
+      <label class="label--checkbox" for="favorite-food-9"><input id="favorite-food-9" name="favorite-food-alt2" type="checkbox" value="burgers"> Burgers</label>
+    </div>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+------------------------------------------------------ */
+.field__input-group {
+  display: block; }
+  .field__input-group > * {
+    display: inline-block;
+    margin-right: .5em; }
+    .field__input-group > *:last-child {
+      margin-right: 0; }
+
+.field__input-group--list {
+  display: block; }
+  .field__input-group--list > * {
+    display: block;
+    margin: .5em 0; }
+    .field__input-group--list > *:last-child {
+      margin-bottom: 0; }
+
+/* @form action
+--------------------------------------------------------
+
+  Each form has an actions footer at the bottom to
+  submit the form
+
+  Example: Form Actions Footer
+  <footer class="form__actions">
+  <article class="field two-fiths">
+    <label class="field__label is-visually-hidden" for="exampleInput7" >Submit</label>
+    <input class="field__input btn btn--block" type="submit" id="exampleInput7" value="Submit">
+    <span  class="field__feedback"></span>
+    <span  class="field__hint"></span>
+  </article>
+  </footer>
+
+--------------------------------------------------------- */
+.form__actions {
+  padding-top: 1em;
+  margin-top: 2em;
+  border-top: 1px solid #888; }
+
+/* @inline forms using grids
+--------------------------------------------------------
+
+  Combine forms and grids to create an inline layout
+
+  Example: Inline Form
+  <form class="form">
+    <div class="gw">
+      <div class="g s-two-fifths">
+        <article class="field">
+          <label class="field__label is-visually-hidden" for="exampleInput8" >Email</label>
+          <input class="field__input" type="email" id="exampleInput8" placeholder="Your email">
+          <span  class="field__feedback"></span>
+          <span  class="field__hint"></span>
+        </article>
+      </div>
+      <div class="g s-two-fifths">
+        <article class="field">
+          <label class="field__label is-visually-hidden" for="exampleInput9" >Name</label>
+          <input class="field__input" type="email" id="exampleInput9" placeholder="Your name">
+          <span  class="field__feedback"></span>
+          <span  class="field__hint"></span>
+        </article>
+      </div>
+      <div class="g s-one-fifth">
+        <article class="field">
+          <input class="field__input btn" type="submit" value="submit">
+        </article>
+      </div>
+    </div>
+  </form>
+
+--------------------------------------------------------- */
+/* @horizontal forms using grids
+--------------------------------------------------------
+
+  Combine forms and grids to create a horizontal layout
+  Note: you'll move the .field__label outside of the .field article for this
+
+  Example: Inline Form
+  <form class="form">
+    <article class="field">
+      <div class="gw">
+        <div class="g s-one-half m-one-fifth">
+          <label class="field__label" for="exampleInput10" >Email</label>
+        </div>
+        <div class="g s-one-half m-four-fifths">
+          <input class="field__input" type="email" id="exampleInput10" placeholder="Your email">
+          <span  class="field__feedback"></span>
+          <span  class="field__hint"></span>
+        </div>
+      </div>
+    </article>
+    <article class="field">
+      <div class="gw">
+        <div class="g s-one-half m-one-fifth">
+          <label class="field__label" for="exampleInput11" >Name</label>
+        </div>
+        <div class="g s-one-half m-four-fifths">
+          <input class="field__input" type="text" id="exampleInput11" placeholder="Your name">
+          <span  class="field__feedback"></span>
+          <span  class="field__hint"></span>
+        </div>
+      </div>
+    </article>
+    <article class="field">
+      <div class="gw">
+        <div class="g s-one-half m-one-fifth">
+          <label class="field__label">Select your favorites</label>
+        </div>
+        <div class="g s-one-half m-four-fifths">
+          <div class="field__input-group--list">
+            <label class="label--checkbox" for="favorite-food-17"><input id="favorite-food-17" name="favorite-food-alt2" type="checkbox" value="pizza"> Pizza</label>
+            <label class="label--checkbox" for="favorite-food-18"><input id="favorite-food-18" name="favorite-food-alt2" type="checkbox" value="tacos"> Tacos</label>
+            <label class="label--checkbox" for="favorite-food-19"><input id="favorite-food-19" name="favorite-food-alt2" type="checkbox" value="burgers"> Burgers</label>
+          </div>
+          <span class="field__feedback"></span>
+          <span class="field__hint"></span>
+      </div>
+    </article>
+    <footer class="form__actions">
+      <div class="gw">
+        <div class="g s-one-half m-one-fifth">
+          <!--nuthin-->
+        </div>
+        <div class="g s-one-half m-four-fifths">
+          <article class="field">
+            <label class="field__label is-visually-hidden" for="submit10">Submit</label>
+            <input class="field__input btn btn" id="submit10" value="Submit">
+            <span class="field__feedback"></span>
+            <span class="field__hint"></span>
+          </article>
+        </div>
+      </div>
+    </footer>
+
+
+  </form>
+
+--------------------------------------------------------- */
+/* Have something else to add?
+--------------------------------------------------------
+  + Add any new modifier classes below
+------------------------------------------------------ */
+/**
+
+  @buttons
+--------------------------------------------------------
+  _3_elements/buttons.scss
+--------------------------------------------------------
+
+  Buttons are a common UI component in sites/apps.  They
+  are usually either anchor, button, or input elements
+  with a classname of 'btn'.  They provide an easily
+  identified clickable target.
+
+  Buttons commonly have modifying classes that apply
+  specific styles.  Examples of these are .btn--large and
+  .btn--inline
+
+  Also see _button-groups.scss, a related component
+  that arranges buttons into useful groups.
+
+  Example: Buttons using anchors
+  <p><a href="#" class="btn">Regular Button</a></p>
+
+  Example: Buttons using buttons
+  <p><button class="btn">Regular Button</button></p>
+
+------------------------------------------------------ */
+button:focus, button:active {
+  outline: none;
+  box-shadow: none;
+  border: none; }
+
+.btn {
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  background: none;
+  border: 1px solid white;
+  font-size: 1.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: .225em;
+  padding: 1em 1.25em;
+  -moz-transition: opacity 1s, background-color 1s, color 1s;
+  -webkit-transition: opacity 1s, background-color 1s, color 1s;
+  transition: opacity 1s, background-color 1s, color 1s;
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-backface-visibility: hidden; }
+  .btn:hover, .btn:focus, .btn:active {
+    outline: none;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.5); }
+  @media (min-width: 20em) {
+    .btn {
+      font-size: 75%; } }
+  @media (min-width: 25em) {
+    .btn {
+      font-size: 77.08333%; } }
+  @media (min-width: 30em) {
+    .btn {
+      font-size: 79.16667%; } }
+  @media (min-width: 35em) {
+    .btn {
+      font-size: 81.25%; } }
+  @media (min-width: 40em) {
+    .btn {
+      font-size: 83.33333%; } }
+  @media (min-width: 45em) {
+    .btn {
+      font-size: 85.41667%; } }
+  @media (min-width: 50em) {
+    .btn {
+      font-size: 87.5%; } }
+  @media (min-width: 55em) {
+    .btn {
+      font-size: 89.58333%; } }
+  @media (min-width: 60em) {
+    .btn {
+      font-size: 91.66667%; } }
+  @media (min-width: 65em) {
+    .btn {
+      font-size: 93.75%; } }
+  @media (min-width: 70em) {
+    .btn {
+      font-size: 95.83333%; } }
+  @media (min-width: 75em) {
+    .btn {
+      font-size: 97.91667%; } }
+  @media (min-width: 80em) {
+    .btn {
+      font-size: 100%; } }
+
+/* @btn--secondary
+--------------------------------------------------------
+
+  A btn modifier, secondary
+
+  Example: .btn--secondary
+  <a class="btn btn--secondary">Secondary button</a>
+
+------------------------------------------------------ */
+/* @btn--large
+--------------------------------------------------------
+
+  A btn modifier, large
+
+  Example: .btn--large
+  <a class="btn btn--large">Large button</a>
+
+------------------------------------------------------ */
+@media screen and (min-width: 34.375em) {
+  .btn--large {
+    font-size: 1.25em;
+    padding: 1.25em 2.75em; } }
+
+/* @btn--inline
+--------------------------------------------------------
+
+  A btn modifier, if this button is in a paragraph or
+  in anything else that has a defined font-size, this
+  modifier will make the btn inherit the font-size of
+  the partent.
+
+  Example: .btn--inline
+  <p>Here's some text <a class="btn btn--inline">Cool button</a> text keeps going</p>
+
+------------------------------------------------------ */
+.btn--inline {
+  font-size: 1em; }
+
+/* @btn--block
+--------------------------------------------------------
+
+  A btn modifier - makes the button display block, 100%
+  width and aligns the text to the center.  Removes left
+  and right padding since the text is center aligned, it
+  is not needed.  Actually sometimes having the padding
+  on the left and right causes problems if the centered
+  text is quite long - so we just remove it.
+
+  Example: .btn--block
+  <a href="#" class="btn btn--block">Block button</a>
+
+------------------------------------------------------ */
+.btn--block {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-right: 0;
+  padding-left: 0; }
+
+/* @btn--icon
+--------------------------------------------------------
+
+  A btn modifier - makes the button display block, 100%
+  width and aligns the text to the center.  Removes left
+  and right padding since the text is center aligned, it
+  is not needed.  Actually sometimes having the padding
+  on the left and right causes problems if the centered
+  text is quite long - so we just remove it.
+
+  Example: .btn--icon
+  <button class="btn--icon ss-icon">Block button</button>
+
+------------------------------------------------------ */
+.btn--icon {
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 1em; }
+
+/***
+
+  @modules
+---------------------------------------------------------
+
+  Reusable objects that are combinations
+  of elements and other modules.
+
+  When you create a new module, make sure the partial is
+  in the modules directory, and you import it below
+
+---------------------------------------------------------  */
+/**
+
+   @site
+--------------------------------------------------------
+  _4_modules/_site.scss
+--------------------------------------------------------
+
+  This is a utility div to wrap the whole site
+
+------------------------------------------------------ */
+/**
+
+  @site-header
+--------------------------------------------------------
+  _4_modules/site-header.scss
+--------------------------------------------------------
+
+  Site-wide header
+
+------------------------------------------------------ */
+.site-header {
+  zoom: 1;
+  padding-top: 1.6875em;
+  padding-bottom: 1.6875em;
+  border-bottom: 1px solid #cfd2d2; }
+  .site-header:before, .site-header:after {
+    content: " ";
+    display: table; }
+  .site-header:after {
+    clear: both; }
+  @media screen and (min-width: 34.375em) {
+    .site-header {
+      padding-top: 2.25em; } }
+  @media screen and (min-width: 48em) {
+    .site-header {
+      padding-top: 2.8125em; } }
+  @media screen and (min-width: 64em) {
+    .site-header {
+      padding-top: 3.09375em; } }
+  @media screen and (min-width: 78.5em) {
+    .site-header {
+      padding-top: 3.375em; } }
+  @media screen and (min-width: 100em) {
+    .site-header {
+      padding-top: 4.5em; } }
+  @media screen and (min-width: 34.375em) {
+    .site-header {
+      padding-bottom: 2.25em; } }
+  @media screen and (min-width: 48em) {
+    .site-header {
+      padding-bottom: 2.8125em; } }
+  @media screen and (min-width: 64em) {
+    .site-header {
+      padding-bottom: 3.09375em; } }
+  @media screen and (min-width: 78.5em) {
+    .site-header {
+      padding-bottom: 3.375em; } }
+  @media screen and (min-width: 100em) {
+    .site-header {
+      padding-bottom: 4.5em; } }
+
+/* @branding
+--------------------------------------------------------
+
+  The logo & (optional) wordmark
+
+  Example: Branding logo
+  <a class="branding" href="/">
+    <img class="branding__logo img--title" src="images/logo.svg" alt="My Company">
+    <h1 class="branding__wordmark">My Company</h1>
+  </a>
+
+------------------------------------------------------ */
+.branding {
+  margin-top: 0em;
+  margin-right: auto;
+  margin-bottom: 1.6875em;
+  margin-left: auto;
+  text-decoration: none;
+  display: block; }
+  @media screen and (min-width: 34.375em) {
+    .branding {
+      margin-top: 0em; } }
+  @media screen and (min-width: 48em) {
+    .branding {
+      margin-top: 0em; } }
+  @media screen and (min-width: 64em) {
+    .branding {
+      margin-top: 0em; } }
+  @media screen and (min-width: 78.5em) {
+    .branding {
+      margin-top: 0em; } }
+  @media screen and (min-width: 100em) {
+    .branding {
+      margin-top: 0em; } }
+  @media screen and (min-width: 34.375em) {
+    .branding {
+      margin-bottom: 2.25em; } }
+  @media screen and (min-width: 48em) {
+    .branding {
+      margin-bottom: 2.8125em; } }
+  @media screen and (min-width: 64em) {
+    .branding {
+      margin-bottom: 3.09375em; } }
+  @media screen and (min-width: 78.5em) {
+    .branding {
+      margin-bottom: 3.375em; } }
+  @media screen and (min-width: 100em) {
+    .branding {
+      margin-bottom: 4.5em; } }
+  @media screen and (min-width: 48em) {
+    .branding {
+      margin: 0;
+      float: left; } }
+
+.branding__logo {
+  float: left;
+  margin-right: 1.125em;
+  height: 3.375em;
+  width: 3.375em; }
+
+.branding__wordmark {
+  font-size: 1.6875em;
+  white-space: nowrap;
+  line-height: 2.25em;
+  margin: 0; }
+
+/*
+
+  @site-nav
+--------------------------------------------------------
+
+  The main site navigation.
+
+-----------------------------------------------------  */
+.site-nav {
+  text-align: center; }
+  @media screen and (min-width: 48em) {
+    .site-nav {
+      float: right; } }
+  .site-nav a {
+    display: inline-block;
+    height: 3.375em;
+    line-height: 3.375em;
+    padding: 0 .5em;
+    margin-left: 0.5625em; }
+    .site-nav a:first-child {
+      margin-left: 0; }
+
+/**
+
+  @site-main
+--------------------------------------------------------
+  _4_modules/site-main.scss
+--------------------------------------------------------
+
+  The site's main content
+
+------------------------------------------------------ */
+.site__main {
+  display: block; }
+
+/**
+
+  @site-footer
+--------------------------------------------------------
+  _4_modules/site-footer.scss
+--------------------------------------------------------
+
+  The site's footer
+
+------------------------------------------------------ */
+.site-footer {
+  padding-top: 0.84375em;
+  padding-bottom: 0.84375em;
+  border-top: 1px solid #cfd2d2; }
+  @media screen and (min-width: 34.375em) {
+    .site-footer {
+      padding-top: 1.125em; } }
+  @media screen and (min-width: 48em) {
+    .site-footer {
+      padding-top: 1.40625em; } }
+  @media screen and (min-width: 64em) {
+    .site-footer {
+      padding-top: 1.54688em; } }
+  @media screen and (min-width: 78.5em) {
+    .site-footer {
+      padding-top: 1.6875em; } }
+  @media screen and (min-width: 100em) {
+    .site-footer {
+      padding-top: 2.25em; } }
+  @media screen and (min-width: 34.375em) {
+    .site-footer {
+      padding-bottom: 1.125em; } }
+  @media screen and (min-width: 48em) {
+    .site-footer {
+      padding-bottom: 1.40625em; } }
+  @media screen and (min-width: 64em) {
+    .site-footer {
+      padding-bottom: 1.54688em; } }
+  @media screen and (min-width: 78.5em) {
+    .site-footer {
+      padding-bottom: 1.6875em; } }
+  @media screen and (min-width: 100em) {
+    .site-footer {
+      padding-bottom: 2.25em; } }
+
+.site-credits {
+  display: block;
+  clear: both; }
+
+/**
+
+  @pages
+--------------------------------------------------------
+  _4_modules/_pages.scss
+--------------------------------------------------------
+
+  Pages have a title and content
+
+-----------------------------------------------------  */
+.page p {
+  opacity: .8;
+  font-size: 2em;
+  margin: 0 auto 1em;
+  line-height: 1.5;
+  max-width: 25em; }
+
+.page__title {
+  padding-bottom: 1.6875em; }
+  @media screen and (min-width: 34.375em) {
+    .page__title {
+      padding-bottom: 2.25em; } }
+  @media screen and (min-width: 48em) {
+    .page__title {
+      padding-bottom: 2.8125em; } }
+  @media screen and (min-width: 64em) {
+    .page__title {
+      padding-bottom: 3.09375em; } }
+  @media screen and (min-width: 78.5em) {
+    .page__title {
+      padding-bottom: 3.375em; } }
+  @media screen and (min-width: 100em) {
+    .page__title {
+      padding-bottom: 4.5em; } }
+  .page__title h1 {
+    text-align: center;
+    font-size: 3.9375em;
+    line-height: 1.1em;
+    font-style: italic; }
+
+/**
+
+  @alerts
+---------------------------------------------------------
+  _4_modules/_alerts.scss
+--------------------------------------------------------
+
+  Alerts are UI elements that give important info
+
+  Example: Error
+  <div class="alert alert--error">
+    <a href="#" class="btn__close">&times;</a>
+    <p>Uh oh - something went wrong</p>
+  </div>
+
+  Example: Warning
+  <div class="alert alert--warning">
+    <a href="#" class="btn__close">&times;</a>
+    <p>Shake it fast, but watch yourself.</p>
+  </div>
+
+  Example: Success
+  <div class="alert alert--success">
+    <a href="#" class="btn__close">&times;</a>
+    <p>The secret to my success is that I learn, 25 hours a day!</p>
+  </div>
+
+  Example: Info
+  <div class="alert alert--info">
+    <a href="#" class="btn__close">&times;</a>
+    <p>Did you ever know that you're my hero?</p>
+  </div>
+
+  NOTE: The code below uses declared color units, maybe it
+        makes sense to declare those in _vars.scss
+
+------------------------------------------------------ */
+.alert {
+  position: relative;
+  border-width: 1px;
+  border-style: solid;
+  padding: .5rem 4rem .5rem .5rem;
+  line-height: 1.25; }
+  .alert:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 2.25em;
+    width: 1px;
+    height: 100%;
+    border-left: 1px solid #000; }
+  .alert p {
+    margin: 0; }
+  .alert .btn__close {
+    position: absolute;
+    top: 50%;
+    margin-top: -.75em;
+    right: .5em;
+    opacity: .5;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+    .alert .btn__close:hover {
+      opacity: 1; }
+
+.alert--error {
+  color: #e04646;
+  border-color: #e04646;
+  background: #ffe6e6; }
+  .alert--error .btn__close {
+    color: #e04646; }
+  .alert--error:after {
+    border-color: #e04646; }
+
+.alert--warning {
+  color: #b29804;
+  border-color: #b29804;
+  background: #fcf7d8; }
+  .alert--warning .btn__close {
+    color: #b29804; }
+  .alert--warning:after {
+    border-color: #b29804; }
+
+.alert--info {
+  color: #537df6;
+  border-color: #537df6;
+  background: #e8f3ff; }
+  .alert--info .btn__close {
+    color: #537df6; }
+  .alert--info:after {
+    border-color: #537df6; }
+
+.alert--success {
+  color: #0ca129;
+  border-color: #0ca129;
+  background: #dafce1; }
+  .alert--success .btn__close {
+    color: #0ca129; }
+  .alert--success:after {
+    border-color: #0ca129; }
+
+/**
+
+  @blocks
+--------------------------------------------------------
+  _4_modules/_blocks.scss
+--------------------------------------------------------
+
+  Blocks contain sections of content.  Blocks can have
+  different visual styling, but usually have the same
+  structure; one spacing unit margin at the bottom,
+  and some have borders, and padding, etc.
+
+-----------------------------------------------------  */
+.block {
+  margin-bottom: 1.6875em; }
+  @media screen and (min-width: 34.375em) {
+    .block {
+      margin-bottom: 2.25em; } }
+  @media screen and (min-width: 48em) {
+    .block {
+      margin-bottom: 2.8125em; } }
+  @media screen and (min-width: 64em) {
+    .block {
+      margin-bottom: 3.09375em; } }
+  @media screen and (min-width: 78.5em) {
+    .block {
+      margin-bottom: 3.375em; } }
+  @media screen and (min-width: 100em) {
+    .block {
+      margin-bottom: 4.5em; } }
+
+.block--ends {
+  margin-top: 1.6875em;
+  margin-bottom: 1.6875em; }
+  @media screen and (min-width: 34.375em) {
+    .block--ends {
+      margin-top: 2.25em; } }
+  @media screen and (min-width: 48em) {
+    .block--ends {
+      margin-top: 2.8125em; } }
+  @media screen and (min-width: 64em) {
+    .block--ends {
+      margin-top: 3.09375em; } }
+  @media screen and (min-width: 78.5em) {
+    .block--ends {
+      margin-top: 3.375em; } }
+  @media screen and (min-width: 100em) {
+    .block--ends {
+      margin-top: 4.5em; } }
+  @media screen and (min-width: 34.375em) {
+    .block--ends {
+      margin-bottom: 2.25em; } }
+  @media screen and (min-width: 48em) {
+    .block--ends {
+      margin-bottom: 2.8125em; } }
+  @media screen and (min-width: 64em) {
+    .block--ends {
+      margin-bottom: 3.09375em; } }
+  @media screen and (min-width: 78.5em) {
+    .block--ends {
+      margin-bottom: 3.375em; } }
+  @media screen and (min-width: 100em) {
+    .block--ends {
+      margin-bottom: 4.5em; } }
+
+/**
+
+  @callouts
+--------------------------------------------------------
+  _4_modules/_callouts.scss
+--------------------------------------------------------
+
+  A Callout, in this context at least, is those sections
+  of featured content that usually contain an icon, a
+  title, and some text.  These are usually in a row, and
+  call attention to highlighted features.
+
+  Example: Callout
+  <article class="callout">
+    <img class="callout__media" src="images/fpo-icon.png">
+    <h3 class="callout__title">Feature</h3>
+    <p>This callout is very impressive, and should command your attention</p>
+  </article>
+
+-----------------------------------------------------  */
+.callout {
+  text-align: center; }
+
+.callout__media {
+  display: block;
+  margin: 0 auto 1em;
+  max-height: 3em;
+  width: auto; }
+
+.callout__title {
+  font-size: 1.5em; }
+
+/**
+
+  @carousels
+--------------------------------------------------------
+  _4_modules/_carousels.scss
+--------------------------------------------------------
+
+  Carousels use FlexSlider
+
+  We'll add a title to the carousel module too
+
+  There are variations of carousels, there's a small carousel
+  and also different color themes
+
+------------------------------------------------------ */
+.carousel {
+  position: relative; }
+
+.carousel__direction-nav li {
+  float: left; }
+
+.carousel__prev,
+.carousel__next {
+  display: block;
+  text-align: center; }
+  .carousel__prev:hover,
+  .carousel__next:hover {
+    opacity: 1; }
+
+/* Have something else to add?
+--------------------------------------------------------
+  + Add any new modifier classes below
+------------------------------------------------------ */
+/**
+
+  @heroes
+--------------------------------------------------------
+  _4_modules/_heroes.scss
+--------------------------------------------------------
+
+  Just your everyday, normal hero.  Contains a div that has
+  the media (video or image) in the background, and a div
+  for the main content.
+
+  Example: Hero
+  <div class="hero">
+    <div class="hero__main">
+      <h1 class="hero__leadin">This is the leadin</h1>
+      <h2 class="hero__name">Name Here</h2>
+    <div class="hero__media"><img src="http://fillmurray.com/1000/400"></div>
+  </div>
+------------------------------------------------------ */
+.hero {
+  position: relative;
+  background: #515554;
+  overflow: hidden;
+  margin-bottom: 1.6875em; }
+  @media screen and (min-width: 34.375em) {
+    .hero {
+      margin-bottom: 2.25em; } }
+  @media screen and (min-width: 48em) {
+    .hero {
+      margin-bottom: 2.8125em; } }
+  @media screen and (min-width: 64em) {
+    .hero {
+      margin-bottom: 3.09375em; } }
+  @media screen and (min-width: 78.5em) {
+    .hero {
+      margin-bottom: 3.375em; } }
+  @media screen and (min-width: 100em) {
+    .hero {
+      margin-bottom: 4.5em; } }
+
+.hero__media {
+  position: relative;
+  z-index: 200; }
+
+.hero__main {
+  position: absolute;
+  z-index: 210;
+  width: 100%;
+  top: 50%;
+  text-align: center;
+  color: white;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: .75em; }
+  @media screen and (min-width: 34.375em) {
+    .hero__main {
+      font-size: 1em; } }
+  @media screen and (min-width: 64em) {
+    .hero__main {
+      font-size: 1.25em; } }
+
+/**
+
+  @modals
+---------------------------------------------------------
+  _4_modules/_modals.scss
+--------------------------------------------------------
+
+  These are very basic modals, there's room for improvement.
+
+--------------------------------------------------------- */
+.modal {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  display: none; }
+
+.modal__container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: table;
+  height: 100%;
+  padding-top: 1.6875em;
+  padding-right: 1.6875em;
+  padding-bottom: 1.6875em;
+  padding-left: 1.6875em; }
+  @media screen and (min-width: 34.375em) {
+    .modal__container {
+      padding-top: 2.25em; } }
+  @media screen and (min-width: 48em) {
+    .modal__container {
+      padding-top: 2.8125em; } }
+  @media screen and (min-width: 64em) {
+    .modal__container {
+      padding-top: 3.09375em; } }
+  @media screen and (min-width: 78.5em) {
+    .modal__container {
+      padding-top: 3.375em; } }
+  @media screen and (min-width: 100em) {
+    .modal__container {
+      padding-top: 4.5em; } }
+  @media screen and (min-width: 34.375em) {
+    .modal__container {
+      padding-right: 2.25em; } }
+  @media screen and (min-width: 48em) {
+    .modal__container {
+      padding-right: 2.8125em; } }
+  @media screen and (min-width: 64em) {
+    .modal__container {
+      padding-right: 3.09375em; } }
+  @media screen and (min-width: 78.5em) {
+    .modal__container {
+      padding-right: 3.375em; } }
+  @media screen and (min-width: 100em) {
+    .modal__container {
+      padding-right: 4.5em; } }
+  @media screen and (min-width: 34.375em) {
+    .modal__container {
+      padding-bottom: 2.25em; } }
+  @media screen and (min-width: 48em) {
+    .modal__container {
+      padding-bottom: 2.8125em; } }
+  @media screen and (min-width: 64em) {
+    .modal__container {
+      padding-bottom: 3.09375em; } }
+  @media screen and (min-width: 78.5em) {
+    .modal__container {
+      padding-bottom: 3.375em; } }
+  @media screen and (min-width: 100em) {
+    .modal__container {
+      padding-bottom: 4.5em; } }
+  @media screen and (min-width: 34.375em) {
+    .modal__container {
+      padding-left: 2.25em; } }
+  @media screen and (min-width: 48em) {
+    .modal__container {
+      padding-left: 2.8125em; } }
+  @media screen and (min-width: 64em) {
+    .modal__container {
+      padding-left: 3.09375em; } }
+  @media screen and (min-width: 78.5em) {
+    .modal__container {
+      padding-left: 3.375em; } }
+  @media screen and (min-width: 100em) {
+    .modal__container {
+      padding-left: 4.5em; } }
+
+.modal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0.55688em;
+  margin-right: 0.55688em;
+  font-size: 3em;
+  border: none;
+  background: none;
+  display: block; }
+  @media screen and (min-width: 34.375em) {
+    .modal__close {
+      margin-top: 0.7425em; } }
+  @media screen and (min-width: 48em) {
+    .modal__close {
+      margin-top: 0.92813em; } }
+  @media screen and (min-width: 64em) {
+    .modal__close {
+      margin-top: 1.02094em; } }
+  @media screen and (min-width: 78.5em) {
+    .modal__close {
+      margin-top: 1.11375em; } }
+  @media screen and (min-width: 100em) {
+    .modal__close {
+      margin-top: 1.485em; } }
+  @media screen and (min-width: 34.375em) {
+    .modal__close {
+      margin-right: 0.7425em; } }
+  @media screen and (min-width: 48em) {
+    .modal__close {
+      margin-right: 0.92813em; } }
+  @media screen and (min-width: 64em) {
+    .modal__close {
+      margin-right: 1.02094em; } }
+  @media screen and (min-width: 78.5em) {
+    .modal__close {
+      margin-right: 1.11375em; } }
+  @media screen and (min-width: 100em) {
+    .modal__close {
+      margin-right: 1.485em; } }
+  .modal__close:hover, .modal__close:focus {
+    outline: none;
+    border: none;
+    opacity: .85; }
+  .modal__close:active {
+    opacity: .6; }
+
+.modal__body {
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle; }
+  .modal__body p {
+    margin-bottom: 1em;
+    font-size: 1.5em; }
+
+/*
+
+  @popovers
+--------------------------------------------------------
+  _4_modules/_popovers.scss
+--------------------------------------------------------
+
+  TBD
+
+------------------------------------------------------ */
+/**
+
+  @tabs
+--------------------------------------------------------
+  _4_modules/_tabs.scss
+--------------------------------------------------------
+
+  Tabs.
+
+------------------------------------------------------ */
+.tab.is-active {
+  pointer-events: none; }
+
+.panels {
+  position: relative; }
+
+.panel {
+  opacity: 0;
+  position: absolute;
+  top: -200%;
+  left: -200%; }
+  .panel.is-active {
+    position: relative;
+    opacity: 1;
+    top: 0;
+    left: 0; }
+
+.panels.is-activated .panel.is-active {
+  position: absolute; }
+
+/**
+
+  @thumbnails
+--------------------------------------------------------
+  _4_modules/_thumbnails.scss
+--------------------------------------------------------
+
+  description
+
+-----------------------------------------------------  */
+@media (min-width: 0em) {
+  .thumbnail {
+    font-size: 200%; } }
+@media (min-width: 20em) {
+  .thumbnail {
+    font-size: 150%; } }
+@media (min-width: 34.375em) {
+  .thumbnail {
+    font-size: 100%; } }
+.thumbnail a {
+  text-decoration: none; }
+
+.thumbnail__caption {
+  text-align: center; }
+  .thumbnail__caption h2, .thumbnail__caption h3 {
+    text-decoration: none;
+    margin: 0; }
+  .thumbnail__caption h2 {
+    color: #485250;
+    font-size: 1.5em;
+    line-height: 1.8;
+    text-transform: uppercase;
+    letter-spacing: .05em; }
+  .thumbnail__caption h3 {
+    font-size: 1.5em;
+    line-height: 1;
+    font-style: italic; }
+
+/**
+
+  @tooltips
+---------------------------------------------------------
+  _4_modules/_tooltips.scss
+--------------------------------------------------------
+
+  Tooltips use bootstrap.js for now.
+
+  <p>Tight pants next level keffiyeh <a href="#" data-toggle="tooltip" title="Default Tooltip">you probably</a>
+   haven't heard of them. Photo booth beard raw denim
+   letterpress vegan messenger bag stumptown.
+   Farm-to-table seitan, mcsweeney's fixie sustainable
+   quinoa 8-bit american apparel <a href="#" data-toggle="tooltip" title="Another tooltip">have a</a>
+   terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats.
+  </p>
+
+--------------------------------------------------------- */
+/**
+
+  @video
+--------------------------------------------------------
+  _4_modules/_video-embeds.scss
+--------------------------------------------------------
+
+  Video Embeds
+
+-----------------------------------------------------  */
+.video-embed {
+  display: block;
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-top: 66.666%; }
+  .video-embed iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100% !important;
+    width: 100% !important; }
+
 /***
 
   @layout
@@ -410,8 +3330,6 @@ video {
   A large portion of CSS is structural layout. You will use
   these helpers to create the scaffolding that will support
   the elements that make up your site.
-
-  Comment out any partial you don't need for this app.
 
 ---------------------------------------------------------  */
 /**
@@ -1864,2987 +4782,15 @@ video {
     display: none; } }
 /***
 
-  @elements
+  @vendor
 ---------------------------------------------------------
 
-  Global styling of elements.
+  CSS related to any vendor plugins that you're using
+  should be imported here. Often, jQuery plugins etc.
+  will be accompanied by some proprietary CSS, so
+  include that right here.
 
 ---------------------------------------------------------  */
-/**
-
-  @fonts
---------------------------------------------------------
-  _3_elements/fonts.scss
---------------------------------------------------------
-
-  Define the fonts used in this app and declare variables
-  to be used in your CSS.
-
-  If you are using a webfont, see the base/_mixins.scss
-  file for deets on the font embed mixin that is used to
-  embed webfonts.
-
-  for example, to create a font-family named "interstate-light"
-  using a font at /fonts/interstate_light-webfont.woff (and other extensions)
-
-  @include embed-font("interstate-light", "/fonts/interstate_light-webfont");
-
--------------------------------------------------------- */
-/* @sans
---------------------------------------------------------
-
-   use $sans for this font
-
------------------------------------------------------- */
-.thumbnail__caption h2 {
-  font-family: helvetica, sans-serif;
-  font-weight: 300;
-  font-style: normal; }
-
-.btn {
-  font-family: helvetica, sans-serif;
-  font-weight: 700;
-  font-style: normal; }
-
-/* @serif
---------------------------------------------------------
-
-  Use $serif for this font
-
--------------------------------------------------------- */
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=url],
-input[type=number],
-input[type=datetime],
-input[type=date],
-input[type=tel],
-input[type=month],
-input[type=week],
-input[type=search],
-input[type=submit], input::-webkit-input-placeholder, input:-moz-placeholder, textarea, .page__title h1, .thumbnail__caption h3 {
-  font-family: georgia, times;
-  font-weight: 300;
-  font-style: normal;
-  color: red; }
-
-body {
-  font-family: georgia, times;
-  font-weight: 400;
-  font-style: normal; }
-
-/**
-
-   @HTML
---------------------------------------------------------
-  _3_elements/_html.scss
---------------------------------------------------------
-
-  HTML should contain the site's default background color
-  and font-size
-
------------------------------------------------------- */
-@media (min-width: 20em) {
-  html {
-    font-size: 75%; } }
-@media (min-width: 25em) {
-  html {
-    font-size: 77.08333%; } }
-@media (min-width: 30em) {
-  html {
-    font-size: 79.16667%; } }
-@media (min-width: 35em) {
-  html {
-    font-size: 81.25%; } }
-@media (min-width: 40em) {
-  html {
-    font-size: 83.33333%; } }
-@media (min-width: 45em) {
-  html {
-    font-size: 85.41667%; } }
-@media (min-width: 50em) {
-  html {
-    font-size: 87.5%; } }
-@media (min-width: 55em) {
-  html {
-    font-size: 89.58333%; } }
-@media (min-width: 60em) {
-  html {
-    font-size: 91.66667%; } }
-@media (min-width: 65em) {
-  html {
-    font-size: 93.75%; } }
-@media (min-width: 70em) {
-  html {
-    font-size: 95.83333%; } }
-@media (min-width: 75em) {
-  html {
-    font-size: 97.91667%; } }
-@media (min-width: 80em) {
-  html {
-    font-size: 100%; } }
-
-* {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-/**
-
-  @body
---------------------------------------------------------
-  _3_elements/_body.scss
---------------------------------------------------------
-
-  Body should contain the document's default font and
-  background color for the content, if that background
-  color is different than the html.
-
------------------------------------------------------- */
-body {
-  line-height: 1.5;
-  color: #515554;
-  background: white; }
-
-/**
-
-  @code
---------------------------------------------------------
-  _3_elements/_code.scss
---------------------------------------------------------
-
-  Code elements like <code> and <pre>
-
-  Example: Code in a paragraph
-  <p>This is a cool paragraph about a classname called <code>.franz</code></p>
-
-
------------------------------------------------------  */
-code {
-  vertical-align: middle;
-  padding: .25em .5em;
-  background: rgba(193, 199, 208, 0.3); }
-
-/**
-
-  @headings
---------------------------------------------------------
-  _3_elements/headings.scss
---------------------------------------------------------
-
-  We set any base styles for any headings that have
-  no classnames.
-
-  Example: Headings
-  <h1>This is an h1 heading</h1>
-  <h2>This is an h2 heading</h2>
-  <h3>This is an h3 heading</h3>
-  <h4>This is an h4 heading</h4>
-  <h5>This is an h5 heading</h5>
-  <h6>This is an h6 heading</h6>
-
-  Additionally, we add classnames so you
-  can apply the styling of, for instance, an h1 to an h2.
-
-  Example: H1 styled like an H3
-  <h1 class="h3">This is an h1 but looks like an h3</h1>
-
------------------------------------------------------- */
-h1, .h1 {
-  margin-bottom: 1em; }
-
-h2, .h2 {
-  margin-bottom: 1em; }
-
-h3, .h3 {
-  margin-bottom: 1em; }
-
-h4, .h4 {
-  margin-bottom: 1em; }
-
-h5, .h5 {
-  margin-bottom: 1em; }
-
-h6, .h6 {
-  margin-bottom: 1em; }
-
-/**
-
-  @text
---------------------------------------------------------
-  _3_elements/text.scss
---------------------------------------------------------
-
-  Some basic styles to paragraphs and
-  inline styles
-
------------------------------------------------------  */
-/* @anti-fout
------------------------------------------------------- */
-.wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading h4, .wf-loading h5, .wf-loading h6, .wf-loading
-button, .wf-loading input, .wf-loading .btn, .wf-loading
-p, .wf-loading ul, .wf-loading ol, .wf-loading blockquote {
-  visibility: hidden; }
-.wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6, .wf-active
-button, .wf-active input, .wf-active .btn, .wf-active
-p, .wf-active ul, .wf-active ol, .wf-active blockquote {
-  visibility: visible; }
-
-/* @paragraphs
---------------------------------------------------------
-
-  Example: Paragraphs
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-
---------------------------------------------------------  */
-p {
-  margin-bottom: 1em;
-  line-height: 1.40625em; }
-
-/* @inline
---------------------------------------------------------
-
-  Common inline elements
-
-  Example: inline elements
-  <p>Lorem Ipsum is <b>bold</b> text of the <strong>strong</strong> printing and typesetting industry. Lorem Ipsum is <i>italic</i> simply dummy text <em>emphasized</em> of the printing and typesetting industry.</p<
-
--------------------------------------------------------- */
-b,
-strong {
-  font-weight: bold; }
-
-i,
-em {
-  font-style: italic; }
-
-/**
-
-  @quotes
---------------------------------------------------------
-  _3_elements/quotes.scss
---------------------------------------------------------
-
-  Blockquotes and pull quotes
-
------------------------------------------------------  */
-/* @blockquote
---------------------------------------------------------
-
-  Example:
-  <blockquote>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-    <cite><a href="http://foo.com">The source</a></cite>
-  </blockquote>
-
-  See http://html5doctor.com/cite-and-blockquote-reloaded/?utm_content=buffercaa2e&utm_source=buffer&utm_medium=twitter&utm_campaign=Buffer for details
-
--------------------------------------------------------- */
-/* @pull-quote
---------------------------------------------------------
-
-  Large quotes pulled from body text.
-
-  Example:
-  <blockquote class="pull-quote">
-    <p>This is an awesome pull quote!</p>
-  </blockquote>
-
--------------------------------------------------------- */
-/**
-
-  @lists
---------------------------------------------------------
-  _3_elements/lists.scss
---------------------------------------------------------
-
-  Structure for lists
-
-  Example: Unordered List
-  <ul>
-    <li>List item here</li>
-    <li>List item here</li>
-    <li>List item here</li>
-    <li>List item here</li>
-    <li>
-      <ul>
-        <li>Nested Item</li>
-        <li>Nested Item</li>
-        <li>Nested Item</li>
-        <li>Nested Item</li>
-      </ul>
-    </li>
-  </ul>
-
-  Example: Ordered List
-  <ol>
-    <li>List item here</li>
-    <li>List item here</li>
-    <li>List item here</li>
-    <li>List item here</li>
-    <li>
-      <ol>
-        <li>Nested Item</li>
-        <li>Nested Item</li>
-        <li>Nested Item</li>
-        <li>Nested Item</li>
-      </ul>
-    </li>
-  </ol>
-
--------------------------------------------------------- */
-ul,
-ol {
-  padding-left: 0;
-  margin-left: 0;
-  margin-bottom: 1em; }
-  ul li,
-  ol li {
-    line-height: 2; }
-
-/**
-
-   @hr
---------------------------------------------------------
-  _3_elements/hr.scss
---------------------------------------------------------
-
-  Horizontal Rule
-
-  Example:
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-  <hr>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-
--------------------------------------------------------- */
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0; }
-
-/* @links
---------------------------------------------------------
-  _3_elements/links.scss
---------------------------------------------------------
-
-  Links, <a> etc.
-  & Webkit tap highlight
-
-  Example: link
-  <p>Lorem Ipsum is simply <a href="#">dummy text</a> of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-
--------------------------------------------------------- */
-/* @anchors
---------------------------------------------------------
-
-  Anchors will have this base styling
-
------------------------------------------------------- */
-a {
-  color: inherit;
-  -moz-transition: opacity 1s, background-color 1s, color 1s;
-  -webkit-transition: opacity 1s, background-color 1s, color 1s;
-  transition: opacity 1s, background-color 1s, color 1s;
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0); }
-  a:hover, a:focus {
-    opacity: .75; }
-
-/* @webkit-tap-highlight
---------------------------------------------------------
-
-  Declare the webkit tap highlight style
-
------------------------------------------------------- */
-body {
-  -webkit-tap-highlight-color: rba(0, 0, 0, 0.35); }
-
-/**
-
-  @images
----------------------------------------------------------
-  _3_elements/images.scss
---------------------------------------------------------
-
-  Base styling for images, plus some helpful utility
-  classes that modify images.
-
-  Note: You won't add any styling to these image classes,
-        these are just utility classes
-
---------------------------------------------------------- */
-/* @images
---------------------------------------------------------
-
-  Base Image Style is 100% width by default
-
-  Example: Image
-  <img src="http://fillmurray.com/600/300">
-
------------------------------------------------------- */
-img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle; }
-
-/* @img--natural
---------------------------------------------------------
-
-  Natural Images are 100% max-width, but their natural width by default
-
-  Example: Image, Natural Width
-  <img class="img--natural" src="http://fillmurray.com/600/300">
-
------------------------------------------------------- */
-.img--natural {
-  width: auto; }
-
-/* @img--title
---------------------------------------------------------
-
-  Title images fit within a heading/title element
-
-  Example: Image inside a title (.img--title)
-  <h1><img class="img--title" src="http://fillmurray.com/300/300"> Title Here versions of Lorem Ipsum.</h1>
-  <h2><img class="img--title" src="http://fillmurray.com/300/300"> Title Here versions of Lorem Ipsum.</h2>
-  <h3><img class="img--title" src="http://fillmurray.com/300/300"> Title Here versions of Lorem Ipsum.</h3>
-
------------------------------------------------------- */
-.img--title {
-  height: 1em;
-  width: auto;
-  vertical-align: top; }
-
-/* @img--placement
---------------------------------------------------------
-
-  Here are a few helper classes to position images, particularly
-  helpful inside paragraphs.
-
-  Example: Image Right
-  <p><img class="img--right" src="http://fillmurray.com/400/300"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-  Example: Image, Natural Width
-  <p><img class="img--left" src="http://fillmurray.com/400/300"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-  Example: Image, Center
-  <p><img class="img--center" src="http://fillmurray.com/400/300"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
------------------------------------------------------- */
-.img--right {
-  width: auto;
-  float: right;
-  margin-bottom: 1em;
-  margin-left: 1em; }
-
-.img--left {
-  width: auto;
-  float: left;
-  margin-right: 1em;
-  margin-bottom: 1em; }
-
-.img--center {
-  width: auto;
-  display: block;
-  margin-right: auto;
-  margin-bottom: 1em;
-  margin-left: auto; }
-
-.img--right img,
-.img--left img,
-.img--center img {
-  width: auto; }
-
-/* @img--circle
---------------------------------------------------------
-
-  Popular circle image for bios etc.
-
-  Example: Circle image
-  <img class="img--circle" src="http://fillmurray.com/400/400">
-
------------------------------------------------------- */
-.img--circle {
-  border-radius: 50%; }
-
-/* Have something else to add?
---------------------------------------------------------
-  + Add any new modifier classes below
------------------------------------------------------- */
-/**
-
-  @forms
----------------------------------------------------------
-  _3_elements/forms.scss
---------------------------------------------------------
-
-  Base styles for all forms and form related elements
-
-  Below you'll set styles for all forms, and if you have
-  any specific kinds of forms, like a search form that you
-  create a classname of form--search, put that at the
-  bottom of this partial.
-
-  This scss partial is pretty big.  Here's how it is
-  organized.
-
-  * Base styling on form elements
-
-  * Styles for form & form modules
-
-
---------------------------------------------------------- */
-/* @text inputs
---------------------------------------------------------
-
-  Base styles for inputs
-
-  Example: Text Input
-  <input type="text" name="schramburger" placeholder="Your Name">
-
-  Inputs can use sizing classes, .input--s .input--l
-
-  Example: Text Small Input
-  <input class="input--s" type="text" name="schramburger" placeholder="Your Name">
-
-  Example: Text Input
-  <input class="input--l" type="text" name="schramburger" placeholder="Your Name">
-
------------------------------------------------------- */
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=url],
-input[type=number],
-input[type=datetime],
-input[type=date],
-input[type=tel],
-input[type=month],
-input[type=week],
-input[type=search],
-input[type=submit] {
-  -webkit-appearance: none;
-  border-radius: 0;
-  width: 100%;
-  padding: 1em;
-  border: 1px solid #515554;
-  color: #515554; }
-  @media (min-width: 20em) {
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=number],
-    input[type=datetime],
-    input[type=date],
-    input[type=tel],
-    input[type=month],
-    input[type=week],
-    input[type=search],
-    input[type=submit] {
-      font-size: 125%; } }
-  @media (min-width: 25em) {
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=number],
-    input[type=datetime],
-    input[type=date],
-    input[type=tel],
-    input[type=month],
-    input[type=week],
-    input[type=search],
-    input[type=submit] {
-      font-size: 122.91667%; } }
-  @media (min-width: 30em) {
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=number],
-    input[type=datetime],
-    input[type=date],
-    input[type=tel],
-    input[type=month],
-    input[type=week],
-    input[type=search],
-    input[type=submit] {
-      font-size: 120.83333%; } }
-  @media (min-width: 35em) {
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=number],
-    input[type=datetime],
-    input[type=date],
-    input[type=tel],
-    input[type=month],
-    input[type=week],
-    input[type=search],
-    input[type=submit] {
-      font-size: 118.75%; } }
-  @media (min-width: 40em) {
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=number],
-    input[type=datetime],
-    input[type=date],
-    input[type=tel],
-    input[type=month],
-    input[type=week],
-    input[type=search],
-    input[type=submit] {
-      font-size: 116.66667%; } }
-  @media (min-width: 45em) {
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=number],
-    input[type=datetime],
-    input[type=date],
-    input[type=tel],
-    input[type=month],
-    input[type=week],
-    input[type=search],
-    input[type=submit] {
-      font-size: 114.58333%; } }
-  @media (min-width: 50em) {
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=number],
-    input[type=datetime],
-    input[type=date],
-    input[type=tel],
-    input[type=month],
-    input[type=week],
-    input[type=search],
-    input[type=submit] {
-      font-size: 112.5%; } }
-  @media (min-width: 55em) {
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=number],
-    input[type=datetime],
-    input[type=date],
-    input[type=tel],
-    input[type=month],
-    input[type=week],
-    input[type=search],
-    input[type=submit] {
-      font-size: 110.41667%; } }
-  @media (min-width: 60em) {
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=number],
-    input[type=datetime],
-    input[type=date],
-    input[type=tel],
-    input[type=month],
-    input[type=week],
-    input[type=search],
-    input[type=submit] {
-      font-size: 108.33333%; } }
-  @media (min-width: 65em) {
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=number],
-    input[type=datetime],
-    input[type=date],
-    input[type=tel],
-    input[type=month],
-    input[type=week],
-    input[type=search],
-    input[type=submit] {
-      font-size: 106.25%; } }
-  @media (min-width: 70em) {
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=number],
-    input[type=datetime],
-    input[type=date],
-    input[type=tel],
-    input[type=month],
-    input[type=week],
-    input[type=search],
-    input[type=submit] {
-      font-size: 104.16667%; } }
-  @media (min-width: 75em) {
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=number],
-    input[type=datetime],
-    input[type=date],
-    input[type=tel],
-    input[type=month],
-    input[type=week],
-    input[type=search],
-    input[type=submit] {
-      font-size: 102.08333%; } }
-  @media (min-width: 80em) {
-    input[type=text],
-    input[type=password],
-    input[type=email],
-    input[type=url],
-    input[type=number],
-    input[type=datetime],
-    input[type=date],
-    input[type=tel],
-    input[type=month],
-    input[type=week],
-    input[type=search],
-    input[type=submit] {
-      font-size: 100%; } }
-  input[type=text]:focus,
-  input[type=password]:focus,
-  input[type=email]:focus,
-  input[type=url]:focus,
-  input[type=number]:focus,
-  input[type=datetime]:focus,
-  input[type=date]:focus,
-  input[type=tel]:focus,
-  input[type=month]:focus,
-  input[type=week]:focus,
-  input[type=search]:focus,
-  input[type=submit]:focus {
-    outline: none; }
-  input[type=text].input--s,
-  input[type=password].input--s,
-  input[type=email].input--s,
-  input[type=url].input--s,
-  input[type=number].input--s,
-  input[type=datetime].input--s,
-  input[type=date].input--s,
-  input[type=tel].input--s,
-  input[type=month].input--s,
-  input[type=week].input--s,
-  input[type=search].input--s,
-  input[type=submit].input--s {
-    font-size: .5rem; }
-  input[type=text].input--l,
-  input[type=password].input--l,
-  input[type=email].input--l,
-  input[type=url].input--l,
-  input[type=number].input--l,
-  input[type=datetime].input--l,
-  input[type=date].input--l,
-  input[type=tel].input--l,
-  input[type=month].input--l,
-  input[type=week].input--l,
-  input[type=search].input--l,
-  input[type=submit].input--l {
-    font-size: 1.5rem; }
-
-input::-webkit-input-placeholder {
-  color: #515554; }
-input:-moz-placeholder {
-  color: #515554; }
-input::-moz-placeholder {
-  color: #515554; }
-input:-ms-input-placeholder {
-  color: #515554; }
-
-input:focus::-webkit-input-placeholder {
-  opacity: .3; }
-input:focus:-moz-placeholder {
-  opacity: .3; }
-input:focus::-moz-placeholder {
-  opacity: .3; }
-input:focus:-ms-input-placeholder {
-  opacity: .3; }
-
-/* @select inputs
---------------------------------------------------------
-
-  Base styling for all selects
-
-  Example: Select Input
-  <select name="schramburger">
-    <option value="value-1">Option 1</option>
-    <option value="value-2">Option 2</option>
-    <option value="value-3">Option 3</option>
-    <option value="value-4">Option 4</option>
-  </select>
-
-  Selects can have added sizing classes, .select--s and .select--l
-
-  Example: Small select
-  <select name="schramburger" class="select--s">
-    <option value="value-1">Option 1</option>
-    <option value="value-2">Option 2</option>
-    <option value="value-3">Option 3</option>
-    <option value="value-4">Option 4</option>
-  </select>
-
-  Example: Large select
-  <select name="schramburger" class="select--l">
-    <option value="value-1">Option 1</option>
-    <option value="value-2">Option 2</option>
-    <option value="value-3">Option 3</option>
-    <option value="value-4">Option 4</option>
-  </select>
-
------------------------------------------------------- */
-/* @textareas
---------------------------------------------------------
-
-  Base styling for textareas
-
-  Textareas can have .textarea--s or .textarea--l classes
-  for different sizes
-
-  Example: Textarea
-  <textarea name="schramburger">Hello, there.</textarea>
-
-  Example: Small Textarea
-  <textarea class="textarea--s" name="schramburger">Hello, there.</textarea>
-
-  Example: Large Textarea
-  <textarea class="textarea--l" name="schramburger">Hello, there.</textarea>
-
------------------------------------------------------- */
-textarea {
-  width: 100%;
-  min-height: 6em;
-  padding: 1em;
-  border: solid 1px #515554; }
-  textarea:focus {
-    outline: none; }
-  textarea.textarea--s {
-    font-size: .5rem; }
-  textarea.textarea--l {
-    font-size: 1.5rem; }
-
-/* @radio inputs
---------------------------------------------------------
-
-  Base styling for radio inputs.  Radios are surrounded
-  by a label for better click targets.
-
-  Example: Radio
-  <label class="label--radio" for="radio-1"><input id="radio-1" type="radio" value="yes"> Radio label</label>
-
-  Example: Radio with super-long label
-  <label class="label--radio" for="radio-3"><input id="radio-3" type="radio" value="yes"> Radio label Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, accusantium ipsum animi perspiciatis officiis iure voluptatibus corporis. Enim, officia, tempora vitae libero dolore sint voluptatum. Blanditiis odit laudantium minus repellat</label>
-
-
------------------------------------------------------- */
-/* @checkbox inputs
---------------------------------------------------------
-
-  Base styling for checkbox inputs.  Checkboxes are surrounded
-  by a label for better click targets.
-
-  Example: Checkbox
-  <label class="label--checkbox" for="checkbox-1"><input id="checkbox-1" type="checkbox" value="yes"> Checkbox label</label>
-
-  Example: Checkbox with super-long label
-  <label class="label--checkbox" for="checkbox-3"><input id="checkbox-3" type="checkbox" value="yes"> Checkbox label Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, accusantium ipsum animi perspiciatis officiis iure voluptatibus corporis. Enim, officia, tempora vitae libero dolore sint voluptatum. Blanditiis odit laudantium minus repellat</label>
-
-
------------------------------------------------------- */
-input[type=checkbox] {
-  -webkit-appearance: none;
-  width: 1em;
-  height: 1em;
-  border: 1px solid #444;
-  background: transparent; }
-  input[type=checkbox]:checked {
-    background: #222; }
-
-.label--checkbox {
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  padding-left: 1.25em; }
-  .label--checkbox input {
-    position: absolute;
-    top: .2em;
-    left: 0; }
-
-/* @textareas
---------------------------------------------------------
-
-  Base styling for textareas
-
-  Example: Textarea
-  <textarea name="schramburger">Hello, there.</textarea>
-
------------------------------------------------------- */
-textarea {
-  width: 100%; }
-
-/* @labels
---------------------------------------------------------
-
-  Base styling for labels
-
-  Example: label
-  <label>Don't label me, I'm a free spirit</labe>
-
------------------------------------------------------- */
-label {
-  font-size: 1em;
-  font-weight: bold; }
-
-/* @form
---------------------------------------------------------
-
-  Like the bootstrap convention, apply standard styling
-  on any form with the classname .form
-
-  This allows us to create modifier classnames like
-  .form--inline and .form--horizontal, which will be
-  laid out further below.
-
------------------------------------------------------- */
-.form {
-  display: block;
-  padding: 2em;
-  border: 1px solid #888;
-  background: #eee; }
-
-/* @form-header
---------------------------------------------------------
-
-  A form header usually consists of a title and some
-  copy.
-
-  Example: Form header
-  <header class="form__header">
-    <h2>Contact Us</h2>
-    <p>Use this form to contact us.  We love talking to
-    our customers.</p>
-  </header>
-
--------------------------------------------------------- */
-.form__header {
-  padding-bottom: 1em;
-  margin-bottom: 2em;
-  border-bottom: 1px solid #888; }
-
-/* @fieldsets
---------------------------------------------------------
-
-  Fieldsets group together related fields.
-
-  Example: Fieldset
-  <fieldset>
-    <legend>Personal Information</legend>
-    <article class="field">
-      <label class="field__label" for="exampleInput1">Your Name</label>
-      <input class="field__input="exampleInput1" type="text" required="required" placeholder="Your name">
-      <span class="field__feedback"></span>
-      <span class="field__hint"></span>
-    </article>
-    <article class="field">
-      <label class="field__label" for="exampleInput2">Your Email</label>
-      <input class="field__input="exampleInput2" type="email" required="required" placeholder="Your email">
-      <span class="field__feedback"></span>
-      <span class="field__hint">Must be a valid email address</span>
-    </article>
-  </fieldset>
-
-  Fieldsets are also nested inside other fieldsets.
-
-  Example: Nested Fieldsets
-  <fieldset>
-    <legend>Personal Information</legend>
-    <article class="field">
-      <label class="field__label" for="exampleInput31">Your Name</label>
-      <input class="field__input="exampleInput31" type="text" required="required" placeholder="Your name">
-      <span class="field__feedback"></span>
-      <span class="field__hint"></span>
-    </article>
-    <article class="field">
-      <label class="field__label" for="exampleInput32">Your Email</label>
-      <input class="field__input="exampleInput32" type="email" required="required" placeholder="Your email">
-      <span class="field__feedback"></span>
-      <span class="field__hint">Must be a valid email address</span>
-    </article>
-    <fieldset>
-      <legend>Address</legend>
-        <article class="field">
-          <label class="field__label" for="exampleInput33">Address 1</label>
-          <input class="field__input="exampleInput33" type="text" required="required" placeholder="Address 1">
-          <span class="field__feedback"></span>
-          <span class="field__hint">Must be a valid email address</span>
-        </article>
-        <article class="field">
-          <label class="field__label" for="exampleInput34">Address 2</label>
-          <input class="field__input="exampleInput34" type="text" required="required" placeholder="Address 2">
-          <span class="field__feedback"></span>
-          <span class="field__hint">Must be a valid email address</span>
-        </article>
-    </fieldset>
-  </fieldset>
-
--------------------------------------------------------- */
-fieldset {
-  border: none; }
-
-/* @fields
---------------------------------------------------------
-
-  A field is an article that contains the input and anything
-  related to the input.
-
-  Example: Field for a text input
-  <article class="field">
-    <label class="field__label" for="exampleInput1">Your Name</label>
-    <input class="field__input="exampleInput1" type="text" required="required" placeholder="Your name">
-    <span class="field__feedback"></span>
-    <span class="field__hint"></span>
-  </article>
-
-  Example: Field with hint
-  <article class="field">
-    <label class="field__label" for="exampleInput2">Your Email</label>
-    <input class="field__input="exampleInput2" type="email" required="required" placeholder="Your email">
-    <span class="field__feedback"></span>
-    <span class="field__hint">Must be a valid email address</span>
-  </article>
-
-  Example: Field with Error
-  <article class="field is-error">
-    <label class="field__label" for="exampleInput3">Your Email</label>
-    <input class="field__input="exampleInput3" type="email" required="required" placeholder="Your email">
-    <span class="field__feedback">Sorry, that email is in use.</span>
-    <span class="field__hint"></span>
-  </article>
-
-  Example: Field for a select input
-  <article class="field">
-    <label class="field__label" for="exampleInput4" >Select your favorite</label>
-    <select class="field__input input--select" id="exampleInput4"  name="favorite-food">
-      <option>Pizza</option>
-      <option>Tacos</option>
-      <option>Burgers</option>
-    </select>
-    <span class="field__feedback"></span>
-    <span class="field__hint"></span>
-  </article>
-
-  Example: Field for a textarea input
-  <article class="field">
-    <label class="field__label">Your Name</label>
-    <textarea class="field__input">Hello, there</textarea>
-    <span class="field__feedback"></span>
-    <span class="field__hint"></span>
-  </article>
-
--------------------------------------------------------- */
-.field {
-  position: relative;
-  margin-bottom: 2em; }
-
-.field__label {
-  display: block; }
-
-.field__hint {
-  color: #888;
-  font-size: .75em;
-  padding: .25em 0;
-  font-style: italic; }
-
-.field__feedback {
-  display: none;
-  font-size: .75em;
-  padding: .25em .75em;
-  background: rgba(218, 35, 0, 0.3);
-  color: white; }
-
-.field.is-error .field__feedback {
-  display: block; }
-.field.is-error input {
-  border: 1px solid rgba(218, 35, 0, 0.3); }
-
-/* @input group
---------------------------------------------------------
-
-  Group containing multiple inputs, helpful for lists
-  of radios or checkboxes.  Shown below in a field...
-
-  Example: Field with input group of radios
-  <article class="field">
-    <label class="field__label">Choose your favorite</label>
-    <div class="field__input-group">
-      <label class="label--radio" for="favorite-food-1"><input id="favorite-food-1" name="favorite-food" type="radio" value="pizza"> Pizza</label>
-      <label class="label--radio" for="favorite-food-2"><input id="favorite-food-2" name="favorite-food" type="radio" value="tacos"> Tacos</label>
-      <label class="label--radio" for="favorite-food-3"><input id="favorite-food-3" name="favorite-food" type="radio" value="burgers"> Burgers</label>
-    </div>
-    <span class="field__feedback"></span>
-    <span class="field__hint"></span>
-  </article>
-
-  Example: Field with input group of checkboxes
-  <article class="field">
-    <label class="field__label">Select your favorites</label>
-    <div class="field__input-group">
-      <label class="label--checkbox" for="favorite-food-4"><input id="favorite-food-4" name="favorite-food-alt" type="checkbox" value="pizza"> Pizza</label>
-      <label class="label--checkbox" for="favorite-food-5"><input id="favorite-food-5" name="favorite-food-alt" type="checkbox" value="tacos"> Tacos</label>
-      <label class="label--checkbox" for="favorite-food-6"><input id="favorite-food-6" name="favorite-food-alt" type="checkbox" value="burgers"> Burgers</label>
-    </div>
-    <span class="field__feedback"></span>
-    <span class="field__hint"></span>
-  </article>
-
-  Example: Field with input group list modifier
-  <article class="field">
-    <label class="field__label">Select your favorites</label>
-    <div class="field__input-group--list">
-      <label class="label--checkbox" for="favorite-food-7"><input id="favorite-food-7" name="favorite-food-alt2" type="checkbox" value="pizza"> Pizza</label>
-      <label class="label--checkbox" for="favorite-food-8"><input id="favorite-food-8" name="favorite-food-alt2" type="checkbox" value="tacos"> Tacos</label>
-      <label class="label--checkbox" for="favorite-food-9"><input id="favorite-food-9" name="favorite-food-alt2" type="checkbox" value="burgers"> Burgers</label>
-    </div>
-    <span class="field__feedback"></span>
-    <span class="field__hint"></span>
-  </article>
-
------------------------------------------------------- */
-.field__input-group {
-  display: block; }
-  .field__input-group > * {
-    display: inline-block;
-    margin-right: .5em; }
-    .field__input-group > *:last-child {
-      margin-right: 0; }
-
-.field__input-group--list {
-  display: block; }
-  .field__input-group--list > * {
-    display: block;
-    margin: .5em 0; }
-    .field__input-group--list > *:last-child {
-      margin-bottom: 0; }
-
-/* @form action
---------------------------------------------------------
-
-  Each form has an actions footer at the bottom to
-  submit the form
-
-  Example: Form Actions Footer
-  <footer class="form__actions">
-  <article class="field two-fiths">
-    <label class="field__label is-visually-hidden" for="exampleInput7" >Submit</label>
-    <input class="field__input btn btn--block" type="submit" id="exampleInput7" value="Submit">
-    <span  class="field__feedback"></span>
-    <span  class="field__hint"></span>
-  </article>
-  </footer>
-
---------------------------------------------------------- */
-.form__actions {
-  padding-top: 1em;
-  margin-top: 2em;
-  border-top: 1px solid #888; }
-
-/* @inline forms using grids
---------------------------------------------------------
-
-  Combine forms and grids to create an inline layout
-
-  Example: Inline Form
-  <form class="form">
-    <div class="gw">
-      <div class="g s-two-fifths">
-        <article class="field">
-          <label class="field__label is-visually-hidden" for="exampleInput8" >Email</label>
-          <input class="field__input" type="email" id="exampleInput8" placeholder="Your email">
-          <span  class="field__feedback"></span>
-          <span  class="field__hint"></span>
-        </article>
-      </div>
-      <div class="g s-two-fifths">
-        <article class="field">
-          <label class="field__label is-visually-hidden" for="exampleInput9" >Name</label>
-          <input class="field__input" type="email" id="exampleInput9" placeholder="Your name">
-          <span  class="field__feedback"></span>
-          <span  class="field__hint"></span>
-        </article>
-      </div>
-      <div class="g s-one-fifth">
-        <article class="field">
-          <input class="field__input btn" type="submit" value="submit">
-        </article>
-      </div>
-    </div>
-  </form>
-
---------------------------------------------------------- */
-/* @horizontal forms using grids
---------------------------------------------------------
-
-  Combine forms and grids to create a horizontal layout
-  Note: you'll move the .field__label outside of the .field article for this
-
-  Example: Inline Form
-  <form class="form">
-    <article class="field">
-      <div class="gw">
-        <div class="g s-one-half m-one-fifth">
-          <label class="field__label" for="exampleInput10" >Email</label>
-        </div>
-        <div class="g s-one-half m-four-fifths">
-          <input class="field__input" type="email" id="exampleInput10" placeholder="Your email">
-          <span  class="field__feedback"></span>
-          <span  class="field__hint"></span>
-        </div>
-      </div>
-    </article>
-    <article class="field">
-      <div class="gw">
-        <div class="g s-one-half m-one-fifth">
-          <label class="field__label" for="exampleInput11" >Name</label>
-        </div>
-        <div class="g s-one-half m-four-fifths">
-          <input class="field__input" type="text" id="exampleInput11" placeholder="Your name">
-          <span  class="field__feedback"></span>
-          <span  class="field__hint"></span>
-        </div>
-      </div>
-    </article>
-    <article class="field">
-      <div class="gw">
-        <div class="g s-one-half m-one-fifth">
-          <label class="field__label">Select your favorites</label>
-        </div>
-        <div class="g s-one-half m-four-fifths">
-          <div class="field__input-group--list">
-            <label class="label--checkbox" for="favorite-food-17"><input id="favorite-food-17" name="favorite-food-alt2" type="checkbox" value="pizza"> Pizza</label>
-            <label class="label--checkbox" for="favorite-food-18"><input id="favorite-food-18" name="favorite-food-alt2" type="checkbox" value="tacos"> Tacos</label>
-            <label class="label--checkbox" for="favorite-food-19"><input id="favorite-food-19" name="favorite-food-alt2" type="checkbox" value="burgers"> Burgers</label>
-          </div>
-          <span class="field__feedback"></span>
-          <span class="field__hint"></span>
-      </div>
-    </article>
-    <footer class="form__actions">
-      <div class="gw">
-        <div class="g s-one-half m-one-fifth">
-          <!--nuthin-->
-        </div>
-        <div class="g s-one-half m-four-fifths">
-          <article class="field">
-            <label class="field__label is-visually-hidden" for="submit10">Submit</label>
-            <input class="field__input btn btn" id="submit10" value="Submit">
-            <span class="field__feedback"></span>
-            <span class="field__hint"></span>
-          </article>
-        </div>
-      </div>
-    </footer>
-
-
-  </form>
-
---------------------------------------------------------- */
-/* Have something else to add?
---------------------------------------------------------
-  + Add any new modifier classes below
------------------------------------------------------- */
-/**
-
-  @buttons
---------------------------------------------------------
-  _3_elements/buttons.scss
---------------------------------------------------------
-
-  Buttons are a common UI component in sites/apps.  They
-  are usually either anchor, button, or input elements
-  with a classname of 'btn'.  They provide an easily
-  identified clickable target.
-
-  Buttons commonly have modifying classes that apply
-  specific styles.  Examples of these are .btn--large and
-  .btn--inline
-
-  Also see _button-groups.scss, a related component
-  that arranges buttons into useful groups.
-
-  Example: Buttons using anchors
-  <p><a href="#" class="btn">Regular Button</a></p>
-
-  Example: Buttons using buttons
-  <p><button class="btn">Regular Button</button></p>
-
------------------------------------------------------- */
-button:focus, button:active {
-  outline: none;
-  box-shadow: none;
-  border: none; }
-
-.btn {
-  -webkit-appearance: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: inline-block;
-  background: none;
-  border: 1px solid white;
-  font-size: 1.25em;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: .225em;
-  padding: 1em 1.25em;
-  -moz-transition: opacity 1s, background-color 1s, color 1s;
-  -webkit-transition: opacity 1s, background-color 1s, color 1s;
-  transition: opacity 1s, background-color 1s, color 1s;
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-  -webkit-backface-visibility: hidden; }
-  .btn:hover, .btn:focus, .btn:active {
-    outline: none;
-    box-shadow: none;
-    background: rgba(255, 255, 255, 0.5); }
-  @media (min-width: 20em) {
-    .btn {
-      font-size: 75%; } }
-  @media (min-width: 25em) {
-    .btn {
-      font-size: 77.08333%; } }
-  @media (min-width: 30em) {
-    .btn {
-      font-size: 79.16667%; } }
-  @media (min-width: 35em) {
-    .btn {
-      font-size: 81.25%; } }
-  @media (min-width: 40em) {
-    .btn {
-      font-size: 83.33333%; } }
-  @media (min-width: 45em) {
-    .btn {
-      font-size: 85.41667%; } }
-  @media (min-width: 50em) {
-    .btn {
-      font-size: 87.5%; } }
-  @media (min-width: 55em) {
-    .btn {
-      font-size: 89.58333%; } }
-  @media (min-width: 60em) {
-    .btn {
-      font-size: 91.66667%; } }
-  @media (min-width: 65em) {
-    .btn {
-      font-size: 93.75%; } }
-  @media (min-width: 70em) {
-    .btn {
-      font-size: 95.83333%; } }
-  @media (min-width: 75em) {
-    .btn {
-      font-size: 97.91667%; } }
-  @media (min-width: 80em) {
-    .btn {
-      font-size: 100%; } }
-
-/* @btn--secondary
---------------------------------------------------------
-
-  A btn modifier, secondary
-
-  Example: .btn--secondary
-  <a class="btn btn--secondary">Secondary button</a>
-
------------------------------------------------------- */
-/* @btn--large
---------------------------------------------------------
-
-  A btn modifier, large
-
-  Example: .btn--large
-  <a class="btn btn--large">Large button</a>
-
------------------------------------------------------- */
-@media screen and (min-width: 34.375em) {
-  .btn--large {
-    font-size: 1.25em;
-    padding: 1.25em 2.75em; } }
-
-/* @btn--inline
---------------------------------------------------------
-
-  A btn modifier, if this button is in a paragraph or
-  in anything else that has a defined font-size, this
-  modifier will make the btn inherit the font-size of
-  the partent.
-
-  Example: .btn--inline
-  <p>Here's some text <a class="btn btn--inline">Cool button</a> text keeps going</p>
-
------------------------------------------------------- */
-.btn--inline {
-  font-size: 1em; }
-
-/* @btn--block
---------------------------------------------------------
-
-  A btn modifier - makes the button display block, 100%
-  width and aligns the text to the center.  Removes left
-  and right padding since the text is center aligned, it
-  is not needed.  Actually sometimes having the padding
-  on the left and right causes problems if the centered
-  text is quite long - so we just remove it.
-
-  Example: .btn--block
-  <a href="#" class="btn btn--block">Block button</a>
-
------------------------------------------------------- */
-.btn--block {
-  display: block;
-  width: 100%;
-  text-align: center;
-  padding-right: 0;
-  padding-left: 0; }
-
-/* @btn--icon
---------------------------------------------------------
-
-  A btn modifier - makes the button display block, 100%
-  width and aligns the text to the center.  Removes left
-  and right padding since the text is center aligned, it
-  is not needed.  Actually sometimes having the padding
-  on the left and right causes problems if the centered
-  text is quite long - so we just remove it.
-
-  Example: .btn--icon
-  <button class="btn--icon ss-icon">Block button</button>
-
------------------------------------------------------- */
-.btn--icon {
-  -webkit-appearance: none;
-  background: transparent;
-  border: none;
-  padding: 0;
-  font-size: 1em; }
-
-/**
-
-  @icons
----------------------------------------------------------
-  _3_elements/icons.scss
---------------------------------------------------------
-
-  Define classes for icons.  First a base class, .icon, and
-  then any modifiers.
-
-  Near the end of this partial, we're including symbolset,
-  which is a font-icon that we dig.
-
---------------------------------------------------------- */
-/* @icon
---------------------------------------------------------
-
-  Your open and close icons
-
-  Example: Open Icon
-  <i class="icon icon--open">&plus;</i>
-
-  Example: Close Icon
-  <i class="icon icon--close">&times;</i>
-
------------------------------------------------------- */
-.icon {
-  color: inherit;
-  display: inline-block;
-  font-style: normal;
-  vertical-align: middle;
-  font-size: 1em; }
-  .icon img {
-    height: 1em;
-    width: auto; }
-
-/* @symbolset
---------------------------------------------------------
-
-  Symbolset
-  www.symbolset.com
-  Copyright © 2012 Oak Studios LLC
-
------------------------------------------------------- */
-@font-face {
-  font-family: "SSStandard";
-  src: url("/fonts/ss-standard.eot");
-  /* IE9 Compat Modes */
-  src: url("/fonts/ss-standard.eot?#iefix") format("embedded-opentype"), url("/fonts/ss-standard.woff") format("woff"), url("/fonts/ss-standard.ttf") format("truetype"), url("/fonts/ss-standard.svg#svgFontName") format("svg");
-  /* Legacy iOS */ }
-.ss-icon, .carousel__prev,
-.carousel__next, .ss-icon.ss-standard, .ss-standard.carousel__prev,
-.ss-standard.carousel__next,
-[class^="ss-"]:before, [class*=" ss-"]:before,
-[class^="ss-"].ss-standard:before, [class*=" ss-"].ss-standard:before,
-[class^="ss-"].right:after, [class*=" ss-"].right:after,
-[class^="ss-"].ss-standard.right:after, [class*=" ss-"].ss-standard.right:after {
-  font-family: "SSStandard";
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: none;
-  text-rendering: optimizeLegibility;
-  white-space: nowrap;
-  -webkit-font-feature-settings: "liga";
-  -moz-font-feature-settings: "liga=1";
-  -moz-font-feature-settings: "liga";
-  -ms-font-feature-settings: "liga" 1;
-  -o-font-feature-settings: "liga";
-  font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased; }
-
-[class^="ss-"].right:before, [class*=" ss-"].ss-standard.right:before {
-  display: none;
-  content: ''; }
-
-.ss-cursor:before, .ss-cursor.right:after {
-  content: ''; }
-
-.ss-crosshair:before, .ss-crosshair.right:after {
-  content: '⌖'; }
-
-.ss-search:before, .ss-search.right:after {
-  content: ''; }
-
-.ss-zoomin:before, .ss-zoomin.right:after {
-  content: ''; }
-
-.ss-zoomout:before, .ss-zoomout.right:after {
-  content: ''; }
-
-.ss-view:before, .ss-view.right:after {
-  content: ''; }
-
-.ss-attach:before, .ss-attach.right:after {
-  content: ''; }
-
-.ss-link:before, .ss-link.right:after {
-  content: ''; }
-
-.ss-move:before, .ss-move.right:after {
-  content: ''; }
-
-.ss-write:before, .ss-write.right:after {
-  content: '✎'; }
-
-.ss-writingdisabled:before, .ss-writingdisabled.right:after {
-  content: ''; }
-
-.ss-erase:before, .ss-erase.right:after {
-  content: '✐'; }
-
-.ss-compose:before, .ss-compose.right:after {
-  content: ''; }
-
-.ss-lock:before, .ss-lock.right:after {
-  content: ''; }
-
-.ss-unlock:before, .ss-unlock.right:after {
-  content: ''; }
-
-.ss-key:before, .ss-key.right:after {
-  content: ''; }
-
-.ss-backspace:before, .ss-backspace.right:after {
-  content: '⌫'; }
-
-.ss-ban:before, .ss-ban.right:after {
-  content: ''; }
-
-.ss-trash:before, .ss-trash.right:after {
-  content: ''; }
-
-.ss-target:before, .ss-target.right:after {
-  content: '◎'; }
-
-.ss-tag:before, .ss-tag.right:after {
-  content: ''; }
-
-.ss-bookmark:before, .ss-bookmark.right:after {
-  content: ''; }
-
-.ss-flag:before, .ss-flag.right:after {
-  content: '⚑'; }
-
-.ss-like:before, .ss-like.right:after {
-  content: ''; }
-
-.ss-dislike:before, .ss-dislike.right:after {
-  content: ''; }
-
-.ss-heart:before, .ss-heart.right:after {
-  content: '♥'; }
-
-.ss-halfheart:before, .ss-halfheart.right:after {
-  content: ''; }
-
-.ss-star:before, .ss-star.right:after {
-  content: '⋆'; }
-
-.ss-halfstar:before, .ss-halfstar.right:after {
-  content: ''; }
-
-.ss-sample:before, .ss-sample.right:after {
-  content: ''; }
-
-.ss-crop:before, .ss-crop.right:after {
-  content: ''; }
-
-.ss-layers:before, .ss-layers.right:after {
-  content: ''; }
-
-.ss-phone:before, .ss-phone.right:after {
-  content: ''; }
-
-.ss-phonedisabled:before, .ss-phonedisabled.right:after {
-  content: ''; }
-
-.ss-rss:before, .ss-rss.right:after {
-  content: ''; }
-
-.ss-facetime:before, .ss-facetime.right:after {
-  content: ''; }
-
-.ss-reply:before, .ss-reply.right:after {
-  content: '↩'; }
-
-.ss-send:before, .ss-send.right:after {
-  content: ''; }
-
-.ss-mail:before, .ss-mail.right:after {
-  content: '✉'; }
-
-.ss-inbox:before, .ss-inbox.right:after {
-  content: ''; }
-
-.ss-chat:before, .ss-chat.right:after {
-  content: ''; }
-
-.ss-user:before, .ss-user.right:after {
-  content: ''; }
-
-.ss-femaleuser:before, .ss-femaleuser.right:after {
-  content: ''; }
-
-.ss-users:before, .ss-users.right:after {
-  content: ''; }
-
-.ss-cart:before, .ss-cart.right:after {
-  content: ''; }
-
-.ss-creditcard:before, .ss-creditcard.right:after {
-  content: ''; }
-
-.ss-dollarsign:before, .ss-dollarsign.right:after {
-  content: ''; }
-
-.ss-barchart:before, .ss-barchart.right:after {
-  content: ''; }
-
-.ss-piechart:before, .ss-piechart.right:after {
-  content: ''; }
-
-.ss-box:before, .ss-box.right:after {
-  content: ''; }
-
-.ss-home:before, .ss-home.right:after {
-  content: '⌂'; }
-
-.ss-globe:before, .ss-globe.right:after {
-  content: ''; }
-
-.ss-navigate:before, .ss-navigate.right:after {
-  content: ''; }
-
-.ss-compass:before, .ss-compass.right:after {
-  content: ''; }
-
-.ss-signpost:before, .ss-signpost.right:after {
-  content: ''; }
-
-.ss-location:before, .ss-location.right:after {
-  content: ''; }
-
-.ss-map:before, .ss-map.right:after {
-  content: ''; }
-
-.ss-pin:before, .ss-pin.right:after {
-  content: ''; }
-
-.ss-database:before, .ss-database.right:after {
-  content: ''; }
-
-.ss-hdd:before, .ss-hdd.right:after {
-  content: ''; }
-
-.ss-music:before, .ss-music.right:after {
-  content: '♫'; }
-
-.ss-mic:before, .ss-mic.right:after {
-  content: ''; }
-
-.ss-volume:before, .ss-volume.right:after {
-  content: ''; }
-
-.ss-volumelow:before, .ss-volumelow.right:after {
-  content: ''; }
-
-.ss-volumehigh:before, .ss-volumehigh.right:after {
-  content: ''; }
-
-.ss-airplay:before, .ss-airplay.right:after {
-  content: ''; }
-
-.ss-camera:before, .ss-camera.right:after {
-  content: ''; }
-
-.ss-picture:before, .ss-picture.right:after {
-  content: ''; }
-
-.ss-video:before, .ss-video.right:after {
-  content: ''; }
-
-.ss-play:before, .ss-play.right:after {
-  content: '▶'; }
-
-.ss-pause:before, .ss-pause.right:after {
-  content: ''; }
-
-.ss-stop:before, .ss-stop.right:after {
-  content: '■'; }
-
-.ss-record:before, .ss-record.right:after {
-  content: '●'; }
-
-.ss-rewind:before, .ss-rewind.right:after {
-  content: '⏪'; }
-
-.ss-fastforward:before, .ss-fastforward.right:after {
-  content: '⏩'; }
-
-.ss-skipback:before, .ss-skipback.right:after {
-  content: '⏮'; }
-
-.ss-skipforward:before, .ss-skipforward.right:after {
-  content: '⏭'; }
-
-.ss-eject:before, .ss-eject.right:after {
-  content: '⏏'; }
-
-.ss-repeat:before, .ss-repeat.right:after {
-  content: ''; }
-
-.ss-replay:before, .ss-replay.right:after {
-  content: '↺'; }
-
-.ss-shuffle:before, .ss-shuffle.right:after {
-  content: ''; }
-
-.ss-book:before, .ss-book.right:after {
-  content: ''; }
-
-.ss-openbook:before, .ss-openbook.right:after {
-  content: ''; }
-
-.ss-notebook:before, .ss-notebook.right:after {
-  content: ''; }
-
-.ss-grid:before, .ss-grid.right:after {
-  content: ''; }
-
-.ss-rows:before, .ss-rows.right:after {
-  content: ''; }
-
-.ss-columns:before, .ss-columns.right:after {
-  content: ''; }
-
-.ss-thumbnails:before, .ss-thumbnails.right:after {
-  content: ''; }
-
-.ss-desktop:before, .ss-desktop.right:after {
-  content: ''; }
-
-.ss-laptop:before, .ss-laptop.right:after {
-  content: ''; }
-
-.ss-tablet:before, .ss-tablet.right:after {
-  content: ''; }
-
-.ss-cell:before, .ss-cell.right:after {
-  content: ''; }
-
-.ss-battery:before, .ss-battery.right:after {
-  content: ''; }
-
-.ss-batteryhigh:before, .ss-batteryhigh.right:after {
-  content: ''; }
-
-.ss-batterymedium:before, .ss-batterymedium.right:after {
-  content: ''; }
-
-.ss-batterylow:before, .ss-batterylow.right:after {
-  content: ''; }
-
-.ss-batteryempty:before, .ss-batteryempty.right:after {
-  content: ''; }
-
-.ss-clouddownload:before, .ss-clouddownload.right:after {
-  content: ''; }
-
-.ss-download:before, .ss-download.right:after {
-  content: ''; }
-
-.ss-cloudupload:before, .ss-cloudupload.right:after {
-  content: ''; }
-
-.ss-upload:before, .ss-upload.right:after {
-  content: ''; }
-
-.ss-fork:before, .ss-fork.right:after {
-  content: ''; }
-
-.ss-merge:before, .ss-merge.right:after {
-  content: ''; }
-
-.ss-refresh:before, .ss-refresh.right:after {
-  content: '↻'; }
-
-.ss-sync:before, .ss-sync.right:after {
-  content: ''; }
-
-.ss-loading:before, .ss-loading.right:after {
-  content: ''; }
-
-.ss-wifi:before, .ss-wifi.right:after {
-  content: ''; }
-
-.ss-connection:before, .ss-connection.right:after {
-  content: ''; }
-
-.ss-file:before, .ss-file.right:after {
-  content: ''; }
-
-.ss-folder:before, .ss-folder.right:after {
-  content: ''; }
-
-.ss-quote:before, .ss-quote.right:after {
-  content: '“'; }
-
-.ss-text:before, .ss-text.right:after {
-  content: ''; }
-
-.ss-font:before, .ss-font.right:after {
-  content: ''; }
-
-.ss-print:before, .ss-print.right:after {
-  content: '⎙'; }
-
-.ss-fax:before, .ss-fax.right:after {
-  content: ''; }
-
-.ss-list:before, .ss-list.right:after {
-  content: ''; }
-
-.ss-layout:before, .ss-layout.right:after {
-  content: ''; }
-
-.ss-action:before, .ss-action.right:after {
-  content: ''; }
-
-.ss-redirect:before, .ss-redirect.right:after {
-  content: '↪'; }
-
-.ss-expand:before, .ss-expand.right:after {
-  content: '⤢'; }
-
-.ss-contract:before, .ss-contract.right:after {
-  content: ''; }
-
-.ss-help:before, .ss-help.right:after {
-  content: '❓'; }
-
-.ss-info:before, .ss-info.right:after {
-  content: 'ℹ'; }
-
-.ss-alert:before, .ss-alert.right:after {
-  content: '⚠'; }
-
-.ss-caution:before, .ss-caution.right:after {
-  content: '⛔'; }
-
-.ss-logout:before, .ss-logout.right:after {
-  content: ''; }
-
-.ss-plus:before, .ss-plus.right:after {
-  content: '+'; }
-
-.ss-hyphen:before, .ss-hyphen.right:after {
-  content: '-'; }
-
-.ss-check:before, .ss-check.right:after {
-  content: '✓'; }
-
-.ss-delete:before, .ss-delete.right:after {
-  content: '␡'; }
-
-.ss-settings:before, .ss-settings.right:after {
-  content: '⚙'; }
-
-.ss-dashboard:before, .ss-dashboard.right:after {
-  content: ''; }
-
-.ss-notifications:before, .ss-notifications.right:after {
-  content: ''; }
-
-.ss-notificationsdisabled:before, .ss-notificationsdisabled.right:after {
-  content: ''; }
-
-.ss-clock:before, .ss-clock.right:after {
-  content: '⏲'; }
-
-.ss-stopwatch:before, .ss-stopwatch.right:after {
-  content: '⏱'; }
-
-.ss-calendar:before, .ss-calendar.right:after {
-  content: ''; }
-
-.ss-calendaradd:before, .ss-calendaradd.right:after {
-  content: ''; }
-
-.ss-calendarremove:before, .ss-calendarremove.right:after {
-  content: ''; }
-
-.ss-calendarcheck:before, .ss-calendarcheck.right:after {
-  content: ''; }
-
-.ss-calendardelete:before, .ss-calendardelete.right:after {
-  content: ''; }
-
-.ss-briefcase:before, .ss-briefcase.right:after {
-  content: ''; }
-
-.ss-cloud:before, .ss-cloud.right:after {
-  content: '☁'; }
-
-.ss-droplet:before, .ss-droplet.right:after {
-  content: ''; }
-
-.ss-navigateup:before, .ss-navigateup.right:after {
-  content: ''; }
-
-.ss-navigateright:before, .ss-navigateright.right:after {
-  content: '▻'; }
-
-.ss-navigatedown:before, .ss-navigatedown.right:after {
-  content: ''; }
-
-.ss-navigateleft:before, .ss-navigateleft.right:after {
-  content: '◅'; }
-
-.ss-up:before, .ss-up.right:after {
-  content: '⬆'; }
-
-.ss-upright:before, .ss-upright.right:after {
-  content: '⬈'; }
-
-.ss-right:before, .ss-right.right:after {
-  content: '➡'; }
-
-.ss-downright:before, .ss-downright.right:after {
-  content: '⬊'; }
-
-.ss-down:before, .ss-down.right:after {
-  content: '⬇'; }
-
-.ss-downleft:before, .ss-downleft.right:after {
-  content: '⬋'; }
-
-.ss-left:before, .ss-left.right:after {
-  content: '⬅'; }
-
-.ss-upleft:before, .ss-upleft.right:after {
-  content: '⬉'; }
-
-.ss-directup:before, .ss-directup.right:after {
-  content: '▴'; }
-
-.ss-directright:before, .ss-directright.right:after {
-  content: '▹'; }
-
-.ss-dropdown:before, .ss-dropdown.right:after {
-  content: '▾'; }
-
-.ss-directleft:before, .ss-directleft.right:after {
-  content: '◃'; }
-
-.ss-retweet:before, .ss-retweet.right:after {
-  content: ''; }
-
-@font-face {
-  font-family: "SSSocial";
-  src: url("/fonts/ss-social-regular.eot");
-  /* IE9 Compat Modes */
-  src: url("/fonts/ss-social-regular.eot?#iefix") format("embedded-opentype"), url("/fonts/ss-social-regular.woff") format("woff"), url("/fonts/ss-social-regular.ttf") format("truetype"), url("/fonts/ss-social-regular.svg#svgFontName") format("svg");
-  /* Legacy iOS */ }
-.ss-icon.ss-social, .ss-social.carousel__prev,
-.ss-social.carousel__next, .ss-icon.ss-social-circle, .ss-social-circle.carousel__prev,
-.ss-social-circle.carousel__next,
-[class^="ss-"]:before, [class*=" ss-"]:before,
-[class^="ss-"][class*=" ss-social"]:before, [class*=" ss-"][class*=" ss-social"]:before,
-[class^="ss-"].right:after, [class*=" ss-"].right:after,
-[class^="ss-"][class*=" ss-social"].right:after, [class*=" ss-"][class*=" ss-social"].right:after {
-  font-family: "SSSocial";
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: none;
-  text-rendering: optimizeLegibility;
-  white-space: nowrap;
-  -webkit-font-feature-settings: "liga";
-  -moz-font-feature-settings: "liga=1";
-  -moz-font-feature-settings: "liga";
-  -ms-font-feature-settings: "liga" 1;
-  -o-font-feature-settings: "liga";
-  font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased; }
-
-[class^="ss-"].right:before, [class^="ss-"][class*=" ss-social"].right:before {
-  display: none;
-  content: ''; }
-
-.ss-facebook:before, .ss-facebook.right:after {
-  content: ''; }
-
-.ss-twitter:before, .ss-twitter.right:after {
-  content: ''; }
-
-.ss-linkedin:before, .ss-linkedin.right:after {
-  content: ''; }
-
-.ss-googleplus:before, .ss-googleplus.right:after {
-  content: ''; }
-
-.ss-tumblr:before, .ss-tumblr.right:after {
-  content: ''; }
-
-.ss-wordpress:before, .ss-wordpress.right:after {
-  content: ''; }
-
-.ss-blogger:before, .ss-blogger.right:after {
-  content: ''; }
-
-.ss-posterous:before, .ss-posterous.right:after {
-  content: ''; }
-
-.ss-youtube:before, .ss-youtube.right:after {
-  content: ''; }
-
-.ss-vimeo:before, .ss-vimeo.right:after {
-  content: ''; }
-
-.ss-flickr:before, .ss-flickr.right:after {
-  content: ''; }
-
-.ss-instagram:before, .ss-instagram.right:after {
-  content: ''; }
-
-.ss-pinterest:before, .ss-pinterest.right:after {
-  content: ''; }
-
-.ss-dribbble:before, .ss-dribbble.right:after {
-  content: ''; }
-
-.ss-behance:before, .ss-behance.right:after {
-  content: ''; }
-
-.ss-github:before, .ss-github.right:after {
-  content: ''; }
-
-.ss-octocat:before, .ss-octocat.right:after {
-  content: ''; }
-
-.ss-paypal:before, .ss-paypal.right:after {
-  content: ''; }
-
-.ss-foursquare:before, .ss-foursquare.right:after {
-  content: ''; }
-
-.ss-skype:before, .ss-skype.right:after {
-  content: ''; }
-
-.ss-rdio:before, .ss-rdio.right:after {
-  content: ''; }
-
-.ss-spotify:before, .ss-spotify.right:after {
-  content: ''; }
-
-.ss-lastfm:before, .ss-lastfm.right:after {
-  content: ''; }
-
-.ss-mail:before, .ss-mail.right:after {
-  content: '✉'; }
-
-.ss-like:before, .ss-like.right:after {
-  content: '👍'; }
-
-.ss-rss:before, .ss-rss.right:after {
-  content: ''; }
-
-/* Have something else to add?
---------------------------------------------------------
-  + Add any new modifier classes below
------------------------------------------------------- */
-/***
-
-  @modules
----------------------------------------------------------
-
-  Reusable objects that are combinations
-  of elements and other modules.
-
-  When you create a new module, make sure the partial is
-  in the modules directory, and you import it below
-
-  Comment out any partial you don't need for this app.
-
----------------------------------------------------------  */
-/**
-
-   @site
---------------------------------------------------------
-  _4_modules/_site.scss
---------------------------------------------------------
-
-  This is a utility div to wrap the whole site
-
------------------------------------------------------- */
-/**
-
-  @site-header
---------------------------------------------------------
-  _4_modules/site-header.scss
---------------------------------------------------------
-
-  Site-wide header
-
------------------------------------------------------- */
-.site-header {
-  zoom: 1;
-  padding-top: 1.6875em;
-  padding-bottom: 1.6875em;
-  border-bottom: 1px solid #cfd2d2; }
-  .site-header:before, .site-header:after {
-    content: " ";
-    display: table; }
-  .site-header:after {
-    clear: both; }
-  @media screen and (min-width: 34.375em) {
-    .site-header {
-      padding-top: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .site-header {
-      padding-top: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .site-header {
-      padding-top: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .site-header {
-      padding-top: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .site-header {
-      padding-top: 4.5em; } }
-  @media screen and (min-width: 34.375em) {
-    .site-header {
-      padding-bottom: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .site-header {
-      padding-bottom: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .site-header {
-      padding-bottom: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .site-header {
-      padding-bottom: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .site-header {
-      padding-bottom: 4.5em; } }
-
-/* @branding
---------------------------------------------------------
-
-  The logo & (optional) wordmark
-
-  Example: Branding logo
-  <a class="branding" href="/">
-    <img class="branding__logo img--title" src="images/logo.svg" alt="My Company">
-    <h1 class="branding__wordmark">My Company</h1>
-  </a>
-
------------------------------------------------------- */
-.branding {
-  margin-top: 0em;
-  margin-right: auto;
-  margin-bottom: 1.6875em;
-  margin-left: auto;
-  text-decoration: none;
-  display: block; }
-  @media screen and (min-width: 34.375em) {
-    .branding {
-      margin-top: 0em; } }
-  @media screen and (min-width: 48em) {
-    .branding {
-      margin-top: 0em; } }
-  @media screen and (min-width: 64em) {
-    .branding {
-      margin-top: 0em; } }
-  @media screen and (min-width: 78.5em) {
-    .branding {
-      margin-top: 0em; } }
-  @media screen and (min-width: 100em) {
-    .branding {
-      margin-top: 0em; } }
-  @media screen and (min-width: 34.375em) {
-    .branding {
-      margin-bottom: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .branding {
-      margin-bottom: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .branding {
-      margin-bottom: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .branding {
-      margin-bottom: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .branding {
-      margin-bottom: 4.5em; } }
-  @media screen and (min-width: 48em) {
-    .branding {
-      margin: 0;
-      float: left; } }
-
-.branding__logo {
-  float: left;
-  margin-right: 1.125em;
-  height: 3.375em;
-  width: 3.375em; }
-
-.branding__wordmark {
-  font-size: 1.6875em;
-  white-space: nowrap;
-  line-height: 2.25em;
-  margin: 0; }
-
-/*
-
-  @site-nav
---------------------------------------------------------
-
-  The main site navigation.
-
------------------------------------------------------  */
-.site-nav {
-  text-align: center; }
-  @media screen and (min-width: 48em) {
-    .site-nav {
-      float: right; } }
-  .site-nav a {
-    display: inline-block;
-    height: 3.375em;
-    line-height: 3.375em;
-    padding: 0 .5em;
-    margin-left: 0.5625em; }
-    .site-nav a:first-child {
-      margin-left: 0; }
-
-/**
-
-  @site-main
---------------------------------------------------------
-  _4_modules/site-main.scss
---------------------------------------------------------
-
-  The site's main content
-
------------------------------------------------------- */
-.site__main {
-  display: block; }
-
-/**
-
-  @site-footer
---------------------------------------------------------
-  _4_modules/site-footer.scss
---------------------------------------------------------
-
-  The site's footer
-
------------------------------------------------------- */
-.site-footer {
-  padding-top: 0.84375em;
-  padding-bottom: 0.84375em;
-  border-top: 1px solid #cfd2d2; }
-  @media screen and (min-width: 34.375em) {
-    .site-footer {
-      padding-top: 1.125em; } }
-  @media screen and (min-width: 48em) {
-    .site-footer {
-      padding-top: 1.40625em; } }
-  @media screen and (min-width: 64em) {
-    .site-footer {
-      padding-top: 1.54688em; } }
-  @media screen and (min-width: 78.5em) {
-    .site-footer {
-      padding-top: 1.6875em; } }
-  @media screen and (min-width: 100em) {
-    .site-footer {
-      padding-top: 2.25em; } }
-  @media screen and (min-width: 34.375em) {
-    .site-footer {
-      padding-bottom: 1.125em; } }
-  @media screen and (min-width: 48em) {
-    .site-footer {
-      padding-bottom: 1.40625em; } }
-  @media screen and (min-width: 64em) {
-    .site-footer {
-      padding-bottom: 1.54688em; } }
-  @media screen and (min-width: 78.5em) {
-    .site-footer {
-      padding-bottom: 1.6875em; } }
-  @media screen and (min-width: 100em) {
-    .site-footer {
-      padding-bottom: 2.25em; } }
-
-.site-credits {
-  display: block;
-  clear: both; }
-
-/**
-
-  @pages
---------------------------------------------------------
-  _4_modules/_pages.scss
---------------------------------------------------------
-
-  Pages have a title and content
-
------------------------------------------------------  */
-.page p {
-  opacity: .8;
-  font-size: 2em;
-  margin: 0 auto 1em;
-  line-height: 1.5;
-  max-width: 25em; }
-
-.page__title {
-  padding-bottom: 1.6875em; }
-  @media screen and (min-width: 34.375em) {
-    .page__title {
-      padding-bottom: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .page__title {
-      padding-bottom: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .page__title {
-      padding-bottom: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .page__title {
-      padding-bottom: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .page__title {
-      padding-bottom: 4.5em; } }
-  .page__title h1 {
-    text-align: center;
-    font-size: 3.9375em;
-    line-height: 1.1em;
-    font-style: italic; }
-
-/**
-
-  @alerts
----------------------------------------------------------
-  _4_modules/_alerts.scss
---------------------------------------------------------
-
-  Alerts are UI elements that give important info
-
-  Example: Error
-  <div class="alert alert--error">
-    <a href="#" class="btn__close">&times;</a>
-    <p>Uh oh - something went wrong</p>
-  </div>
-
-  Example: Warning
-  <div class="alert alert--warning">
-    <a href="#" class="btn__close">&times;</a>
-    <p>Shake it fast, but watch yourself.</p>
-  </div>
-
-  Example: Success
-  <div class="alert alert--success">
-    <a href="#" class="btn__close">&times;</a>
-    <p>The secret to my success is that I learn, 25 hours a day!</p>
-  </div>
-
-  Example: Info
-  <div class="alert alert--info">
-    <a href="#" class="btn__close">&times;</a>
-    <p>Did you ever know that you're my hero?</p>
-  </div>
-
-  NOTE: The code below uses declared color units, maybe it
-        makes sense to declare those in _vars.scss
-
------------------------------------------------------- */
-.alert {
-  position: relative;
-  border-width: 1px;
-  border-style: solid;
-  padding: .5rem 4rem .5rem .5rem;
-  line-height: 1.25; }
-  .alert:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 2.25em;
-    width: 1px;
-    height: 100%;
-    border-left: 1px solid #000; }
-  .alert p {
-    margin: 0; }
-  .alert .btn__close {
-    position: absolute;
-    top: 50%;
-    margin-top: -.75em;
-    right: .5em;
-    opacity: .5;
-    -webkit-transition: all .3s;
-    transition: all .3s; }
-    .alert .btn__close:hover {
-      opacity: 1; }
-
-.alert--error {
-  color: #e04646;
-  border-color: #e04646;
-  background: #ffe6e6; }
-  .alert--error .btn__close {
-    color: #e04646; }
-  .alert--error:after {
-    border-color: #e04646; }
-
-.alert--warning {
-  color: #b29804;
-  border-color: #b29804;
-  background: #fcf7d8; }
-  .alert--warning .btn__close {
-    color: #b29804; }
-  .alert--warning:after {
-    border-color: #b29804; }
-
-.alert--info {
-  color: #537df6;
-  border-color: #537df6;
-  background: #e8f3ff; }
-  .alert--info .btn__close {
-    color: #537df6; }
-  .alert--info:after {
-    border-color: #537df6; }
-
-.alert--success {
-  color: #0ca129;
-  border-color: #0ca129;
-  background: #dafce1; }
-  .alert--success .btn__close {
-    color: #0ca129; }
-  .alert--success:after {
-    border-color: #0ca129; }
-
-/**
-
-  @blocks
---------------------------------------------------------
-  _4_modules/_blocks.scss
---------------------------------------------------------
-
-  Blocks contain sections of content.  Blocks can have
-  different visual styling, but usually have the same
-  structure; one spacing unit margin at the bottom,
-  and some have borders, and padding, etc.
-
------------------------------------------------------  */
-.block {
-  margin-bottom: 1.6875em; }
-  @media screen and (min-width: 34.375em) {
-    .block {
-      margin-bottom: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .block {
-      margin-bottom: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .block {
-      margin-bottom: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .block {
-      margin-bottom: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .block {
-      margin-bottom: 4.5em; } }
-
-.block--ends {
-  margin-top: 1.6875em;
-  margin-bottom: 1.6875em; }
-  @media screen and (min-width: 34.375em) {
-    .block--ends {
-      margin-top: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .block--ends {
-      margin-top: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .block--ends {
-      margin-top: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .block--ends {
-      margin-top: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .block--ends {
-      margin-top: 4.5em; } }
-  @media screen and (min-width: 34.375em) {
-    .block--ends {
-      margin-bottom: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .block--ends {
-      margin-bottom: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .block--ends {
-      margin-bottom: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .block--ends {
-      margin-bottom: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .block--ends {
-      margin-bottom: 4.5em; } }
-
-/**
-
-  @callouts
---------------------------------------------------------
-  _4_modules/_callouts.scss
---------------------------------------------------------
-
-  A Callout, in this context at least, is those sections
-  of featured content that usually contain an icon, a
-  title, and some text.  These are usually in a row, and
-  call attention to highlighted features.
-
-  Example: Callout
-  <article class="callout">
-    <img class="callout__media" src="images/fpo-icon.png">
-    <h3 class="callout__title">Feature</h3>
-    <p>This callout is very impressive, and should command your attention</p>
-  </article>
-
------------------------------------------------------  */
-.callout {
-  text-align: center; }
-
-.callout__media {
-  display: block;
-  margin: 0 auto 1em;
-  max-height: 3em;
-  width: auto; }
-
-.callout__title {
-  font-size: 1.5em; }
-
-/**
-
-  @carousels
---------------------------------------------------------
-  _4_modules/_carousels.scss
---------------------------------------------------------
-
-  Carousels use FlexSlider
-
-  We'll add a title to the carousel module too
-
-  There are variations of carousels, there's a small carousel
-  and also different color themes
-
------------------------------------------------------- */
-.carousel {
-  position: relative; }
-
-.carousel__direction-nav li {
-  float: left; }
-
-.carousel__prev,
-.carousel__next {
-  display: block;
-  text-align: center; }
-  .carousel__prev:hover,
-  .carousel__next:hover {
-    opacity: 1; }
-
-/* Have something else to add?
---------------------------------------------------------
-  + Add any new modifier classes below
------------------------------------------------------- */
-/**
-
-  @heroes
---------------------------------------------------------
-  _4_modules/_heroes.scss
---------------------------------------------------------
-
-  Just your everyday, normal hero.  Contains a div that has
-  the media (video or image) in the background, and a div
-  for the main content.
-
-  Example: Hero
-  <div class="hero">
-    <div class="hero__main">
-      <h1 class="hero__leadin">This is the leadin</h1>
-      <h2 class="hero__name">Name Here</h2>
-    <div class="hero__media"><img src="http://fillmurray.com/1000/400"></div>
-  </div>
------------------------------------------------------- */
-.hero {
-  position: relative;
-  background: #515554;
-  overflow: hidden;
-  margin-bottom: 1.6875em; }
-  @media screen and (min-width: 34.375em) {
-    .hero {
-      margin-bottom: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .hero {
-      margin-bottom: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .hero {
-      margin-bottom: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .hero {
-      margin-bottom: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .hero {
-      margin-bottom: 4.5em; } }
-
-.hero__media {
-  position: relative;
-  z-index: 200; }
-
-.hero__main {
-  position: absolute;
-  z-index: 210;
-  width: 100%;
-  top: 50%;
-  text-align: center;
-  color: white;
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  font-size: .75em; }
-  @media screen and (min-width: 34.375em) {
-    .hero__main {
-      font-size: 1em; } }
-  @media screen and (min-width: 64em) {
-    .hero__main {
-      font-size: 1.25em; } }
-
-/**
-
-  @modals
----------------------------------------------------------
-  _4_modules/_modals.scss
---------------------------------------------------------
-
-  These are very basic modals, there's room for improvement.
-
---------------------------------------------------------- */
-.modal {
-  position: fixed;
-  z-index: 200;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.96);
-  display: none; }
-
-.modal__container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: table;
-  height: 100%;
-  padding-top: 1.6875em;
-  padding-right: 1.6875em;
-  padding-bottom: 1.6875em;
-  padding-left: 1.6875em; }
-  @media screen and (min-width: 34.375em) {
-    .modal__container {
-      padding-top: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .modal__container {
-      padding-top: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .modal__container {
-      padding-top: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .modal__container {
-      padding-top: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .modal__container {
-      padding-top: 4.5em; } }
-  @media screen and (min-width: 34.375em) {
-    .modal__container {
-      padding-right: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .modal__container {
-      padding-right: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .modal__container {
-      padding-right: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .modal__container {
-      padding-right: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .modal__container {
-      padding-right: 4.5em; } }
-  @media screen and (min-width: 34.375em) {
-    .modal__container {
-      padding-bottom: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .modal__container {
-      padding-bottom: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .modal__container {
-      padding-bottom: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .modal__container {
-      padding-bottom: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .modal__container {
-      padding-bottom: 4.5em; } }
-  @media screen and (min-width: 34.375em) {
-    .modal__container {
-      padding-left: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .modal__container {
-      padding-left: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .modal__container {
-      padding-left: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .modal__container {
-      padding-left: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .modal__container {
-      padding-left: 4.5em; } }
-
-.modal__close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-top: 0.55688em;
-  margin-right: 0.55688em;
-  font-size: 3em;
-  border: none;
-  background: none;
-  display: block; }
-  @media screen and (min-width: 34.375em) {
-    .modal__close {
-      margin-top: 0.7425em; } }
-  @media screen and (min-width: 48em) {
-    .modal__close {
-      margin-top: 0.92813em; } }
-  @media screen and (min-width: 64em) {
-    .modal__close {
-      margin-top: 1.02094em; } }
-  @media screen and (min-width: 78.5em) {
-    .modal__close {
-      margin-top: 1.11375em; } }
-  @media screen and (min-width: 100em) {
-    .modal__close {
-      margin-top: 1.485em; } }
-  @media screen and (min-width: 34.375em) {
-    .modal__close {
-      margin-right: 0.7425em; } }
-  @media screen and (min-width: 48em) {
-    .modal__close {
-      margin-right: 0.92813em; } }
-  @media screen and (min-width: 64em) {
-    .modal__close {
-      margin-right: 1.02094em; } }
-  @media screen and (min-width: 78.5em) {
-    .modal__close {
-      margin-right: 1.11375em; } }
-  @media screen and (min-width: 100em) {
-    .modal__close {
-      margin-right: 1.485em; } }
-  .modal__close:hover, .modal__close:focus {
-    outline: none;
-    border: none;
-    opacity: .85; }
-  .modal__close:active {
-    opacity: .6; }
-
-.modal__body {
-  display: table-cell;
-  height: 100%;
-  width: 100%;
-  vertical-align: middle; }
-  .modal__body p {
-    margin-bottom: 1em;
-    font-size: 1.5em; }
-
-/*
-
-  @popovers
---------------------------------------------------------
-  _4_modules/_popovers.scss
---------------------------------------------------------
-
-  TBD
-
------------------------------------------------------- */
-/**
-
-  @tabs
---------------------------------------------------------
-  _4_modules/_tabs.scss
---------------------------------------------------------
-
-  Tabs.
-
------------------------------------------------------- */
-.tab.is-active {
-  pointer-events: none; }
-
-.panels {
-  position: relative; }
-
-.panel {
-  opacity: 0;
-  position: absolute;
-  top: -200%;
-  left: -200%; }
-  .panel.is-active {
-    position: relative;
-    opacity: 1;
-    top: 0;
-    left: 0; }
-
-.panels.is-activated .panel.is-active {
-  position: absolute; }
-
-/**
-
-  @thumbnails
---------------------------------------------------------
-  _4_modules/_thumbnails.scss
---------------------------------------------------------
-
-  description
-
------------------------------------------------------  */
-@media (min-width: 0em) {
-  .thumbnail {
-    font-size: 200%; } }
-@media (min-width: 20em) {
-  .thumbnail {
-    font-size: 150%; } }
-@media (min-width: 34.375em) {
-  .thumbnail {
-    font-size: 100%; } }
-.thumbnail a {
-  text-decoration: none; }
-
-.thumbnail__caption {
-  text-align: center; }
-  .thumbnail__caption h2, .thumbnail__caption h3 {
-    text-decoration: none;
-    margin: 0; }
-  .thumbnail__caption h2 {
-    color: #485250;
-    font-size: 1.5em;
-    line-height: 1.8;
-    text-transform: uppercase;
-    letter-spacing: .05em; }
-  .thumbnail__caption h3 {
-    font-size: 1.5em;
-    line-height: 1;
-    font-style: italic; }
-
-/**
-
-  @tooltips
----------------------------------------------------------
-  _4_modules/_tooltips.scss
---------------------------------------------------------
-
-  Tooltips use bootstrap.js for now.
-
-  <p>Tight pants next level keffiyeh <a href="#" data-toggle="tooltip" title="Default Tooltip">you probably</a>
-   haven't heard of them. Photo booth beard raw denim
-   letterpress vegan messenger bag stumptown.
-   Farm-to-table seitan, mcsweeney's fixie sustainable
-   quinoa 8-bit american apparel <a href="#" data-toggle="tooltip" title="Another tooltip">have a</a>
-   terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats.
-  </p>
-
---------------------------------------------------------- */
-/**
-
-  @video
---------------------------------------------------------
-  _4_modules/_video-embeds.scss
---------------------------------------------------------
-
-  Video Embeds
-
------------------------------------------------------  */
-.video-embed {
-  display: block;
-  width: 100%;
-  height: 0;
-  position: relative;
-  padding-top: 66.666%; }
-  .video-embed iframe {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100% !important;
-    width: 100% !important; }
-
 /**
 
   @grid guide

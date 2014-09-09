@@ -3,69 +3,18 @@
   MAIN STYLESHEET for ***YOUR-SITE-NAME-HERE***
 
 ---------------------------------------------------------
-
-  BUILT WITH SKYLINE: EVOLVING CSS ARCHITECTURE
-
-  SKYLINE CREATED BY CRUSH & LOVELY ENGINEERING
-
-  Jeff Schram         Adam Becker         Jacob Fentress
-  (@jeffschram)       (@adambbecker)      (@jfentress)
-  jeffschram.com      adambbecker.com     jacobfentress.com
-
----------------------------------------------------------
-
-
-  ADDITIONAL CREDITS, INSPIRATION & SHOUT OUTS
-
-  Harry Roberts       Chris Coyier        Brad Frost
-  (@csswizardry)      (@crishcoyier)      (@bradfrost)
-  csswizardry.com     css-tricks.com      patternlab.io
-  inuitcss.com        codepen.io          bradfrostweb.com
-
-  Jonathan Snook      Nicole Sullivan
-  (@snook)            (@stubbornella)
-  smaccs.com          stubbornella.org
-
-  - For some mixins, naming conventions and OOCSS concepts
-  - Check these guys out and learn from their awesomeness
-
-
-  Nicolas Gallagher
-  http://nicolasgallagher.com
-  http://necolas.github.io/normalize.css/
-
-  - For the reset
-
-
-  HTML5 Boilerplate (@h5bp)
-  html5boilerplate.com
-
-  - For the print stylesheet
-
-
-  Twitter Bootstrap (@twbootstrap)
-  twitter.github.com/bootstrap
-
-  - For some component ideas, naming conventions and javascript
-
-
-  A quite note on navigating through these files:
-  We are using @waypoints to allow you to easily search
-  for certain sections. For instance, to get to the
-  Table Of Contents (or toc) just search for "@toc"
-  and you'll jump right to it.
-
-
+  For credits, shoutouts, and info check the README.md
 ---------------------------------------------------------
 
   TABLE OF CONTENTS
   @toc
 
-  - Dependencies .... anything needed to compile this project
-  - Foundation ............ foundations, mixins, functions, vars
-  - Layout ..... layout objects like grids, containers
-  - Elements ........ single elements
-  - Modules ......... objects created by combining elements
+  - Dependencies ...... anything needed to compile this project
+  - Base .............. foundations, mixins, functions, vars
+  - Elements .......... single elements
+  - Layout ............ layout objects like grids, containers
+  - Modules ........... objects created by combining elements
+  - Vendor ............ any css from vendor plugins
 
 ---------------------------------------------------------  */
 
@@ -92,7 +41,7 @@
 
 /***
 
-  @foundation
+  @base
 ---------------------------------------------------------
 
   Your CSS begins with some global variables, a reset which
@@ -102,68 +51,39 @@
 
   // Vars
   //
-  @import "screen/_1_foundation/vars";
+  @import "base/vars";
 
   // Reset
   //
-  @import "screen/_1_foundation/reset";
-
-  // Functions
-  //
-  @import "screen/_1_foundation/functions/auto-or-value";
+  @import "base/reset";
 
   // Mixins
   //
-  @import "screen/_1_foundation/mixins/arrows";
+  @import "base/mixin-arrows";
 
-  @import "screen/_1_foundation/mixins/breakpoints";
+  @import "base/mixin-breakpoints";
 
-  @import "screen/_1_foundation/mixins/clearfix";
+  @import "base/mixin-clearfix";
 
-  @import "screen/_1_foundation/mixins/element-queries";
+  @import "base/mixin-element-queries";
 
-  @import "screen/_1_foundation/mixins/flexbox";
+  @import "base/mixin-flexbox";
 
-  @import "screen/_1_foundation/mixins/font-face-importer";
+  @import "base/mixin-font-face-importer";
 
-  @import "screen/_1_foundation/mixins/gradual-media-queries";
+  @import "base/mixin-gradual-media-queries";
 
-  @import "screen/_1_foundation/mixins/spacing";
-
+  @import "base/mixin-spacing";
 
   // Print
   //
-  @import "screen/_1_foundation/print";
+  @import "base/print";
 
+  // Globals
+  //
+  @import "base/fonts";
 
-
-
-
-
-/***
-
-  @layout
----------------------------------------------------------
-
-  A large portion of CSS is structural layout. You will use
-  these helpers to create the scaffolding that will support
-  the elements that make up your site.
-
-  Comment out any partial you don't need for this app.
-
----------------------------------------------------------  */
-
-  @import "screen/_2_layout/container";
-
-  @import "screen/_2_layout/widths";
-
-  @import "screen/_2_layout/ups";
-
-  @import "screen/_2_layout/grids";
-
-  @import "screen/_2_layout/media";
-
-  @import "screen/_2_layout/hide";
+  @import "base/icons";
 
 
 
@@ -178,33 +98,29 @@
 
 ---------------------------------------------------------  */
 
-  @import "screen/_3_elements/fonts";
+  @import "elements/html";
 
-  @import "screen/_3_elements/html";
+  @import "elements/body";
 
-  @import "screen/_3_elements/body";
+  @import "elements/code";
 
-  @import "screen/_3_elements/code";
+  @import "elements/headings";
 
-  @import "screen/_3_elements/headings";
+  @import "elements/text";
 
-  @import "screen/_3_elements/text";
+  @import "elements/quotes";
 
-  @import "screen/_3_elements/quotes";
+  @import "elements/lists";
 
-  @import "screen/_3_elements/lists";
+  @import "elements/hr";
 
-  @import "screen/_3_elements/hr";
+  @import "elements/links";
 
-  @import "screen/_3_elements/links";
+  @import "elements/images";
 
-  @import "screen/_3_elements/images";
+  @import "elements/forms";
 
-  @import "screen/_3_elements/forms";
-
-  @import "screen/_3_elements/buttons";
-
-  @import "screen/_3_elements/icons";
+  @import "elements/buttons";
 
 
 
@@ -221,53 +137,90 @@
   When you create a new module, make sure the partial is
   in the modules directory, and you import it below
 
-  Comment out any partial you don't need for this app.
-
 ---------------------------------------------------------  */
 
 
   // Site Modules
   //
-  @import "screen/_4_modules/site";
+  @import "modules/site";
 
-  @import "screen/_4_modules/site-header";
+  @import "modules/site-header";
 
-  @import "screen/_4_modules/site-main";
+  @import "modules/site-main";
 
-  @import "screen/_4_modules/site-footer";
+  @import "modules/site-footer";
 
 
   // Page Template Module
   //
-  @import "screen/_4_modules/pages";
+  @import "modules/pages";
 
 
   // Component Modules
   //
-  @import "screen/_4_modules/alerts";
+  @import "modules/alerts";
 
-  @import "screen/_4_modules/blocks";
+  @import "modules/blocks";
 
-  @import "screen/_4_modules/callouts";
+  @import "modules/callouts";
 
-  @import "screen/_4_modules/carousels";
+  @import "modules/carousels";
 
-  @import "screen/_4_modules/heroes";
+  @import "modules/heroes";
 
-  @import "screen/_4_modules/modals";
+  @import "modules/modals";
 
-  @import "screen/_4_modules/popovers";
+  @import "modules/popovers";
 
-  @import "screen/_4_modules/tabs";
+  @import "modules/tabs";
 
-  @import "screen/_4_modules/thumbnails";
+  @import "modules/thumbnails";
 
-  @import "screen/_4_modules/tooltips";
+  @import "modules/tooltips";
 
-  @import "screen/_4_modules/video-embeds";
+  @import "modules/video-embeds";
 
 
-  // Vendor Related Modules
-  //
+
+
+/***
+
+  @layout
+---------------------------------------------------------
+
+  A large portion of CSS is structural layout. You will use
+  these helpers to create the scaffolding that will support
+  the elements that make up your site.
+
+---------------------------------------------------------  */
+
+  @import "layout/container";
+
+  @import "layout/widths";
+
+  @import "layout/ups";
+
+  @import "layout/grids";
+
+  @import "layout/media";
+
+  @import "layout/hide";
+
+
+
+
+
+
+/***
+
+  @vendor
+---------------------------------------------------------
+
+  CSS related to any vendor plugins that you're using
+  should be imported here. Often, jQuery plugins etc.
+  will be accompanied by some proprietary CSS, so
+  include that right here.
+
+---------------------------------------------------------  */
   @import "vendor/skyline-grid-guide";
 

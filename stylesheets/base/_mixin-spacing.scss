@@ -17,6 +17,22 @@
 
 -----------------------------------------------------  */
 
+
+// Function to determine if value or auto
+//
+@function autoOrValue ($val) {
+  @if $val == a or $val == auto {
+    @return auto;
+  }
+  @else {
+    @return $val;
+  }
+}
+
+
+
+
+
 // Define the $spacing variables which are based on the global $unit var
 $spacing: 1.5*$unit;
 $spacing__sm: 2*$unit;
