@@ -22,31 +22,31 @@ The starter files contain as little code as possible.  The structure consists of
 |
 ├── javascripts
 |   ├── app
-|   |   ├── application.js
+|       ├── application.js
 |   ├── vendor
-|   |   ├── (lots of front-end jquery plugins)
-|   |   ├── jquery.skyline.gridguide.js
-|   |   ├── jquery.skyline.smartresize.js
-|   |   ├── jquery.skyline.styleguide.js
+|       ├── (lots of front-end jquery plugins)
+|       ├── jquery.skyline.gridguide.js
+|       ├── jquery.skyline.smartresize.js
+|       ├── jquery.skyline.styleguide.js
 |   ├── utility
-|   |   ├── ios-orientationchange-fix.js
-|   |   ├── modernizr.js (you will usually create your own custom build)
-|   |   ├── respond.js (use if supporting IE8)
-|   |   ├── selectivizr.js (use if supporting IE8)
+|       ├── ios-orientationchange-fix.js
+|       ├── modernizr.js (you will usually create your own custom build)
+|       ├── respond.js (use if supporting IE8)
+|       ├── selectivizr.js (use if supporting IE8)
 |
 ├── stylesheets
 |   ├── base
-|   |   ├── variables, resets, mixins, functions, etc.
+|       ├── variables, resets, mixins, functions, etc.
 |   ├── elements
-|   |   ├── styles for base elements (p, ul, img, form, input, etc.)
+|       ├── styles for base elements (p, ul, img, form, input, etc.)
 |   ├── layout
-|   |   ├── grids, widths, utilities, etc.
+|       ├── grids, widths, utilities, etc.
 |   ├── modules
-|   |   ├── styles for objects/modules you create (.site-header, .hero, .page, .bio, .site-footer, etc.)
+|       ├── styles for objects/modules you create (.site-header, .hero, .page, .bio, .site-footer, etc.)
 |   ├── vendor
-|   |   ├── styles related to plugins
+|       ├── styles related to plugins
 |   ├── README.md
-|   ├── screen.scss (the manifest file that pulls in all the partials and compiles into screen.css)
+|    ── screen.scss (the manifest file that pulls in all the partials and compiles into screen.css)
 ```
 
 ### Usage
