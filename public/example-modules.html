@@ -80,45 +80,72 @@
         <section class="block--ends container">
           <h1>Example Modules</h1>
           <p>Reusable components to jumpt start development.</p>
+          <p>Note that these components use basic inline javascript for some UI actions. Since Skyline focuses on CSS, you are free to use any javascript libraries you wish.</p>
         </section>
 
         <section class="block container">
           <h3>Alerts</h3>
           <p>Alerts are UI elements that give important info.</p>
-          <div class="alert alert--error" style="margin-bottom: 20px;">
-            <a href="#" class="btn__close">&times;</a>
-            <p>Uh oh - something went wrong</p>
+          <div class="alert alert--error" id="alert-1">
+            <a href="#" class="btn__close" onclick="document.getElementById('alert-1').style.display = 'none'; return false;">&times;</a>
+            <p>ERROR: Uh oh - something went wrong</p>
           </div>
-          <div class="alert alert--warning" style="margin-bottom: 20px;">
-            <a href="#" class="btn__close">&times;</a>
-            <p>Shake it fast, but watch yourself.</p>
+          <div class="alert alert--warning" id="alert-2">
+            <a href="#" class="btn__close" onclick="document.getElementById('alert-2').style.display = 'none'; return false;">&times;</a>
+            <p>WARNING: Shake it fast, but watch yourself.</p>
           </div>
-          <div class="alert alert--success" style="margin-bottom: 20px;">
-            <a href="#" class="btn__close">&times;</a>
-            <p>The secret to my success is that I learn, 25 hours a day!</p>
+          <div class="alert alert--success" id="alert-3">
+            <a href="#" class="btn__close" onclick="document.getElementById('alert-3').style.display = 'none'; return false;">&times;</a>
+            <p>SUCCESS: The secret to my success is that I learn, 25 hours a day!</p>
           </div>
-          <div class="alert alert--info" style="margin-bottom: 20px;">
-            <a href="#" class="btn__close">&times;</a>
-            <p>Did you ever know that you're my hero?</p>
+          <div class="alert alert--info" id="alert-4">
+            <a href="#" class="btn__close" onclick="document.getElementById('alert-4').style.display = 'none'; return false;">&times;</a>
+            <p>INFO: All the planets can fit in the space between the earth and moon.</p>
           </div>
         </section>
 
         <section class="block container">
           <hr>
           <h3>Callouts</h3>
-          <p style="margin-bottom: 60px;">A Callout, in this context at least, is those sections of featured content that usually contain an icon, a title, and some text.  These are usually in a row, and call attention to highlighted features.</p>
-          <article class="callout">
-            <img class="callout__media" src="images/fpo-icon.png">
-            <h3 class="callout__title">Feature</h3>
-            <p>This callout is very impressive, and should command your attention</p>
-          </article>
+          <p>Callouts are those sections of featured content that usually contain an icon, a title, and some text.  These are usually in a row, and call attention to highlighted features.</p>
+          <p style="margin-bottom: 4em;">We're putting these into a 4 up grid</p>
+          <div class="gw md-two-up lg-four-up">
+            <div class="g">
+              <article class="callout">
+                <img class="callout__media" src="images/fpo-icon.png">
+                <h3 class="callout__title">Feature</h3>
+                <p>This callout is very impressive, and should command your attention</p>
+              </article>
+            </div>
+            <div class="g">
+              <article class="callout">
+                <img class="callout__media" src="images/fpo-icon.png">
+                <h3 class="callout__title">Feature</h3>
+                <p>This callout is very impressive, and should command your attention</p>
+              </article>
+            </div>
+            <div class="g">
+              <article class="callout">
+                <img class="callout__media" src="images/fpo-icon.png">
+                <h3 class="callout__title">Feature</h3>
+                <p>This callout is very impressive, and should command your attention</p>
+              </article>
+            </div>
+            <div class="g">
+              <article class="callout">
+                <img class="callout__media" src="images/fpo-icon.png">
+                <h3 class="callout__title">Feature</h3>
+                <p>This callout is very impressive, and should command your attention</p>
+              </article>
+            </div>
+          </div><!--/gw-->
         </section>
 
         <section class="block container">
           <hr>
           <h3>Modals</h3>
           <p>Basic Modals</p>
-          <button onclick="document.getElementById('modal').style.display = 'block';">Show Modal</button>
+          <button class="btn" onclick="document.getElementById('modal').style.display = 'block';">Show Modal</button>
           <div id="modal" class="modal">
             <div class="modal__container">
               <div class="modal__body" style="text-align: center;">

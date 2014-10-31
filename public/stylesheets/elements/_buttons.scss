@@ -41,7 +41,8 @@ button {
   display: inline-block;
   background: $color__black;
   color: $color__white;
-  @extend %sans--bold;
+  border: none;
+  @extend %sans--regular;
   font-size: 1.25em;
   text-transform: uppercase;
   text-decoration: none;

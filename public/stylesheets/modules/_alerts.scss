@@ -41,18 +41,9 @@
   position: relative;
   border-width: 1px;
   border-style: solid;
+  margin-bottom: 2em;
   padding: .5rem 4rem .5rem .5rem;
   line-height: 1.25;
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 2.25em;
-    width: 1px;
-    height: 100%;
-    border-left: 1px solid #000;
-  }
 
   // text
   p {
@@ -64,10 +55,11 @@
     position: absolute;
     top: 50%;
     margin-top: -.75em;
-    right: .5em;
+    right: 1em;
     opacity: .5;
     -webkit-transition: all .3s;
     transition: all .3s;
+    text-decoration: none;
     &:hover {
       opacity: 1;
     }

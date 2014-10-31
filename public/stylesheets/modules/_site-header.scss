@@ -36,17 +36,21 @@
   @include margin(0 auto 1 auto);
   text-decoration: none;
   display: block;
+  text-align: center;
   @include bp-at-least($breakpoint__md) {
     margin: 0;
     float: left;
+    text-align: left;
   }
 }
 
 .branding__logo {
-  float: left;
-  margin-right: 1*$unit;
   height: 3*$unit;
   width: 3*$unit;
+  @include bp-at-least($breakpoint__md) {
+    float: left;
+    margin-right: 1*$unit;
+  }
 }
 
 .branding__wordmark {

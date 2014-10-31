@@ -16,6 +16,7 @@
 //
 .block {
   @include margin(n n 1 n);
+  // These blocks don't contain visual styling, but you can add your own
 }
 
 
