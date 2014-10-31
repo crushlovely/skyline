@@ -1,0 +1,763 @@
+/**
+
+  @forms
+---------------------------------------------------------
+  elements/_forms.scss
+--------------------------------------------------------
+
+  Base styles for all forms and form related elements
+
+  Below you'll set styles for all forms, and if you have
+  any specific kinds of forms, like a search form that you
+  create a classname of form--search, put that at the
+  bottom of this partial.
+
+  This scss partial is pretty big.  Here's how it is
+  organized.
+
+  * Base styling on form elements
+
+  * Styles for form & form modules
+
+
+--------------------------------------------------------- */
+
+
+
+
+
+/* @text inputs
+--------------------------------------------------------
+
+  Base styles for inputs
+
+  Example: Text Input
+  <input type="text" name="schramburger" placeholder="Your Name">
+
+  Inputs can use sizing classes, .input--s .input--l
+
+  Example: Text Small Input
+  <input class="input--s" type="text" name="schramburger" placeholder="Your Name">
+
+  Example: Text Input
+  <input class="input--l" type="text" name="schramburger" placeholder="Your Name">
+
+------------------------------------------------------ */
+
+// Input elements
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+  @extend %serif--light;
+  width: 100%;
+  padding: 1em;
+  border: 1px solid $color__black;
+  color: $color__black;
+  &:focus {
+    outline: none;
+  }
+  // Size modifiers
+  &.input--s {
+    font-size: .5rem;
+  }
+
+  &.input--l {
+    font-size: 1.5rem;
+  }
+}
+
+// Define the input placeholder color to be reused in the
+// following code
+$input-placeholder: $color__black;
+
+// Placeholders
+input {
+  &::-webkit-input-placeholder {
+    color: $input-placeholder;
+    @extend %serif--light;
+  }
+  &:-moz-placeholder {
+    color: $input-placeholder;
+    @extend %serif--light;
+  }
+  &::-moz-placeholder {
+    color: $input-placeholder;
+  }
+  &:-ms-input-placeholder {
+    color: $input-placeholder;
+  }
+}
+// Placeholders on focus
+input:focus {
+  &::-webkit-input-placeholder {
+    opacity: .3;
+  }
+  &:-moz-placeholder {
+    opacity: .3;
+  }
+  &::-moz-placeholder {
+    opacity: .3;
+  }
+  &:-ms-input-placeholder {
+    opacity: .3;
+  }
+}
+
+
+// Submit
+// input[type=submit] {
+//   &:hover,
+//   &:focus {
+//     @extend .accent-bg;
+//     color: white;
+//   }
+// }
+
+
+
+/* @select inputs
+--------------------------------------------------------
+
+  Base styling for all selects
+
+  Example: Select Input
+  <select name="schramburger">
+    <option value="value-1">Option 1</option>
+    <option value="value-2">Option 2</option>
+    <option value="value-3">Option 3</option>
+    <option value="value-4">Option 4</option>
+  </select>
+
+  Selects can have added sizing classes, .select--s and .select--l
+
+  Example: Small select
+  <select name="schramburger" class="select--s">
+    <option value="value-1">Option 1</option>
+    <option value="value-2">Option 2</option>
+    <option value="value-3">Option 3</option>
+    <option value="value-4">Option 4</option>
+  </select>
+
+  Example: Large select
+  <select name="schramburger" class="select--l">
+    <option value="value-1">Option 1</option>
+    <option value="value-2">Option 2</option>
+    <option value="value-3">Option 3</option>
+    <option value="value-4">Option 4</option>
+  </select>
+
+------------------------------------------------------ */
+
+select {
+  width: 100%;
+  font-size: 1rem;
+  &.select--sm {
+    font-size: .5rem;
+  }
+  &.select--lg {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+/* @textareas
+--------------------------------------------------------
+
+  Base styling for textareas
+
+  Textareas can have .textarea--s or .textarea--l classes
+  for different sizes
+
+  Example: Textarea
+  <textarea name="schramburger">Hello, there.</textarea>
+
+  Example: Small Textarea
+  <textarea class="textarea--s" name="schramburger">Hello, there.</textarea>
+
+  Example: Large Textarea
+  <textarea class="textarea--l" name="schramburger">Hello, there.</textarea>
+
+------------------------------------------------------ */
+
+textarea {
+  width: 100%;
+  min-height: 6em;
+  padding: 1em;
+  border: solid 1px $color__black;
+  @extend %serif--light;
+  &:focus {
+    outline: none;
+  }
+  &.textarea--s {
+    font-size: .5rem;
+  }
+  &.textarea--l {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+/* @radio inputs
+--------------------------------------------------------
+
+  Base styling for radio inputs.  Radios are surrounded
+  by a label for better click targets.
+
+  Example: Radio
+  <label class="label--radio" for="radio-1"><input id="radio-1" type="radio" value="yes"> Radio label</label>
+
+  Example: Radio with super-long label
+  <label class="label--radio" for="radio-3"><input id="radio-3" type="radio" value="yes"> Radio label Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, accusantium ipsum animi perspiciatis officiis iure voluptatibus corporis. Enim, officia, tempora vitae libero dolore sint voluptatum. Blanditiis odit laudantium minus repellat</label>
+
+
+------------------------------------------------------ */
+
+input[type=radio] {
+  -webkit-appearance: none;
+  width: 1em;
+  height: 1em;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #444;
+  background: transparent;
+  &:checked {
+    background: #222;
+  }
+}
+
+
+.label--radio {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 1em;
+  input {
+    position: absolute;
+    top: .7em;
+    left: 0;
+  }
+}
+
+
+
+
+
+/* @checkbox inputs
+--------------------------------------------------------
+
+  Base styling for checkbox inputs.  Checkboxes are surrounded
+  by a label for better click targets.
+
+  Example: Checkbox
+  <label class="label--checkbox" for="checkbox-1"><input id="checkbox-1" type="checkbox" value="yes"> Checkbox label</label>
+
+  Example: Checkbox with super-long label
+  <label class="label--checkbox" for="checkbox-3"><input id="checkbox-3" type="checkbox" value="yes"> Checkbox label Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, accusantium ipsum animi perspiciatis officiis iure voluptatibus corporis. Enim, officia, tempora vitae libero dolore sint voluptatum. Blanditiis odit laudantium minus repellat</label>
+
+
+------------------------------------------------------ */
+
+input[type=checkbox] {
+  -webkit-appearance:none;
+  width: 1em;
+  height: 1em;
+  padding: 0;
+  border: 1px solid #444;
+  background: transparent;
+  &:checked {
+    background: #222;
+  }
+}
+
+.label--checkbox {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 1em;
+  input {
+    position: absolute;
+    top: .7em;
+    left: 0;
+  }
+}
+
+
+
+
+
+/* @textareas
+--------------------------------------------------------
+
+  Base styling for textareas
+
+  Example: Textarea
+  <textarea name="schramburger">Hello, there.</textarea>
+
+------------------------------------------------------ */
+
+textarea {
+  width: 100%;
+}
+
+
+
+
+
+/* @labels
+--------------------------------------------------------
+
+  Base styling for labels
+
+  Example: label
+  <label>Don't label me, I'm a free spirit</labe>
+
+------------------------------------------------------ */
+
+label {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+
+
+
+
+/* @form
+--------------------------------------------------------
+
+  Like the bootstrap convention, apply standard styling
+  on any form with the classname .form
+
+  This allows us to create modifier classnames like
+  .form--inline and .form--horizontal, which will be
+  laid out further below.
+
+------------------------------------------------------ */
+
+.form {
+  display: block;
+  padding: 2em;
+  border: 1px solid #888;
+  background: #eee;
+}
+
+
+
+
+/* @form-header
+--------------------------------------------------------
+
+  A form header usually consists of a title and some
+  copy.
+
+  Example: Form header
+  <header class="form__header">
+    <h2>Contact Us</h2>
+    <p>Use this form to contact us.  We love talking to
+    our customers.</p>
+  </header>
+
+-------------------------------------------------------- */
+
+.form__header {
+  padding-bottom: 1em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #888;
+}
+
+
+
+
+
+/* @fieldsets
+--------------------------------------------------------
+
+  Fieldsets group together related fields.
+
+  Example: Fieldset
+  <fieldset>
+    <legend>Personal Information</legend>
+    <article class="field">
+      <label class="field__label" for="exampleInput1">Your Name</label>
+      <input class="field__input="exampleInput1" type="text" required="required" placeholder="Your name">
+      <span class="field__feedback"></span>
+      <span class="field__hint"></span>
+    </article>
+    <article class="field">
+      <label class="field__label" for="exampleInput2">Your Email</label>
+      <input class="field__input="exampleInput2" type="email" required="required" placeholder="Your email">
+      <span class="field__feedback"></span>
+      <span class="field__hint">Must be a valid email address</span>
+    </article>
+  </fieldset>
+
+  Fieldsets are also nested inside other fieldsets.
+
+  Example: Nested Fieldsets
+  <fieldset>
+    <legend>Personal Information</legend>
+    <article class="field">
+      <label class="field__label" for="exampleInput31">Your Name</label>
+      <input class="field__input="exampleInput31" type="text" required="required" placeholder="Your name">
+      <span class="field__feedback"></span>
+      <span class="field__hint"></span>
+    </article>
+    <article class="field">
+      <label class="field__label" for="exampleInput32">Your Email</label>
+      <input class="field__input="exampleInput32" type="email" required="required" placeholder="Your email">
+      <span class="field__feedback"></span>
+      <span class="field__hint">Must be a valid email address</span>
+    </article>
+    <fieldset>
+      <legend>Address</legend>
+        <article class="field">
+          <label class="field__label" for="exampleInput33">Address 1</label>
+          <input class="field__input="exampleInput33" type="text" required="required" placeholder="Address 1">
+          <span class="field__feedback"></span>
+          <span class="field__hint">Must be a valid email address</span>
+        </article>
+        <article class="field">
+          <label class="field__label" for="exampleInput34">Address 2</label>
+          <input class="field__input="exampleInput34" type="text" required="required" placeholder="Address 2">
+          <span class="field__feedback"></span>
+          <span class="field__hint">Must be a valid email address</span>
+        </article>
+    </fieldset>
+  </fieldset>
+
+-------------------------------------------------------- */
+
+fieldset {
+  border: none;
+}
+
+
+
+/* @fields
+--------------------------------------------------------
+
+  A field is an article that contains the input and anything
+  related to the input.
+
+  Example: Field for a text input
+  <article class="field">
+    <label class="field__label" for="exampleInput1">Your Name</label>
+    <input class="field__input="exampleInput1" type="text" required="required" placeholder="Your name">
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field with hint
+  <article class="field">
+    <label class="field__label" for="exampleInput2">Your Email</label>
+    <input class="field__input="exampleInput2" type="email" required="required" placeholder="Your email">
+    <span class="field__feedback"></span>
+    <span class="field__hint">Must be a valid email address</span>
+  </article>
+
+  Example: Field with Error
+  <article class="field is-error">
+    <label class="field__label" for="exampleInput3">Your Email</label>
+    <input class="field__input="exampleInput3" type="email" required="required" placeholder="Your email">
+    <span class="field__feedback">Sorry, that email is in use.</span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field for a select input
+  <article class="field">
+    <label class="field__label" for="exampleInput4" >Select your favorite</label>
+    <select class="field__input input--select" id="exampleInput4"  name="favorite-food">
+      <option>Pizza</option>
+      <option>Tacos</option>
+      <option>Burgers</option>
+    </select>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field for a textarea input
+  <article class="field">
+    <label class="field__label">Your Name</label>
+    <textarea class="field__input">Hello, there</textarea>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+-------------------------------------------------------- */
+
+.field {
+  position: relative;
+  margin-bottom: 2em;
+}
+
+// Field label
+.field__label {
+  display: block;
+}
+
+// Field hint
+.field__hint {
+  color: #888;
+  font-size: .75em;
+  padding: .25em 0;
+  font-style: italic;
+}
+
+// Field feedback
+.field__feedback {
+  display: none; // hidden by default, shown if inside .is-error
+  font-size: .75em;
+  padding: .25em .75em;
+  background: rgba(218, 35, 0, 0.3);
+  color: white;
+}
+
+// Field error states
+.field.is-error {
+
+  .field__feedback {
+    display: block;
+  }
+  input {
+    border: 1px solid rgba(218, 35, 0, 0.3);
+  }
+
+}
+
+
+
+
+
+/* @input group
+--------------------------------------------------------
+
+  Group containing multiple inputs, helpful for lists
+  of radios or checkboxes.  Shown below in a field...
+
+  Example: Field with input group of radios
+  <article class="field">
+    <label class="field__label">Choose your favorite</label>
+    <div class="field__input-group">
+      <label class="label--radio" for="favorite-food-1"><input id="favorite-food-1" name="favorite-food" type="radio" value="pizza"> Pizza</label>
+      <label class="label--radio" for="favorite-food-2"><input id="favorite-food-2" name="favorite-food" type="radio" value="tacos"> Tacos</label>
+      <label class="label--radio" for="favorite-food-3"><input id="favorite-food-3" name="favorite-food" type="radio" value="burgers"> Burgers</label>
+    </div>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field with input group of checkboxes
+  <article class="field">
+    <label class="field__label">Select your favorites</label>
+    <div class="field__input-group">
+      <label class="label--checkbox" for="favorite-food-4"><input id="favorite-food-4" name="favorite-food-alt" type="checkbox" value="pizza"> Pizza</label>
+      <label class="label--checkbox" for="favorite-food-5"><input id="favorite-food-5" name="favorite-food-alt" type="checkbox" value="tacos"> Tacos</label>
+      <label class="label--checkbox" for="favorite-food-6"><input id="favorite-food-6" name="favorite-food-alt" type="checkbox" value="burgers"> Burgers</label>
+    </div>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+  Example: Field with input group list modifier
+  <article class="field">
+    <label class="field__label">Select your favorites</label>
+    <div class="field__input-group--list">
+      <label class="label--checkbox" for="favorite-food-7"><input id="favorite-food-7" name="favorite-food-alt2" type="checkbox" value="pizza"> Pizza</label>
+      <label class="label--checkbox" for="favorite-food-8"><input id="favorite-food-8" name="favorite-food-alt2" type="checkbox" value="tacos"> Tacos</label>
+      <label class="label--checkbox" for="favorite-food-9"><input id="favorite-food-9" name="favorite-food-alt2" type="checkbox" value="burgers"> Burgers</label>
+    </div>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </article>
+
+------------------------------------------------------ */
+
+.field__input-group {
+  display: block;
+  > * {
+    display: inline-block;
+    margin-right: .5em;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// List mod
+.field__input-group--list {
+  display: block;
+  > * {
+    display: block;
+    margin: .5em 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+
+
+
+
+
+/* @form action
+--------------------------------------------------------
+
+  Each form has an actions footer at the bottom to
+  submit the form
+
+  Example: Form Actions Footer
+  <footer class="form__actions">
+  <article class="field two-fiths">
+    <label class="field__label is-visually-hidden" for="exampleInput7" >Submit</label>
+    <input class="field__input btn btn--block" type="submit" id="exampleInput7" value="Submit">
+    <span  class="field__feedback"></span>
+    <span  class="field__hint"></span>
+  </article>
+  </footer>
+
+--------------------------------------------------------- */
+
+.form__actions {
+  padding-top: 1em;
+  margin-top: 2em;
+  border-top: 1px solid #888;
+}
+
+
+
+
+
+/* @inline forms using grids
+--------------------------------------------------------
+
+  Combine forms and grids to create an inline layout
+
+  Example: Inline Form
+  <form class="form">
+    <div class="gw">
+      <div class="g s-two-fifths">
+        <article class="field">
+          <label class="field__label is-visually-hidden" for="exampleInput8" >Email</label>
+          <input class="field__input" type="email" id="exampleInput8" placeholder="Your email">
+          <span  class="field__feedback"></span>
+          <span  class="field__hint"></span>
+        </article>
+      </div>
+      <div class="g s-two-fifths">
+        <article class="field">
+          <label class="field__label is-visually-hidden" for="exampleInput9" >Name</label>
+          <input class="field__input" type="email" id="exampleInput9" placeholder="Your name">
+          <span  class="field__feedback"></span>
+          <span  class="field__hint"></span>
+        </article>
+      </div>
+      <div class="g s-one-fifth">
+        <article class="field">
+          <input class="field__input btn" type="submit" value="submit">
+        </article>
+      </div>
+    </div>
+  </form>
+
+--------------------------------------------------------- */
+
+// Note - there are no special classses/styles for this -
+// This is here in the file just to illustrate how to do it.
+
+
+
+
+
+/* @horizontal forms using grids
+--------------------------------------------------------
+
+  Combine forms and grids to create a horizontal layout
+  Note: you'll move the .field__label outside of the .field article for this
+
+  Example: Inline Form
+  <form class="form">
+    <article class="field">
+      <div class="gw">
+        <div class="g s-one-half m-one-fifth">
+          <label class="field__label" for="exampleInput10" >Email</label>
+        </div>
+        <div class="g s-one-half m-four-fifths">
+          <input class="field__input" type="email" id="exampleInput10" placeholder="Your email">
+          <span  class="field__feedback"></span>
+          <span  class="field__hint"></span>
+        </div>
+      </div>
+    </article>
+    <article class="field">
+      <div class="gw">
+        <div class="g s-one-half m-one-fifth">
+          <label class="field__label" for="exampleInput11" >Name</label>
+        </div>
+        <div class="g s-one-half m-four-fifths">
+          <input class="field__input" type="text" id="exampleInput11" placeholder="Your name">
+          <span  class="field__feedback"></span>
+          <span  class="field__hint"></span>
+        </div>
+      </div>
+    </article>
+    <article class="field">
+      <div class="gw">
+        <div class="g s-one-half m-one-fifth">
+          <label class="field__label">Select your favorites</label>
+        </div>
+        <div class="g s-one-half m-four-fifths">
+          <div class="field__input-group--list">
+            <label class="label--checkbox" for="favorite-food-17"><input id="favorite-food-17" name="favorite-food-alt2" type="checkbox" value="pizza"> Pizza</label>
+            <label class="label--checkbox" for="favorite-food-18"><input id="favorite-food-18" name="favorite-food-alt2" type="checkbox" value="tacos"> Tacos</label>
+            <label class="label--checkbox" for="favorite-food-19"><input id="favorite-food-19" name="favorite-food-alt2" type="checkbox" value="burgers"> Burgers</label>
+          </div>
+          <span class="field__feedback"></span>
+          <span class="field__hint"></span>
+      </div>
+    </article>
+    <footer class="form__actions">
+      <div class="gw">
+        <div class="g s-one-half m-one-fifth">
+          <!--nuthin-->
+        </div>
+        <div class="g s-one-half m-four-fifths">
+          <article class="field">
+            <label class="field__label is-visually-hidden" for="submit10">Submit</label>
+            <input class="field__input btn btn" id="submit10" value="Submit">
+            <span class="field__feedback"></span>
+            <span class="field__hint"></span>
+          </article>
+        </div>
+      </div>
+    </footer>
+
+
+  </form>
+
+--------------------------------------------------------- */
+
+// Note - there are no special classses/styles for this -
+// This is here in the file just to illustrate how to do it.
+
+
+
+
+
+
+
+
+
+
+
+/* Have something else to add?
+--------------------------------------------------------
+  + Add any new modifier classes below
+------------------------------------------------------ */

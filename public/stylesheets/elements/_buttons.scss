@@ -1,0 +1,173 @@
+/**
+
+  @buttons
+--------------------------------------------------------
+  elements/_buttons.scss
+--------------------------------------------------------
+
+  Buttons are a common UI component in sites/apps.  They
+  are usually either anchor, button, or input elements
+  with a classname of 'btn'.  They provide an easily
+  identified clickable target.
+
+  Buttons commonly have modifying classes that apply
+  specific styles.  Examples of these are .btn--large and
+  .btn--inline
+
+  Also see _button-groups.scss, a related component
+  that arranges buttons into useful groups.
+
+  Example: Buttons using anchors
+  <p><a href="#" class="btn">Regular Button</a></p>
+
+  Example: Buttons using buttons
+  <p><button class="btn">Regular Button</button></p>
+
+------------------------------------------------------ */
+
+button {
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+}
+
+.btn {
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  background: $color__black;
+  color: $color__white;
+  @extend %sans--bold;
+  font-size: 1.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: .225em;
+  padding: 1em 1.25em;
+  @include transition(opacity 1s, background-color 1s, color 1s);
+  @include translateY(0); // force cpu
+  -webkit-backface-visibility: hidden;
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    opacity: .85;
+  }
+}
+
+
+
+
+
+/* @btn--secondary
+--------------------------------------------------------
+
+  A btn modifier, secondary
+
+  Example: .btn--secondary
+  <a class="btn btn--secondary">Secondary button</a>
+
+------------------------------------------------------ */
+
+.btn--secondary {
+  background: none;
+  border: 1px solid $color__white;
+  color: $color__white;
+}
+
+
+
+
+
+/* @btn--large
+--------------------------------------------------------
+
+  A btn modifier, large
+
+  Example: .btn--large
+  <a class="btn btn--large">Large button</a>
+
+------------------------------------------------------ */
+
+.btn--large {
+  @include bp-at-least($breakpoint__sm) {
+    font-size: 1.25em;
+    padding: 1.25em 2.75em;
+  }
+}
+
+
+
+
+
+/* @btn--inline
+--------------------------------------------------------
+
+  A btn modifier, if this button is in a paragraph or
+  in anything else that has a defined font-size, this
+  modifier will make the btn inherit the font-size of
+  the partent.
+
+  Example: .btn--inline
+  <p>Here's some text <a class="btn btn--inline">Cool button</a> text keeps going</p>
+
+------------------------------------------------------ */
+
+.btn--inline {
+  font-size: 1em;
+}
+
+
+
+/* @btn--block
+--------------------------------------------------------
+
+  A btn modifier - makes the button display block, 100%
+  width and aligns the text to the center.  Removes left
+  and right padding since the text is center aligned, it
+  is not needed.  Actually sometimes having the padding
+  on the left and right causes problems if the centered
+  text is quite long - so we just remove it.
+
+  Example: .btn--block
+  <a href="#" class="btn btn--block">Block button</a>
+
+------------------------------------------------------ */
+
+.btn--block {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+
+
+
+/* @btn--icon
+--------------------------------------------------------
+
+  A btn modifier - makes the button display block, 100%
+  width and aligns the text to the center.  Removes left
+  and right padding since the text is center aligned, it
+  is not needed.  Actually sometimes having the padding
+  on the left and right causes problems if the centered
+  text is quite long - so we just remove it.
+
+  Example: .btn--icon
+  <button class="btn--icon ss-icon">Block button</button>
+
+------------------------------------------------------ */
+
+.btn--icon {
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 1em;
+}
+

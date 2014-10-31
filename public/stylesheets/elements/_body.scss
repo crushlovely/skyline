@@ -1,0 +1,20 @@
+/**
+
+  @body
+--------------------------------------------------------
+  elements/_body.scss
+--------------------------------------------------------
+
+  Body should contain the document's default font and
+  background color for the content, if that background
+  color is different than the html.
+
+------------------------------------------------------ */
+
+
+body {
+  @extend %sans--regular;
+  line-height: 1.5;
+  color: $color__black;
+  background: $color__white;
+}
