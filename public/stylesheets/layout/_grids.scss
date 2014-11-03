@@ -92,10 +92,11 @@ $grid__float-at: $breakpoint__xs;
 .grid-wrap,
 .gw {
   @include clearfix();
+  display: block;
   // Sometimes, ul are used for grid wraps
   list-style-type: none;
   @include bp-at-least($grid__float-at) {
-    @include margin(n -.25 n -.25);
+    margin: 0 -.25*$unit;
   }
 }
 
@@ -106,12 +107,13 @@ $grid__float-at: $breakpoint__xs;
   @include clearfix();
   min-height: 1rem;
   position: relative;
-  @include padding(n n 1 n);
+  padding-bottom: 1*$unit;
+  width: 100%;
   &:last-of-type {
     padding-bottom: 0;
   }
   @include bp-at-least($grid__float-at) {
-    @include padding(n .25 .5 .25);
+    padding: 0 .25*$unit .75*$unit;
     float: left;
   }
 }

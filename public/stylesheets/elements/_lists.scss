@@ -44,8 +44,8 @@
 ul,
 ol {
   padding-left: 0;
-  margin-left: 0;
-  margin-bottom: 1em;
+  margin-left: 1*$unit;
+  margin-bottom: 1*$unit;
   li {
     line-height: 2;
   }

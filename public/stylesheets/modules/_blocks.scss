@@ -15,7 +15,8 @@
 // Blocks add bottom margin
 //
 .block {
-  @include margin(n n 1 n);
+  margin-bottom: 1*$unit;
+  padding-bottom: 1*$unit;
   // These blocks don't contain visual styling, but you can add your own
 }
 
@@ -23,6 +24,7 @@
 // Block with top and bottom margin
 //
 .block--ends {
-  @include margin(1 n 1 n);
+  margin-top: 1*$unit;
+  margin-bottom: 1*$unit;
 }
 

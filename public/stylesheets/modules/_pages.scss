@@ -5,28 +5,30 @@
   modules/_pages.scss
 --------------------------------------------------------
 
-  Pages have a title and content
+  Pages contain content and can have styled headers
+  and footers if you choose.
 
 -----------------------------------------------------  */
 
+// The page wrap
+//
 .page {
-  // Typography
-  p {
-    opacity: .8;
-    font-size: 2em;
-    margin: 0 auto 1em;
-    line-height: 1.5;
-    max-width: 25em;
-  }
+  // Add styles to the wrapper if you prefer
 }
 
-.page__title {
-  @include padding(n n 1 n);
-  h1 {
-    @extend %serif--light;
-    text-align: center;
-    font-size: (63/16)*1em;
-    line-height: 1.1em;
-    font-style: italic;
-  }
+
+// The header
+//
+.page__header {
+  padding: 1*$unit 0;
+  margin-bottom: 1*$unit;
+  background: rgba(0,0,0,.025);
+  border-bottom: 1px solid $color__grey--light;
+}
+
+
+// The footer
+//
+.page__footer {
+
 }

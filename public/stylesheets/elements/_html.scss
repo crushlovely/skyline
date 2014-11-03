@@ -14,6 +14,7 @@ html {
   // Check out base/_mixin-gradual-media-queries.scss
   // for an explaination of this mixin that gradually
   // changes the base fontsize.
+  font-size: 80%;
   @include gradual-queries(20em, 80%, 80em, 100%, 10em);
 }
 

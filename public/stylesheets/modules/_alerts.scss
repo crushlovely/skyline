@@ -31,8 +31,8 @@
     <p>Did you ever know that you're my hero?</p>
   </div>
 
-  NOTE: The code below uses declared color units, maybe it
-        makes sense to declare those in _vars.scss
+  NOTE: The code below uses declared color units, if you'd
+        prefer, declare those as variables in _vars.scss
 
 ------------------------------------------------------ */
 
@@ -41,7 +41,7 @@
   position: relative;
   border-width: 1px;
   border-style: solid;
-  margin-bottom: 2em;
+  margin-bottom: 2*$unit;
   padding: .5rem 4rem .5rem .5rem;
   line-height: 1.25;
 

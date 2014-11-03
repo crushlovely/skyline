@@ -77,84 +77,143 @@
 
       <main class="site-main" role="main">
 
-        <section class="block--ends container">
-          <h1>Example Modules</h1>
-          <p>Reusable components to jumpt start development.</p>
-          <p>Note that these components use basic inline javascript for some UI actions. Since Skyline focuses on CSS, you are free to use any javascript libraries you wish.</p>
-        </section>
+        <div class="page">
 
-        <section class="block container">
-          <h3>Alerts</h3>
-          <p>Alerts are UI elements that give important info.</p>
-          <div class="alert alert--error" id="alert-1">
-            <a href="#" class="btn__close" onclick="document.getElementById('alert-1').style.display = 'none'; return false;">&times;</a>
-            <p>ERROR: Uh oh - something went wrong</p>
-          </div>
-          <div class="alert alert--warning" id="alert-2">
-            <a href="#" class="btn__close" onclick="document.getElementById('alert-2').style.display = 'none'; return false;">&times;</a>
-            <p>WARNING: Shake it fast, but watch yourself.</p>
-          </div>
-          <div class="alert alert--success" id="alert-3">
-            <a href="#" class="btn__close" onclick="document.getElementById('alert-3').style.display = 'none'; return false;">&times;</a>
-            <p>SUCCESS: The secret to my success is that I learn, 25 hours a day!</p>
-          </div>
-          <div class="alert alert--info" id="alert-4">
-            <a href="#" class="btn__close" onclick="document.getElementById('alert-4').style.display = 'none'; return false;">&times;</a>
-            <p>INFO: All the planets can fit in the space between the earth and moon.</p>
-          </div>
-        </section>
+          <section class="page__header">
+            <div class="container">
+              <h1>Example Modules</h1>
+              <p>Reusable components to jumpt start development.</p>
+              <p>This whole page here is in a <code>.page</code> module. This is a module created for basic pages with a wrapping <code>.page</code> div, and a <code>.page__header</code> and optional <code>.page__footer</code>.</p>
+              <p>Note that these components use basic inline javascript for some UI actions. Since Skyline focuses on CSS, you are free to use any javascript libraries you wish.</p>
+            </div>
+          </section>
 
-        <section class="block container">
-          <hr>
-          <h3>Callouts</h3>
-          <p>Callouts are those sections of featured content that usually contain an icon, a title, and some text.  These are usually in a row, and call attention to highlighted features.</p>
-          <p style="margin-bottom: 4em;">We're putting these into a 4 up grid</p>
-          <div class="gw md-two-up lg-four-up">
-            <div class="g">
-              <article class="callout">
-                <img class="callout__media" src="images/fpo-icon.png">
-                <h3 class="callout__title">Feature</h3>
-                <p>This callout is very impressive, and should command your attention</p>
-              </article>
+          <section class="block container">
+            <h3>Alerts</h3>
+            <p>Alerts are UI elements that give important info.</p>
+            <div class="alert alert--error" id="alert-1">
+              <a href="#" class="btn__close" onclick="document.getElementById('alert-1').style.display = 'none'; return false;">&times;</a>
+              <p>ERROR: Uh oh - something went wrong</p>
             </div>
-            <div class="g">
-              <article class="callout">
-                <img class="callout__media" src="images/fpo-icon.png">
-                <h3 class="callout__title">Feature</h3>
-                <p>This callout is very impressive, and should command your attention</p>
-              </article>
+            <div class="alert alert--warning" id="alert-2">
+              <a href="#" class="btn__close" onclick="document.getElementById('alert-2').style.display = 'none'; return false;">&times;</a>
+              <p>WARNING: Shake it fast, but watch yourself.</p>
             </div>
-            <div class="g">
-              <article class="callout">
-                <img class="callout__media" src="images/fpo-icon.png">
-                <h3 class="callout__title">Feature</h3>
-                <p>This callout is very impressive, and should command your attention</p>
-              </article>
+            <div class="alert alert--success" id="alert-3">
+              <a href="#" class="btn__close" onclick="document.getElementById('alert-3').style.display = 'none'; return false;">&times;</a>
+              <p>SUCCESS: The secret to my success is that I learn, 25 hours a day!</p>
             </div>
-            <div class="g">
-              <article class="callout">
-                <img class="callout__media" src="images/fpo-icon.png">
-                <h3 class="callout__title">Feature</h3>
-                <p>This callout is very impressive, and should command your attention</p>
-              </article>
+            <div class="alert alert--info" id="alert-4">
+              <a href="#" class="btn__close" onclick="document.getElementById('alert-4').style.display = 'none'; return false;">&times;</a>
+              <p>INFO: All the planets can fit in the space between the earth and moon.</p>
             </div>
-          </div><!--/gw-->
-        </section>
+          </section>
 
-        <section class="block container">
-          <hr>
-          <h3>Modals</h3>
-          <p>Basic Modals</p>
-          <button class="btn" onclick="document.getElementById('modal').style.display = 'block';">Show Modal</button>
-          <div id="modal" class="modal">
-            <div class="modal__container">
-              <div class="modal__body" style="text-align: center;">
-                <p>Modal content</p>
+          <section class="block container">
+            <hr>
+            <h3>Callouts</h3>
+            <p>Callouts are those sections of featured content that usually contain an icon, a title, and some text.  These are usually in a row, and call attention to highlighted features.</p>
+            <p style="margin-bottom: 4em;">We're putting these into a small 2 up, medium 4 up grid</p>
+            <div class="gw sm-two-up md-four-up">
+              <div class="g">
+                <article class="callout">
+                  <img class="callout__media" src="images/fpo-icon.png">
+                  <h3 class="callout__title">Feature</h3>
+                  <p>This callout is very impressive, and should command your attention</p>
+                </article>
               </div>
+              <div class="g">
+                <article class="callout">
+                  <img class="callout__media" src="images/fpo-icon.png">
+                  <h3 class="callout__title">Feature</h3>
+                  <p>This callout is very impressive, and should command your attention</p>
+                </article>
+              </div>
+              <div class="g">
+                <article class="callout">
+                  <img class="callout__media" src="images/fpo-icon.png">
+                  <h3 class="callout__title">Feature</h3>
+                  <p>This callout is very impressive, and should command your attention</p>
+                </article>
+              </div>
+              <div class="g">
+                <article class="callout">
+                  <img class="callout__media" src="images/fpo-icon.png">
+                  <h3 class="callout__title">Feature</h3>
+                  <p>This callout is very impressive, and should command your attention</p>
+                </article>
+              </div>
+            </div><!--/gw-->
+          </section>
+
+
+          <section class="block container">
+            <hr>
+            <h3>Thumbnails</h3>
+            <p>Thumbnails are usually found within a grid or gallery, as a teaser or preview of more content. The common use is to have an image on top of a title and text below, while the entire thumbnail is an anchor link.</p>
+            <p style="margin-bottom: 4em;">We're putting these into a small 2 up, medium 4 up grid</p>
+            <div class="gw sm-two-up md-four-up">
+              <div class="g">
+                <a class="thumbnail" href="/some/article">
+                  <img class="thumbnail__media" src="/images/fpo-500x300.jpg">
+                  <div class="thumbnail__caption">
+                    <h2>A caption title here</h2>
+                    <p>Some more text follows to tease the rest of
+                    the content</p>
+                  </div>
+                </a>
+              </div>
+              <div class="g">
+                <a class="thumbnail" href="/some/article">
+                  <img class="thumbnail__media" src="/images/fpo-500x300.jpg">
+                  <div class="thumbnail__caption">
+                    <h2>A caption title here</h2>
+                    <p>Some more text follows to tease the rest of
+                    the content</p>
+                  </div>
+                </a>
+              </div>
+              <div class="g">
+                <a class="thumbnail" href="/some/article">
+                  <img class="thumbnail__media" src="/images/fpo-500x300.jpg">
+                  <div class="thumbnail__caption">
+                    <h2>A caption title here</h2>
+                    <p>Some more text follows to tease the rest of
+                    the content</p>
+                  </div>
+                </a>
+              </div>
+              <div class="g">
+                <a class="thumbnail" href="/some/article">
+                  <img class="thumbnail__media" src="/images/fpo-500x300.jpg">
+                  <div class="thumbnail__caption">
+                    <h2>A caption title here</h2>
+                    <p>Some more text follows to tease the rest of
+                    the content</p>
+                  </div>
+                </a>
+              </div>
+            </div><!--/gw-->
+          </section>
+
+
+          <section class="block container">
+            <hr>
+            <h3>Modals</h3>
+            <p>Click the button below to see our basic starter modal.</p>
+            <button class="btn" onclick="document.getElementById('modal').style.display = 'block'; return false;">Show Modal</button>
+            <div id="modal" class="modal">
+              <div class="modal__container">
+                <div class="modal__body" style="text-align: center;">
+                  <h2>Modal content</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam sint illo asperiores deleniti doloribus, voluptatibus distinctio dolorem ipsam non soluta officia architecto totam sit adipisci explicabo minima ad aliquam. Doloribus?</p>
+                </div>
+              </div>
+              <a href="#" class="modal__close" onclick="document.getElementById('modal').style.display = 'none'; return false;">&times;</a>
             </div>
-            <a href="#" class="modal__close" onclick="document.getElementById('modal').style.display = 'none';">&times;</a>
-          </div>
-        </section>
+          </section>
+
+        </div><!--/.page-->
 
       </main>
 

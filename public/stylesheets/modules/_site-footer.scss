@@ -13,7 +13,7 @@
 // The site's footer
 //
 .site-footer {
-  @include padding(.5 n .5 n);
+  padding: 1*$unit 0;
   border-top: 1px solid $color__grey--light;
 }
 

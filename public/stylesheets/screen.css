@@ -317,11 +317,6 @@ video {
   }
 
 ------------------------------------------------------ */
-.thumbnail__caption h2 {
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: 300;
-  font-style: normal; }
-
 body, .btn {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
@@ -338,7 +333,7 @@ body, .btn {
   }
 
 -------------------------------------------------------- */
-input, input::-webkit-input-placeholder, input:-moz-placeholder, textarea, .page__title h1, .thumbnail__caption h3 {
+input, input::-webkit-input-placeholder, input:-moz-placeholder, textarea {
   font-family: georgia, times;
   font-weight: 300;
   font-style: normal; }
@@ -1295,27 +1290,29 @@ hr {
   and font-size
 
 ------------------------------------------------------ */
-@media (min-width: 20em) {
-  html {
-    font-size: 80%; } }
-@media (min-width: 30em) {
-  html {
-    font-size: 83.33333%; } }
-@media (min-width: 40em) {
-  html {
-    font-size: 86.66667%; } }
-@media (min-width: 50em) {
-  html {
-    font-size: 90%; } }
-@media (min-width: 60em) {
-  html {
-    font-size: 93.33333%; } }
-@media (min-width: 70em) {
-  html {
-    font-size: 96.66667%; } }
-@media (min-width: 80em) {
-  html {
-    font-size: 100%; } }
+html {
+  font-size: 80%; }
+  @media (min-width: 20em) {
+    html {
+      font-size: 80%; } }
+  @media (min-width: 30em) {
+    html {
+      font-size: 83.33333%; } }
+  @media (min-width: 40em) {
+    html {
+      font-size: 86.66667%; } }
+  @media (min-width: 50em) {
+    html {
+      font-size: 90%; } }
+  @media (min-width: 60em) {
+    html {
+      font-size: 93.33333%; } }
+  @media (min-width: 70em) {
+    html {
+      font-size: 96.66667%; } }
+  @media (min-width: 80em) {
+    html {
+      font-size: 100%; } }
 
 * {
   -webkit-text-size-adjust: 100%;
@@ -1522,8 +1519,8 @@ body {
 ul,
 ol {
   padding-left: 0;
-  margin-left: 0;
-  margin-bottom: 1em; }
+  margin-left: 1.125em;
+  margin-bottom: 1.125em; }
   ul li,
   ol li {
     line-height: 2; }
@@ -1759,6 +1756,7 @@ em {
 .grid-wrap,
 .gw {
   zoom: 1;
+  display: block;
   list-style-type: none; }
   .grid-wrap:before, .grid-wrap:after,
   .gw:before,
@@ -1771,55 +1769,15 @@ em {
   @media screen and (min-width: 20em) {
     .grid-wrap,
     .gw {
-      margin-right: -0.42188em;
-      margin-left: -0.42188em; } }
-  @media screen and (min-width: 20em) and (min-width: 34.375em) {
-    .grid-wrap,
-    .gw {
-      margin-right: -0.5625em; } }
-  @media screen and (min-width: 20em) and (min-width: 48em) {
-    .grid-wrap,
-    .gw {
-      margin-right: -0.70313em; } }
-  @media screen and (min-width: 20em) and (min-width: 64em) {
-    .grid-wrap,
-    .gw {
-      margin-right: -0.77344em; } }
-  @media screen and (min-width: 20em) and (min-width: 78.5em) {
-    .grid-wrap,
-    .gw {
-      margin-right: -0.84375em; } }
-  @media screen and (min-width: 20em) and (min-width: 100em) {
-    .grid-wrap,
-    .gw {
-      margin-right: -1.125em; } }
-  @media screen and (min-width: 20em) and (min-width: 34.375em) {
-    .grid-wrap,
-    .gw {
-      margin-left: -0.5625em; } }
-  @media screen and (min-width: 20em) and (min-width: 48em) {
-    .grid-wrap,
-    .gw {
-      margin-left: -0.70313em; } }
-  @media screen and (min-width: 20em) and (min-width: 64em) {
-    .grid-wrap,
-    .gw {
-      margin-left: -0.77344em; } }
-  @media screen and (min-width: 20em) and (min-width: 78.5em) {
-    .grid-wrap,
-    .gw {
-      margin-left: -0.84375em; } }
-  @media screen and (min-width: 20em) and (min-width: 100em) {
-    .grid-wrap,
-    .gw {
-      margin-left: -1.125em; } }
+      margin: 0 -0.28125em; } }
 
 .grid,
 .g {
   zoom: 1;
   min-height: 1rem;
   position: relative;
-  padding-bottom: 1.6875em; }
+  padding-bottom: 1.125em;
+  width: 100%; }
   .grid:before, .grid:after,
   .g:before,
   .g:after {
@@ -1828,96 +1786,14 @@ em {
   .grid:after,
   .g:after {
     clear: both; }
-  @media screen and (min-width: 34.375em) {
-    .grid,
-    .g {
-      padding-bottom: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .grid,
-    .g {
-      padding-bottom: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .grid,
-    .g {
-      padding-bottom: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .grid,
-    .g {
-      padding-bottom: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .grid,
-    .g {
-      padding-bottom: 4.5em; } }
   .grid:last-of-type,
   .g:last-of-type {
     padding-bottom: 0; }
   @media screen and (min-width: 20em) {
     .grid,
     .g {
-      padding-right: 0.42188em;
-      padding-bottom: 0.84375em;
-      padding-left: 0.42188em;
+      padding: 0 0.28125em 0.84375em;
       float: left; } }
-  @media screen and (min-width: 20em) and (min-width: 34.375em) {
-    .grid,
-    .g {
-      padding-right: 0.5625em; } }
-  @media screen and (min-width: 20em) and (min-width: 48em) {
-    .grid,
-    .g {
-      padding-right: 0.70313em; } }
-  @media screen and (min-width: 20em) and (min-width: 64em) {
-    .grid,
-    .g {
-      padding-right: 0.77344em; } }
-  @media screen and (min-width: 20em) and (min-width: 78.5em) {
-    .grid,
-    .g {
-      padding-right: 0.84375em; } }
-  @media screen and (min-width: 20em) and (min-width: 100em) {
-    .grid,
-    .g {
-      padding-right: 1.125em; } }
-  @media screen and (min-width: 20em) and (min-width: 34.375em) {
-    .grid,
-    .g {
-      padding-bottom: 1.125em; } }
-  @media screen and (min-width: 20em) and (min-width: 48em) {
-    .grid,
-    .g {
-      padding-bottom: 1.40625em; } }
-  @media screen and (min-width: 20em) and (min-width: 64em) {
-    .grid,
-    .g {
-      padding-bottom: 1.54688em; } }
-  @media screen and (min-width: 20em) and (min-width: 78.5em) {
-    .grid,
-    .g {
-      padding-bottom: 1.6875em; } }
-  @media screen and (min-width: 20em) and (min-width: 100em) {
-    .grid,
-    .g {
-      padding-bottom: 2.25em; } }
-  @media screen and (min-width: 20em) and (min-width: 34.375em) {
-    .grid,
-    .g {
-      padding-left: 0.5625em; } }
-  @media screen and (min-width: 20em) and (min-width: 48em) {
-    .grid,
-    .g {
-      padding-left: 0.70313em; } }
-  @media screen and (min-width: 20em) and (min-width: 64em) {
-    .grid,
-    .g {
-      padding-left: 0.77344em; } }
-  @media screen and (min-width: 20em) and (min-width: 78.5em) {
-    .grid,
-    .g {
-      padding-left: 0.84375em; } }
-  @media screen and (min-width: 20em) and (min-width: 100em) {
-    .grid,
-    .g {
-      padding-left: 1.125em; } }
 
 /* @table grids
 --------------------------------------------------------
@@ -3092,7 +2968,7 @@ em {
   modules/_site.scss
 --------------------------------------------------------
 
-  This is a utility div to wrap the whole site
+  This is a utility div to wrap the whole site.
 
 ------------------------------------------------------ */
 /**
@@ -3107,44 +2983,13 @@ em {
 ------------------------------------------------------ */
 .site-header {
   zoom: 1;
-  padding-top: 1.6875em;
-  padding-bottom: 1.6875em;
+  padding: 1.125em 0;
   border-bottom: 1px solid #cfd2d2; }
   .site-header:before, .site-header:after {
     content: " ";
     display: table; }
   .site-header:after {
     clear: both; }
-  @media screen and (min-width: 34.375em) {
-    .site-header {
-      padding-top: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .site-header {
-      padding-top: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .site-header {
-      padding-top: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .site-header {
-      padding-top: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .site-header {
-      padding-top: 4.5em; } }
-  @media screen and (min-width: 34.375em) {
-    .site-header {
-      padding-bottom: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .site-header {
-      padding-bottom: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .site-header {
-      padding-bottom: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .site-header {
-      padding-bottom: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .site-header {
-      padding-bottom: 4.5em; } }
 
 /* @branding
 --------------------------------------------------------
@@ -3262,39 +3107,8 @@ em {
 
 ------------------------------------------------------ */
 .site-footer {
-  padding-top: 0.84375em;
-  padding-bottom: 0.84375em;
+  padding: 1.125em 0;
   border-top: 1px solid #cfd2d2; }
-  @media screen and (min-width: 34.375em) {
-    .site-footer {
-      padding-top: 1.125em; } }
-  @media screen and (min-width: 48em) {
-    .site-footer {
-      padding-top: 1.40625em; } }
-  @media screen and (min-width: 64em) {
-    .site-footer {
-      padding-top: 1.54688em; } }
-  @media screen and (min-width: 78.5em) {
-    .site-footer {
-      padding-top: 1.6875em; } }
-  @media screen and (min-width: 100em) {
-    .site-footer {
-      padding-top: 2.25em; } }
-  @media screen and (min-width: 34.375em) {
-    .site-footer {
-      padding-bottom: 1.125em; } }
-  @media screen and (min-width: 48em) {
-    .site-footer {
-      padding-bottom: 1.40625em; } }
-  @media screen and (min-width: 64em) {
-    .site-footer {
-      padding-bottom: 1.54688em; } }
-  @media screen and (min-width: 78.5em) {
-    .site-footer {
-      padding-bottom: 1.6875em; } }
-  @media screen and (min-width: 100em) {
-    .site-footer {
-      padding-bottom: 2.25em; } }
 
 .site-credits {
   display: block;
@@ -3307,38 +3121,15 @@ em {
   modules/_pages.scss
 --------------------------------------------------------
 
-  Pages have a title and content
+  Pages contain content and can have styled headers
+  and footers if you choose.
 
 -----------------------------------------------------  */
-.page p {
-  opacity: .8;
-  font-size: 2em;
-  margin: 0 auto 1em;
-  line-height: 1.5;
-  max-width: 25em; }
-
-.page__title {
-  padding-bottom: 1.6875em; }
-  @media screen and (min-width: 34.375em) {
-    .page__title {
-      padding-bottom: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .page__title {
-      padding-bottom: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .page__title {
-      padding-bottom: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .page__title {
-      padding-bottom: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .page__title {
-      padding-bottom: 4.5em; } }
-  .page__title h1 {
-    text-align: center;
-    font-size: 3.9375em;
-    line-height: 1.1em;
-    font-style: italic; }
+.page__header {
+  padding: 1.125em 0;
+  margin-bottom: 1.125em;
+  background: rgba(0, 0, 0, 0.025);
+  border-bottom: 1px solid #cfd2d2; }
 
 /**
 
@@ -3373,15 +3164,15 @@ em {
     <p>Did you ever know that you're my hero?</p>
   </div>
 
-  NOTE: The code below uses declared color units, maybe it
-        makes sense to declare those in _vars.scss
+  NOTE: The code below uses declared color units, if you'd
+        prefer, declare those as variables in _vars.scss
 
 ------------------------------------------------------ */
 .alert {
   position: relative;
   border-width: 1px;
   border-style: solid;
-  margin-bottom: 2em;
+  margin-bottom: 2.25em;
   padding: .5rem 4rem .5rem .5rem;
   line-height: 1.25; }
   .alert p {
@@ -3448,56 +3239,12 @@ em {
 
 -----------------------------------------------------  */
 .block {
-  margin-bottom: 1.6875em; }
-  @media screen and (min-width: 34.375em) {
-    .block {
-      margin-bottom: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .block {
-      margin-bottom: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .block {
-      margin-bottom: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .block {
-      margin-bottom: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .block {
-      margin-bottom: 4.5em; } }
+  margin-bottom: 1.125em;
+  padding-bottom: 1.125em; }
 
 .block--ends {
-  margin-top: 1.6875em;
-  margin-bottom: 1.6875em; }
-  @media screen and (min-width: 34.375em) {
-    .block--ends {
-      margin-top: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .block--ends {
-      margin-top: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .block--ends {
-      margin-top: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .block--ends {
-      margin-top: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .block--ends {
-      margin-top: 4.5em; } }
-  @media screen and (min-width: 34.375em) {
-    .block--ends {
-      margin-bottom: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .block--ends {
-      margin-bottom: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .block--ends {
-      margin-bottom: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .block--ends {
-      margin-bottom: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .block--ends {
-      margin-bottom: 4.5em; } }
+  margin-top: 1.125em;
+  margin-bottom: 1.125em; }
 
 /**
 
@@ -3524,7 +3271,7 @@ em {
 
 .callout__media {
   display: block;
-  margin: 0 auto 1em;
+  margin: 0 auto 1.125em;
   max-height: 3em;
   width: auto; }
 
@@ -3552,24 +3299,8 @@ em {
 ------------------------------------------------------ */
 .hero {
   position: relative;
-  background: #515554;
   overflow: hidden;
-  margin-bottom: 1.6875em; }
-  @media screen and (min-width: 34.375em) {
-    .hero {
-      margin-bottom: 2.25em; } }
-  @media screen and (min-width: 48em) {
-    .hero {
-      margin-bottom: 2.8125em; } }
-  @media screen and (min-width: 64em) {
-    .hero {
-      margin-bottom: 3.09375em; } }
-  @media screen and (min-width: 78.5em) {
-    .hero {
-      margin-bottom: 3.375em; } }
-  @media screen and (min-width: 100em) {
-    .hero {
-      margin-bottom: 4.5em; } }
+  margin-bottom: 1.125em; }
 
 .hero__media {
   position: relative;
@@ -3601,7 +3332,9 @@ em {
   modules/_modals.scss
 --------------------------------------------------------
 
-  These are very basic modals, there's room for improvement.
+  These are very basic modals, which simply cover the entire
+  viewport from top to bottom, left to right.  Feel free
+  to edit the styles of modals to suit your needs.
 
 --------------------------------------------------------- */
 .modal {
@@ -3751,36 +3484,36 @@ em {
   modules/_thumbnails.scss
 --------------------------------------------------------
 
-  description
+  Thumbnails are usually found within a grid or gallery,
+  as a teaser or preview of more content. The common
+  use is to have an image on top of a title and text
+  below, while the entire thumbnail is an anchor link.
+
+  Example: Thumbnail
+  <a class="thumbnail" href="/some/article">
+    <img class="thumbnail__media" src="http://fillmurray.com/400/200">
+    <div class="thumbnail__caption">
+      <h2>A caption title here</h2>
+      <p>Some more text follows to tease the rest of
+      the content</p>
+    </div>
+  </a>
 
 -----------------------------------------------------  */
-@media (min-width: 0em) {
-  .thumbnail {
-    font-size: 200%; } }
-@media (min-width: 20em) {
-  .thumbnail {
-    font-size: 150%; } }
-@media (min-width: 34.375em) {
-  .thumbnail {
-    font-size: 100%; } }
-.thumbnail a {
+.thumbnail {
+  display: block;
+  padding: 0.5625em;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   text-decoration: none; }
 
+.thumbnail__media {
+  margin-bottom: 0.5625em; }
+
 .thumbnail__caption {
-  text-align: center; }
-  .thumbnail__caption h2, .thumbnail__caption h3 {
-    text-decoration: none;
-    margin: 0; }
-  .thumbnail__caption h2 {
-    color: #485250;
-    font-size: 1.5em;
-    line-height: 1.8;
-    text-transform: uppercase;
-    letter-spacing: .05em; }
-  .thumbnail__caption h3 {
-    font-size: 1.5em;
-    line-height: 1;
-    font-style: italic; }
+  font-size: 85%; }
+  .thumbnail__caption h1, .thumbnail__caption h2, .thumbnail__caption h3, .thumbnail__caption h4, .thumbnail__caption h5, .thumbnail__caption h5 {
+    margin-bottom: 0.28125em; }
 
 /**
 

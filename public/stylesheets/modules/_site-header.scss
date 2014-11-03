@@ -11,7 +11,7 @@
 
 .site-header {
   @include clearfix();
-  @include padding(1 n 1 n);
+  padding: 1*$unit 0;
   border-bottom: 1px solid $color__grey--light;
 }
 

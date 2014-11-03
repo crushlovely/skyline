@@ -5,11 +5,14 @@
   modules/_modals.scss
 --------------------------------------------------------
 
-  These are very basic modals, there's room for improvement.
+  These are very basic modals, which simply cover the entire
+  viewport from top to bottom, left to right.  Feel free
+  to edit the styles of modals to suit your needs.
 
 --------------------------------------------------------- */
 
-// main modal box
+// Main modal box
+//
 .modal {
   position: fixed;
   z-index: 200; // modals live in level 2
@@ -19,6 +22,9 @@
   display: none; // is shown with js
 }
 
+
+// The content within the modal
+//
 .modal__container {
   position: absolute;
   top: 0; bottom: 0; left: 0; right: 0;
@@ -27,6 +33,9 @@
   @include padding(1 1 1 1);
 }
 
+
+// The close button
+//
 .modal__close {
   position: absolute;
   top: 0;

@@ -5,35 +5,38 @@
   modules/_thumbnails.scss
 --------------------------------------------------------
 
-  description
+  Thumbnails are usually found within a grid or gallery,
+  as a teaser or preview of more content. The common
+  use is to have an image on top of a title and text
+  below, while the entire thumbnail is an anchor link.
+
+  Example: Thumbnail
+  <a class="thumbnail" href="/some/article">
+    <img class="thumbnail__media" src="http://fillmurray.com/400/200">
+    <div class="thumbnail__caption">
+      <h2>A caption title here</h2>
+      <p>Some more text follows to tease the rest of
+      the content</p>
+    </div>
+  </a>
 
 -----------------------------------------------------  */
 
 .thumbnail {
-  @include gradual-queries(0, 200%, $breakpoint__sm, 100%, 20em);
- a {
+  display: block;
+  padding: .5*$unit;
+  background: rgba(0, 0, 0, .1);
+  border: 1px solid rgba(0, 0, 0, .15);
   text-decoration: none;
- }
+}
+
+.thumbnail__media {
+  margin-bottom: .5*$unit;
 }
 
 .thumbnail__caption {
-  text-align: center;
-  h2, h3 {
-    text-decoration: none;
-    margin: 0;
-  }
-  h2 {
-    color: #485250;
-    font-size: (24/16)*1em;
-    line-height: 1.8;
-    text-transform: uppercase;
-    letter-spacing: .05em;
-    @extend %sans--light;
-  }
-  h3 {
-    font-size: (24/16)*1em;
-    line-height: 1;
-    @extend %serif--light;
-    font-style: italic;
+  font-size: 85%;
+  h1, h2, h3, h4, h5, h5 {
+   margin-bottom: .25*$unit;
   }
 }
