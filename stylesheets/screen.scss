@@ -1,0 +1,206 @@
+/****
+
+  MAIN STYLESHEET for [* Site Name Here *]
+
+---------------------------------------------------------
+
+  BUILT WITH SKYLINE: EVOLVING CSS ARCHITECTURE
+
+  See README.md for info and credits
+
+
+
+---------------------------------------------------------
+
+  TABLE OF CONTENTS
+  @toc
+
+  - Dependencies .... anything needed to compile this project
+  - Base ............ foundations, mixins, functions, vars
+  - Composition ..... layout objects like grids, containers
+  - Elements ........ single elements
+  - Modules ......... objects created by combining elements
+
+---------------------------------------------------------  */
+
+
+
+
+
+/***
+
+  @dependencies
+---------------------------------------------------------
+
+  The only dependency here is Compass that allows us to
+  handle vendor prefixes, and a few other useful things.
+
+-----------------------------------------------------  */
+
+  @import "compass";
+
+
+
+
+
+
+/***
+
+  @base
+---------------------------------------------------------
+
+  Your CSS begins with some global variables, a reset which
+  is basically Normalize, some mixins, and a print stylesheet.
+
+-----------------------------------------------------  */
+
+  // Vars
+  //
+  @import "base/vars";
+
+  // Reset
+  //
+  @import "base/reset";
+
+  // Mixins
+  //
+  @import "base/mixin-breakpoints";
+
+  @import "base/mixin-clearfix";
+
+  @import "base/mixin-font-face-importer";
+
+  @import "base/mixin-gradual-media-queries";
+
+  // Global
+  //
+  @import "base/fonts";
+
+
+
+
+  // Print
+  //
+  @import "base/print";
+
+
+
+
+
+/***
+
+  @elements
+---------------------------------------------------------
+
+  Global styling of elements.
+
+---------------------------------------------------------  */
+
+
+
+  @import "elements/body";
+
+  @import "elements/buttons";
+
+  @import "elements/code";
+
+  @import "elements/forms";
+
+  @import "elements/headings";
+
+  @import "elements/hr";
+
+  @import "elements/html";
+
+  @import "elements/images";
+
+  @import "elements/icons";
+
+  @import "elements/links";
+
+  @import "elements/lists";
+
+  @import "elements/quotes";
+
+  @import "elements/text";
+
+
+
+
+
+
+
+  /***
+
+  @layout
+---------------------------------------------------------
+
+  A large portion of CSS is structural layout. You will use
+  these helpers to create the scaffolding that will support
+  the elements that make up your site.
+
+---------------------------------------------------------  */
+
+  @import "layout/container";
+
+  @import "layout/grids";
+
+  @import "layout/hide";
+
+  @import "layout/media";
+
+  @import "layout/ups";
+
+  @import "layout/widths";
+
+
+
+
+
+/***
+
+  @modules
+---------------------------------------------------------
+
+  Reusable objects that are combinations
+  of elements and other modules.
+
+  When you create a new module, make sure the partial is
+  in the modules directory, and you import it below
+
+  Comment out any partial you don't need for this app.
+
+---------------------------------------------------------  */
+
+
+  // Site Modules
+  //
+  @import "modules/site";
+
+  @import "modules/site-header";
+
+  @import "modules/site-main";
+
+  @import "modules/site-footer";
+
+
+  // Page Template Module
+  //
+  @import "modules/pages";
+
+
+  // Component Modules
+  //
+  @import "modules/alerts";
+
+  @import "modules/blocks";
+
+  @import "modules/callouts";
+
+  @import "modules/heroes";
+
+  @import "modules/modals";
+
+  @import "modules/thumbnails";
+
+  @import "modules/video-embeds";

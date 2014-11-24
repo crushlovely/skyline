@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="no-js ie9 ie"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js"><!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <title>***YOUR-TITLE-HERE***</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="stylesheets/screen.css">
+
+  <!-- Canonical Meta -->
+  <link rel="canonical" href="**YOUR-URL-HERE***">
+
+  <!-- Viewport Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta -->
+  <meta name="description" content="***YOUR-CONTENT-HERE-***">
+  <meta name="keywords" content="***YOUR-CONTENT-HERE-***">
+  <meta name="robots" content="INDEX,FOLLOW">
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
+  <meta name="apple-mobile-web-app-title" content="Unsung">
+
+  <!-- Facebook -->
+  <meta property="og:image" content="***YOUR-URUL-HERE-***/images/avatar.png">
+  <meta property="og:title" content="***YOUR-TITLE-HERE-***">
+  <meta property="og:site_name" content="***YOUR-SITE'S-NAME-HERE-***">
+  <meta property="og:url" content="***YOUR-URL-HERE-***">
+  <meta property="og:description" content="***YOUR-CONTENT-HERE-***">
+
+  <!-- Windows 8 Pin app to start screen -->
+  <meta name="msapplication-TileColor" content="#272727">
+  <meta name="msapplication-TileImage" content="***YOUR-URL-HERE-***/apple-touch-icon-precomposed.png">
+
+  <!-- grid example styles -->
+  <style>
+    .gx {
+      min-height: 4em;
+      background: rgba(193, 199, 208, .5);
+      border: 1px solid rgba(193, 199, 208, .5);
+    }
+  </style>
+
+
+  </head>
+
+
+  <body>
+
+    <div class="site">
+
+      <header class="site-header" role="banner">
+        <div class="container">
+          <a class="branding" href="index.html">
+            <img class="branding__logo" src="images/fpo-logo.png" alt="Site Name">
+            <h1 class="branding__wordmark">Site Name</h1>
+          </a>
+          <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="example-grids.html">Grids</a>
+            <a href="example-modules.html">Modules</a>
+            <a href="example-forms.html">Forms</a>
+            <a href="http://skyline.is">Skyline</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="site-main" role="main">
+
+        <section class="block--ends container">
+          <h1>Skyline uses a simple, but powerful responsive grid system.</h1>
+          <ol>
+            <li>Grid layout is achieved by using a wrapping div called a 'grid-wrapper', and shortened to the classname <code>.gw</code>.</li>
+            <li>Within the grid-wrapper, grid units are added, and shortened to the classname <code>.g</code>.</li>
+            <li>These grid units then have responsive classnames added to them, which specify their widths at different viewports.</li>
+            <li>Responsive width classes start with a two-letter prefix (xs, sm, md, lg, xl) and follow with the width, written in plain ol' English (one-half, two-thirds, seven-elevenths, etc.).
+          </ol>
+        </section>
+
+        <section class="block container">
+          <h1>A Basic grid example</h1>
+          <p>Each grid unit below has the following behavior:</p>
+          <ul>
+            <li><b>At SM: </b> one-half</li>
+            <li><b>At MD: </b> one-third</li>
+            <li><b>At LG: </b> one-sixth</li>
+            <li><b>At XL: </b> one-twelfth</li>
+          </ul>
+          <div class="gw">
+            <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
+          </div>
+        </section>
+
+        <section class="block container">
+          <h1>A nested grid example</h1>
+          <p>Grids can be nested within grids</p>
+          <div class="gw">
+            <div class="g sm-one-half">
+              <div class="gx">
+                <div class="gw">
+                  <div class="g sm-one-third"><div class="gx"></div></div>
+                  <div class="g sm-one-third"><div class="gx"></div></div>
+                  <div class="g sm-one-third"><div class="gx"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="g sm-one-half">
+              <div class="gx">
+                <div class="gw">
+                  <div class="g sm-one-half"><div class="gx"></div></div>
+                  <div class="g sm-one-half"><div class="gx"></div></div>
+                </div>
+              </div>
+            </div>
+             <div class="g sm-one-half">
+              <div class="gx">
+                <div class="gw">
+                  <div class="g sm-one-fourth"><div class="gx"></div></div>
+                  <div class="g sm-one-fourth"><div class="gx"></div></div>
+                  <div class="g sm-one-fourth"><div class="gx"></div></div>
+                  <div class="g sm-one-fourth"><div class="gx"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="g sm-one-half">
+              <div class="gx">
+                <div class="gw">
+                  <div class="g sm-one-fifth"><div class="gx"></div></div>
+                  <div class="g sm-one-fifth"><div class="gx"></div></div>
+                  <div class="g sm-one-fifth"><div class="gx"></div></div>
+                  <div class="g sm-one-fifth"><div class="gx"></div></div>
+                  <div class="g sm-one-fifth"><div class="gx"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="block container">
+          <h1>A double-nested grid example</h1>
+          <p>It's unusual, but sure - you can nest a nested grid.</p>
+          <div class="gw">
+            <div class="g sm-one-half">
+              <div class="gx">
+                <div class="gw">
+                  <div class="g sm-one-half">
+                    <div class="gx">
+                      <div class="gw">
+                        <div class="g sm-one-half">
+                          <div class="gx"></div>
+                        </div>
+                        <div class="g sm-one-half">
+                          <div class="gx"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="g sm-one-half">
+                    <div class="gx">
+                      <div class="gw">
+                        <div class="g sm-one-half">
+                          <div class="gx"></div>
+                        </div>
+                        <div class="g sm-one-half">
+                          <div class="gx"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="g sm-one-half">
+              <div class="gx">
+                <div class="gw">
+                  <div class="g sm-one-half">
+                    <div class="gx">
+                      <div class="gw">
+                        <div class="g sm-one-half">
+                          <div class="gx"></div>
+                        </div>
+                        <div class="g sm-one-half">
+                          <div class="gx"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="g sm-one-half">
+                    <div class="gx">
+                      <div class="gw">
+                        <div class="g sm-one-half">
+                          <div class="gx"></div>
+                        </div>
+                        <div class="g sm-one-half">
+                          <div class="gx"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <a class="branding" href="/">Site Name</a>
+          <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="example-grids.html">Grids</a>
+            <a href="example-modules.html">Modules</a>
+            <a href="example-forms.html">Forms</a>
+            <a href="http://skyline.is">Skyline</a>
+          </nav>
+          <small class="site-credits">&copy; 2014 Site Name</small>
+        </div>
+      </footer>
+
+    </div><!--/.site-->
+
+
+  </body>
+
+
+</html>

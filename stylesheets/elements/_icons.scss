@@ -1,0 +1,42 @@
+/**
+
+  @icons
+---------------------------------------------------------
+  elements/_icons.scss
+--------------------------------------------------------
+
+  Your icon set may vary. In this partial, you may wish
+  to load in a font icon set and add all the associated
+  css that goes with it. This would be the case if you
+  were using something like Symbolset or IcoMoon for
+  example.
+
+--------------------------------------------------------- */
+
+
+
+
+
+/* @icon
+--------------------------------------------------------
+
+  This is a basic icon element. We set some basic
+  structural styles and display styles to get the ball
+  rolling.
+
+  Example: Open Icon
+  <i class="icon icon--open">&plus;</i>
+
+  Example: Close Icon
+  <i class="icon icon--close">&times;</i>
+
+------------------------------------------------------ */
+
+
+.icon {
+  color: inherit;
+  display: inline-block;
+  font-style: normal;
+  vertical-align: middle;
+  font-size: 1em;
+}

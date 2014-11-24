@@ -1,0 +1,48 @@
+/**
+
+  @gradual media queries mixin
+--------------------------------------------------------
+  base/_mixin-gradual-media-queries.scss
+--------------------------------------------------------
+
+ The mixin takes arguments of start-width, start-fontsize,
+ end-width, and end-fontsize and then creates media queries
+ between those start and end points at another argument
+ value, increment-width.
+
+ Usage: Gradually increase the font size of the html
+ html {
+  @include gradual-queries(20em, 80%, 70em, 100%, 10em)
+ }
+
+ In the above usage, the html fontsize will start out at
+ 80% at 20em and end up at 100% at 70em - and the gradual
+ changes in the fontsize percentage will be calculated
+ at 10em intervals.
+
+------------------------------------------------------ */
+
+// FUNCTION TO STRIP UNITS
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+// GRADUAL QUERIES MIXIN
+@mixin gradual-queries($start-width, $start-fontsize, $end-width, $end-fontsize, $increment-width){
+  // Define number of increments, $increments
+  $increments: ceil((strip-units($end-width) - strip-units($start-width))/strip-units($increment-width));
+  // Define the difference between fontsizes
+  $fontsize-diff: (strip-units($end-fontsize) - strip-units($start-fontsize));
+  // The amount of difference, incrementally
+  $fontsize-increment: $fontsize-diff/$increments;
+  // Apply adjusted fontsizes
+  @for $i from 0 to $increments {
+   $increment-point: $start-width+$i*$increment-width;
+   @media (min-width: $increment-point){
+     font-size: $start-fontsize+($i*$fontsize-increment);
+   }
+  }
+  @media (min-width: $end-width){
+   font-size: $end-fontsize;
+  }
+}

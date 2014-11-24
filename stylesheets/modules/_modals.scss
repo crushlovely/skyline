@@ -1,0 +1,70 @@
+/**
+
+  @modals
+---------------------------------------------------------
+  modules/_modals.scss
+--------------------------------------------------------
+
+  These are very basic modals, which simply cover the entire
+  viewport from top to bottom, left to right.  Feel free
+  to edit the styles of modals to suit your needs.
+
+--------------------------------------------------------- */
+
+// Main modal box
+//
+.modal {
+  position: fixed;
+  z-index: 200; // modals live in level 2
+  top: 0; bottom: 0; left: 0; right: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, .96);
+  display: none; // is shown with js
+}
+
+
+// The content within the modal
+//
+.modal__container {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  display: table;
+  height: 100%;
+  padding: 1*$unit;
+}
+
+
+// The close button
+//
+.modal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: .33*$unit .33*$unit 0 0;
+  font-size: 3em;
+  border: none;
+  background: none;
+  display: block;
+  &:hover, &:focus {
+    outline: none;
+    border: none;
+    opacity: .85;
+  }
+  &:active {
+    opacity: .6;
+  }
+
+}
+
+// modal body
+.modal__body {
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+
+  p {
+    margin-bottom: 1em;
+    font-size: 1.5em;
+  }
+}
