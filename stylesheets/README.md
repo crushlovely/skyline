@@ -7,9 +7,15 @@ BUILT WITH SKYLINE: EVOLVING CSS ARCHITECTURE
 SKYLINE CREATED BY CRUSH & LOVELY ENGINEERING
 ---------------------------------------------------------
 
-Jeff Schram         Adam Becker         Jacob Fentress
-(@jeffschram)       (@adambbecker)      (@jfentress)
-jeffschram.com      adambbecker.com     jacobfentress.com
+Jeff Schram         Adam Becker         
+@jeffschram       @adambbecker  
+jeffschram.com      adambbecker.com     
+
+
+Jacob Fentress      Ryan Buttrey
+@jfentress        @ryanbuttrey
+jacobfentress.com   ryanbuttrey.com
+
 
 
 
@@ -23,16 +29,17 @@ Atomic Design.
 
 
 
+
 ADDITIONAL CREDITS, INSPIRATION & SHOUT OUTS
 ---------------------------------------------------------
 
 Harry Roberts       Chris Coyier        Brad Frost
-(@csswizardry)      (@crishcoyier)      (@bradfrost)
+@csswizardry        @crishcoyier        @bradfrost
 csswizardry.com     css-tricks.com      patternlab.io
 inuitcss.com        codepen.io          bradfrostweb.com
 
 Jonathan Snook      Nicole Sullivan
-(@snook)            (@stubbornella)
+@snook              @stubbornella
 smaccs.com          stubbornella.org
 
 - For some mixins, naming conventions and OOCSS concepts
