@@ -15,7 +15,6 @@
   TABLE OF CONTENTS
   @toc
 
-  - Dependencies .... anything needed to compile this project
   - Base ............ foundations, mixins, functions, vars
   - Composition ..... layout objects like grids, containers
   - Elements ........ single elements
@@ -23,21 +22,6 @@
 
 ---------------------------------------------------------  */
 
-
-
-
-
-/***
-
-  @dependencies
----------------------------------------------------------
-
-  The only dependency here is Compass that allows us to
-  handle vendor prefixes, and a few other useful things.
-
------------------------------------------------------  */
-
-  @import "compass";
 
 
 

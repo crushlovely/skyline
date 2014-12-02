@@ -8,12 +8,12 @@ SKYLINE CREATED BY CRUSH & LOVELY ENGINEERING
 ---------------------------------------------------------
 
 Jeff Schram         Adam Becker         
-@jeffschram       @adambbecker  
+@jeffschram         @adambbecker  
 jeffschram.com      adambbecker.com     
 
 
 Jacob Fentress      Ryan Buttrey
-@jfentress        @ryanbuttrey
+@jfentress          @ryanbuttrey
 jacobfentress.com   ryanbuttrey.com
 
 
