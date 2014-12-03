@@ -9,7 +9,7 @@
   classes that modify images.
 
   Note: You won't add any styling to these image classes,
-        these are just utility classes
+  these are just utility classes
 
 --------------------------------------------------------- */
 
@@ -78,7 +78,7 @@ img {
 
 
 
-/* @img--placement
+/* @image placement
 --------------------------------------------------------
 
   Here are a few helper classes to position images, particularly
@@ -98,22 +98,22 @@ img {
 .img--right {
     width: auto;
     float: right;
-    margin-bottom: 1em;
-    margin-left: 1em;
+    margin-bottom: 1*$unit;
+    margin-left: 1*$unit;
 }
 
 .img--left {
     width: auto;
     float:left;
-    margin-right: 1em;
-    margin-bottom: 1em;
+    margin-right: 1*$unit;
+    margin-bottom: 1*$unit;
 }
 
 .img--center {
     width: auto;
     display:block;
     margin-right:auto;
-    margin-bottom: 1em;
+    margin-bottom: 1*$unit;
     margin-left:auto;
 }
 
@@ -144,20 +144,3 @@ img {
 .img--circle {
   border-radius: 50%;
 }
-
-
-
-
-
-/* Have something else to add?
---------------------------------------------------------
-  + Add any new modifier classes below
------------------------------------------------------- */
-
-
-
-
-
-
-
-

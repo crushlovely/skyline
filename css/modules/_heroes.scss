@@ -37,7 +37,8 @@
   top: 50%;
   text-align: center;
   color: $color__white;
-  @include transform(translateY(-50%));
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
   font-size: .75em;
   @include bp-at-least($breakpoint__sm) {
     font-size: 1em;

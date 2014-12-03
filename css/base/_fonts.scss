@@ -11,9 +11,7 @@
   If you are using a webfont, use the @embed-font() mixin
   from base/_mixin-font-face-importer.scs
 
-  Usage: Create a font-family named "interstate-light"
-  using a font at /fonts/interstate_light-webfont.woff (and other extensions)
-
+  Usage: Create a font-family named "interstate-light" using a font at /fonts/interstate_light-webfont.woff (and other extensions)
   @include embed-font("interstate-light", "/fonts/interstate_light-webfont");
 
 -------------------------------------------------------- */

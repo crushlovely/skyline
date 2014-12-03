@@ -5,8 +5,7 @@
   elements/_links.scss
 --------------------------------------------------------
 
-  Links, <a> etc.
-  & Webkit tap highlight
+  Links, <a> etc. & Webkit tap highlight
 
   Example: link
   <p>Lorem Ipsum is simply <a href="#">dummy text</a> of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -25,8 +24,6 @@
 
 a {
   color: inherit;
-  @include transition(opacity 1s, background-color 1s, color 1s);
-  @include translateY(0); // force cpu
   &:hover,
   &:focus {
     opacity: .75;

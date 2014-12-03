@@ -14,9 +14,6 @@
   specific styles.  Examples of these are .btn--large and
   .btn--inline
 
-  Also see _button-groups.scss, a related component
-  that arranges buttons into useful groups.
-
   Example: Buttons using anchors
   <p><a href="#" class="btn">Regular Button</a></p>
 
@@ -48,9 +45,6 @@ button {
   text-decoration: none;
   letter-spacing: .225em;
   padding: 1em 1.25em;
-  @include transition(opacity 1s, background-color 1s, color 1s);
-  @include translateY(0); // force cpu
-  -webkit-backface-visibility: hidden;
   &:hover,
   &:focus,
   &:active {
@@ -123,6 +117,8 @@ button {
 
 
 
+
+
 /* @btn--block
 --------------------------------------------------------
 
@@ -149,6 +145,7 @@ button {
 
 
 
+
 /* @btn--icon
 --------------------------------------------------------
 
@@ -165,7 +162,6 @@ button {
 ------------------------------------------------------ */
 
 .btn--icon {
-  -webkit-appearance: none;
   background: transparent;
   border: none;
   padding: 0;

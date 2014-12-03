@@ -17,21 +17,6 @@ $text__baseline: (18/16)*1em;
 
 
 
-/* @anti-fout
------------------------------------------------------- */
-
-  h1, h2, h3, h4, h5, h6,
-  button, input, .btn,
-  p, ul, ol, blockquote {
-    .wf-loading & {
-      visibility: hidden;
-    }
-    .wf-active & {
-      visibility: visible;;
-    }
-  }
-
-
 
 
 

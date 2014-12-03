@@ -15,22 +15,12 @@
   TABLE OF CONTENTS
   @toc
 
-  - Dependencies .... anything needed to compile this project
   - Base ............ foundations, mixins, functions, vars
   - Composition ..... layout objects like grids, containers
   - Elements ........ single elements
   - Modules ......... objects created by combining elements
 
 ---------------------------------------------------------  */
-/***
-
-  @dependencies
----------------------------------------------------------
-
-  The only dependency here is Compass that allows us to
-  handle vendor prefixes, and a few other useful things.
-
------------------------------------------------------  */
 /***
 
   @base
@@ -232,9 +222,7 @@ video {
   If you are using a webfont, use the @embed-font() mixin
   from base/_mixin-font-face-importer.scs
 
-  Usage: Create a font-family named "interstate-light"
-  using a font at /fonts/interstate_light-webfont.woff (and other extensions)
-
+  Usage: Create a font-family named "interstate-light" using a font at /fonts/interstate_light-webfont.woff (and other extensions)
   @include embed-font("interstate-light", "/fonts/interstate_light-webfont");
 
 -------------------------------------------------------- */
@@ -376,9 +364,6 @@ body {
   specific styles.  Examples of these are .btn--large and
   .btn--inline
 
-  Also see _button-groups.scss, a related component
-  that arranges buttons into useful groups.
-
   Example: Buttons using anchors
   <p><a href="#" class="btn">Regular Button</a></p>
 
@@ -403,15 +388,7 @@ button:focus, button:active {
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: .225em;
-  padding: 1em 1.25em;
-  -moz-transition: opacity 1s, background-color 1s, color 1s;
-  -webkit-transition: opacity 1s, background-color 1s, color 1s;
-  transition: opacity 1s, background-color 1s, color 1s;
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-  -webkit-backface-visibility: hidden; }
+  padding: 1em 1.25em; }
   .btn:hover, .btn:focus, .btn:active {
     outline: none;
     opacity: .85; }
@@ -495,7 +472,6 @@ button:focus, button:active {
 
 ------------------------------------------------------ */
 .btn--icon {
-  -webkit-appearance: none;
   background: transparent;
   border: none;
   padding: 0;
@@ -1009,110 +985,6 @@ fieldset {
   margin-top: 2em;
   border-top: 1px solid #888; }
 
-/* @inline forms using grids
---------------------------------------------------------
-
-  Combine forms and grids to create an inline layout
-
-  Example: Inline Form
-  <form class="form">
-    <div class="gw">
-      <div class="g s-two-fifths">
-        <article class="field">
-          <label class="field__label is-visually-hidden" for="exampleInput8" >Email</label>
-          <input class="field__input" type="email" id="exampleInput8" placeholder="Your email">
-          <span  class="field__feedback"></span>
-          <span  class="field__hint"></span>
-        </article>
-      </div>
-      <div class="g s-two-fifths">
-        <article class="field">
-          <label class="field__label is-visually-hidden" for="exampleInput9" >Name</label>
-          <input class="field__input" type="email" id="exampleInput9" placeholder="Your name">
-          <span  class="field__feedback"></span>
-          <span  class="field__hint"></span>
-        </article>
-      </div>
-      <div class="g s-one-fifth">
-        <article class="field">
-          <input class="field__input btn" type="submit" value="submit">
-        </article>
-      </div>
-    </div>
-  </form>
-
---------------------------------------------------------- */
-/* @horizontal forms using grids
---------------------------------------------------------
-
-  Combine forms and grids to create a horizontal layout
-  Note: you'll move the .field__label outside of the .field article for this
-
-  Example: Inline Form
-  <form class="form">
-    <article class="field">
-      <div class="gw">
-        <div class="g s-one-half m-one-fifth">
-          <label class="field__label" for="exampleInput10" >Email</label>
-        </div>
-        <div class="g s-one-half m-four-fifths">
-          <input class="field__input" type="email" id="exampleInput10" placeholder="Your email">
-          <span  class="field__feedback"></span>
-          <span  class="field__hint"></span>
-        </div>
-      </div>
-    </article>
-    <article class="field">
-      <div class="gw">
-        <div class="g s-one-half m-one-fifth">
-          <label class="field__label" for="exampleInput11" >Name</label>
-        </div>
-        <div class="g s-one-half m-four-fifths">
-          <input class="field__input" type="text" id="exampleInput11" placeholder="Your name">
-          <span  class="field__feedback"></span>
-          <span  class="field__hint"></span>
-        </div>
-      </div>
-    </article>
-    <article class="field">
-      <div class="gw">
-        <div class="g s-one-half m-one-fifth">
-          <label class="field__label">Select your favorites</label>
-        </div>
-        <div class="g s-one-half m-four-fifths">
-          <div class="field__input-group--list">
-            <label class="label--checkbox" for="favorite-food-17"><input id="favorite-food-17" name="favorite-food-alt2" type="checkbox" value="pizza"> Pizza</label>
-            <label class="label--checkbox" for="favorite-food-18"><input id="favorite-food-18" name="favorite-food-alt2" type="checkbox" value="tacos"> Tacos</label>
-            <label class="label--checkbox" for="favorite-food-19"><input id="favorite-food-19" name="favorite-food-alt2" type="checkbox" value="burgers"> Burgers</label>
-          </div>
-          <span class="field__feedback"></span>
-          <span class="field__hint"></span>
-      </div>
-    </article>
-    <footer class="form__actions">
-      <div class="gw">
-        <div class="g s-one-half m-one-fifth">
-          <!--nuthin-->
-        </div>
-        <div class="g s-one-half m-four-fifths">
-          <article class="field">
-            <label class="field__label is-visually-hidden" for="submit10">Submit</label>
-            <input class="field__input btn btn" id="submit10" value="Submit">
-            <span class="field__feedback"></span>
-            <span class="field__hint"></span>
-          </article>
-        </div>
-      </div>
-    </footer>
-
-
-  </form>
-
---------------------------------------------------------- */
-/* Have something else to add?
---------------------------------------------------------
-  + Add any new modifier classes below
------------------------------------------------------- */
 /**
 
   @headings
@@ -1181,7 +1053,7 @@ hr {
 
 /**
 
-   @HTML
+   @html
 --------------------------------------------------------
   elements/_html.scss
 --------------------------------------------------------
@@ -1231,7 +1103,7 @@ html {
   classes that modify images.
 
   Note: You won't add any styling to these image classes,
-        these are just utility classes
+  these are just utility classes
 
 --------------------------------------------------------- */
 /* @images
@@ -1277,7 +1149,7 @@ img {
   width: auto;
   vertical-align: top; }
 
-/* @img--placement
+/* @image placement
 --------------------------------------------------------
 
   Here are a few helper classes to position images, particularly
@@ -1296,20 +1168,20 @@ img {
 .img--right {
   width: auto;
   float: right;
-  margin-bottom: 1em;
-  margin-left: 1em; }
+  margin-bottom: 1.125em;
+  margin-left: 1.125em; }
 
 .img--left {
   width: auto;
   float: left;
-  margin-right: 1em;
-  margin-bottom: 1em; }
+  margin-right: 1.125em;
+  margin-bottom: 1.125em; }
 
 .img--center {
   width: auto;
   display: block;
   margin-right: auto;
-  margin-bottom: 1em;
+  margin-bottom: 1.125em;
   margin-left: auto; }
 
 .img--right img,
@@ -1329,10 +1201,6 @@ img {
 .img--circle {
   border-radius: 50%; }
 
-/* Have something else to add?
---------------------------------------------------------
-  + Add any new modifier classes below
------------------------------------------------------- */
 /**
 
   @icons
@@ -1375,8 +1243,7 @@ img {
   elements/_links.scss
 --------------------------------------------------------
 
-  Links, <a> etc.
-  & Webkit tap highlight
+  Links, <a> etc. & Webkit tap highlight
 
   Example: link
   <p>Lorem Ipsum is simply <a href="#">dummy text</a> of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -1389,14 +1256,7 @@ img {
 
 ------------------------------------------------------ */
 a {
-  color: inherit;
-  -moz-transition: opacity 1s, background-color 1s, color 1s;
-  -webkit-transition: opacity 1s, background-color 1s, color 1s;
-  transition: opacity 1s, background-color 1s, color 1s;
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0); }
+  color: inherit; }
   a:hover, a:focus {
     opacity: .75; }
 
@@ -1479,8 +1339,6 @@ ol {
     <cite><a href="http://foo.com">The source</a></cite>
   </blockquote>
 
-  See http://html5doctor.com/cite-and-blockquote-reloaded/?utm_content=buffercaa2e&utm_source=buffer&utm_medium=twitter&utm_campaign=Buffer for details
-
 -------------------------------------------------------- */
 /* @pull-quote
 --------------------------------------------------------
@@ -1504,17 +1362,6 @@ ol {
   inline styles
 
 -----------------------------------------------------  */
-/* @anti-fout
------------------------------------------------------- */
-.wf-loading h1, .wf-loading h2, .wf-loading h3, .wf-loading h4, .wf-loading h5, .wf-loading h6, .wf-loading
-button, .wf-loading input, .wf-loading .btn, .wf-loading
-p, .wf-loading ul, .wf-loading ol, .wf-loading blockquote {
-  visibility: hidden; }
-.wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6, .wf-active
-button, .wf-active input, .wf-active .btn, .wf-active
-p, .wf-active ul, .wf-active ol, .wf-active blockquote {
-  visibility: visible; }
-
 /* @paragraphs
 --------------------------------------------------------
 
@@ -1581,7 +1428,7 @@ em {
   zoom: 1;
   margin-left: auto;
   margin-right: auto;
-  max-width: 64rem;
+  max-width: 64em;
   padding: 0 1.125em; }
   .container:before, .container:after {
     content: " ";
@@ -1596,7 +1443,7 @@ em {
   layout/_grids.scss
 --------------------------------------------------------
 
-  Manhattan uses a simple grid system.  It starts with
+  Skyline uses a simple grid system.  It starts with
   a wrapper div that can have a classname of .grid-wrap
   or .gw for short.  Inside of that div, you'll nest
   your grid units.  These are divs with classname of
@@ -1704,53 +1551,6 @@ em {
       padding: 0 0.28125em 0.84375em;
       float: left; } }
 
-/* @table grids
---------------------------------------------------------
-
-  Grids that behave as tables and table cells at certain
-  viewports
-
------------------------------------------------------- */
-@media screen and (min-width: 34.375em) {
-  .sm-tw {
-    display: table;
-    width: 100%;
-    border-collapse: collapse; }
-
-  .sm-t {
-    display: table-cell;
-    float: none;
-    vertical-align: top; } }
-@media screen and (min-width: 48em) {
-  .md-tw {
-    display: table;
-    width: 100%;
-    border-collapse: collapse; }
-
-  .md-t {
-    display: table-cell;
-    float: none;
-    vertical-align: top; } }
-@media screen and (min-width: 64em) {
-  .lg-tw {
-    display: table;
-    width: 100%;
-    border-collapse: collapse; }
-
-  .lg-t {
-    display: table-cell;
-    float: none;
-    vertical-align: top; } }
-@media screen and (min-width: 78.5em) {
-  .xl-tw {
-    display: table;
-    width: 100%;
-    border-collapse: collapse; }
-
-  .xl-t {
-    display: table-cell;
-    float: none;
-    vertical-align: top; } }
 /**
 
   @hide
@@ -2176,10 +1976,10 @@ em {
   currently.  (nice to have)
 
 ---------------------------------------------------------  */
-/* @viewport-agnostic
+/* @default
 --------------------------------------------------------
 
-  These will be honored at every viewport
+  Default sizes, no media queries
 
 ------------------------------------------------------ */
 .one-whole {
@@ -2983,7 +2783,7 @@ em {
   modules/_site-footer.scss
 --------------------------------------------------------
 
-  The site's footer
+  The site's global footer
 
 ------------------------------------------------------ */
 .site-footer {
@@ -3192,8 +2992,6 @@ em {
   top: 50%;
   text-align: center;
   color: white;
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   font-size: .75em; }
