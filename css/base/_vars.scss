@@ -97,16 +97,11 @@ $breakpoint__xxl: map-get($breakpoints, xxl);
 ---------------------------------------------------------
 
   Define an em value for $unit.  $unit is a helpful little
-  variable that serves to keep your spacing consistent and
-  looking at it's best.
+  variable that serves to keep your spacing consistent.
 
   Most often, 1 $unit is equal to your baseline height.  So
   if your baseline height is 1.125ems (which is 18px), that's
   the value of 1 $unit.
-
-  You can line your typography with $unit, space things out
-  nice and consistently, and other stuff that'll be written
-  here when I finsih this real copy.  Whoo.
 
 --------------------------------------------------------- */
 

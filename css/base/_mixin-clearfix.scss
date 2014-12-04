@@ -7,9 +7,6 @@
 
   Use @include clearfix(); in your CSS
 
-  Note: If you're using Compass, this mixin will replace the
-  Compass clearfix() mixin.
-
   Usage: clearfix mixin
   .element-to-clearfix {
     @include cleafix();
@@ -27,6 +24,6 @@
   &:after {
     clear: both;
   }
-  // For IE 6/7 (trigger hasLayout)s
+  // For IE 6/7 (trigger hasLayout)
   zoom: 1;
 }

@@ -16,8 +16,8 @@
   @toc
 
   - Base ............ foundations, mixins, functions, vars
-  - Composition ..... layout objects like grids, containers
   - Elements ........ single elements
+  - Layout .......... layout objects like grids, containers  
   - Modules ......... objects created by combining elements
 
 ---------------------------------------------------------  */
@@ -67,16 +67,11 @@
 ---------------------------------------------------------
 
   Define an em value for $unit.  $unit is a helpful little
-  variable that serves to keep your spacing consistent and
-  looking at it's best.
+  variable that serves to keep your spacing consistent.
 
   Most often, 1 $unit is equal to your baseline height.  So
   if your baseline height is 1.125ems (which is 18px), that's
   the value of 1 $unit.
-
-  You can line your typography with $unit, space things out
-  nice and consistently, and other stuff that'll be written
-  here when I finsih this real copy.  Whoo.
 
 --------------------------------------------------------- */
 /**
@@ -92,7 +87,7 @@
   Throughout Skyline, each partial has it's own resets.
   This allows you to only use what you need.
 
-  Credit goes to Normalize, which is used a lot.
+  Credit goes to Normalize
   http://normalize.css v2.1.0 http://git.io/normalize
 
 --------------------------------------------------------- */
@@ -132,7 +127,7 @@ video {
   Options include bp-at-least for min-width, bp-until
   for max-width, and bp-between for min and max widths.
 
-  You can use your breakpoint vars, or any value.
+  You can use your breakpoint vars, or any other value.
 
   Usage: styles at medium breakpoint
   .some-element {
@@ -157,9 +152,6 @@ video {
 --------------------------------------------------------
 
   Use @include clearfix(); in your CSS
-
-  Note: If you're using Compass, this mixin will replace the
-  Compass clearfix() mixin.
 
   Usage: clearfix mixin
   .element-to-clearfix {
@@ -207,6 +199,8 @@ video {
  80% at 20em and end up at 100% at 70em - and the gradual
  changes in the fontsize percentage will be calculated
  at 10em intervals.
+
+ See http://codepen.io/jeffschram/pen/IixqA
 
 ------------------------------------------------------ */
 /**
@@ -1971,10 +1965,6 @@ em {
   of 50% to a div once it is at a large size, use
   .lg-one-half
 
-  Note: we can probably write this partial using a recursive
-  loop instead of just writing it all out like it is
-  currently.  (nice to have)
-
 ---------------------------------------------------------  */
 /* @default
 --------------------------------------------------------
@@ -2932,10 +2922,9 @@ em {
   modules/_callouts.scss
 --------------------------------------------------------
 
-  A Callout, in this context at least, is those sections
-  of featured content that usually contain an icon, a
-  title, and some text.  These are usually in a row, and
-  call attention to highlighted features.
+  Callouts, are sections of featured content that usually 
+  contain an icon, a title, and some text. These are 
+  usually in a row, and call attention to highlighted features.
 
   Example: Callout
   <article class="callout">
@@ -2979,7 +2968,7 @@ em {
 .hero {
   position: relative;
   overflow: hidden;
-  margin-bottom: 1.125em; }
+  margin-bottom: 2.25em; }
 
 .hero__media {
   position: relative;

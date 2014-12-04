@@ -9,7 +9,7 @@
   Options include bp-at-least for min-width, bp-until
   for max-width, and bp-between for min and max widths.
 
-  You can use your breakpoint vars, or any value.
+  You can use your breakpoint vars, or any other value.
 
   Usage: styles at medium breakpoint
   .some-element {
@@ -28,7 +28,6 @@
 -----------------------------------------------------  */
 
 // Breakpoint At Least
-// [ bp ] Sublime snippet
 @mixin bp-at-least($device-width) {
   @media screen and (min-width: $device-width) {
     @content
@@ -36,7 +35,6 @@
 }
 
 // Breakpoint At Least
-// [ bpu ] Sublime snippet
 @mixin bp-until($device-width) {
   @media screen and (max-width: $device-width - 1) {
     @content
@@ -44,7 +42,6 @@
 }
 
 // Breakpoint At Least
-// [ bpb ] Sublime snippet
 @mixin bp-between($device-width, $device-width2) {
   @media screen and (min-width: $device-width) and (max-width: $device-width2) {
     @content
