@@ -26,6 +26,7 @@ The starter files contain as little code as possible.  The structure consists of
 |   ├── README.md (credits and info about Skyline SCSS)
 |
 |   ├── screen.scss (the manifest file that pulls in all the partials and compiles into screen.css)
+|
 ├── images
 |   ├── (placeholder images are here for example pages)
 |
