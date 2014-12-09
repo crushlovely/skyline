@@ -1,0 +1,337 @@
+/**
+
+  @variables
+---------------------------------------------------------
+  base/_vars.scss
+--------------------------------------------------------
+
+  Global variables are defined here.  Define your colors,
+  spacing and grid settings.
+
+-----------------------------------------------------  */
+/* @colors
+--------------------------------------------------------
+
+  All color variables are defined here.
+
+  We use real color names here.  Although naming something
+  like 'brand' is in fact more generic and reusable, we've
+  found that you end up creating variables like $brand-2,
+  $brand-alt, $brand-complimentary etc.  While coding,
+  it's too easy to forget what those mean.
+
+  If the design changes drastically and the brand changes
+  from, let's say, blue to green, just do a global
+  find/replace - that's what text editors are for.
+
+------------------------------------------------------ */
+/* @breakpoints
+---------------------------------------------------------
+
+  Define global breakpoints as xs, sm, md, lg, xl, xxl
+
+--------------------------------------------------------- */
+/* @global spacing unit
+---------------------------------------------------------
+
+  Define an em value for $unit.  $unit is a helpful little
+  variable that serves to keep your spacing consistent.
+
+  Most often, 1 $unit is equal to your baseline height.  So
+  if your baseline height is 1.125ems (which is 18px), that's
+  the value of 1 $unit.
+
+--------------------------------------------------------- */
+/**
+
+  @breakpoints mixin
+-----------------------------------------------------
+  base/_mixin-breakpoints.scss
+-----------------------------------------------------
+
+  This mixin makes using inline media queries easy.
+  Options include bp-at-least for min-width, bp-until
+  for max-width, and bp-between for min and max widths.
+
+  You can use your breakpoint vars, or any other value.
+
+  Usage: styles at medium breakpoint
+  .some-element {
+    @include bp-at-least($breakpoint__md){
+      your-styles: go-here;
+    }
+  }
+
+  Usage: styles at custom breakpoint
+  .another-element {
+    @include bp-until(83.45em){
+      your-styles: go-here;
+    }
+  }
+
+-----------------------------------------------------  */
+/**
+
+  @widths
+---------------------------------------------------------
+  layout/_widths.scss
+--------------------------------------------------------
+
+  Global Width Classes like .one-third or .seven-twelfths
+
+  If you append the width class with a size indicator, the
+  size will only be applied if the viewport is at least
+  at that breakpoint size.  For instance, to apply a width
+  of 50% to a div once the viewport is at a large size, use
+  .lg-one-half.
+
+  Set the widths configuration variables in this partial
+  to specify how many or how few classes you want available
+  in your project.
+
+---------------------------------------------------------  */
+/*
+  
+  Widths at default Viewport 
+
+---------------------------------------------------- */
+.one-whole {
+  width: 100%; }
+
+.one-half {
+  width: 50%; }
+
+.two-halves {
+  width: 100%; }
+
+.one-third {
+  width: 33.33333%; }
+
+.two-thirds {
+  width: 66.66667%; }
+
+.three-thirds {
+  width: 100%; }
+
+.one-fourth {
+  width: 25%; }
+
+.two-fourths {
+  width: 50%; }
+
+.three-fourths {
+  width: 75%; }
+
+.four-fourths {
+  width: 100%; }
+
+/* 
+  
+  Responsive widths at $breakpoint__xs 
+
+---------------------------------------------------- */
+@media screen and (min-width: 20em) {
+  .xs-one-whole {
+    width: 100%; }
+
+  .xs-one-half {
+    width: 50%; }
+
+  .xs-two-halves {
+    width: 100%; }
+
+  .xs-one-third {
+    width: 33.33333%; }
+
+  .xs-two-thirds {
+    width: 66.66667%; }
+
+  .xs-three-thirds {
+    width: 100%; }
+
+  .xs-one-fourth {
+    width: 25%; }
+
+  .xs-two-fourths {
+    width: 50%; }
+
+  .xs-three-fourths {
+    width: 75%; }
+
+  .xs-four-fourths {
+    width: 100%; } }
+/* 
+  
+  Responsive widths at $breakpoint__sm 
+
+---------------------------------------------------- */
+@media screen and (min-width: 34.375em) {
+  .sm-one-whole {
+    width: 100%; }
+
+  .sm-one-half {
+    width: 50%; }
+
+  .sm-two-halves {
+    width: 100%; }
+
+  .sm-one-third {
+    width: 33.33333%; }
+
+  .sm-two-thirds {
+    width: 66.66667%; }
+
+  .sm-three-thirds {
+    width: 100%; }
+
+  .sm-one-fourth {
+    width: 25%; }
+
+  .sm-two-fourths {
+    width: 50%; }
+
+  .sm-three-fourths {
+    width: 75%; }
+
+  .sm-four-fourths {
+    width: 100%; } }
+/* 
+  
+  Responsive widths at $breakpoint__md 
+
+---------------------------------------------------- */
+@media screen and (min-width: 48em) {
+  .md-one-whole {
+    width: 100%; }
+
+  .md-one-half {
+    width: 50%; }
+
+  .md-two-halves {
+    width: 100%; }
+
+  .md-one-third {
+    width: 33.33333%; }
+
+  .md-two-thirds {
+    width: 66.66667%; }
+
+  .md-three-thirds {
+    width: 100%; }
+
+  .md-one-fourth {
+    width: 25%; }
+
+  .md-two-fourths {
+    width: 50%; }
+
+  .md-three-fourths {
+    width: 75%; }
+
+  .md-four-fourths {
+    width: 100%; } }
+/* 
+  
+  Responsive widths at $breakpoint__lg 
+
+---------------------------------------------------- */
+@media screen and (min-width: 64em) {
+  .lg-one-whole {
+    width: 100%; }
+
+  .lg-one-half {
+    width: 50%; }
+
+  .lg-two-halves {
+    width: 100%; }
+
+  .lg-one-third {
+    width: 33.33333%; }
+
+  .lg-two-thirds {
+    width: 66.66667%; }
+
+  .lg-three-thirds {
+    width: 100%; }
+
+  .lg-one-fourth {
+    width: 25%; }
+
+  .lg-two-fourths {
+    width: 50%; }
+
+  .lg-three-fourths {
+    width: 75%; }
+
+  .lg-four-fourths {
+    width: 100%; } }
+/* 
+  
+  Responsive widths at $breakpoint__xl 
+
+---------------------------------------------------- */
+@media screen and (min-width: 78.5em) {
+  .xl-one-whole {
+    width: 100%; }
+
+  .xl-one-half {
+    width: 50%; }
+
+  .xl-two-halves {
+    width: 100%; }
+
+  .xl-one-third {
+    width: 33.33333%; }
+
+  .xl-two-thirds {
+    width: 66.66667%; }
+
+  .xl-three-thirds {
+    width: 100%; }
+
+  .xl-one-fourth {
+    width: 25%; }
+
+  .xl-two-fourths {
+    width: 50%; }
+
+  .xl-three-fourths {
+    width: 75%; }
+
+  .xl-four-fourths {
+    width: 100%; } }
+/* 
+  
+  Responsive widths at $breakpoint__xxl 
+
+---------------------------------------------------- */
+@media screen and (min-width: 100em) {
+  .xxl-one-whole {
+    width: 100%; }
+
+  .xxl-one-half {
+    width: 50%; }
+
+  .xxl-two-halves {
+    width: 100%; }
+
+  .xxl-one-third {
+    width: 33.33333%; }
+
+  .xxl-two-thirds {
+    width: 66.66667%; }
+
+  .xxl-three-thirds {
+    width: 100%; }
+
+  .xxl-one-fourth {
+    width: 25%; }
+
+  .xxl-two-fourths {
+    width: 50%; }
+
+  .xxl-three-fourths {
+    width: 75%; }
+
+  .xxl-four-fourths {
+    width: 100%; } }
