@@ -52,6 +52,9 @@
     <div class="g">...</div>
   </div>
   
+  NOTE: see some test styles at the bottom of this partial
+  Remove them if you don't need them.
+
 ------------------------------------------------------ */
 
 
@@ -109,5 +112,33 @@ $grid__bottom-spacing-when-floating: $grid__gutter-width;
   @include bp-at-least($grid__float-at) {
     padding: 0 .5*$grid__gutter-width $grid__bottom-spacing-when-floating;
     float: left;
+  }
+}
+
+
+// NOTE: The following styles can be used to test your grids
+// Add a classname of 'dev--grids' to the html and the .gx (grid example)
+// will be outlined according to the viewport
+.gx {
+  min-height: 4em;
+  background: rgba(193, 199, 208, .5);
+  border: 1px solid rgba(193, 199, 208, .5);
+  @include bp-at-least($breakpoint__xs) {
+    border-color: yellow;
+  }
+  @include bp-at-least($breakpoint__sm) {
+    border-color: green;
+  }
+  @include bp-at-least($breakpoint__md) {
+    border-color: blue;
+  }
+  @include bp-at-least($breakpoint__lg) {
+    border-color: purple;
+  }
+  @include bp-at-least($breakpoint__xl) {
+    border-color: red;
+  }
+  @include bp-at-least($breakpoint__xxl) {
+    border-color: black;
   }
 }

@@ -72,885 +72,310 @@
 -----------------------------------------------------  */
 /**
 
-  @widths
----------------------------------------------------------
-  layout/_widths.scss
+  @ups
+--------------------------------------------------------
+  layout/_ups.scss
 --------------------------------------------------------
 
-  Global Width Classes like .one-third or .seven-twelfths
-  and responsive widths like .sm-one-third or .xl-one-half
+  UPS?
 
-  If you append the width class with a size indicator, the
-  size will only be applied if the viewport is at least
-  at that breakpoint size.  For instance, to apply a width
-  of 50% to a div once the viewport is at a large size, use
-  .lg-one-half.
+  Yep, ups.  These are global classes that will set
+  their direct children to a specific width.  You will
+  mainly use these in grids, and maybe with tabs or
+  navigations.
 
-  Set the widths configuration variables below in this partial
+  For instance: four-up will set each child to 25%
+
+  Set the ups configuration variables below in this partial
   to specify how many or how few classes you want available
   in your project.
 
-  Dependencies:
-  To use this partial, you also need $breakpoints defined
-  in base/_vars.scss and the breakpoint mixin from
-  base/_mixin-breakpoints.scss
+  Example: Ups and grids
+  <div class="gw two-up">
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+  </div><!--/gw-->
+  <div class="gw three-up">
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+  </div><!--/gw-->
 
----------------------------------------------------------  */
+  Ups work like widths in that they have responsive behavior.  If
+  you prepend an up class with a responsive prefix, like (s for small
+  or m for medium) the behaviour will only kick in at those
+  viewports.
+
+  For example, if you want your gallery to be two-up at the smallest
+  viewport, four-up at medium, six-up at large, and eight-up on the largest then use
+  this.
+
+  Example: Responsive Ups
+  <div class="gw two-up m-four-up l-six-up xl-eight-up">
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+  </div><!--/gw-->
+  
+  
+
+-----------------------------------------------------  */
 /*
   
   Widths at default Viewport 
 
 ---------------------------------------------------- */
-.one-whole {
+.one-up > * {
   width: 100%; }
 
-.one-half {
+.two-up > * {
   width: 50%; }
 
-.one-third {
+.three-up > * {
   width: 33.33333%; }
 
-.two-thirds {
-  width: 66.66667%; }
-
-.one-fourth {
+.four-up > * {
   width: 25%; }
 
-.three-fourths {
-  width: 75%; }
-
-.one-fifth {
+.five-up > * {
   width: 20%; }
 
-.two-fifths {
-  width: 40%; }
-
-.three-fifths {
-  width: 60%; }
-
-.four-fifths {
-  width: 80%; }
-
-.one-sixth {
+.six-up > * {
   width: 16.66667%; }
 
-.five-sixths {
-  width: 83.33333%; }
-
-.one-seventh {
+.seven-up > * {
   width: 14.28571%; }
 
-.two-sevenths {
-  width: 28.57143%; }
-
-.three-sevenths {
-  width: 42.85714%; }
-
-.four-sevenths {
-  width: 57.14286%; }
-
-.five-sevenths {
-  width: 71.42857%; }
-
-.six-sevenths {
-  width: 85.71429%; }
-
-.one-eighth {
+.eight-up > * {
   width: 12.5%; }
 
-.three-eighths {
-  width: 37.5%; }
-
-.five-eighths {
-  width: 62.5%; }
-
-.seven-eighths {
-  width: 87.5%; }
-
-.one-ninth {
+.nine-up > * {
   width: 11.11111%; }
 
-.two-ninths {
-  width: 22.22222%; }
-
-.four-ninths {
-  width: 44.44444%; }
-
-.five-ninths {
-  width: 55.55556%; }
-
-.seven-ninths {
-  width: 77.77778%; }
-
-.eight-ninths {
-  width: 88.88889%; }
-
-.one-tenth {
+.ten-up > * {
   width: 10%; }
 
-.three-tenths {
-  width: 30%; }
-
-.seven-tenths {
-  width: 70%; }
-
-.nine-tenths {
-  width: 90%; }
-
-.one-eleventh {
+.eleven-up > * {
   width: 9.09091%; }
 
-.two-elevenths {
-  width: 18.18182%; }
-
-.three-elevenths {
-  width: 27.27273%; }
-
-.four-elevenths {
-  width: 36.36364%; }
-
-.five-elevenths {
-  width: 45.45455%; }
-
-.six-elevenths {
-  width: 54.54545%; }
-
-.seven-elevenths {
-  width: 63.63636%; }
-
-.eight-elevenths {
-  width: 72.72727%; }
-
-.nine-elevenths {
-  width: 81.81818%; }
-
-.ten-elevenths {
-  width: 90.90909%; }
-
-.one-twelfth {
+.twelve-up > * {
   width: 8.33333%; }
-
-.five-twelfths {
-  width: 41.66667%; }
-
-.seven-twelfths {
-  width: 58.33333%; }
-
-.eleven-twelfths {
-  width: 91.66667%; }
 
 /* 
   
-  Responsive widths at $breakpoint__sm
+  Responsive ups at $breakpoint__sm
 
 ---------------------------------------------------- */
 @media screen and (min-width: 34.375em) {
-  .sm-one-whole {
+  .sm-one-up > * {
     width: 100%; }
 
-  .sm-one-half {
+  .sm-two-up > * {
     width: 50%; }
 
-  .sm-one-third {
+  .sm-three-up > * {
     width: 33.33333%; }
 
-  .sm-two-thirds {
-    width: 66.66667%; }
-
-  .sm-one-fourth {
+  .sm-four-up > * {
     width: 25%; }
 
-  .sm-three-fourths {
-    width: 75%; }
-
-  .sm-one-fifth {
+  .sm-five-up > * {
     width: 20%; }
 
-  .sm-two-fifths {
-    width: 40%; }
-
-  .sm-three-fifths {
-    width: 60%; }
-
-  .sm-four-fifths {
-    width: 80%; }
-
-  .sm-one-sixth {
+  .sm-six-up > * {
     width: 16.66667%; }
 
-  .sm-five-sixths {
-    width: 83.33333%; }
-
-  .sm-one-seventh {
+  .sm-seven-up > * {
     width: 14.28571%; }
 
-  .sm-two-sevenths {
-    width: 28.57143%; }
-
-  .sm-three-sevenths {
-    width: 42.85714%; }
-
-  .sm-four-sevenths {
-    width: 57.14286%; }
-
-  .sm-five-sevenths {
-    width: 71.42857%; }
-
-  .sm-six-sevenths {
-    width: 85.71429%; }
-
-  .sm-one-eighth {
+  .sm-eight-up > * {
     width: 12.5%; }
 
-  .sm-three-eighths {
-    width: 37.5%; }
-
-  .sm-five-eighths {
-    width: 62.5%; }
-
-  .sm-seven-eighths {
-    width: 87.5%; }
-
-  .sm-one-ninth {
+  .sm-nine-up > * {
     width: 11.11111%; }
 
-  .sm-two-ninths {
-    width: 22.22222%; }
-
-  .sm-four-ninths {
-    width: 44.44444%; }
-
-  .sm-five-ninths {
-    width: 55.55556%; }
-
-  .sm-seven-ninths {
-    width: 77.77778%; }
-
-  .sm-eight-ninths {
-    width: 88.88889%; }
-
-  .sm-one-tenth {
+  .sm-ten-up > * {
     width: 10%; }
 
-  .sm-three-tenths {
-    width: 30%; }
-
-  .sm-seven-tenths {
-    width: 70%; }
-
-  .sm-nine-tenths {
-    width: 90%; }
-
-  .sm-one-eleventh {
+  .sm-eleven-up > * {
     width: 9.09091%; }
 
-  .sm-two-elevenths {
-    width: 18.18182%; }
-
-  .sm-three-elevenths {
-    width: 27.27273%; }
-
-  .sm-four-elevenths {
-    width: 36.36364%; }
-
-  .sm-five-elevenths {
-    width: 45.45455%; }
-
-  .sm-six-elevenths {
-    width: 54.54545%; }
-
-  .sm-seven-elevenths {
-    width: 63.63636%; }
-
-  .sm-eight-elevenths {
-    width: 72.72727%; }
-
-  .sm-nine-elevenths {
-    width: 81.81818%; }
-
-  .sm-ten-elevenths {
-    width: 90.90909%; }
-
-  .sm-one-twelfth {
-    width: 8.33333%; }
-
-  .sm-five-twelfths {
-    width: 41.66667%; }
-
-  .sm-seven-twelfths {
-    width: 58.33333%; }
-
-  .sm-eleven-twelfths {
-    width: 91.66667%; } }
+  .sm-twelve-up > * {
+    width: 8.33333%; } }
 /* 
   
-  Responsive widths at $breakpoint__md
+  Responsive ups at $breakpoint__md
 
 ---------------------------------------------------- */
 @media screen and (min-width: 48em) {
-  .md-one-whole {
+  .md-one-up > * {
     width: 100%; }
 
-  .md-one-half {
+  .md-two-up > * {
     width: 50%; }
 
-  .md-one-third {
+  .md-three-up > * {
     width: 33.33333%; }
 
-  .md-two-thirds {
-    width: 66.66667%; }
-
-  .md-one-fourth {
+  .md-four-up > * {
     width: 25%; }
 
-  .md-three-fourths {
-    width: 75%; }
-
-  .md-one-fifth {
+  .md-five-up > * {
     width: 20%; }
 
-  .md-two-fifths {
-    width: 40%; }
-
-  .md-three-fifths {
-    width: 60%; }
-
-  .md-four-fifths {
-    width: 80%; }
-
-  .md-one-sixth {
+  .md-six-up > * {
     width: 16.66667%; }
 
-  .md-five-sixths {
-    width: 83.33333%; }
-
-  .md-one-seventh {
+  .md-seven-up > * {
     width: 14.28571%; }
 
-  .md-two-sevenths {
-    width: 28.57143%; }
-
-  .md-three-sevenths {
-    width: 42.85714%; }
-
-  .md-four-sevenths {
-    width: 57.14286%; }
-
-  .md-five-sevenths {
-    width: 71.42857%; }
-
-  .md-six-sevenths {
-    width: 85.71429%; }
-
-  .md-one-eighth {
+  .md-eight-up > * {
     width: 12.5%; }
 
-  .md-three-eighths {
-    width: 37.5%; }
-
-  .md-five-eighths {
-    width: 62.5%; }
-
-  .md-seven-eighths {
-    width: 87.5%; }
-
-  .md-one-ninth {
+  .md-nine-up > * {
     width: 11.11111%; }
 
-  .md-two-ninths {
-    width: 22.22222%; }
-
-  .md-four-ninths {
-    width: 44.44444%; }
-
-  .md-five-ninths {
-    width: 55.55556%; }
-
-  .md-seven-ninths {
-    width: 77.77778%; }
-
-  .md-eight-ninths {
-    width: 88.88889%; }
-
-  .md-one-tenth {
+  .md-ten-up > * {
     width: 10%; }
 
-  .md-three-tenths {
-    width: 30%; }
-
-  .md-seven-tenths {
-    width: 70%; }
-
-  .md-nine-tenths {
-    width: 90%; }
-
-  .md-one-eleventh {
+  .md-eleven-up > * {
     width: 9.09091%; }
 
-  .md-two-elevenths {
-    width: 18.18182%; }
-
-  .md-three-elevenths {
-    width: 27.27273%; }
-
-  .md-four-elevenths {
-    width: 36.36364%; }
-
-  .md-five-elevenths {
-    width: 45.45455%; }
-
-  .md-six-elevenths {
-    width: 54.54545%; }
-
-  .md-seven-elevenths {
-    width: 63.63636%; }
-
-  .md-eight-elevenths {
-    width: 72.72727%; }
-
-  .md-nine-elevenths {
-    width: 81.81818%; }
-
-  .md-ten-elevenths {
-    width: 90.90909%; }
-
-  .md-one-twelfth {
-    width: 8.33333%; }
-
-  .md-five-twelfths {
-    width: 41.66667%; }
-
-  .md-seven-twelfths {
-    width: 58.33333%; }
-
-  .md-eleven-twelfths {
-    width: 91.66667%; } }
+  .md-twelve-up > * {
+    width: 8.33333%; } }
 /* 
   
-  Responsive widths at $breakpoint__lg
+  Responsive ups at $breakpoint__lg
 
 ---------------------------------------------------- */
 @media screen and (min-width: 64em) {
-  .lg-one-whole {
+  .lg-one-up > * {
     width: 100%; }
 
-  .lg-one-half {
+  .lg-two-up > * {
     width: 50%; }
 
-  .lg-one-third {
+  .lg-three-up > * {
     width: 33.33333%; }
 
-  .lg-two-thirds {
-    width: 66.66667%; }
-
-  .lg-one-fourth {
+  .lg-four-up > * {
     width: 25%; }
 
-  .lg-three-fourths {
-    width: 75%; }
-
-  .lg-one-fifth {
+  .lg-five-up > * {
     width: 20%; }
 
-  .lg-two-fifths {
-    width: 40%; }
-
-  .lg-three-fifths {
-    width: 60%; }
-
-  .lg-four-fifths {
-    width: 80%; }
-
-  .lg-one-sixth {
+  .lg-six-up > * {
     width: 16.66667%; }
 
-  .lg-five-sixths {
-    width: 83.33333%; }
-
-  .lg-one-seventh {
+  .lg-seven-up > * {
     width: 14.28571%; }
 
-  .lg-two-sevenths {
-    width: 28.57143%; }
-
-  .lg-three-sevenths {
-    width: 42.85714%; }
-
-  .lg-four-sevenths {
-    width: 57.14286%; }
-
-  .lg-five-sevenths {
-    width: 71.42857%; }
-
-  .lg-six-sevenths {
-    width: 85.71429%; }
-
-  .lg-one-eighth {
+  .lg-eight-up > * {
     width: 12.5%; }
 
-  .lg-three-eighths {
-    width: 37.5%; }
-
-  .lg-five-eighths {
-    width: 62.5%; }
-
-  .lg-seven-eighths {
-    width: 87.5%; }
-
-  .lg-one-ninth {
+  .lg-nine-up > * {
     width: 11.11111%; }
 
-  .lg-two-ninths {
-    width: 22.22222%; }
-
-  .lg-four-ninths {
-    width: 44.44444%; }
-
-  .lg-five-ninths {
-    width: 55.55556%; }
-
-  .lg-seven-ninths {
-    width: 77.77778%; }
-
-  .lg-eight-ninths {
-    width: 88.88889%; }
-
-  .lg-one-tenth {
+  .lg-ten-up > * {
     width: 10%; }
 
-  .lg-three-tenths {
-    width: 30%; }
-
-  .lg-seven-tenths {
-    width: 70%; }
-
-  .lg-nine-tenths {
-    width: 90%; }
-
-  .lg-one-eleventh {
+  .lg-eleven-up > * {
     width: 9.09091%; }
 
-  .lg-two-elevenths {
-    width: 18.18182%; }
-
-  .lg-three-elevenths {
-    width: 27.27273%; }
-
-  .lg-four-elevenths {
-    width: 36.36364%; }
-
-  .lg-five-elevenths {
-    width: 45.45455%; }
-
-  .lg-six-elevenths {
-    width: 54.54545%; }
-
-  .lg-seven-elevenths {
-    width: 63.63636%; }
-
-  .lg-eight-elevenths {
-    width: 72.72727%; }
-
-  .lg-nine-elevenths {
-    width: 81.81818%; }
-
-  .lg-ten-elevenths {
-    width: 90.90909%; }
-
-  .lg-one-twelfth {
-    width: 8.33333%; }
-
-  .lg-five-twelfths {
-    width: 41.66667%; }
-
-  .lg-seven-twelfths {
-    width: 58.33333%; }
-
-  .lg-eleven-twelfths {
-    width: 91.66667%; } }
+  .lg-twelve-up > * {
+    width: 8.33333%; } }
 /* 
   
-  Responsive widths at $breakpoint__xl
+  Responsive ups at $breakpoint__xl
 
 ---------------------------------------------------- */
 @media screen and (min-width: 78.5em) {
-  .xl-one-whole {
+  .xl-one-up > * {
     width: 100%; }
 
-  .xl-one-half {
+  .xl-two-up > * {
     width: 50%; }
 
-  .xl-one-third {
+  .xl-three-up > * {
     width: 33.33333%; }
 
-  .xl-two-thirds {
-    width: 66.66667%; }
-
-  .xl-one-fourth {
+  .xl-four-up > * {
     width: 25%; }
 
-  .xl-three-fourths {
-    width: 75%; }
-
-  .xl-one-fifth {
+  .xl-five-up > * {
     width: 20%; }
 
-  .xl-two-fifths {
-    width: 40%; }
-
-  .xl-three-fifths {
-    width: 60%; }
-
-  .xl-four-fifths {
-    width: 80%; }
-
-  .xl-one-sixth {
+  .xl-six-up > * {
     width: 16.66667%; }
 
-  .xl-five-sixths {
-    width: 83.33333%; }
-
-  .xl-one-seventh {
+  .xl-seven-up > * {
     width: 14.28571%; }
 
-  .xl-two-sevenths {
-    width: 28.57143%; }
-
-  .xl-three-sevenths {
-    width: 42.85714%; }
-
-  .xl-four-sevenths {
-    width: 57.14286%; }
-
-  .xl-five-sevenths {
-    width: 71.42857%; }
-
-  .xl-six-sevenths {
-    width: 85.71429%; }
-
-  .xl-one-eighth {
+  .xl-eight-up > * {
     width: 12.5%; }
 
-  .xl-three-eighths {
-    width: 37.5%; }
-
-  .xl-five-eighths {
-    width: 62.5%; }
-
-  .xl-seven-eighths {
-    width: 87.5%; }
-
-  .xl-one-ninth {
+  .xl-nine-up > * {
     width: 11.11111%; }
 
-  .xl-two-ninths {
-    width: 22.22222%; }
-
-  .xl-four-ninths {
-    width: 44.44444%; }
-
-  .xl-five-ninths {
-    width: 55.55556%; }
-
-  .xl-seven-ninths {
-    width: 77.77778%; }
-
-  .xl-eight-ninths {
-    width: 88.88889%; }
-
-  .xl-one-tenth {
+  .xl-ten-up > * {
     width: 10%; }
 
-  .xl-three-tenths {
-    width: 30%; }
-
-  .xl-seven-tenths {
-    width: 70%; }
-
-  .xl-nine-tenths {
-    width: 90%; }
-
-  .xl-one-eleventh {
+  .xl-eleven-up > * {
     width: 9.09091%; }
 
-  .xl-two-elevenths {
-    width: 18.18182%; }
-
-  .xl-three-elevenths {
-    width: 27.27273%; }
-
-  .xl-four-elevenths {
-    width: 36.36364%; }
-
-  .xl-five-elevenths {
-    width: 45.45455%; }
-
-  .xl-six-elevenths {
-    width: 54.54545%; }
-
-  .xl-seven-elevenths {
-    width: 63.63636%; }
-
-  .xl-eight-elevenths {
-    width: 72.72727%; }
-
-  .xl-nine-elevenths {
-    width: 81.81818%; }
-
-  .xl-ten-elevenths {
-    width: 90.90909%; }
-
-  .xl-one-twelfth {
-    width: 8.33333%; }
-
-  .xl-five-twelfths {
-    width: 41.66667%; }
-
-  .xl-seven-twelfths {
-    width: 58.33333%; }
-
-  .xl-eleven-twelfths {
-    width: 91.66667%; } }
+  .xl-twelve-up > * {
+    width: 8.33333%; } }
 /* 
   
-  Responsive widths at $breakpoint__xxl
+  Responsive ups at $breakpoint__xxl
 
 ---------------------------------------------------- */
 @media screen and (min-width: 100em) {
-  .xxl-one-whole {
+  .xxl-one-up > * {
     width: 100%; }
 
-  .xxl-one-half {
+  .xxl-two-up > * {
     width: 50%; }
 
-  .xxl-one-third {
+  .xxl-three-up > * {
     width: 33.33333%; }
 
-  .xxl-two-thirds {
-    width: 66.66667%; }
-
-  .xxl-one-fourth {
+  .xxl-four-up > * {
     width: 25%; }
 
-  .xxl-three-fourths {
-    width: 75%; }
-
-  .xxl-one-fifth {
+  .xxl-five-up > * {
     width: 20%; }
 
-  .xxl-two-fifths {
-    width: 40%; }
-
-  .xxl-three-fifths {
-    width: 60%; }
-
-  .xxl-four-fifths {
-    width: 80%; }
-
-  .xxl-one-sixth {
+  .xxl-six-up > * {
     width: 16.66667%; }
 
-  .xxl-five-sixths {
-    width: 83.33333%; }
-
-  .xxl-one-seventh {
+  .xxl-seven-up > * {
     width: 14.28571%; }
 
-  .xxl-two-sevenths {
-    width: 28.57143%; }
-
-  .xxl-three-sevenths {
-    width: 42.85714%; }
-
-  .xxl-four-sevenths {
-    width: 57.14286%; }
-
-  .xxl-five-sevenths {
-    width: 71.42857%; }
-
-  .xxl-six-sevenths {
-    width: 85.71429%; }
-
-  .xxl-one-eighth {
+  .xxl-eight-up > * {
     width: 12.5%; }
 
-  .xxl-three-eighths {
-    width: 37.5%; }
-
-  .xxl-five-eighths {
-    width: 62.5%; }
-
-  .xxl-seven-eighths {
-    width: 87.5%; }
-
-  .xxl-one-ninth {
+  .xxl-nine-up > * {
     width: 11.11111%; }
 
-  .xxl-two-ninths {
-    width: 22.22222%; }
-
-  .xxl-four-ninths {
-    width: 44.44444%; }
-
-  .xxl-five-ninths {
-    width: 55.55556%; }
-
-  .xxl-seven-ninths {
-    width: 77.77778%; }
-
-  .xxl-eight-ninths {
-    width: 88.88889%; }
-
-  .xxl-one-tenth {
+  .xxl-ten-up > * {
     width: 10%; }
 
-  .xxl-three-tenths {
-    width: 30%; }
-
-  .xxl-seven-tenths {
-    width: 70%; }
-
-  .xxl-nine-tenths {
-    width: 90%; }
-
-  .xxl-one-eleventh {
+  .xxl-eleven-up > * {
     width: 9.09091%; }
 
-  .xxl-two-elevenths {
-    width: 18.18182%; }
-
-  .xxl-three-elevenths {
-    width: 27.27273%; }
-
-  .xxl-four-elevenths {
-    width: 36.36364%; }
-
-  .xxl-five-elevenths {
-    width: 45.45455%; }
-
-  .xxl-six-elevenths {
-    width: 54.54545%; }
-
-  .xxl-seven-elevenths {
-    width: 63.63636%; }
-
-  .xxl-eight-elevenths {
-    width: 72.72727%; }
-
-  .xxl-nine-elevenths {
-    width: 81.81818%; }
-
-  .xxl-ten-elevenths {
-    width: 90.90909%; }
-
-  .xxl-one-twelfth {
-    width: 8.33333%; }
-
-  .xxl-five-twelfths {
-    width: 41.66667%; }
-
-  .xxl-seven-twelfths {
-    width: 58.33333%; }
-
-  .xxl-eleven-twelfths {
-    width: 91.66667%; } }
+  .xxl-twelve-up > * {
+    width: 8.33333%; } }

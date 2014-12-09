@@ -65,7 +65,7 @@ $widths__number-of-divisions-at-breakpoint: (
 // and .five-fifths. If you say false, you'll still get 
 // .one-whole classes because those are super useful
 //
-$widths__generate-all-100-percent-widths: false; // true or false
+$widths__generate-all-100-percent-widths: true; // true or false
 
 
 // Generate common denominator widths:
@@ -75,7 +75,7 @@ $widths__generate-all-100-percent-widths: false; // true or false
 // Setting this to 'false' generates less code, but forces you
 // to remember your fractions.
 //
-$widths__generate-common-denominator-widths: false; // true or false
+$widths__generate-common-denominator-widths: true; // true or false
 
 
 

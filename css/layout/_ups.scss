@@ -14,6 +14,10 @@
 
   For instance: four-up will set each child to 25%
 
+  Set the ups configuration variables below in this partial
+  to specify how many or how few classes you want available
+  in your project.
+
   Example: Ups and grids
   <div class="gw two-up">
     <div class="g"><img src="http://fillmurray.com/500/300"></div>
@@ -53,423 +57,104 @@
     <div class="g"><img src="http://fillmurray.com/500/300"></div>
     <div class="g"><img src="http://fillmurray.com/500/300"></div>
   </div><!--/gw-->
+  
+  
 
 -----------------------------------------------------  */
 
 
 
 
-
-/* @default viewport
---------------------------------------------------------
-
-  These will be honored at every viewport
-
------------------------------------------------------- */
-
-// Two up
-.two-up > * {
-  width: 50%;
-}
-
-// Three up
-.three-up > * {
-  width: 33.333333%;
-}
-
-// Four up
-.four-up > * {
-  width: 25%;
-}
-
-// Five up
-.five-up > * {
-  width: 20%;
-}
-
-// Six up
-.six-up > * {
-  width: 16.6666666%;
-}
-
-// Seven up
-.seven-up > * {
- width: 14.285714286%;
-}
-
-// Eight up
-.eight-up > *{
-  width: 12.5%;
-}
-
-// Nine up
-.nine-up > *{
-  width: 11.111111111%;
-}
-
-// Ten up
-.ten-up {
-  width: 10%;
-}
-
-// Eleven up
-.eleven-up > *{
- width: 9.090909091%;
-}
-
-// Twelve up
-.twelve-up > * {
-  width: 8.333333333%;
-}
+// Ups configuration 
+// Define the number of ups you want to use at each
+// breakpoint. The breakpoints below match the values that
+// you defined in base/_vars.scss 
+//
+$ups__number-of-ups-at-breakpoint: (
+  n:   12,
+  xs:  0,
+  sm:  12,
+  md:  12,
+  lg:  12,
+  xl:  12,
+  xxl: 12
+);
 
 
 
+// ----------------------------------------------------
+// Function to make easy-to-read class from number
+// ----------------------------------------------------
+
+// Define english for each integer
+// NOTE: this is also defined in layout/_widths.scss but
+// we're redefining it to avoid making _widths.scss a
+// dependency. In a future release, this will be included
+// in something like base/_definitions.scss.
+//
+$english-by-number: (
+  1:  "one",
+  2:  "two",
+  3:  "three",
+  4:  "four",
+  5:  "five",
+  6:  "six",
+  7:  "seven",
+  8:  "eight",
+  9:  "nine",
+  10: "ten",
+  11: "eleven",
+  12: "twelve"
+);
 
 
-/* @breakpoint__xs
---------------------------------------------------------
-
-  Up sizes that are applied if viewport is at least at
-  the $breakpoint__xs size
-
------------------------------------------------------- */
-
-@include bp-at-least($breakpoint__xs) {
-
-  // Two up
-  .xs-two-up > * {
-    width: 50%;
+// Mixin to return easy-to-read up class from 2 numbers
+// Accepts a $numerator, $denominator, and optional breakpoint
+// 
+@mixin easy-to-read-up($n, $breakpoint:"") {
+  // Define optional prefix
+  //
+  $breakpoint-prefix: ".";
+  @if ($breakpoint != "n") {  
+    @if map-has-key($ups__number-of-ups-at-breakpoint, $breakpoint) {
+      $breakpoint-prefix: ".#{unquote($breakpoint)}-";
+    }
   }
+  
+  // Define english and delimiter '-' for first part of class
+  //
+  $up-first-part: "#{map-get($english-by-number, $n)}-";
+  
+  // Here's the class
+  #{$breakpoint-prefix}#{$up-first-part}up > * { width: (100 / $n)*1%; }
 
-  // Three up
-  .xs-three-up > * {
-    width: 33.333333%;
-  }
-
-  // Four up
-  .xs-four-up > * {
-    width: 25%;
-  }
-
-  // Five up
-  .xs-five-up > * {
-    width: 20%;
-  }
-
-  // Six up
-  .xs-six-up > * {
-    width: 16.6666666%;
-  }
-
-  // Seven up
-  .xs-seven-up > * {
-   width: 14.285714286%;
-  }
-
-  // Eight up
-  .xs-eight-up > *{
-    width: 12.5%;
-  }
-
-  // Nine up
-  .xs-nine-up > *{
-    width: 11.111111111%;
-  }
-
-  // Ten up
-  .xs-ten-up {
-    width: 10%;
-  }
-
-  // Eleven up
-  .xs-eleven-up > *{
-   width: 9.090909091%;
-  }
-
-  // Twelve up
-  .xs-twelve-up > * {
-    width: 8.333333333%;
-  }
 
 }
 
-
-
-/* @breakpoint__sm
---------------------------------------------------------
-
-  Up sizes that are applied if viewport is at least at
-  the $breakpoint__sm size
-
------------------------------------------------------- */
-
-@include bp-at-least($breakpoint__sm) {
-
-  // Two up
-  .sm-two-up > * {
-    width: 50%;
+// Loop through all breakpoints in $ups__number-of-ups-at-breakpoint
+@each $breakpoint, $num-ups in $ups__number-of-ups-at-breakpoint {
+  @if ($num-ups > 0) {  
+    @if ($breakpoint != "n") {
+      /* 
+        
+        Responsive ups at $breakpoint__#{$breakpoint}
+      
+      ---------------------------------------------------- */  
+      @include bp-at-least ( map-get($breakpoints, $breakpoint) ) {
+        @for $i from 1 through $num-ups {
+          @include easy-to-read-up($i, $breakpoint);
+        }
+      }
+    }
+    @else {
+      /*
+        
+        Widths at default Viewport 
+      
+      ---------------------------------------------------- */  
+      @for $i from 1 through $num-ups {
+        @include easy-to-read-up($i, $breakpoint);
+      }
+    }
   }
-
-  // Three up
-  .sm-three-up > * {
-    width: 33.333333%;
-  }
-
-  // Four up
-  .sm-four-up > * {
-    width: 25%;
-  }
-
-  // Five up
-  .sm-five-up > * {
-    width: 20%;
-  }
-
-  // Six up
-  .sm-six-up > * {
-    width: 16.6666666%;
-  }
-
-  // Seven up
-  .sm-seven-up > * {
-   width: 14.285714286%;
-  }
-
-  // Eight up
-  .sm-eight-up > *{
-    width: 12.5%;
-  }
-
-  // Nine up
-  .sm-nine-up > *{
-    width: 11.111111111%;
-  }
-
-  // Ten up
-  .sm-ten-up {
-    width: 10%;
-  }
-
-  // Eleven up
-  .sm-eleven-up > *{
-   width: 9.090909091%;
-  }
-
-  // Twelve up
-  .sm-twelve-up > * {
-    width: 8.333333333%;
-  }
-
-}
-
-
-
-
-
-/* @breakpoint__md
---------------------------------------------------------
-
-  Up sizes that are applied if viewport is at least at
-  the $breakpoint__md size
-
------------------------------------------------------- */
-
-@include bp-at-least($breakpoint__md){
-
-  // Two up
-  .md-two-up > * {
-    width: 50%;
-  }
-
-  // Three up
-  .md-three-up > * {
-    width: 33.333333%;
-  }
-
-  // Four up
-  .md-four-up > * {
-    width: 25%;
-  }
-
-  // Five up
-  .md-five-up > * {
-    width: 20%;
-  }
-
-  // Six up
-  .md-six-up > * {
-    width: 16.6666666%;
-  }
-
-  // Seven up
-  .md-seven-up > * {
-   width: 14.285714286%;
-  }
-
-  // Eight up
-  .md-eight-up > *{
-    width: 12.5%;
-  }
-
-  // Nine up
-  .md-nine-up > *{
-    width: 11.111111111%;
-  }
-
-  // Ten up
-  .md-ten-up {
-    width: 10%;
-  }
-
-  // Eleven up
-  .md-eleven-up > *{
-   width: 9.090909091%;
-  }
-
-  // Twelve up
-  .md-twelve-up > * {
-    width: 8.333333333%;
-  }
-
-}
-
-
-
-
-/* @breakpoint__lg
---------------------------------------------------------
-
-  Up sizes that are applied if viewport is at least at
-  the $breakpoint__lg size
-
------------------------------------------------------- */
-
-@include bp-at-least($breakpoint__lg){
-
-  // Two up
-  .lg-two-up > * {
-    width: 50%;
-  }
-
-  // Three up
-  .lg-three-up > * {
-    width: 33.333333%;
-  }
-
-  // Four up
-  .lg-four-up > * {
-    width: 25%;
-  }
-
-  // Five up
-  .lg-five-up > * {
-    width: 20%;
-  }
-
-  // Six up
-  .lg-six-up > * {
-    width: 16.6666666%;
-  }
-
-  // Seven up
-  .lg-seven-up > * {
-   width: 14.285714286%;
-  }
-
-  // Eight up
-  .lg-eight-up > *{
-    width: 12.5%;
-  }
-
-  // Nine up
-  .lg-nine-up > *{
-    width: 11.111111111%;
-  }
-
-  // Ten up
-  .lg-ten-up {
-    width: 10%;
-  }
-
-  // Eleven up
-  .lg-eleven-up > *{
-   width: 9.090909091%;
-  }
-
-  // Twelve up
-  .lg-twelve-up > * {
-    width: 8.333333333%;
-  }
-
-}
-
-
-
-
-
-/* @breakpoint__xl
---------------------------------------------------------
-
-  Up sizes that are applied if viewport is at least at
-  the $breakpoint__xl size
-
------------------------------------------------------- */
-
-@include bp-at-least($breakpoint__xl){
-
-  // Two up
-  .xl-two-up > * {
-    width: 50%;
-  }
-
-  // Three up
-  .xl-three-up > * {
-    width: 33.333333%;
-  }
-
-  // Four up
-  .xl-four-up > * {
-    width: 25%;
-  }
-
-  // Five up
-  .xl-five-up > * {
-    width: 20%;
-  }
-
-  // Six up
-  .xl-six-up > * {
-    width: 16.6666666%;
-  }
-
-  // Seven up
-  .xl-seven-up > * {
-   width: 14.285714286%;
-  }
-
-  // Eight up
-  .xl-eight-up > *{
-    width: 12.5%;
-  }
-
-  // Nine up
-  .xl-nine-up > *{
-    width: 11.111111111%;
-  }
-
-  // Ten up
-  .xl-ten-up {
-    width: 10%;
-  }
-
-  // Eleven up
-  .xl-eleven-up > *{
-   width: 9.090909091%;
-  }
-
-  // Twelve up
-  .xl-twelve-up > * {
-    width: 8.333333333%;
-  }
-
 }
