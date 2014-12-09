@@ -8,11 +8,17 @@
   Define the fonts used in this app and declare silent
   classes to be used in your CSS.
 
-  If you are using a webfont, use the @embed-font() mixin
-  from base/_mixin-font-face-importer.scs
+  If you are using a webfont that you're hosting, add 
+  the @embed-font() mixin from base/_mixin-font-face-importer.scs 
+  before you declare your fonts.
 
   Usage: Create a font-family named "interstate-light" using a font at /fonts/interstate_light-webfont.woff (and other extensions)
   @include embed-font("interstate-light", "/fonts/interstate_light-webfont");
+  
+  If you are using Google Fonts, you can add the
+  import code before you declare your fonts.
+  
+  @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700);
 
 -------------------------------------------------------- */
 
@@ -32,10 +38,7 @@
 
 ------------------------------------------------------ */
 
-// Get Source Sans from Google Fonts
-// @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700);
-
-$sans:'Source Sans Pro', sans-serif;
+$sans:sans-serif;
 
 %sans--light {
   font-family: $sans;
