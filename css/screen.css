@@ -1711,7 +1711,7 @@ em {
   </div><!--/gw-->
 
 -----------------------------------------------------  */
-/* @viewport-agnostic
+/* @default
 --------------------------------------------------------
 
   These will be honored at every viewport
@@ -1758,37 +1758,37 @@ em {
 
 ------------------------------------------------------ */
 @media screen and (min-width: 20em) {
-  .sm-two-up > * {
+  .xs-two-up > * {
     width: 50%; }
 
-  .sm-three-up > * {
+  .xs-three-up > * {
     width: 33.333333%; }
 
-  .sm-four-up > * {
+  .xs-four-up > * {
     width: 25%; }
 
-  .sm-five-up > * {
+  .xs-five-up > * {
     width: 20%; }
 
-  .sm-six-up > * {
+  .xs-six-up > * {
     width: 16.6666666%; }
 
-  .sm-seven-up > * {
+  .xs-seven-up > * {
     width: 14.285714286%; }
 
-  .sm-eight-up > * {
+  .xs-eight-up > * {
     width: 12.5%; }
 
-  .sm-nine-up > * {
+  .xs-nine-up > * {
     width: 11.111111111%; }
 
-  .sm-ten-up {
+  .xs-ten-up {
     width: 10%; }
 
-  .sm-eleven-up > * {
+  .xs-eleven-up > * {
     width: 9.090909091%; }
 
-  .sm-twelve-up > * {
+  .xs-twelve-up > * {
     width: 8.333333333%; } }
 /* @breakpoint__sm
 --------------------------------------------------------

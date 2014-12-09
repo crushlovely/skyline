@@ -51,3 +51,6 @@ If you want a simple route, you can view the index.html page in a browser and it
 ### Documentation
 Extensive docs are in the works, but not yet released. However, Skyline makes it easy by adding detailed documentation in the comments of the scss partials themselves. Descriptions are right next to the actual code, making it simple to learn how it works.
 
+## Copyright
+
+Copyright (c) 2014 Jeff Schram (Crush & Lovely). See LICENSE for further details.
