@@ -99,6 +99,90 @@
 
 
 
+/* @breakpoint__xs
+--------------------------------------------------------
+
+  Sizes that are applied if viewport is at least at
+  the $breakpoint__xs size
+
+------------------------------------------------------ */
+
+@include bp-at-least($breakpoint__xs){
+
+   // Whole
+  .xs-one-whole         { width: 100%; }
+
+
+  // Halves
+  .xs-one-half          { width: 50%; }
+
+
+  // Thirds
+  .xs-one-third         { width: 33.333%; }
+  .xs-two-thirds        { width: 66.666%; }
+
+
+  // Fourths
+  .xs-one-fourth        { width: 25%; }
+  .xs-two-fourths       { width: 50%; }
+  .xs-three-fourths     { width: 75%; }
+
+
+  // Fifths
+  .xs-one-fifth         { width: 20%; }
+  .xs-two-fifths        { width: 40%; }
+  .xs-three-fifths      { width: 60%; }
+  .xs-four-fifths       { width: 80%; }
+
+
+  // Sixths
+  .xs-one-sixth         { width: 16.666%; }
+  .xs-two-sixths        { width: 33.333%; }
+  .xs-three-sixths      { width: 50%; }
+  .xs-four-sixths       { width: 66.666%; }
+  .xs-five-sixths       { width: 83.333%; }
+
+
+  // Eighths
+  .xs-one-eighth        { width: 12.5%; }
+  .xs-two-eighths       { width: 25%; }
+  .xs-three-eighths     { width: 37.5%; }
+  .xs-four-eighths      { width: 50%; }
+  .xs-five-eighths      { width: 62.5%; }
+  .xs-six-eighths       { width: 75%; }
+  .xs-seven-eighths     { width: 87.5%; }
+
+
+  // Tenths
+  .xs-one-tenth         { width: 10%; }
+  .xs-two-tenths        { width: 20%; }
+  .xs-three-tenths      { width: 30%; }
+  .xs-four-tenths       { width: 40%; }
+  .xs-five-tenths       { width: 50%; }
+  .xs-six-tenths        { width: 60%; }
+  .xs-seven-tenths      { width: 70%; }
+  .xs-eight-tenths      { width: 80%; }
+  .xs-nine-tenths       { width: 90%; }
+
+
+  // Twelfths
+  .xs-one-twelfth       { width: 8.333%; }
+  .xs-two-twelfths      { width: 16.666%; }
+  .xs-three-twelfths    { width: 25%; }
+  .xs-four-twelfths     { width: 33.333%; }
+  .xs-five-twelfths     { width: 41.666%; }
+  .xs-six-twelfths      { width: 50%; }
+  .xs-seven-twelfths    { width: 58.333%; }
+  .xs-eight-twelfths    { width: 66.666%; }
+  .xs-nine-twelfths     { width: 75%; }
+  .xs-ten-twelfths      { width: 83.333%; }
+  .xs-eleven-twelfths   { width: 91.666%; }
+}
+
+
+
+
+
 /* @breakpoint__sm
 --------------------------------------------------------
 

@@ -11,80 +11,75 @@
   your grid units.  These are divs with classname of
   either .grid or .g for short.
 
+  To specify the responsive behavior of the grid,
+  add width classes from layout/_widths.scss.
+
+  Example: Grid with responsive width classes
+  <div class="gw">
+    <div class="g sm-one-whole md-one-half  lg-one-third    xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-half  lg-one-third    xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-third lg-one-third    xl-one-twelfth">...</div>
+    <div class="g sm-one-whole md-one-third lg-one-fifth    xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-third lg-three-fifths xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-half  lg-one-fifth    xl-one-twelfth">...</div>
+    <div class="g sm-one-whole md-one-half  lg-one-sixth    xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-third lg-one-sixth    xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-third lg-one-sixth    xl-one-twelfth">...</div>
+    <div class="g sm-one-whole md-one-third lg-one-sixth    xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-half  lg-one-sixth    xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-half  lg-one-sixth    xl-one-twelfth">...</div>
+  </div>
+
   For a grid wrap containing equally-sized grid units, like
-  a gallery of thumbnails for instance, use the modifier
-  classes like .gw--4-up.  If you do this, you won't need
-  to specify the widths on the grid units.
+  a gallery of thumbnails for instance, use the responsive ups
+  classes from layout/_widths.scss. With these classes
+  applied to the .grid-wrap/.gw, you won't need to specify
+  widths on the individual grid units, just on the wrapper.
 
-  For individual sizes, combine .g/.grid
-  divs with width classes like and you're all
-  set to go.
-
+  Example: Grid with responsive ups classes
+  <div class="gw two-up sm-three-up md-four-up lg-six-up">
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+  </div>
+  
 ------------------------------------------------------ */
 
 
 
 
-/* @grid settings
----------------------------------------------------------
 
-  Define the grid padding/gutter width and also the
-  breakpoint at which default grid-units stack.
-
---------------------------------------------------------- */
-
+// Grid configuration
+// -----------------------------------------------------
 
 // Define the point at which grids no longer stack, but float
+// You might use a $breakpoint__* variable from _vars.scss or
+// any other value that works for you.
 $grid__float-at: $breakpoint__xs;
 
+// Define the width of the gutters between grid units
+// You might use $unit from _vars.scss, or a relative value 
+// of $unit, like .5$unit for instance for small gutters.
+$grid__gutter-width: $unit;
 
+// Define the amount of space at the bottom of a grid unit
+// when they are stacking (before they start to float)
+// You might choose $unit again.
+$grid__bottom-spacing-when-stacking: $unit;
 
-
-
-
-/* @grid wrappers and grid units
---------------------------------------------------------
-
-  Example: Grid
-  <div class="gw two-up">
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-  </div><!--/gw-->
-  <div class="gw three-up">
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-  </div><!--/gw-->
-  <div class="gw six-up">
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-  </div><!--/gw-->
-   <div class="gw twelve-up">
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-  </div><!--/gw-->
-  <div class="gw">
-    <div class="g one-fourth"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g one-half"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g one-eighth"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g one-eighth"><img src="http://fillmurray.com/500/300"></div>
-  </div><!--/gw-->
-
------------------------------------------------------- */
+// Define the amount of space at the bottom of a grid unit
+// when they are floating. It's often a good idea to make
+// this value equal to the gutter width.
+$grid__bottom-spacing-when-floating: $grid__gutter-width;
 
 
 
@@ -95,8 +90,9 @@ $grid__float-at: $breakpoint__xs;
   display: block;
   // Sometimes, ul are used for grid wraps
   list-style-type: none;
+  margin-bottom: -1*$grid__bottom-spacing-when-stacking;
   @include bp-at-least($grid__float-at) {
-    margin: 0 -.25*$unit;
+    margin: 0 -.5*$grid__gutter-width -1*$grid__bottom-spacing-when-floating;
   }
 }
 
@@ -105,15 +101,13 @@ $grid__float-at: $breakpoint__xs;
 .grid,
 .g {
   @include clearfix();
-  min-height: 1rem;
+  min-height: 1px;
   position: relative;
-  padding-bottom: 1*$unit;
+  padding-bottom: $grid__bottom-spacing-when-stacking;
+  display: block;
   width: 100%;
-  &:last-of-type {
-    padding-bottom: 0;
-  }
   @include bp-at-least($grid__float-at) {
-    padding: 0 .25*$unit .75*$unit;
+    padding: 0 .5*$grid__gutter-width $grid__bottom-spacing-when-floating;
     float: left;
   }
 }

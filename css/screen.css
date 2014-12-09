@@ -1443,71 +1443,54 @@ em {
   your grid units.  These are divs with classname of
   either .grid or .g for short.
 
-  For a grid wrap containing equally-sized grid units, like
-  a gallery of thumbnails for instance, use the modifier
-  classes like .gw--4-up.  If you do this, you won't need
-  to specify the widths on the grid units.
+  To specify the responsive behavior of the grid,
+  add width classes from layout/_widths.scss.
 
-  For individual sizes, combine .g/.grid
-  divs with width classes like and you're all
-  set to go.
-
------------------------------------------------------- */
-/* @grid settings
----------------------------------------------------------
-
-  Define the grid padding/gutter width and also the
-  breakpoint at which default grid-units stack.
-
---------------------------------------------------------- */
-/* @grid wrappers and grid units
---------------------------------------------------------
-
-  Example: Grid
-  <div class="gw two-up">
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-  </div><!--/gw-->
-  <div class="gw three-up">
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-  </div><!--/gw-->
-  <div class="gw six-up">
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-  </div><!--/gw-->
-   <div class="gw twelve-up">
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-  </div><!--/gw-->
+  Example: Grid with responsive width classes
   <div class="gw">
-    <div class="g one-fourth"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g one-half"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g one-eighth"><img src="http://fillmurray.com/500/300"></div>
-    <div class="g one-eighth"><img src="http://fillmurray.com/500/300"></div>
-  </div><!--/gw-->
+    <div class="g sm-one-whole md-one-half  lg-one-third    xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-half  lg-one-third    xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-third lg-one-third    xl-one-twelfth">...</div>
+    <div class="g sm-one-whole md-one-third lg-one-fifth    xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-third lg-three-fifths xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-half  lg-one-fifth    xl-one-twelfth">...</div>
+    <div class="g sm-one-whole md-one-half  lg-one-sixth    xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-third lg-one-sixth    xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-third lg-one-sixth    xl-one-twelfth">...</div>
+    <div class="g sm-one-whole md-one-third lg-one-sixth    xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-half  lg-one-sixth    xl-one-twelfth">...</div>
+    <div class="g sm-one-half  md-one-half  lg-one-sixth    xl-one-twelfth">...</div>
+  </div>
 
+  For a grid wrap containing equally-sized grid units, like
+  a gallery of thumbnails for instance, use the responsive ups
+  classes from layout/_widths.scss. With these classes
+  applied to the .grid-wrap/.gw, you won't need to specify
+  widths on the individual grid units, just on the wrapper.
+
+  Example: Grid with responsive ups classes
+  <div class="gw two-up sm-three-up md-four-up lg-six-up">
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+    <div class="g">...</div>
+  </div>
+  
 ------------------------------------------------------ */
 .grid-wrap,
 .gw {
   zoom: 1;
   display: block;
-  list-style-type: none; }
+  list-style-type: none;
+  margin-bottom: -1.125em; }
   .grid-wrap:before, .grid-wrap:after,
   .gw:before,
   .gw:after {
@@ -1519,14 +1502,15 @@ em {
   @media screen and (min-width: 20em) {
     .grid-wrap,
     .gw {
-      margin: 0 -0.28125em; } }
+      margin: 0 -0.5625em -1.125em; } }
 
 .grid,
 .g {
   zoom: 1;
-  min-height: 1rem;
+  min-height: 1px;
   position: relative;
   padding-bottom: 1.125em;
+  display: block;
   width: 100%; }
   .grid:before, .grid:after,
   .g:before,
@@ -1536,13 +1520,10 @@ em {
   .grid:after,
   .g:after {
     clear: both; }
-  .grid:last-of-type,
-  .g:last-of-type {
-    padding-bottom: 0; }
   @media screen and (min-width: 20em) {
     .grid,
     .g {
-      padding: 0 0.28125em 0.84375em;
+      padding: 0 0.5625em 1.125em;
       float: left; } }
 
 /**
@@ -1758,37 +1739,37 @@ em {
 
 ------------------------------------------------------ */
 @media screen and (min-width: 20em) {
-  .sm-two-up > * {
+  .xs-two-up > * {
     width: 50%; }
 
-  .sm-three-up > * {
+  .xs-three-up > * {
     width: 33.333333%; }
 
-  .sm-four-up > * {
+  .xs-four-up > * {
     width: 25%; }
 
-  .sm-five-up > * {
+  .xs-five-up > * {
     width: 20%; }
 
-  .sm-six-up > * {
+  .xs-six-up > * {
     width: 16.6666666%; }
 
-  .sm-seven-up > * {
+  .xs-seven-up > * {
     width: 14.285714286%; }
 
-  .sm-eight-up > * {
+  .xs-eight-up > * {
     width: 12.5%; }
 
-  .sm-nine-up > * {
+  .xs-nine-up > * {
     width: 11.111111111%; }
 
-  .sm-ten-up {
+  .xs-ten-up {
     width: 10%; }
 
-  .sm-eleven-up > * {
+  .xs-eleven-up > * {
     width: 9.090909091%; }
 
-  .sm-twelve-up > * {
+  .xs-twelve-up > * {
     width: 8.333333333%; } }
 /* @breakpoint__sm
 --------------------------------------------------------
@@ -2101,6 +2082,142 @@ em {
 .eleven-twelfths {
   width: 91.666%; }
 
+/* @breakpoint__xs
+--------------------------------------------------------
+
+  Sizes that are applied if viewport is at least at
+  the $breakpoint__xs size
+
+------------------------------------------------------ */
+@media screen and (min-width: 20em) {
+  .xs-one-whole {
+    width: 100%; }
+
+  .xs-one-half {
+    width: 50%; }
+
+  .xs-one-third {
+    width: 33.333%; }
+
+  .xs-two-thirds {
+    width: 66.666%; }
+
+  .xs-one-fourth {
+    width: 25%; }
+
+  .xs-two-fourths {
+    width: 50%; }
+
+  .xs-three-fourths {
+    width: 75%; }
+
+  .xs-one-fifth {
+    width: 20%; }
+
+  .xs-two-fifths {
+    width: 40%; }
+
+  .xs-three-fifths {
+    width: 60%; }
+
+  .xs-four-fifths {
+    width: 80%; }
+
+  .xs-one-sixth {
+    width: 16.666%; }
+
+  .xs-two-sixths {
+    width: 33.333%; }
+
+  .xs-three-sixths {
+    width: 50%; }
+
+  .xs-four-sixths {
+    width: 66.666%; }
+
+  .xs-five-sixths {
+    width: 83.333%; }
+
+  .xs-one-eighth {
+    width: 12.5%; }
+
+  .xs-two-eighths {
+    width: 25%; }
+
+  .xs-three-eighths {
+    width: 37.5%; }
+
+  .xs-four-eighths {
+    width: 50%; }
+
+  .xs-five-eighths {
+    width: 62.5%; }
+
+  .xs-six-eighths {
+    width: 75%; }
+
+  .xs-seven-eighths {
+    width: 87.5%; }
+
+  .xs-one-tenth {
+    width: 10%; }
+
+  .xs-two-tenths {
+    width: 20%; }
+
+  .xs-three-tenths {
+    width: 30%; }
+
+  .xs-four-tenths {
+    width: 40%; }
+
+  .xs-five-tenths {
+    width: 50%; }
+
+  .xs-six-tenths {
+    width: 60%; }
+
+  .xs-seven-tenths {
+    width: 70%; }
+
+  .xs-eight-tenths {
+    width: 80%; }
+
+  .xs-nine-tenths {
+    width: 90%; }
+
+  .xs-one-twelfth {
+    width: 8.333%; }
+
+  .xs-two-twelfths {
+    width: 16.666%; }
+
+  .xs-three-twelfths {
+    width: 25%; }
+
+  .xs-four-twelfths {
+    width: 33.333%; }
+
+  .xs-five-twelfths {
+    width: 41.666%; }
+
+  .xs-six-twelfths {
+    width: 50%; }
+
+  .xs-seven-twelfths {
+    width: 58.333%; }
+
+  .xs-eight-twelfths {
+    width: 66.666%; }
+
+  .xs-nine-twelfths {
+    width: 75%; }
+
+  .xs-ten-twelfths {
+    width: 83.333%; }
+
+  .xs-eleven-twelfths {
+    width: 91.666%; } }
 /* @breakpoint__sm
 --------------------------------------------------------
 
@@ -2909,11 +3026,11 @@ em {
 
 -----------------------------------------------------  */
 .block {
-  margin-bottom: 1.125em; }
+  margin-bottom: 2.25em; }
 
 .block--ends {
-  margin-top: 1.125em;
-  margin-bottom: 1.125em; }
+  margin-top: 2.25em;
+  margin-bottom: 2.25em; }
 
 /**
 

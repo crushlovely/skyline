@@ -77,14 +77,15 @@
             <li>Grid layout is achieved by using a wrapping div called a 'grid-wrapper', and shortened to the classname <code>.gw</code>.</li>
             <li>Within the grid-wrapper, grid units are added, and shortened to the classname <code>.g</code>.</li>
             <li>These grid units then have responsive classnames added to them, which specify their widths at different viewports.</li>
-            <li>Responsive width classes start with a two-letter prefix (xs, sm, md, lg, xl) and follow with the width, written in plain ol' English (one-half, two-thirds, seven-elevenths, etc.).
+            <li>Responsive width classes start with a two-letter prefix (xs, sm, md, lg, xl) and follow with the width, written in easy-to-read fractions (one-half, two-thirds, seven-elevenths, etc.).
           </ol>
         </section>
 
         <section class="block container">
-          <h1>A Basic grid example</h1>
-          <p>Each grid unit below has the following behavior:</p>
+          <h1>A basic grid example</h1>
+          <p>Each grid unit below has the following classes: <code>sm-one-half md-one-third lg-one-sixth xl-one-twelfth</code>. These classes determine the grid unit's width at these viewports:</p>
           <ul>
+            <li><b>Default: </b> grid units are 100%</li>
             <li><b>At SM: </b> one-half</li>
             <li><b>At MD: </b> one-third</li>
             <li><b>At LG: </b> one-sixth</li>
@@ -103,6 +104,70 @@
             <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
             <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
             <div class="g sm-one-half md-one-third lg-one-sixth xl-one-twelfth"><div class="gx"></div></div>
+          </div>
+        </section>
+
+        <section class="block container">
+          <h1>An example of a grid units with unique sizes</h1>
+          <p>The grid units below use different combinations of responsive width classes for a more complex grid.</p>
+          <div class="gw">
+            <div class="g sm-one-whole md-one-half  lg-one-third    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half  md-one-half  lg-one-third    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half  md-one-third lg-one-third    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-whole md-one-third lg-one-fifth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half  md-one-third lg-three-fifths xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half  md-one-half  lg-one-fifth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-whole md-one-half  lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half  md-one-third lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half  md-one-third lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-whole md-one-third lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half  md-one-half  lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half  md-one-half  lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
+          </div>
+        </section>
+
+        <section class="block container">
+          <h1>An example of a ludicrous grid</h1>
+          <p>Just to illustrate the flexibility of this grid system, here's an example of a ludicrously complex grid.</p>
+          <div class="gw">
+            <div class="g xs-one-whole sm-one-whole md-one-half  lg-one-third    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g xs-one-third sm-one-half  md-one-half  lg-one-third    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g xs-two-thirds sm-one-half  md-one-third lg-one-third    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g xs-one-half sm-one-whole md-one-third lg-one-fifth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g xs-one-half sm-one-half  md-one-third lg-three-fifths xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g xs-one-fourth sm-one-half  md-one-half  lg-one-fifth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g xs-one-half sm-one-whole md-one-half  lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g xs-one-fourth sm-one-half  md-one-third lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g xs-one-sixth sm-one-half  md-one-third lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g xs-two-sixths sm-one-whole md-one-third lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g xs-one-sixth sm-one-half  md-one-half  lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g xs-two-sixths sm-one-half  md-one-half  lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
+          </div>
+        </section>
+
+
+        <section class="block container">
+          <h1>Grid example using ups</h1>
+          <p>For a grid wrap containing equally-sized grid units, like a gallery of thumbnails for instance, use the responsive ups classes from <code>layout/_ups.scss</code>. With these classes applied to the .grid wrapper, you won't need to specify widths on each individual grid unit.</p>
+          <ul>
+            <li><b>Default: </b> two-up</li>
+            <li><b>At SM: </b> three-up</li>
+            <li><b>At MD: </b> four-up</li>
+            <li><b>At LG: </b> six-up</li>
+          </ul>
+          <div class="gw two-up sm-three-up md-four-up lg-six-up">
+            <div class="g"><div class="gx"></div></div>
+            <div class="g"><div class="gx"></div></div>
+            <div class="g"><div class="gx"></div></div>
+            <div class="g"><div class="gx"></div></div>
+            <div class="g"><div class="gx"></div></div>
+            <div class="g"><div class="gx"></div></div>
+            <div class="g"><div class="gx"></div></div>
+            <div class="g"><div class="gx"></div></div>
+            <div class="g"><div class="gx"></div></div>
+            <div class="g"><div class="gx"></div></div>
+            <div class="g"><div class="gx"></div></div>
+            <div class="g"><div class="gx"></div></div>
           </div>
         </section>
 
