@@ -2006,19 +2006,37 @@ em {
   width: 80%; }
 
 .one-sixth {
-  width: 16.666%; }
+  width: 16.66667%; }
 
 .two-sixths {
-  width: 33.333%; }
+  width: 33.33333%; }
 
 .three-sixths {
   width: 50%; }
 
 .four-sixths {
-  width: 66.666%; }
+  width: 66.66667%; }
 
 .five-sixths {
-  width: 83.333%; }
+  width: 83.33333%; }
+
+.one-seventh {
+  width: 14.28571%; }
+
+.two-sevenths {
+  width: 28.57143%; }
+
+.three-sevenths {
+  width: 42.85714%; }
+
+.four-sevenths {
+  width: 57.14286%; }
+
+.five-sevenths {
+  width: 71.42857%; }
+
+.six-sevenths {
+  width: 85.71429%; }
 
 .one-eighth {
   width: 12.5%; }
@@ -2040,6 +2058,30 @@ em {
 
 .seven-eighths {
   width: 87.5%; }
+
+.one-ninth {
+  width: 11.11111%; }
+
+.two-ninths {
+  width: 22.22222%; }
+
+.three-ninths {
+  width: 33.33333%; }
+
+.four-ninths {
+  width: 44.44444%; }
+
+.five-ninths {
+  width: 55.55556%; }
+
+.six-ninths {
+  width: 66.66667%; }
+
+.seven-ninths {
+  width: 77.77778%; }
+
+.eight-ninths {
+  width: 88.88889%; }
 
 .one-tenth {
   width: 10%; }
@@ -2068,38 +2110,68 @@ em {
 .nine-tenths {
   width: 90%; }
 
+.one-eleventh {
+  width: 9.09091%; }
+
+.two-elevenths {
+  width: 18.18182%; }
+
+.three-elevenths {
+  width: 27.27273%; }
+
+.four-elevenths {
+  width: 36.36364%; }
+
+.five-elevenths {
+  width: 45.45455%; }
+
+.six-elevenths {
+  width: 54.54545%; }
+
+.seven-elevenths {
+  width: 63.63636%; }
+
+.eight-elevenths {
+  width: 72.72727%; }
+
+.nine-elevenths {
+  width: 81.81818%; }
+
+.ten-elevenths {
+  width: 90.90909%; }
+
 .one-twelfth {
-  width: 8.333%; }
+  width: 8.33333%; }
 
 .two-twelfths {
-  width: 16.666%; }
+  width: 16.66667%; }
 
 .three-twelfths {
   width: 25%; }
 
 .four-twelfths {
-  width: 33.333%; }
+  width: 33.33333%; }
 
 .five-twelfths {
-  width: 41.666%; }
+  width: 41.66667%; }
 
 .six-twelfths {
   width: 50%; }
 
 .seven-twelfths {
-  width: 58.333%; }
+  width: 58.33333%; }
 
 .eight-twelfths {
-  width: 66.666%; }
+  width: 66.66667%; }
 
 .nine-twelfths {
   width: 75%; }
 
 .ten-twelfths {
-  width: 83.333%; }
+  width: 83.33333%; }
 
 .eleven-twelfths {
-  width: 91.666%; }
+  width: 91.66667%; }
 
 /* @breakpoint__sm
 --------------------------------------------------------
@@ -2143,19 +2215,37 @@ em {
     width: 80%; }
 
   .sm-one-sixth {
-    width: 16.666%; }
+    width: 16.66667%; }
 
   .sm-two-sixths {
-    width: 33.333%; }
+    width: 33.33333%; }
 
   .sm-three-sixths {
     width: 50%; }
 
   .sm-four-sixths {
-    width: 66.666%; }
+    width: 66.66667%; }
 
   .sm-five-sixths {
-    width: 83.333%; }
+    width: 83.33333%; }
+
+  .sm-one-seventh {
+    width: 14.28571%; }
+
+  .sm-two-sevenths {
+    width: 28.57143%; }
+
+  .sm-three-sevenths {
+    width: 42.85714%; }
+
+  .sm-four-sevenths {
+    width: 57.14286%; }
+
+  .sm-five-sevenths {
+    width: 71.42857%; }
+
+  .sm-six-sevenths {
+    width: 85.71429%; }
 
   .sm-one-eighth {
     width: 12.5%; }
@@ -2177,6 +2267,30 @@ em {
 
   .sm-seven-eighths {
     width: 87.5%; }
+
+  .sm-one-ninth {
+    width: 11.11111%; }
+
+  .sm-two-ninths {
+    width: 22.22222%; }
+
+  .sm-three-ninths {
+    width: 33.33333%; }
+
+  .sm-four-ninths {
+    width: 44.44444%; }
+
+  .sm-five-ninths {
+    width: 55.55556%; }
+
+  .sm-six-ninths {
+    width: 66.66667%; }
+
+  .sm-seven-ninths {
+    width: 77.77778%; }
+
+  .sm-eight-ninths {
+    width: 88.88889%; }
 
   .sm-one-tenth {
     width: 10%; }
@@ -2205,38 +2319,68 @@ em {
   .sm-nine-tenths {
     width: 90%; }
 
+  .sm-one-eleventh {
+    width: 9.09091%; }
+
+  .sm-two-elevenths {
+    width: 18.18182%; }
+
+  .sm-three-elevenths {
+    width: 27.27273%; }
+
+  .sm-four-elevenths {
+    width: 36.36364%; }
+
+  .sm-five-elevenths {
+    width: 45.45455%; }
+
+  .sm-six-elevenths {
+    width: 54.54545%; }
+
+  .sm-seven-elevenths {
+    width: 63.63636%; }
+
+  .sm-eight-elevenths {
+    width: 72.72727%; }
+
+  .sm-nine-elevenths {
+    width: 81.81818%; }
+
+  .sm-ten-elevenths {
+    width: 90.90909%; }
+
   .sm-one-twelfth {
-    width: 8.333%; }
+    width: 8.33333%; }
 
   .sm-two-twelfths {
-    width: 16.666%; }
+    width: 16.66667%; }
 
   .sm-three-twelfths {
     width: 25%; }
 
   .sm-four-twelfths {
-    width: 33.333%; }
+    width: 33.33333%; }
 
   .sm-five-twelfths {
-    width: 41.666%; }
+    width: 41.66667%; }
 
   .sm-six-twelfths {
     width: 50%; }
 
   .sm-seven-twelfths {
-    width: 58.333%; }
+    width: 58.33333%; }
 
   .sm-eight-twelfths {
-    width: 66.666%; }
+    width: 66.66667%; }
 
   .sm-nine-twelfths {
     width: 75%; }
 
   .sm-ten-twelfths {
-    width: 83.333%; }
+    width: 83.33333%; }
 
   .sm-eleven-twelfths {
-    width: 91.666%; } }
+    width: 91.66667%; } }
 /* @breakpoint__md
 --------------------------------------------------------
 
@@ -2279,19 +2423,37 @@ em {
     width: 80%; }
 
   .md-one-sixth {
-    width: 16.666%; }
+    width: 16.66667%; }
 
   .md-two-sixths {
-    width: 33.333%; }
+    width: 33.33333%; }
 
   .md-three-sixths {
     width: 50%; }
 
   .md-four-sixths {
-    width: 66.666%; }
+    width: 66.66667%; }
 
   .md-five-sixths {
-    width: 83.333%; }
+    width: 83.33333%; }
+
+  .md-one-seventh {
+    width: 14.28571%; }
+
+  .md-two-sevenths {
+    width: 28.57143%; }
+
+  .md-three-sevenths {
+    width: 42.85714%; }
+
+  .md-four-sevenths {
+    width: 57.14286%; }
+
+  .md-five-sevenths {
+    width: 71.42857%; }
+
+  .md-six-sevenths {
+    width: 85.71429%; }
 
   .md-one-eighth {
     width: 12.5%; }
@@ -2313,6 +2475,30 @@ em {
 
   .md-seven-eighths {
     width: 87.5%; }
+
+  .md-one-ninth {
+    width: 11.11111%; }
+
+  .md-two-ninths {
+    width: 22.22222%; }
+
+  .md-three-ninths {
+    width: 33.33333%; }
+
+  .md-four-ninths {
+    width: 44.44444%; }
+
+  .md-five-ninths {
+    width: 55.55556%; }
+
+  .md-six-ninths {
+    width: 66.66667%; }
+
+  .md-seven-ninths {
+    width: 77.77778%; }
+
+  .md-eight-ninths {
+    width: 88.88889%; }
 
   .md-one-tenth {
     width: 10%; }
@@ -2341,38 +2527,68 @@ em {
   .md-nine-tenths {
     width: 90%; }
 
+  .md-one-eleventh {
+    width: 9.09091%; }
+
+  .md-two-elevenths {
+    width: 18.18182%; }
+
+  .md-three-elevenths {
+    width: 27.27273%; }
+
+  .md-four-elevenths {
+    width: 36.36364%; }
+
+  .md-five-elevenths {
+    width: 45.45455%; }
+
+  .md-six-elevenths {
+    width: 54.54545%; }
+
+  .md-seven-elevenths {
+    width: 63.63636%; }
+
+  .md-eight-elevenths {
+    width: 72.72727%; }
+
+  .md-nine-elevenths {
+    width: 81.81818%; }
+
+  .md-ten-elevenths {
+    width: 90.90909%; }
+
   .md-one-twelfth {
-    width: 8.333%; }
+    width: 8.33333%; }
 
   .md-two-twelfths {
-    width: 16.666%; }
+    width: 16.66667%; }
 
   .md-three-twelfths {
     width: 25%; }
 
   .md-four-twelfths {
-    width: 33.333%; }
+    width: 33.33333%; }
 
   .md-five-twelfths {
-    width: 41.666%; }
+    width: 41.66667%; }
 
   .md-six-twelfths {
     width: 50%; }
 
   .md-seven-twelfths {
-    width: 58.333%; }
+    width: 58.33333%; }
 
   .md-eight-twelfths {
-    width: 66.666%; }
+    width: 66.66667%; }
 
   .md-nine-twelfths {
     width: 75%; }
 
   .md-ten-twelfths {
-    width: 83.333%; }
+    width: 83.33333%; }
 
   .md-eleven-twelfths {
-    width: 91.666%; } }
+    width: 91.66667%; } }
 /* @breakpoint__lg
 --------------------------------------------------------
 
@@ -2415,19 +2631,37 @@ em {
     width: 80%; }
 
   .lg-one-sixth {
-    width: 16.666%; }
+    width: 16.66667%; }
 
   .lg-two-sixths {
-    width: 33.333%; }
+    width: 33.33333%; }
 
   .lg-three-sixths {
     width: 50%; }
 
   .lg-four-sixths {
-    width: 66.666%; }
+    width: 66.66667%; }
 
   .lg-five-sixths {
-    width: 83.333%; }
+    width: 83.33333%; }
+
+  .lg-one-seventh {
+    width: 14.28571%; }
+
+  .lg-two-sevenths {
+    width: 28.57143%; }
+
+  .lg-three-sevenths {
+    width: 42.85714%; }
+
+  .lg-four-sevenths {
+    width: 57.14286%; }
+
+  .lg-five-sevenths {
+    width: 71.42857%; }
+
+  .lg-six-sevenths {
+    width: 85.71429%; }
 
   .lg-one-eighth {
     width: 12.5%; }
@@ -2449,6 +2683,30 @@ em {
 
   .lg-seven-eighths {
     width: 87.5%; }
+
+  .lg-one-ninth {
+    width: 11.11111%; }
+
+  .lg-two-ninths {
+    width: 22.22222%; }
+
+  .lg-three-ninths {
+    width: 33.33333%; }
+
+  .lg-four-ninths {
+    width: 44.44444%; }
+
+  .lg-five-ninths {
+    width: 55.55556%; }
+
+  .lg-six-ninths {
+    width: 66.66667%; }
+
+  .lg-seven-ninths {
+    width: 77.77778%; }
+
+  .lg-eight-ninths {
+    width: 88.88889%; }
 
   .lg-one-tenth {
     width: 10%; }
@@ -2477,38 +2735,68 @@ em {
   .lg-nine-tenths {
     width: 90%; }
 
+  .lg-one-eleventh {
+    width: 9.09091%; }
+
+  .lg-two-elevenths {
+    width: 18.18182%; }
+
+  .lg-three-elevenths {
+    width: 27.27273%; }
+
+  .lg-four-elevenths {
+    width: 36.36364%; }
+
+  .lg-five-elevenths {
+    width: 45.45455%; }
+
+  .lg-six-elevenths {
+    width: 54.54545%; }
+
+  .lg-seven-elevenths {
+    width: 63.63636%; }
+
+  .lg-eight-elevenths {
+    width: 72.72727%; }
+
+  .lg-nine-elevenths {
+    width: 81.81818%; }
+
+  .lg-ten-elevenths {
+    width: 90.90909%; }
+
   .lg-one-twelfth {
-    width: 8.333%; }
+    width: 8.33333%; }
 
   .lg-two-twelfths {
-    width: 16.666%; }
+    width: 16.66667%; }
 
   .lg-three-twelfths {
     width: 25%; }
 
   .lg-four-twelfths {
-    width: 33.333%; }
+    width: 33.33333%; }
 
   .lg-five-twelfths {
-    width: 41.666%; }
+    width: 41.66667%; }
 
   .lg-six-twelfths {
     width: 50%; }
 
   .lg-seven-twelfths {
-    width: 58.333%; }
+    width: 58.33333%; }
 
   .lg-eight-twelfths {
-    width: 66.666%; }
+    width: 66.66667%; }
 
   .lg-nine-twelfths {
     width: 75%; }
 
   .lg-ten-twelfths {
-    width: 83.333%; }
+    width: 83.33333%; }
 
   .lg-eleven-twelfths {
-    width: 91.666%; } }
+    width: 91.66667%; } }
 /* @breakpoint__xl
 --------------------------------------------------------
 
@@ -2551,19 +2839,37 @@ em {
     width: 80%; }
 
   .xl-one-sixth {
-    width: 16.666%; }
+    width: 16.66667%; }
 
   .xl-two-sixths {
-    width: 33.333%; }
+    width: 33.33333%; }
 
   .xl-three-sixths {
     width: 50%; }
 
   .xl-four-sixths {
-    width: 66.666%; }
+    width: 66.66667%; }
 
   .xl-five-sixths {
-    width: 83.333%; }
+    width: 83.33333%; }
+
+  .xl-one-seventh {
+    width: 14.28571%; }
+
+  .xl-two-sevenths {
+    width: 28.57143%; }
+
+  .xl-three-sevenths {
+    width: 42.85714%; }
+
+  .xl-four-sevenths {
+    width: 57.14286%; }
+
+  .xl-five-sevenths {
+    width: 71.42857%; }
+
+  .xl-six-sevenths {
+    width: 85.71429%; }
 
   .xl-one-eighth {
     width: 12.5%; }
@@ -2585,6 +2891,30 @@ em {
 
   .xl-seven-eighths {
     width: 87.5%; }
+
+  .xl-one-ninth {
+    width: 11.11111%; }
+
+  .xl-two-ninths {
+    width: 22.22222%; }
+
+  .xl-three-ninths {
+    width: 33.33333%; }
+
+  .xl-four-ninths {
+    width: 44.44444%; }
+
+  .xl-five-ninths {
+    width: 55.55556%; }
+
+  .xl-six-ninths {
+    width: 66.66667%; }
+
+  .xl-seven-ninths {
+    width: 77.77778%; }
+
+  .xl-eight-ninths {
+    width: 88.88889%; }
 
   .xl-one-tenth {
     width: 10%; }
@@ -2613,38 +2943,68 @@ em {
   .xl-nine-tenths {
     width: 90%; }
 
+  .xl-one-eleventh {
+    width: 9.09091%; }
+
+  .xl-two-elevenths {
+    width: 18.18182%; }
+
+  .xl-three-elevenths {
+    width: 27.27273%; }
+
+  .xl-four-elevenths {
+    width: 36.36364%; }
+
+  .xl-five-elevenths {
+    width: 45.45455%; }
+
+  .xl-six-elevenths {
+    width: 54.54545%; }
+
+  .xl-seven-elevenths {
+    width: 63.63636%; }
+
+  .xl-eight-elevenths {
+    width: 72.72727%; }
+
+  .xl-nine-elevenths {
+    width: 81.81818%; }
+
+  .xl-ten-elevenths {
+    width: 90.90909%; }
+
   .xl-one-twelfth {
-    width: 8.333%; }
+    width: 8.33333%; }
 
   .xl-two-twelfths {
-    width: 16.666%; }
+    width: 16.66667%; }
 
   .xl-three-twelfths {
     width: 25%; }
 
   .xl-four-twelfths {
-    width: 33.333%; }
+    width: 33.33333%; }
 
   .xl-five-twelfths {
-    width: 41.666%; }
+    width: 41.66667%; }
 
   .xl-six-twelfths {
     width: 50%; }
 
   .xl-seven-twelfths {
-    width: 58.333%; }
+    width: 58.33333%; }
 
   .xl-eight-twelfths {
-    width: 66.666%; }
+    width: 66.66667%; }
 
   .xl-nine-twelfths {
     width: 75%; }
 
   .xl-ten-twelfths {
-    width: 83.333%; }
+    width: 83.33333%; }
 
   .xl-eleven-twelfths {
-    width: 91.666%; } }
+    width: 91.66667%; } }
 /***
 
   @modules
