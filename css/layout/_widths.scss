@@ -50,7 +50,7 @@
 //
 $widths__number-of-divisions-at-breakpoint: (
   n:   12,
-  xs:  12,
+  xs:  0,
   sm:  12,
   md:  12,
   lg:  12,
@@ -191,29 +191,31 @@ $english-nth-by-number: (
 
 // Loop through all breakpoints in $widths__number-of-divisions-at-breakpoint
 @each $breakpoint, $num-divisions in $widths__number-of-divisions-at-breakpoint {
-  @if ($breakpoint != "n") {
-    /* 
+  @if ($num-divisions > 0) {  
+    @if ($breakpoint != "n") {
+      /* 
+        
+        Responsive widths at $breakpoint__#{$breakpoint}
       
-      Responsive widths at $breakpoint__#{$breakpoint}
-    
-    ---------------------------------------------------- */  
-    @include bp-at-least ( map-get($breakpoints, $breakpoint) ) {
+      ---------------------------------------------------- */  
+      @include bp-at-least ( map-get($breakpoints, $breakpoint) ) {
+        @for $i from 1 through $num-divisions {
+          @for $j from 1 through $i {
+            @include easy-to-read-width($j, $i, $breakpoint);
+          }
+        }
+      }
+    }
+    @else {
+      /*
+        
+        Widths at default Viewport 
+      
+      ---------------------------------------------------- */  
       @for $i from 1 through $num-divisions {
         @for $j from 1 through $i {
           @include easy-to-read-width($j, $i, $breakpoint);
         }
-      }
-    }
-  }
-  @else {
-    /*
-      
-      Widths at default Viewport 
-    
-    ---------------------------------------------------- */  
-    @for $i from 1 through $num-divisions {
-      @for $j from 1 through $i {
-        @include easy-to-read-width($j, $i, $breakpoint);
       }
     }
   }
