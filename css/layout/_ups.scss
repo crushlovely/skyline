@@ -60,7 +60,7 @@
 
 
 
-/* @viewport-agnostic
+/* @default
 --------------------------------------------------------
 
   These will be honored at every viewport
@@ -134,64 +134,66 @@
 
 ------------------------------------------------------ */
 
-@include bp-at-least($breakpoint__xs){
+@include bp-at-least($breakpoint__xs) {
 
   // Two up
-  .sm-two-up > * {
+  .xs-two-up > * {
     width: 50%;
   }
 
   // Three up
-  .sm-three-up > * {
+  .xs-three-up > * {
     width: 33.333333%;
   }
 
   // Four up
-  .sm-four-up > * {
+  .xs-four-up > * {
     width: 25%;
   }
 
   // Five up
-  .sm-five-up > * {
+  .xs-five-up > * {
     width: 20%;
   }
 
   // Six up
-  .sm-six-up > * {
+  .xs-six-up > * {
     width: 16.6666666%;
   }
 
   // Seven up
-  .sm-seven-up > * {
+  .xs-seven-up > * {
    width: 14.285714286%;
   }
 
   // Eight up
-  .sm-eight-up > *{
+  .xs-eight-up > *{
     width: 12.5%;
   }
 
   // Nine up
-  .sm-nine-up > *{
+  .xs-nine-up > *{
     width: 11.111111111%;
   }
 
   // Ten up
-  .sm-ten-up {
+  .xs-ten-up {
     width: 10%;
   }
 
   // Eleven up
-  .sm-eleven-up > *{
+  .xs-eleven-up > *{
    width: 9.090909091%;
   }
 
   // Twelve up
-  .sm-twelve-up > * {
+  .xs-twelve-up > * {
     width: 8.333333333%;
   }
 
 }
+
+
 
 
 
@@ -203,7 +205,7 @@
 
 ------------------------------------------------------ */
 
-@include bp-at-least($breakpoint__sm){
+@include bp-at-least($breakpoint__sm) {
 
   // Two up
   .sm-two-up > * {
@@ -274,7 +276,7 @@
 
 ------------------------------------------------------ */
 
-@include bp-at-least($breakpoint__md){
+@include bp-at-least($breakpoint__md) {
 
   // Two up
   .md-two-up > * {
@@ -336,6 +338,7 @@
 
 
 
+
 /* @breakpoint__lg
 --------------------------------------------------------
 
@@ -344,7 +347,7 @@
 
 ------------------------------------------------------ */
 
-@include bp-at-least($breakpoint__lg){
+@include bp-at-least($breakpoint__lg) {
 
   // Two up
   .lg-two-up > * {
@@ -415,7 +418,7 @@
 
 ------------------------------------------------------ */
 
-@include bp-at-least($breakpoint__xl){
+@include bp-at-least($breakpoint__xl) {
 
   // Two up
   .xl-two-up > * {
