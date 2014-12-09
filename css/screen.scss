@@ -188,24 +188,3 @@
   @import "modules/thumbnails";
 
   @import "modules/video-embeds";
-
-
-
-  // Dev
-  .dev .gx {
-    @include bp-at-least($breakpoint__xs) {
-      border: 1px solid yellow;
-    }
-    @include bp-at-least($breakpoint__sm) {
-      border: 1px solid green;
-    }
-    @include bp-at-least($breakpoint__md) {
-      border: 1px solid blue;
-    }
-    @include bp-at-least($breakpoint__lg) {
-      border: 1px solid black;
-    }
-    @include bp-at-least($breakpoint__xl) {
-      border: 1px solid red;
-    }
-  }

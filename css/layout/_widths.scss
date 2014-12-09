@@ -6,6 +6,7 @@
 --------------------------------------------------------
 
   Global Width Classes like .one-third or .seven-twelfths
+  and responsive widths like .sm-one-third or .xl-one-half
 
   If you append the width class with a size indicator, the
   size will only be applied if the viewport is at least
@@ -13,9 +14,14 @@
   of 50% to a div once the viewport is at a large size, use
   .lg-one-half.
 
-  Set the widths configuration variables in this partial
+  Set the widths configuration variables below in this partial
   to specify how many or how few classes you want available
   in your project.
+
+  Dependencies:
+  To use this partial, you also need $breakpoints defined
+  in base/_vars.scss and the breakpoint mixin from
+  base/_mixin-breakpoints.scss
 
 ---------------------------------------------------------  */
 
@@ -33,23 +39,25 @@
 // with a media query for the xs breakpoint and 12 sets of
 // easy-to-read width classes. Not 12 classes, but 12 SETS
 // of classes like .one-third, .two-thirds, .three-thirds etc.
-// This generates a lot of CSS, which is useful, but only
-// specify the number of columns you really need.
+// This generates a lot of CSS (16kb compressed, non-gzipped), 
+// all of it useful but why not specify the number of columns 
+// you really need.
 //
 // NOTE: by default, we have 12 divisions for each breakpoint, which
 // is the largest amount possible. Pare this down to what you need.
-// You can use 0 if you don't want any responsive width classes
-// for any givenbreakpoint.
+// You can use 0 [* TODO *] if you don't want any responsive width classes
+// for any given breakpoint.
 //
 $widths__number-of-divisions-at-breakpoint: (
-  n:   4,
-  xs:  4,
-  sm:  4,
-  md:  4,
-  lg:  4,
-  xl:  4,
-  xxl: 4
+  n:   12,
+  xs:  12,
+  sm:  12,
+  md:  12,
+  lg:  12,
+  xl:  12,
+  xxl: 12
 );
+
 
 // 100% width classes:
 // ------------------------------------------------------
@@ -77,11 +85,6 @@ $widths__generate-common-denominator-widths: true; // true or false
 // ------------------------------------------------------
 // NOTE: there's nothing else to edit after this line. All that
 // follows are the functions/mixins that generate the code.
-// You might want to check the main screen.css file after compiling
-// if you need to verify your settings.
-
-
-
 
 
 // ----------------------------------------------------
@@ -159,7 +162,7 @@ $english-nth-by-number: (
   @if ($breakpoint != "n") {
     /* 
       
-      Responsive widths at $breakpoint__#{$breakpoint} 
+      Responsive widths at $breakpoint__#{$breakpoint}
     
     ---------------------------------------------------- */  
     @include bp-at-least ( map-get($breakpoints, $breakpoint) ) {
