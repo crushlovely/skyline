@@ -65,7 +65,7 @@ $widths__number-of-divisions-at-breakpoint: (
 // and .five-fifths. If you say false, you'll still get 
 // .one-whole classes because those are super useful
 //
-$widths__generate-all-100-percent-widths: true; // true or false
+$widths__generate-all-100-percent-widths: false; // true or false
 
 
 // Generate common denominator widths:
@@ -75,7 +75,7 @@ $widths__generate-all-100-percent-widths: true; // true or false
 // Setting this to 'false' generates less code, but forces you
 // to remember your fractions.
 //
-$widths__generate-common-denominator-widths: true; // true or false
+$widths__generate-common-denominator-widths: false; // true or false
 
 
 
@@ -126,6 +126,22 @@ $english-nth-by-number: (
   12: "twelfth"
 );
 
+// Euclid's Algorithm to find GCD of Fraction
+// used to determine if a fraction can be reduced 
+//
+// first, this assumes that $b > $a and they are non zero.
+// It will always be so in our 
+// case - so we're not going to add conditionals to check for this
+
+@function gcd($a, $b) {
+  @if ($b == 0) { @return $a; }
+  @else {
+    $remainder: $a%$b;
+    @return gcd($b, $remainder);
+  }
+}
+
+
 // Mixin to return easy-to-read width class from 2 numbers
 // Accepts a $numerator, $denominator, and optional breakpoint
 // 
@@ -154,7 +170,23 @@ $english-nth-by-number: (
   }
   
   // Here's the class
-  #{$breakpoint-prefix}#{$width-first-part}#{$width-second-part} { width: ($numerator/$denominator)*100%; }
+  // Return the class based on settings defined above
+  //
+  // If $widths__generate-all-100-percent-widths is false and $numerator/$denominator = 1. Only do this
+  // for denominators above 1 so we still get .one-whole
+  //
+  @if ($widths__generate-all-100-percent-widths != true and $numerator/$denominator == 1 and $denominator > 1) {
+    // We don't return the width in this situation
+  }
+  // If $widths__generate-common-denominator-widths is false
+  //
+  @elseif ($widths__generate-common-denominator-widths != true and gcd($numerator, $denominator) > 1) {
+    // We don't return the width in this situation
+  }
+  @else {
+    #{$breakpoint-prefix}#{$width-first-part}#{$width-second-part} { width: ($numerator/$denominator)*100%; }
+  }
+
 }
 
 // Loop through all breakpoints in $widths__number-of-divisions-at-breakpoint
