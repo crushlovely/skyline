@@ -91,7 +91,6 @@
   http://normalize.css v2.1.0 http://git.io/normalize
 
 --------------------------------------------------------- */
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700);
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -3228,3 +3227,19 @@ em {
     right: 0;
     height: 100% !important;
     width: 100% !important; }
+
+@media screen and (min-width: 20em) {
+  .dev .gx {
+    border: 1px solid yellow; } }
+@media screen and (min-width: 34.375em) {
+  .dev .gx {
+    border: 1px solid green; } }
+@media screen and (min-width: 48em) {
+  .dev .gx {
+    border: 1px solid blue; } }
+@media screen and (min-width: 64em) {
+  .dev .gx {
+    border: 1px solid black; } }
+@media screen and (min-width: 78.5em) {
+  .dev .gx {
+    border: 1px solid red; } }
