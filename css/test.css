@@ -176,6 +176,47 @@
 
 /* 
   
+  Responsive ups at $breakpoint__xs
+
+---------------------------------------------------- */
+@media screen and (min-width: 20em) {
+  .xs-one-up > * {
+    width: 100%; }
+
+  .xs-two-up > * {
+    width: 50%; }
+
+  .xs-three-up > * {
+    width: 33.33333%; }
+
+  .xs-four-up > * {
+    width: 25%; }
+
+  .xs-five-up > * {
+    width: 20%; }
+
+  .xs-six-up > * {
+    width: 16.66667%; }
+
+  .xs-seven-up > * {
+    width: 14.28571%; }
+
+  .xs-eight-up > * {
+    width: 12.5%; }
+
+  .xs-nine-up > * {
+    width: 11.11111%; }
+
+  .xs-ten-up > * {
+    width: 10%; }
+
+  .xs-eleven-up > * {
+    width: 9.09091%; }
+
+  .xs-twelve-up > * {
+    width: 8.33333%; } }
+/* 
+  
   Responsive ups at $breakpoint__sm
 
 ---------------------------------------------------- */
