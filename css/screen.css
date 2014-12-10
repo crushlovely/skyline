@@ -1537,26 +1537,65 @@ em {
 .gx {
   min-height: 4em;
   background: rgba(193, 199, 208, 0.5);
-  border: 1px solid rgba(193, 199, 208, 0.5); }
+  border: 2px solid rgba(193, 199, 208, 0.5); }
   @media screen and (min-width: 20em) {
     .gx {
-      border-color: yellow; } }
+      border-color: #94c1c8; } }
   @media screen and (min-width: 34.375em) {
     .gx {
-      border-color: green; } }
+      border-color: #a2bb60; } }
   @media screen and (min-width: 48em) {
     .gx {
-      border-color: blue; } }
+      border-color: #eb6d58; } }
   @media screen and (min-width: 64em) {
     .gx {
-      border-color: purple; } }
+      border-color: #0d699c; } }
   @media screen and (min-width: 78.5em) {
     .gx {
-      border-color: red; } }
+      border-color: #c492bc; } }
   @media screen and (min-width: 100em) {
     .gx {
-      border-color: black; } }
+      border-color: #76400b; } }
 
+.g .g .gx {
+  border-width: 1px; }
+
+@media screen and (min-width: 20em) {
+  [class*="-highlight"] {
+    color: inherit; }
+
+  .xs-highlight {
+    color: #94c1c8; } }
+@media screen and (min-width: 34.375em) {
+  [class*="-highlight"] {
+    color: inherit; }
+
+  .sm-highlight {
+    color: #a2bb60; } }
+@media screen and (min-width: 48em) {
+  [class*="-highlight"] {
+    color: inherit; }
+
+  .md-highlight {
+    color: #eb6d58; } }
+@media screen and (min-width: 64em) {
+  [class*="-highlight"] {
+    color: inherit; }
+
+  .lg-highlight {
+    color: #0d699c; } }
+@media screen and (min-width: 78.5em) {
+  [class*="-highlight"] {
+    color: inherit; }
+
+  .xl-highlight {
+    color: #c492bc; } }
+@media screen and (min-width: 100em) {
+  [class*="-highlight"] {
+    color: inherit; }
+
+  .xl-highlight {
+    color: #76400b; } }
 /**
 
   @hide

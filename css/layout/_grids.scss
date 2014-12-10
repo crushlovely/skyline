@@ -122,23 +122,32 @@ $grid__bottom-spacing-when-floating: $grid__gutter-width;
 .gx {
   min-height: 4em;
   background: rgba(193, 199, 208, .5);
-  border: 1px solid rgba(193, 199, 208, .5);
+  border: 2px solid rgba(193, 199, 208, .5);
   @include bp-at-least($breakpoint__xs) {
-    border-color: yellow;
+    border-color: $color__sky-blue;
   }
   @include bp-at-least($breakpoint__sm) {
-    border-color: green;
+    border-color: $color__green;
   }
   @include bp-at-least($breakpoint__md) {
-    border-color: blue;
+    border-color: $color__salmon;
   }
   @include bp-at-least($breakpoint__lg) {
-    border-color: purple;
+    border-color: $color__blue;
   }
   @include bp-at-least($breakpoint__xl) {
-    border-color: red;
+    border-color: $color__purple;
   }
   @include bp-at-least($breakpoint__xxl) {
-    border-color: black;
+    border-color: $color__brown;
   }
 }
+
+.g .g .gx { border-width: 1px; }
+
+@include bp-at-least($breakpoint__xs)  { [class*="-highlight"] { color: inherit; } .xs-highlight { color: $color__sky-blue; } }
+@include bp-at-least($breakpoint__sm)  { [class*="-highlight"] { color: inherit; } .sm-highlight { color: $color__green; } }
+@include bp-at-least($breakpoint__md)  { [class*="-highlight"] { color: inherit; } .md-highlight { color: $color__salmon; } }
+@include bp-at-least($breakpoint__lg)  { [class*="-highlight"] { color: inherit; } .lg-highlight { color: $color__blue; } }
+@include bp-at-least($breakpoint__xl)  { [class*="-highlight"] { color: inherit; } .xl-highlight { color: $color__purple; } }
+@include bp-at-least($breakpoint__xxl) { [class*="-highlight"] { color: inherit; } .xl-highlight { color: $color__brown; } }
