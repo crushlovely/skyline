@@ -16,7 +16,7 @@ The starter files contain as little code as possible.  The structure consists of
 ```
 ├── css
 |   ├── base
-|       ├── variables, resets, mixins, global assets like fonts and icons, etc.
+|       ├── variables, resets, mixins, global assets like fonts
 |   ├── elements
 |       ├── styles for base elements (p, ul, img, form, input, etc.)
 |   ├── layout
