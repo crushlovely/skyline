@@ -22,13 +22,16 @@
 
 ------------------------------------------------------ */
 
-$container__max-width: 64em; // restricts width
+$container__max-width: 70em; // restricts width
 
 .container {
   @include clearfix();
   margin-left: auto;
   margin-right: auto;
   max-width: $container__max-width;   
-  padding: 0 1*$unit;
+  padding: 0 1.5*$unit;
+  @include bp-at-least($breakpoint__sm) {
+    padding: 0 3*$unit;
+  }
 }
 

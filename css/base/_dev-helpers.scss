@@ -1,0 +1,251 @@
+/**
+
+  @dev helpers
+--------------------------------------------------------
+  base/_dev-helpers.scss
+--------------------------------------------------------
+
+  Dev helpers highlight elements and/or show information
+  about the site and its current state (breakpoints, etc.)
+
+  These are made active by adding classes to the HTML
+  element. A JS system to toggle these classes is in
+  the works. 
+
+  This partial requires:
+  * base/_vars.scss
+  * base/_mixin-breakpoints.scss
+
+-------------------------------------------------------- */
+
+
+
+
+
+// Dev configuration
+// --------------------------------------------------------
+//
+// Define color variables
+//
+$dev__color__default: $color__grey;
+$dev__color__xs: $color__sky-blue;
+$dev__color__sm: $color__green;
+$dev__color__md: $color__salmon;
+$dev__color__lg: $color__blue;
+$dev__color__xl: $color__purple;
+$dev__color__xxl: $color__brown;
+//
+// Define background opacity 
+$dev__bg-opacity: .25;
+
+
+
+/* @highlight elements at breakpoint
+--------------------------------------------------------
+  
+  Highlight an element at certain breakpoints by changing
+  its color;
+
+  Add .dev--highlight to the HTML element to enable this.
+
+  Example: Highlight a title at MD breakpoint
+  <h1 class="md-highlight">I will change color at MD breakpoint</h1>
+
+-------------------------------------------------------- */
+
+.dev--highlight-elements {
+  @include bp-at-least($breakpoint__xs)  { 
+    [class*="-highlight"] { color: inherit; } 
+    .xs-highlight { color: $dev__color__xs; } 
+  }
+  @include bp-at-least($breakpoint__sm)  { 
+    [class*="-highlight"] { color: inherit; } 
+    .sm-highlight { color: $dev__color__sm; } 
+  }
+  @include bp-at-least($breakpoint__md)  { 
+    [class*="-highlight"] { color: inherit; } 
+    .md-highlight { color: $dev__color__md; } 
+  }
+  @include bp-at-least($breakpoint__lg)  { 
+    [class*="-highlight"] { color: inherit; } 
+    .lg-highlight { color: $dev__color__lg; } 
+  }
+  @include bp-at-least($breakpoint__xl)  { 
+    [class*="-highlight"] { color: inherit; } 
+    .xl-highlight { color: $color__purple; } 
+  }
+  @include bp-at-least($breakpoint__xxl) { 
+    [class*="-highlight"] { color: inherit; } 
+    .xxl-highlight { color: $dev__color__xxl; } 
+  }
+}
+
+
+
+
+
+/* @highlight grids in dev mode
+--------------------------------------------------------
+  
+  Indicate grids using responsive widths at certain breakpoints.
+
+  Add .dev--grids to the HTML element to enable this.
+
+  No extra classes are needed on the grids themselves.
+
+-------------------------------------------------------- */
+
+.dev--highlight-grids {  
+  // Grids
+  //
+  .g, .grid {
+    > * {
+      min-height: 4em;
+      background: rgba(193, 199, 208, .5);
+      border: 1px solid rgba(193, 199, 208, .5);
+    }
+    @include bp-at-least($breakpoint__xs) {
+      &[class*="xs-"] > * {
+        border-color: $dev__color__xs;
+        background: rgba($dev__color__xs, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($breakpoint__sm) {
+      &[class*="sm-"] > * {
+        border-color: $dev__color__sm;
+        background: rgba($dev__color__sm, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($breakpoint__md) {
+      &[class*="md-"] > * {
+        border-color: $dev__color__md;
+        background: rgba($dev__color__md, $dev__bg-opacity);      
+      }
+    }
+    @include bp-at-least($breakpoint__lg) {
+      &[class*="lg-"] > * {
+        border-color: $dev__color__lg;
+        background: rgba($dev__color__lg, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($breakpoint__xl) {
+      &[class*="xl-"] > * {
+        border-color: $color__purple;
+        background: rgba($color__purple, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($breakpoint__xxl) {
+      &[class*="xxl-"] > * {
+        border-color: $dev__color__xxl;
+        background: rgba($dev__color__xxl, $dev__bg-opacity);
+      }
+    }
+  }
+
+  // Ups
+  .gw, .grid-wrap {
+    @include bp-at-least($breakpoint__xs) {
+      &[class*="xs-"][class*="-up"] > * > * {
+        border-color: $dev__color__xs;
+        background: rgba($dev__color__xs, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($breakpoint__sm) {
+      &[class*="sm-"][class*="-up"] > * > * {
+        border-color: $dev__color__sm;
+        background: rgba($dev__color__sm, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($breakpoint__md) {
+      &[class*="md-"][class*="-up"] > * > * {
+        border-color: $dev__color__md;
+        background: rgba($dev__color__md, $dev__bg-opacity);      
+      }
+    }
+    @include bp-at-least($breakpoint__lg) {
+      &[class*="lg-"][class*="-up"] > * > * {
+        border-color: $dev__color__lg;
+        background: rgba($dev__color__lg, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($breakpoint__xl) {
+      &[class*="xl-"][class*="-up"] > * > * {
+        border-color: $color__purple;
+        background: rgba($color__purple, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($breakpoint__xxl) {
+      &[class*="xxl-"][class*="-up"] > * > * { 
+        border-color: $dev__color__xxl;
+        background: rgba($dev__color__xxl, $dev__bg-opacity);
+      }
+    }
+  }
+
+}
+
+
+
+
+/* @show the current breakpoint
+--------------------------------------------------------
+  
+  Adds a badge to the bottom right of the body to show
+  the current breakpoint.
+
+  To enable this, add .dev--show-breakpoint to the HTML
+  element
+
+-------------------------------------------------------- */
+
+.dev--show-breakpoint {
+  body:before {
+    content: "-";
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 1em;
+    border: 1px solid $dev__color__default;
+    background: rgba($dev__color__default, $dev__bg-opacity);
+    font-size: .25em;
+    line-height: 1;
+    color: $dev__color__default;
+    @include bp-at-least($breakpoint__xs) {
+      content: "XS";
+      color: $dev__color__xs;
+      background: rgba($dev__color__xs, $dev__bg-opacity);
+      border-color: $dev__color__xs;
+    }
+    @include bp-at-least($breakpoint__sm) {
+      content: "SM";
+      color: $dev__color__sm;
+      background: rgba($dev__color__sm, $dev__bg-opacity);
+      border-color: $dev__color__sm;
+    }
+    @include bp-at-least($breakpoint__md) {
+      content: "MD";
+      color: $dev__color__md;
+      background: rgba($dev__color__md, $dev__bg-opacity);
+      border-color: $dev__color__md;
+    }
+    @include bp-at-least($breakpoint__lg) {
+      content: "LG";
+      color: $dev__color__lg;
+      background: rgba($dev__color__lg, $dev__bg-opacity);
+      border-color: $dev__color__lg;
+    }
+    @include bp-at-least($breakpoint__xl) {
+      content: "XL";
+      color: $dev__color__xl;
+      background: rgba($dev__color__xl, $dev__bg-opacity);
+      border-color: $dev__color__xl;
+    }
+    @include bp-at-least($breakpoint__xxl) {
+      content: "XXL";
+      color: $dev__color__xxl;
+      background: rgba($dev__color__xxl, $dev__bg-opacity);
+      border-color: $dev__color__xxl;
+    }
+  }
+}
+  
