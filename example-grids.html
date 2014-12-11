@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dev--grids">
+<html class="dev--highlight-grids dev--highlight-elements dev--show-breakpoint">
 
 <head>
   <meta charset="utf-8">
@@ -70,13 +70,14 @@
             <li>These grid units then have responsive classnames added to them, which specify their widths at different viewports.</li>
             <li>Responsive width classes start with a two-letter prefix (xs, sm, md, lg, xl) and follow with the width, written in easy-to-read fractions (one-half, two-thirds, seven-elevenths, etc.).
           </ol>
+          <p><em>NOTE: The HTML element on this page has the classes <code>.dev--highlight-elements .dev--highlight-grids .dev--show-breakpoint</code> from <code>base/_dev-helpers.scss</code>. These enable some helper classes that highlight elements at breakpoints</em></p>
         </section>
 
         <section class="block container">
           <h1>A basic grid example</h1>
           <p>Each grid unit below has the following classes: <code>sm-one-half md-one-third lg-one-sixth xl-one-twelfth</code>. These classes determine the grid unit's width at these viewports:</p>
           <ul>
-            <li><b class="xs-highlight">Default</b>: grid units are 100%</li>
+            <li><b>Default</b>: grid units are 100%</li>
             <li><b class="sm-highlight">At SM</b>: one-half</li>
             <li><b class="md-highlight">At MD</b>: one-third</li>
             <li><b class="lg-highlight">At LG</b>: one-sixth</li>
@@ -105,15 +106,15 @@
             <div class="g sm-one-whole md-one-half  lg-one-third    xl-one-twelfth"><div class="gx"></div></div>
             <div class="g sm-one-half  md-one-half  lg-one-third    xl-one-twelfth"><div class="gx"></div></div>
             <div class="g sm-one-half  md-one-third lg-one-third    xl-one-twelfth"><div class="gx"></div></div>
-            <div class="g sm-one-whole md-one-third lg-one-fifth    xl-one-twelfth"><div class="gx"></div></div>
-            <div class="g sm-one-half  md-one-third lg-three-fifths xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-whole md-one-third lg-one-fifth    xl-three-twelfths"><div class="gx"></div></div>
+            <div class="g sm-one-half  md-one-third lg-three-fifths xl-three-twelfths"><div class="gx"></div></div>
             <div class="g sm-one-half  md-one-half  lg-one-fifth    xl-one-twelfth"><div class="gx"></div></div>
             <div class="g sm-one-whole md-one-half  lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
             <div class="g sm-one-half  md-one-third lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
-            <div class="g sm-one-half  md-one-third lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
-            <div class="g sm-one-whole md-one-third lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
-            <div class="g sm-one-half  md-one-half  lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
-            <div class="g sm-one-half  md-one-half  lg-one-sixth    xl-one-twelfth"><div class="gx"></div></div>
+            <div class="g sm-one-half  md-one-third lg-one-sixth    xl-one-eighth"><div class="gx"></div></div>
+            <div class="g sm-one-whole md-one-third lg-one-sixth    xl-three-eighths"><div class="gx"></div></div>
+            <div class="g sm-one-half  md-one-half  lg-one-sixth    xl-three-eighths"><div class="gx"></div></div>
+            <div class="g sm-one-half  md-one-half  lg-one-sixth    xl-one-eighth"><div class="gx"></div></div>
           </div>
         </section>
 
@@ -141,13 +142,14 @@
           <h1>Grid example using ups</h1>
           <p>For a grid wrap containing equally-sized grid units, like a gallery of thumbnails for instance, use the responsive ups classes from <code>layout/_ups.scss</code>. With these classes applied to the .grid wrapper, you won't need to specify widths on each individual grid unit.</p>
           <ul>
-            <li><b class="xs-highlight">Default</b>: two-up</li>
+            <li><b>Default</b>: 100%</li>
+            <li><b class="xs-highlight">At XS</b>: two-up</li>
             <li><b class="sm-highlight">At SM</b>: three-up</li>
             <li><b class="md-highlight">At MD</b>: four-up</li>
             <li><b class="lg-highlight">At LG</b>: six-up</li>
             <li><b class="xl-highlight">At XL</b>: twelve-up</li>
           </ul>
-          <div class="gw two-up sm-three-up md-four-up lg-six-up xl-twelve-up">
+          <div class="gw xs-two-up sm-three-up md-four-up lg-six-up xl-twelve-up">
             <div class="g"><div class="gx"></div></div>
             <div class="g"><div class="gx"></div></div>
             <div class="g"><div class="gx"></div></div>

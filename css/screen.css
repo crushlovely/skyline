@@ -259,6 +259,189 @@ input, input::-webkit-input-placeholder, input:-moz-placeholder, textarea {
 
 /**
 
+  @dev helpers
+--------------------------------------------------------
+  base/_dev-helpers.scss
+--------------------------------------------------------
+
+  Dev helpers highlight elements and/or show information
+  about the site and its current state (breakpoints, etc.)
+
+  These are made active by adding classes to the HTML
+  element. A JS system to toggle these classes is in
+  the works. 
+
+  This partial requires:
+  * base/_vars.scss
+  * base/_mixin-breakpoints.scss
+
+-------------------------------------------------------- */
+/* @highlight elements at breakpoint
+--------------------------------------------------------
+  
+  Highlight an element at certain breakpoints by changing
+  its color;
+
+  Add .dev--highlight to the HTML element to enable this.
+
+  Example: Highlight a title at MD breakpoint
+  <h1 class="md-highlight">I will change color at MD breakpoint</h1>
+
+-------------------------------------------------------- */
+@media screen and (min-width: 20em) {
+  .dev--highlight-elements [class*="-highlight"] {
+    color: inherit; }
+  .dev--highlight-elements .xs-highlight {
+    color: #94c1c8; } }
+@media screen and (min-width: 34.375em) {
+  .dev--highlight-elements [class*="-highlight"] {
+    color: inherit; }
+  .dev--highlight-elements .sm-highlight {
+    color: #a2bb60; } }
+@media screen and (min-width: 48em) {
+  .dev--highlight-elements [class*="-highlight"] {
+    color: inherit; }
+  .dev--highlight-elements .md-highlight {
+    color: #eb6d58; } }
+@media screen and (min-width: 64em) {
+  .dev--highlight-elements [class*="-highlight"] {
+    color: inherit; }
+  .dev--highlight-elements .lg-highlight {
+    color: #0d699c; } }
+@media screen and (min-width: 78.5em) {
+  .dev--highlight-elements [class*="-highlight"] {
+    color: inherit; }
+  .dev--highlight-elements .xl-highlight {
+    color: #c492bc; } }
+@media screen and (min-width: 100em) {
+  .dev--highlight-elements [class*="-highlight"] {
+    color: inherit; }
+  .dev--highlight-elements .xxl-highlight {
+    color: #76400b; } }
+
+/* @highlight grids in dev mode
+--------------------------------------------------------
+  
+  Indicate grids using responsive widths at certain breakpoints.
+
+  Add .dev--grids to the HTML element to enable this.
+
+  No extra classes are needed on the grids themselves.
+
+-------------------------------------------------------- */
+.dev--highlight-grids .g > *, .dev--highlight-grids .grid > * {
+  min-height: 4em;
+  background: rgba(193, 199, 208, 0.5);
+  border: 1px solid rgba(193, 199, 208, 0.5); }
+@media screen and (min-width: 20em) {
+  .dev--highlight-grids .g[class*="xs-"] > *, .dev--highlight-grids .grid[class*="xs-"] > * {
+    border-color: #94c1c8;
+    background: rgba(148, 193, 200, 0.25); } }
+@media screen and (min-width: 34.375em) {
+  .dev--highlight-grids .g[class*="sm-"] > *, .dev--highlight-grids .grid[class*="sm-"] > * {
+    border-color: #a2bb60;
+    background: rgba(162, 187, 96, 0.25); } }
+@media screen and (min-width: 48em) {
+  .dev--highlight-grids .g[class*="md-"] > *, .dev--highlight-grids .grid[class*="md-"] > * {
+    border-color: #eb6d58;
+    background: rgba(235, 109, 88, 0.25); } }
+@media screen and (min-width: 64em) {
+  .dev--highlight-grids .g[class*="lg-"] > *, .dev--highlight-grids .grid[class*="lg-"] > * {
+    border-color: #0d699c;
+    background: rgba(13, 105, 156, 0.25); } }
+@media screen and (min-width: 78.5em) {
+  .dev--highlight-grids .g[class*="xl-"] > *, .dev--highlight-grids .grid[class*="xl-"] > * {
+    border-color: #c492bc;
+    background: rgba(196, 146, 188, 0.25); } }
+@media screen and (min-width: 100em) {
+  .dev--highlight-grids .g[class*="xxl-"] > *, .dev--highlight-grids .grid[class*="xxl-"] > * {
+    border-color: #76400b;
+    background: rgba(118, 64, 11, 0.25); } }
+@media screen and (min-width: 20em) {
+  .dev--highlight-grids .gw[class*="xs-"][class*="-up"] > * > *, .dev--highlight-grids .grid-wrap[class*="xs-"][class*="-up"] > * > * {
+    border-color: #94c1c8;
+    background: rgba(148, 193, 200, 0.25); } }
+@media screen and (min-width: 34.375em) {
+  .dev--highlight-grids .gw[class*="sm-"][class*="-up"] > * > *, .dev--highlight-grids .grid-wrap[class*="sm-"][class*="-up"] > * > * {
+    border-color: #a2bb60;
+    background: rgba(162, 187, 96, 0.25); } }
+@media screen and (min-width: 48em) {
+  .dev--highlight-grids .gw[class*="md-"][class*="-up"] > * > *, .dev--highlight-grids .grid-wrap[class*="md-"][class*="-up"] > * > * {
+    border-color: #eb6d58;
+    background: rgba(235, 109, 88, 0.25); } }
+@media screen and (min-width: 64em) {
+  .dev--highlight-grids .gw[class*="lg-"][class*="-up"] > * > *, .dev--highlight-grids .grid-wrap[class*="lg-"][class*="-up"] > * > * {
+    border-color: #0d699c;
+    background: rgba(13, 105, 156, 0.25); } }
+@media screen and (min-width: 78.5em) {
+  .dev--highlight-grids .gw[class*="xl-"][class*="-up"] > * > *, .dev--highlight-grids .grid-wrap[class*="xl-"][class*="-up"] > * > * {
+    border-color: #c492bc;
+    background: rgba(196, 146, 188, 0.25); } }
+@media screen and (min-width: 100em) {
+  .dev--highlight-grids .gw[class*="xxl-"][class*="-up"] > * > *, .dev--highlight-grids .grid-wrap[class*="xxl-"][class*="-up"] > * > * {
+    border-color: #76400b;
+    background: rgba(118, 64, 11, 0.25); } }
+
+/* @show the current breakpoint
+--------------------------------------------------------
+  
+  Adds a badge to the bottom right of the body to show
+  the current breakpoint.
+
+  To enable this, add .dev--show-breakpoint to the HTML
+  element
+
+-------------------------------------------------------- */
+.dev--show-breakpoint body:before {
+  content: "-";
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1em;
+  border: 1px solid #b0b3b3;
+  background: rgba(176, 179, 179, 0.25);
+  font-size: .25em;
+  line-height: 1;
+  color: #b0b3b3; }
+  @media screen and (min-width: 20em) {
+    .dev--show-breakpoint body:before {
+      content: "XS";
+      color: #94c1c8;
+      background: rgba(148, 193, 200, 0.25);
+      border-color: #94c1c8; } }
+  @media screen and (min-width: 34.375em) {
+    .dev--show-breakpoint body:before {
+      content: "SM";
+      color: #a2bb60;
+      background: rgba(162, 187, 96, 0.25);
+      border-color: #a2bb60; } }
+  @media screen and (min-width: 48em) {
+    .dev--show-breakpoint body:before {
+      content: "MD";
+      color: #eb6d58;
+      background: rgba(235, 109, 88, 0.25);
+      border-color: #eb6d58; } }
+  @media screen and (min-width: 64em) {
+    .dev--show-breakpoint body:before {
+      content: "LG";
+      color: #0d699c;
+      background: rgba(13, 105, 156, 0.25);
+      border-color: #0d699c; } }
+  @media screen and (min-width: 78.5em) {
+    .dev--show-breakpoint body:before {
+      content: "XL";
+      color: #c492bc;
+      background: rgba(196, 146, 188, 0.25);
+      border-color: #c492bc; } }
+  @media screen and (min-width: 100em) {
+    .dev--show-breakpoint body:before {
+      content: "XXL";
+      color: #76400b;
+      background: rgba(118, 64, 11, 0.25);
+      border-color: #76400b; } }
+
+/**
+
   @print
 --------------------------------------------------------
   base/_print.scss
@@ -1427,13 +1610,16 @@ em {
   zoom: 1;
   margin-left: auto;
   margin-right: auto;
-  max-width: 64em;
-  padding: 0 1.125em; }
+  max-width: 70em;
+  padding: 0 1.6875em; }
   .container:before, .container:after {
     content: " ";
     display: table; }
   .container:after {
     clear: both; }
+  @media screen and (min-width: 34.375em) {
+    .container {
+      padding: 0 3.375em; } }
 
 /**
 
@@ -1510,7 +1696,7 @@ em {
   @media screen and (min-width: 20em) {
     .grid-wrap,
     .gw {
-      margin: 0 -0.5625em -1.125em; } }
+      margin: 0 0 -1.125em -1.125em; } }
 
 .grid,
 .g {
@@ -1531,71 +1717,9 @@ em {
   @media screen and (min-width: 20em) {
     .grid,
     .g {
-      padding: 0 0.5625em 1.125em;
+      padding: 0 0 1.125em 1.125em;
       float: left; } }
 
-.gx {
-  min-height: 4em;
-  background: rgba(193, 199, 208, 0.5);
-  border: 2px solid rgba(193, 199, 208, 0.5); }
-  @media screen and (min-width: 20em) {
-    .gx {
-      border-color: #94c1c8; } }
-  @media screen and (min-width: 34.375em) {
-    .gx {
-      border-color: #a2bb60; } }
-  @media screen and (min-width: 48em) {
-    .gx {
-      border-color: #eb6d58; } }
-  @media screen and (min-width: 64em) {
-    .gx {
-      border-color: #0d699c; } }
-  @media screen and (min-width: 78.5em) {
-    .gx {
-      border-color: #c492bc; } }
-  @media screen and (min-width: 100em) {
-    .gx {
-      border-color: #76400b; } }
-
-.g .g .gx {
-  border-width: 1px; }
-
-@media screen and (min-width: 20em) {
-  [class*="-highlight"] {
-    color: inherit; }
-
-  .xs-highlight {
-    color: #94c1c8; } }
-@media screen and (min-width: 34.375em) {
-  [class*="-highlight"] {
-    color: inherit; }
-
-  .sm-highlight {
-    color: #a2bb60; } }
-@media screen and (min-width: 48em) {
-  [class*="-highlight"] {
-    color: inherit; }
-
-  .md-highlight {
-    color: #eb6d58; } }
-@media screen and (min-width: 64em) {
-  [class*="-highlight"] {
-    color: inherit; }
-
-  .lg-highlight {
-    color: #0d699c; } }
-@media screen and (min-width: 78.5em) {
-  [class*="-highlight"] {
-    color: inherit; }
-
-  .xl-highlight {
-    color: #c492bc; } }
-@media screen and (min-width: 100em) {
-  [class*="-highlight"] {
-    color: inherit; }
-
-  .xl-highlight {
-    color: #76400b; } }
 /**
 
   @hide
