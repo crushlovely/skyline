@@ -127,8 +127,6 @@ $english-by-number: (
   
   // Here's the class
   #{$breakpoint-prefix}#{$up-first-part}up > * { width: (100 / $n)*1%; }
-
-
 }
 
 // Loop through all breakpoints in $ups__number-of-ups-at-breakpoint

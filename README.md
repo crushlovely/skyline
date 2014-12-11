@@ -16,7 +16,7 @@ The starter files contain as little code as possible.  The structure consists of
 ```
 ├── css
 |   ├── base
-|       ├── variables, resets, mixins, global assets like fonts and icons, etc.
+|       ├── variables, resets, mixins, global assets like fonts
 |   ├── elements
 |       ├── styles for base elements (p, ul, img, form, input, etc.)
 |   ├── layout
@@ -51,3 +51,6 @@ If you want a simple route, you can view the index.html page in a browser and it
 ### Documentation
 Extensive docs are in the works, but not yet released. However, Skyline makes it easy by adding detailed documentation in the comments of the scss partials themselves. Descriptions are right next to the actual code, making it simple to learn how it works.
 
+## Copyright
+
+Copyright (c) 2014 Jeff Schram (Crush & Lovely). See LICENSE for further details.

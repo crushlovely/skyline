@@ -2191,18 +2191,15 @@ em {
 
   If you append the width class with a size indicator, the
   size will only be applied if the viewport is at least
-  at that breakpoint size.  For instance, to apply a width
-  of 50% to a div once the viewport is at a large size, use
-  .lg-one-half.
+  at that breakpoint size.
 
   Set the widths configuration variables below in this partial
   to specify how many or how few classes you want available
   in your project.
 
-  Dependencies:
-  To use this partial, you also need $breakpoints defined
-  in base/_vars.scss and the breakpoint mixin from
-  base/_mixin-breakpoints.scss
+  Requires:
+  * base/_vars.scss and the breakpoint mixin from
+  * base/_mixin-breakpoints.scss
 
 ---------------------------------------------------------  */
 /*
