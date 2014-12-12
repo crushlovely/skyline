@@ -23,13 +23,15 @@
 -------------------------------------------------------- */
 
 
+$sans: sans-serif;
+$serif: georgia, times;
 
 
 
 /* @sans
 --------------------------------------------------------
 
-  This is your basic sans font.
+  This is your basic sans font. You can use light, regular, semi-bold, and bold
 
   Usage: use sans regular on a p
   p {
@@ -38,40 +40,23 @@
 
 ------------------------------------------------------ */
 
-$sans:sans-serif;
 
-%sans--light {
-  font-family: $sans;
-  font-weight: 300;
-  font-style: normal;
+
+$sans-font-styles: ("light": (300, normal), "regular": (400, normal), "semi-bold": (600, normal), "bold": (700, normal));
+@each $style, $attr in $sans-font-styles {
+    %sans--#{$style} {
+        font-family: $sans;
+        font-weight: nth($attr, 1);
+        font-style: nth($attr, 2);
+    }
 }
-
-%sans--regular {
-  font-family: $sans;
-  font-weight: 400;
-  font-style: normal;
-}
-
-%sans--semi-bold {
-  font-family: $sans;
-  font-weight: 600;
-  font-style: normal;
-}
-
-%sans--bold {
-  font-family: $sans;
-  font-weight: 700;
-  font-style: normal;
-}
-
-
 
 
 
 /* @serif
 --------------------------------------------------------
 
-  This is your basic serif font.
+  This is your basic serif font. You can use light, regular, italic, and semi-bold.
 
   Usage: use serif regular on a p
   p {
@@ -80,28 +65,11 @@ $sans:sans-serif;
 
 -------------------------------------------------------- */
 
-$serif: georgia, times;
-
-%serif--light {
-  font-family: $serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-%serif--regular {
-  font-family: $serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-%serif--italic {
-  font-family: $serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-%serif--semi-bold {
-  font-family: $serif;
-  font-weight: 600;
-  font-style: italic;
+$serif-font-styles: ("light": (300, normal), "regular": (400, normal), "italic": (400, italic), "semi-bold": (600, italic));
+@each $style, $attr in $serif-font-styles {
+    %serif--#{$style} {
+        font-family: $serif;
+        font-weight: nth($attr, 1);
+        font-style: nth($attr, 2);
+    }
 }
