@@ -36,7 +36,7 @@
 
 // Breakpoint Until
 @mixin bp-until($device-width) {
-  @media screen and (max-width: $device-width - 1) {
+  @media screen and (max-width: $device-width - .01) {
     @content
   }
 }
