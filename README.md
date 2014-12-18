@@ -6,6 +6,8 @@
 ### Introduction
 Skyline is a starting point for building custom CSS frameworks. The starter kit provides a solid CSS architecture that acts as a scaffolding to support your unique design system. It promotes object-oriented CSS, written in SCSS using BEM notation.
 
+Learn more at http://skyline.is
+
 ### Credits
 Developed by the [Crush & Lovely](http://crushlovely.com) Engineering Team
 Jeff Schram / @jeffschram jeffschram.com
