@@ -1,7 +1,7 @@
 ![Skyline](http://skyline.is/avatar-7aab8b54.png)
 
 # Skyline
-## Evolving CSS Architecture
+Evolving CSS Architecture
 
 ### Introduction
 Skyline is a starting point for building custom CSS frameworks. The starter kit provides a solid CSS architecture that acts as a scaffolding to support your unique design system. It promotes object-oriented CSS, written in SCSS using BEM notation.
