@@ -8,7 +8,7 @@ Skyline is a starting point for building custom CSS frameworks. The starter kit 
 
 Learn more at http://skyline.is
 
-Take a look at the example pages, with the initial starter styles at [http://crushlovely.g]
+Take a look at the example pages, with the initial starter styles at [http://crushlovely.github.io/skyline](http://crushlovely.github.io/skyline)
 
 ### Credits
 Developed by the [Crush & Lovely](http://crushlovely.com) Engineering Team
