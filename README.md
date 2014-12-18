@@ -8,15 +8,14 @@ Skyline is a starting point for building custom CSS frameworks. The starter kit 
 
 Learn more at http://skyline.is
 
+Take a look at the example pages, with the initial starter styles at [http://crushlovely.g]
+
 ### Credits
 Developed by the [Crush & Lovely](http://crushlovely.com) Engineering Team
-Jeff Schram / @jeffschram jeffschram.com
-with
-Adam Becker / @adambbecker adambbecker.com
-Jacob Fentress / @jfentress jacobfentress.com
-Ryan Buttrey / @ryanbuttrey ryanbuttrey.com
+* Jeff Schram / [@jeffschram](http://twitter.com/jeffschram) / [jeffschram.com](http://jeffschram.com)
+* with Adam Becker, Jacob Fentress, & Ryan Buttrey
 
-Feel free to contact Jeff on twitter @jeffschram with questions, comments, etc. And issues and pull requests are always welcome.
+Feel free to contact Jeff on twitter [@jeffschram](http://twitter.com/jeffschram) with questions, comments, etc. And issues and pull requests are always welcome.
 
 
 ### Setup
