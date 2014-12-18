@@ -7,9 +7,9 @@ BUILT WITH SKYLINE: EVOLVING CSS ARCHITECTURE
 SKYLINE CREATED BY CRUSH & LOVELY ENGINEERING
 ---------------------------------------------------------
 
-Jeff Schram         Adam Becker         
+Jeff Schram         Adam Becker
 @jeffschram         @adambbecker  
-jeffschram.com      adambbecker.com     
+jeffschram.com      adambbecker.com
 
 
 Jacob Fentress      Ryan Buttrey
@@ -24,7 +24,7 @@ COLOPHON & GUIDELINES
 
 Skyline is an object-oriented CSS architecture system
 written in SCSS with BEM notation and is heavily inspired
-by the concepts found in SMACCS, InuitCSS, Bootstrap, &
+by the concepts found in SMACCS, ITCSS, Bootstrap, &
 Atomic Design.
 
 

@@ -1,24 +1,31 @@
-# Skyline Starter Files
-## Basic Skyline Starter HTML and SCSS
+![Skyline](http://skyline.is/avatar-7aab8b54.png)
 
+# Skyline
+## Evolving CSS Architecture
 
 ### Introduction
+Skyline is a starting point for building custom CSS frameworks. The starter kit provides a solid CSS architecture that acts as a scaffolding to support your unique design system. It promotes object-oriented CSS, written in SCSS using BEM notation.
 
-Skyline helps you create a design system for your website.  It encourages a well thought-out CSS architecture, and enables you to develop a reusable and maintainable codebase.
+### Credits
+Developed by the [Crush & Lovely](http://crushlovely.com) Engineering Team
+Jeff Schram / @jeffschram jeffschram.com
+with
+Adam Becker / @adambbecker adambbecker.com
+Jacob Fentress / @jfentress jacobfentress.com
+Ryan Buttrey / @ryanbuttrey ryanbuttrey.com
 
-This starter kit includes the style files you will use on your site. In most cases, you will copy the contents of the `css` folder into your own project. Each SCSS partial is self-documented and includes markup examples in the comments. The kit also contains HTML files as examples to illustrate how you will write out your markup.
+Feel free to contact Jeff on twitter @jeffschram with questions, comments, etc. And issues and pull requests are always welcome.
 
-Skyline is a minimal scaffolding, it does not impose a visual style.  It contains many layout and structural helpers, utilities, and basic element and module styles that you will build upon. It is really a starting point, an organized set of files that allow you to create your own custom framework.
 
-### Starter Files
-The starter files contain as little code as possible.  The structure consists of:
+### Setup
+We wanted to keep the starter files as lean as possible. This isn't a self-contained app, it has demo images, example HTML, and the Skyline SCSS files in the CSS folder. You'll likely copy the SCSS files into your own app, and use the example HTML files as guides to mark up your own pages.
 
 ```
 ├── css
 |   ├── base
 |       ├── variables, resets, mixins, global assets like fonts
 |   ├── elements
-|       ├── styles for base elements (p, ul, img, form, input, etc.)
+|       ├── styles for base elements (p, ul, img, form, etc.)
 |   ├── layout
 |       ├── grids, widths, utilities, etc.
 |   ├── modules
@@ -42,15 +49,20 @@ The starter files contain as little code as possible.  The structure consists of
 
 ```
 
-### Usage
-These starter files are not a working app. Most likely, you'll add these resources into your applications.
+### Skyline's architecture is composed of 4 layers.
+Base contains global settings, variables, resets, and mixins. These make up the foundation of your CSS.
 
-If you want a simple route, you can view the index.html page in a browser and it'll work just fine, but you'll need to process the scss yourself once you start making style changes. You can run sass --watch on the stylesheets folder if you have sass installed on your machine, or use something like CodeKit.
+Elements contains all the global styling for basic stand-alone elements; such as links, quotes, tables, and text.
 
+Layout contains structural helper classes like .container, which restricts content to a consistent max-width, and a responsive grid system as well.
+
+Modules are custom-made components that are used throughout your site. These include global modules like the site header and footer, and other reusable modules like alerts and heroes.
+
+### See it in action
+You can view the example pages in a browser, make sure you're compiling the SCSS if you want to see any changes you've made to the Skyline files reflected in the examples.
 
 ### Documentation
 Extensive docs are in the works, but not yet released. However, Skyline makes it easy by adding detailed documentation in the comments of the scss partials themselves. Descriptions are right next to the actual code, making it simple to learn how it works.
 
 ## Copyright
-
 Copyright (c) 2014 Jeff Schram (Crush & Lovely). See LICENSE for further details.

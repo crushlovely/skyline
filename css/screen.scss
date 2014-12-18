@@ -9,15 +9,12 @@
   See README.md for info and credits
 
 
-
----------------------------------------------------------
-
   TABLE OF CONTENTS
   @toc
 
   - Base ............ foundations, mixins, functions, vars
   - Elements ........ single elements
-  - Layout .......... layout objects like grids, containers  
+  - Layout .......... layout objects like grids, containers
   - Modules ......... objects created by combining elements
 
 ---------------------------------------------------------  */
@@ -117,14 +114,14 @@
 
 
 
-  /***
+/***
 
   @layout
 ---------------------------------------------------------
 
   A large portion of CSS is structural layout. You will use
   these helpers to create the scaffolding that will support
-  the elements that make up your site.
+  the elements and modules that make up your site.
 
 ---------------------------------------------------------  */
 
@@ -153,7 +150,7 @@
   of elements and other modules.
 
   When you create a new module, make sure the partial is
-  in the modules directory, and you import it below
+  in the modules directory, and you import it below.
 
   Comment out any partial you don't need for this app.
 
